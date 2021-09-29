@@ -1,0 +1,90 @@
+---
+author:
+- Jon Zelner
+header-includes:
+- \usepackage{float}
+- \usepackage{etaremune}
+- \usepackage{wrapfig}
+- \usepackage{graphicx}
+- \usepackage{appendixnumberbeamer}
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty, font=footnotesize}
+- \usepackage{tikz}
+- \usepackage{xcolor}
+- \usetikzlibrary{shapes, arrows}
+- \usepackage{pdfpages}
+- \titlegraphic{\vspace{5cm}\flushright\includegraphics{`r here::here("assets/epibayeslogo.png")`}}
+
+title: "What's going on? What's next?"
+institute: University of Michigan School of Public Health \newline `jzelner@umich.edu` \newline `epibayes.io`
+fontsize: 12pt
+output: 
+  beamer_presentation:
+    theme: "metropolis"
+    latex_engine: xelatex
+    citation_package: biblatex
+date: \today
+bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+---
+
+
+```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
+## This function uses the `here` package to make it easy to include graphics in a directory
+## relative to the project root
+include_local_graphics <- function(x) {
+  knitr::include_graphics(here::here(x))
+}
+
+```
+
+## Where have we been? 
+
+```{r echo=FALSE, out.width='60%', fig.align="center", fig.cap="What my kids looked like right before the pandemic"}
+include_local_graphics("images/kids/pre-pandemic-kids.jpeg")
+```
+
+## A lot has happened!
+
+```{r echo=FALSE, out.width='50%', fig.align="center", fig.cap="How they look now..."}
+include_local_graphics("images/kids/kids-summer-2021.jpeg")
+```
+
+## A lot of \alert{growth}
+
+Currently:
+
+>- 4 PhD students
+
+>- 1 postdoc
+
+>- 2 Research Area Specialists
+
+## Our \alert{big themes}
+
+>- Inequality in infectious disease outcomes. [@zelner2021h]
+
+>- Spatial heterogeneity
+
+>- Measurement issues in seroepidemiology
+
+>- Missing data and bias
+
+>- Privacy, ethics and applications of spatial epidemiology [@broen2021]
+
+## Explore these issues through many different systems
+
+- COVID-19 [@zelner2020]
+
+- Influenza
+
+- Coccidiomycosis [@heaney2021]
+
+- Endemic Burkitt's Lymphoma
+
+- MRSA
+
+- Klebsiella Pneumoniae
+
+
+# References
