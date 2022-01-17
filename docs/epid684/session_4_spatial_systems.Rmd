@@ -1,0 +1,75 @@
+---
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    fig_caption: false
+---
+
+```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
+
+## This function uses the `here` package to make it easy to include graphics in a directory
+## relative to the project root
+include_local_graphics <- function(x) {
+  knitr::include_graphics(here::here(x))
+}
+```
+
+# Spatial systems (of systems) in epidemiology {#title}
+
+Jon Zelner   
+Epid 684   
+University of Michigan    
+1/14/2022
+
+# Agenda 
+
+>- Final "Good Map, Bad Map" presentations.
+>- What makes for a spatial systems approach to epidemiology?
+>- Mapping your own project topics as spatial systems.
+
+# Return of "Good Map, Bad Map"
+
+- [Slide deck](https://docs.google.com/presentation/d/1KJTB9Nq4S4J6aZLtjv0xTADWhEl83nuqX0KP56k8QrY/edit?usp=sharing) 
+
+# What are the components of a spatial health system? {.centerimg .r-fit-text}
+
+<img src="./area_level_health_diez.png" height="400" width="auto">
+
+# Types of feedback
+<div class="row">
+  <div class="textcolumn">
+  <p><span class="alert">Balancing Feedback:</span> When an action gives rise to counter-action, totally or partially
+    balancing out the initial one.</p>
+  </div>
+  <div class="imgcolumn"><img class="fragment" src="../../images/balancing_feedback.png"></div>
+</div>
+
+# Types of feedback
+<div class="row">
+  <div class="textcolumn">
+  <p><span class="alert">Reinforcing Feedback:</span> When an action gives rise to counter-action, totally or partially
+    balancing out the initial one.</p>
+  </div>
+  <div class="imgcolumn"><img class="fragment" src="../../images/reinforcing_feedback.png"></div>
+</div>
+
+# Spatial systems (of systems) {.center .sectionbreak}
+
+# Our friend <span class="alert">scale</span> is back {.imgslide}
+
+<img src= "../../images/connected_outbreaks.png">
+
+How many outbreaks we see is really a function of what scale we're looking at or care about.
+
+# Intervening in complex systems (of systems) means dealing with <span class="alert">messes</span>.
+
+<img src="./mess_management.png">
+
+# Next Time

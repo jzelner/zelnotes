@@ -1,0 +1,115 @@
+---
+author:
+- Jon Zelner
+header-includes:
+- \usepackage{float}
+- \usepackage{etaremune}
+- \usepackage{wrapfig}
+- \usepackage{graphicx}
+- \usepackage{appendixnumberbeamer}
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty, font=footnotesize}
+- \usepackage{tikz}
+- \usepackage{xcolor}
+- \usetikzlibrary{shapes, arrows}
+- \usepackage{pdfpages}
+
+title: What is spatial epidemiology, anyway? 
+institute: University of Michigan School of Public Health \newline EPID 684 \newline Winter 2022 \newline \newline `jzelner@umich.edu` \newline `epibayes.io`
+fontsize: 12pt
+urlcolor: blue
+output: 
+  beamer_presentation:
+    theme: "metropolis"
+    latex_engine: xelatex
+    citation_package: biblatex
+date: \today
+bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+---
+
+
+```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
+
+## This function uses the `here` package to make it easy to include graphics in a directory
+## relative to the project root
+include_local_graphics <- function(x) {
+  knitr::include_graphics(here::here(x))
+}
+```
+
+## Agenda
+
+>- Who am I?
+>- What is this class about? 
+>- What are we going to do this semester?
+
+## The elephant in the Zoom
+
+```{r echo=FALSE, out.width='80%', fig.align="center"}
+#| fig.cap="There is a disturbance in the...Winter term"
+include_local_graphics("images/omicron_strikes_back.png")
+```
+../2022-01-11-11-58-20.png
+
+## Who am I?
+
+>- Assistant Professor of Epidemiology at UM since \alert{2017}
+>- Core faculty member in the *Center for Social Epidemiology and Population Health* (CSEPH)
+>- Research group focused on infectious disease ([epibayes.io](https://epibayes.io))
+>- PhD in Sociology and Public Policy from UM (2011)
+>- Also teach undergrad courses on the social history of infectious disease (PUBHLTH 405) 
+
+## The final frontier?
+
+```{r echo=FALSE, out.width='80%', fig.align="center", fig.cap="Spatial analysis is closer than you might think."}
+include_local_graphics("images/uss_enterprise.jpg")
+```
+
+## Course Goals
+
+By the end of this term you will:
+
+>1. Become effective in the application of spatial ideas to real-world problems in epidemiology.
+>2. Be able to apply a spatial systems approach to public health.
+>3. Learn how to select appropriate quantitative tools for addressing spatial public health problems.
+>4. Understand how to use spatial analysis as a tool for advancing health justice and equity.
+
+## Maps...but also more!
+
+```{r echo=FALSE, out.width='80%', fig.align="center", fig.cap="Disease maps have become strangely ubiquitous in the last couple of years..."}
+include_local_graphics("images/nyt_covid_hotspots.png")
+```
+
+
+## Spatial epidemiology \alert{snuck up on me}...
+
+```{r echo=FALSE, out.height='80%', fig.align="center", fig.cap="My first disease map, from  2015"}
+include_local_graphics("images/lima_tb_incidence.png")
+```
+
+## What makes an epidemiological problem \alert{spatial}?
+
+>- \alert{On your own:} Spend a couple of minutes collecting your thoughts about what you think makes space relevant to an epidemiological problem.
+
+>- \alert{In small groups:}
+>    - Share your ideas about spatial problems.
+>    - Try to answer the following question: "What is an example of a non-spatial problem in epidemiology?"
+
+## Spatial epidemiology is all about \alert{relationships}
+
+>- \alert{Distance} is a stand-in for all the things that often make near things more similar and far things less similar.
+>- For example: environmental exposures, social and political factors, patterns of movement, built environment.
+>- Shares a lot of DNA with \alert{time-series} and \alert{network} analysis.
+>- Necessarily highly interdisciplinary and open to a wide range of approaches.
+
+
+## What, \alert{exactly}, are we going to be doing this term?
+
+- [Syllabus](https://publish.obsidian.md/epibayes/Courses/EPID684/Syllabus)
+
+## Next Time
+
+- Digging into the [key ideas and tools of spatial epidemiology](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+1/Sessions/2.+Maps+and+More) in more detail.
+
+# References
