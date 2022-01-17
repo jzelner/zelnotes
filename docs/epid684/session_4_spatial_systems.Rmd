@@ -8,11 +8,24 @@ output:
     css: "styles.css"
     self_contained: false
     lib_dir: "."
-    reveal_plugins: ["menu", "chalkboard"]
+    reveal_plugins: ["chalkboard"]
     fig_caption: false
     reveal_options: 
       chalkboard:
         theme: "whiteboard"
+        toggleChalboardButton: true
+      customcontrols: {
+  		  controls: [
+  			{ icon: '<i class="fa fa-pen-square"></i>',
+  			  title: 'Toggle chalkboard (B)',
+  			  action: 'RevealChalkboard.toggleChalkboard();'
+  			},
+  			{ icon: '<i class="fa fa-pen"></i>',
+  			  title: 'Toggle notes canvas (C)',
+  			  action: 'RevealChalkboard.toggleNotesCanvas();'
+  			}
+  		]
+    }
 ---
 
 ```{r setup, echo=FALSE,warning=FALSE,message=FALSE}

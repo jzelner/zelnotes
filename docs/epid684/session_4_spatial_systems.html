@@ -217,7 +217,6 @@ The 1854 cholera epidemic has disproportionately burdened the destitute. Calls f
   <script src="reveal.js-4.2.1/dist/reveal.js"></script>
   
   <!-- reveal.js plugins -->
-  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
   <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
   <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
   
@@ -304,43 +303,27 @@ The 1854 cholera epidemic has disproportionately burdened the destitute. Calls f
         // Time before the cursor is hidden (in ms)
         hideCursorTime: 5000,
 
-        menu: {
-          // Configuration from
-          // https://github.com/denehyg/reveal.js-menu#configuration
-   
-   
-    
-    
-    
-    
-    
-    
-    
- 
- 
- 
- 
- 
-          // option not supported for change
-          loadIcons: false, // using rmarkdown provided own.
-          custom: false,
-          themes: false,
-          // themesPath: 'dist/theme/',
-          transitions: false
-        },
-
 
         chalkboard: {
           theme: 'whiteboard',
         },
         customcontrols: {
-            controls: [
-            ]
+             controls: [
+            {
+              icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            {
+              icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
         },
 
         // Optional reveal.js plugins
         plugins: [
-          RevealMenu,
           RevealChalkboard,
           RevealCustomControls,
         ]
