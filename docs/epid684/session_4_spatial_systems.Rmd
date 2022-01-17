@@ -8,6 +8,7 @@ output:
     css: "styles.css"
     self_contained: false
     lib_dir: "."
+    reveal_plugins: ["menu", "chalkboard"]
     fig_caption: false
 ---
 
@@ -48,7 +49,7 @@ University of Michigan
   <p><span class="alert">Balancing Feedback:</span> When an action gives rise to counter-action, totally or partially
     balancing out the initial one.</p>
   </div>
-  <div class="imgcolumn"><img class="fragment" src="../../images/balancing_feedback.png"></div>
+  <div class="imgcolumn"><img class="fragment" src="../images/balancing_feedback.png"></div>
 </div>
 
 # Types of feedback
@@ -57,14 +58,14 @@ University of Michigan
   <p><span class="alert">Reinforcing Feedback:</span> When an action gives rise to counter-action, totally or partially
     balancing out the initial one.</p>
   </div>
-  <div class="imgcolumn"><img class="fragment" src="../../images/reinforcing_feedback.png"></div>
+  <div class="imgcolumn"><img class="fragment" src="../images/reinforcing_feedback.png"></div>
 </div>
 
 # Spatial systems (of systems) {.center .sectionbreak}
 
 # Our friend <span class="alert">scale</span> is back {.imgslide}
 
-<img src= "../../images/connected_outbreaks.png">
+<img src= "../images/connected_outbreaks.png">
 
 How many outbreaks we see is really a function of what scale we're looking at or care about.
 

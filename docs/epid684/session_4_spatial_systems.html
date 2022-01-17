@@ -22,6 +22,8 @@
 
   <link rel="stylesheet" href="reveal.js-4.2.1/dist/theme/solarized.css" id="theme">
 
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/chalkboard/style.css">
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/customcontrols/style.css">
 
   <style type="text/css">
   /* some tweaks to reveal css */
@@ -63,6 +65,8 @@
 
     <link rel="stylesheet" href="styles.css"/>
     <script src="header-attrs-2.11/header-attrs.js"></script>
+    <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 </head>
 <body>
   <div class="reveal">
@@ -107,7 +111,7 @@ University of Michigan<br />
 </p>
 </div>
 <div class="imgcolumn">
-<img class="fragment" src="../../images/balancing_feedback.png">
+<img class="fragment" src="../images/balancing_feedback.png">
 </div>
 </div>
 </section>
@@ -121,7 +125,7 @@ University of Michigan<br />
 </p>
 </div>
 <div class="imgcolumn">
-<img class="fragment" src="../../images/reinforcing_feedback.png">
+<img class="fragment" src="../images/reinforcing_feedback.png">
 </div>
 </div>
 </section>
@@ -133,7 +137,7 @@ University of Michigan<br />
 
 <section id="our-friend-scale-is-back" class="title-slide slide level1 imgslide">
 <h1 class="imgslide">Our friend <span class="alert">scale</span> is back</h1>
-<p><img src= "../../images/connected_outbreaks.png"></p>
+<p><img src= "../images/connected_outbreaks.png"></p>
 <p>How many outbreaks we see is really a function of what scale we’re looking at or care about.</p>
 </section>
 
@@ -152,6 +156,9 @@ University of Michigan<br />
   <script src="reveal.js-4.2.1/dist/reveal.js"></script>
   
   <!-- reveal.js plugins -->
+  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
+  <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
+  <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
   
   <script>
 
@@ -236,10 +243,44 @@ University of Michigan<br />
         // Time before the cursor is hidden (in ms)
         hideCursorTime: 5000,
 
+        menu: {
+          // Configuration from
+          // https://github.com/denehyg/reveal.js-menu#configuration
+   
+   
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ 
+ 
+ 
+          // option not supported for change
+          loadIcons: false, // using rmarkdown provided own.
+          custom: false,
+          themes: false,
+          // themesPath: 'dist/theme/',
+          transitions: false
+        },
 
+
+        chalkboard: {
+        },
+        customcontrols: {
+            controls: [
+            ]
+        },
 
         // Optional reveal.js plugins
         plugins: [
+          RevealMenu,
+          RevealChalkboard,
+          RevealCustomControls,
         ]
       });
 
