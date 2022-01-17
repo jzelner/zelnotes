@@ -10,6 +10,9 @@ output:
     lib_dir: "."
     reveal_plugins: ["menu", "chalkboard"]
     fig_caption: false
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
 ---
 
 ```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
@@ -104,6 +107,13 @@ Spend 15m on your own:
 >- Focus on *simplicity*, i.e. if you don't think it needs to be there...it doesn't!
 
 <p class = "fragment">Spend 10m in pairs explaining the working of your systems.</p>
+
+## Useful tools for diagramming systems
+
+- [Excalidraw](https://excalidraw.com/)
+- [Loopy](https://ncase.me/loopy/v1.1/)
+- Powerpoint/Google slides
+- Paper/pencil
 
 
 # Next Time {.imgslide}
