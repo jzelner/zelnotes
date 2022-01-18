@@ -15,7 +15,7 @@ header-includes:
 - \usepackage{pdfpages}
 - \titlegraphic{\vspace{5cm}\flushright\includegraphics{`r here::here("assets/epibayeslogo.png")`}}
 
-title: "What's going on? What's next?"
+title: "EpiBayes: 2021 and Beyond"
 institute: University of Michigan School of Public Health \newline `jzelner@umich.edu` \newline `epibayes.io`
 fontsize: 12pt
 output: 
@@ -38,53 +38,132 @@ include_local_graphics <- function(x) {
 
 ```
 
-## Where have we been? 
+## EpiBayes
 
-```{r echo=FALSE, out.width='60%', fig.align="center", fig.cap="What my kids looked like right before the pandemic"}
+```{r echo=FALSE, out.width='80%', fig.align="center", fig.cap="For more info, check out our group site at epibayes.io"}
+include_local_graphics("images/epibayes-blurb.png")
+```
+
+## Who we are:
+
+>- **PhD students:** Kelly Broen, Ramya Naraharisetti, Hannah Steinberg, Rob Trangucci
+
+>- **Postdoc:** Joey Dickens
+
+>- **Research Area Specialists:** Krzysztof Sakrejda, Stephanie Choi
+
+>- Many other faculty, postdoc, and student collaborators at UM, NIH, CDC, and beyond...
+
+## A lot has happened in the last 18+ months!
+
+```{r echo=FALSE, out.width='90%', fig.align="center"}
+include_local_graphics("images/mi_covid_timeline_august_2021.png")
+```
+
+
+## What my kids looked like right before the pandemic
+```{r echo=FALSE, out.width='60%', fig.align="center", fig.cap="January 2020"}
 include_local_graphics("images/kids/pre-pandemic-kids.jpeg")
 ```
 
-## A lot has happened!
+## How they look now...
 
-```{r echo=FALSE, out.width='50%', fig.align="center", fig.cap="How they look now..."}
+```{r echo=FALSE, out.width='80%', fig.align="center", fig.cap="September 2021"}
+include_local_graphics("images/memes/brother-sister.jpeg")
+```
+
+## How they look now...
+
+```{r echo=FALSE, out.width='50%', fig.align="center", fig.cap="September 2021"}
 include_local_graphics("images/kids/kids-summer-2021.jpeg")
 ```
 
-## A lot of \alert{growth}
 
-Currently:
+## Some of our \alert{big themes}
 
->- 4 PhD students
+>- Inequality in infectious disease risk [@zelner2021h]
 
->- 1 postdoc
+>- Spatial variation in infection outcomes [@contreras2020; @masters2020c]
 
->- 2 Research Area Specialists
+>- Measurement issues in seroepidemiology [@zelner2019a; @kubale2020a]
 
-## Our \alert{big themes}
+>- Missing data & bias in estimates of key social/spatial risks 
 
->- Inequality in infectious disease outcomes. [@zelner2021h]
+>- Privacy and ethics in applications of spatial epidemiology [@broen2021]
 
->- Spatial heterogeneity
+## COVID has shifted what we do, but also solidified it
 
->- Measurement issues in seroepidemiology
+```{r echo=FALSE, out.width='80%', fig.align="center", fig.cap="covidmapping.org, developed in collaboration with MDHHS"}
+include_local_graphics("images/projects/covidmapping-august-2021.png")
+```
 
->- Missing data and bias
+## Explore these issues through many different \alert{disease systems}
 
->- Privacy, ethics and applications of spatial epidemiology [@broen2021]
+>- COVID-19 [@zelner2020]
 
-## Explore these issues through many different systems
+>- Influenza
 
-- COVID-19 [@zelner2020]
+>- Coccidiomycosis [@heaney2021]
 
-- Influenza
+>- Endemic Burkitt's Lymphoma
 
-- Coccidiomycosis [@heaney2021]
+>- MRSA
 
-- Endemic Burkitt's Lymphoma
+>- Klebsiella Pneumoniae
 
-- MRSA
+# Recent and Ongoing Projects
 
-- Klebsiella Pneumoniae
+## Inequality in \alert{COVID-19 mortality} in Michigan driven by incidence rather than case-fatality
+
+```{r echo=FALSE, out.width='70%', fig.align="center", fig.cap="Disparities in COVID-19 incidence and case-fatality for March-June 2020"}
+include_local_graphics("images/projects/zelner-cid-covid-disparities.png")
+```
+
+## How have these inequities been impacted by changing pandemic conditions?
+
+```{r echo=FALSE, out.width='90%', fig.align="center"}
+include_local_graphics("images/mi_covid_timeline_august_2021.png")
+```
+
+## Differences in \alert{case-fatality} have remained small over the course of the pandemic
+
+```{r echo=FALSE, out.width='70%', fig.align="center", fig.cap="Figure from Naraharisetti et al., In Prep"}
+include_local_graphics("images/projects/ramya-cfr-covid-2020.png")
+```
+
+## Equalizing the \alert{pacing} of infection could have prevented a large fraction of deaths among Black people in MI
+
+```{r echo=FALSE, out.width='70%', fig.align="center", fig.cap="Figure from Naraharisetti et al., In Prep"}
+include_local_graphics("images/projects/ramya-deaths-averted.png")
+```
+
+## \alert{Local intensity} of Malaria exposure associated with increased pediatric cancer risk
+
+```{r echo=FALSE, out.width='70%', fig.align="center", fig.cap="Spatial clustering of endemic Burkitt's Lymphoma in Tanzania, Uganda and Kenya (From Broen et al., In Prep)."}
+include_local_graphics("images/projects/kelly_ebl_clustering.png")
+```
+
+## Spatial clustering of pediatric non-vaccination dramatically increases VPD outbreak risk
+
+```{r echo=FALSE, out.width='50%', fig.align="center", fig.cap="Figure from Masters et al. 2020 \\protect\\cite{masters2020}"}
+include_local_graphics("images/projects/nina-pnas-clustering.png")
+```
+
+## \alert{Layered screening} and \alert{intake cohorting} are necessary to reduce COVID-19 outbreak risk in a large urban jail
+
+```{r echo=FALSE, out.width='70%', fig.align="center", fig.cap="Figure from Sakrejda et al., In Prep"}
+include_local_graphics("images/projects/sakrejda-ccj-screening.png")
+```
+
+## See something interesting?
+
+- If these or other projects are of interest, let me or anyone else know!
+
+- Don't hesitate to drop a line at `jzelner@umich.edu`
+
+- Check out our other work at `covidmapping.org` and `epibayes.io`
+
+- Thanks!
 
 
 # References

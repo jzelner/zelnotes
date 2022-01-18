@@ -1,4 +1,5 @@
 ---
+pagetitle: "Spatial Systems"
 fontsize: 12pt
 urlcolor: blue
 output: 
@@ -28,12 +29,21 @@ include_local_graphics <- function(x) {
 }
 ```
 
-# Spatial systems (of systems) in epidemiology {#title}
+# Spatial systems (of systems){#title}
 
-Jon Zelner   
-Epid 684   
-University of Michigan    
-1/18/2022
+<div class="spacedrow">
+  <div class="iteml">
+  <p style="font-size:0.8em">
+      Jon Zelner  
+      Epid 684  
+      University of Michigan  
+      1/18/2022 
+  </p>
+  </div>
+  <div class="itemr">
+  <img src="../images/epid_logo.png">
+  </div>
+</div>
 
 # Agenda 
 
@@ -45,7 +55,7 @@ University of Michigan
 
 - [Slide deck](https://docs.google.com/presentation/d/1KJTB9Nq4S4J6aZLtjv0xTADWhEl83nuqX0KP56k8QrY/edit?usp=sharing) 
 
-# Why take a <span class="alert">systems perspective</span> on epidemiology? 
+# Why take a <span class="alert">systems perspective</span> on spatial epidemiology? 
 
 >- If we care about the effect of place, isolating individual risk factors may be counterproductive.
 >- Determinants of health and disparities accure over the <span class="alert">lifecourse</span> and have to be understood cumulatively.
@@ -59,11 +69,12 @@ University of Michigan
 
 From Diez Roux et al. 2011
 
-# What does it <span class="alert">mean</span> to take a systems perspective?
+# How can we <span class="alert">apply</span> the systems perspective?
 <div class="toprow">
 <div class="column" style="flex:60%">
->- Characterize system components or states
->- Map feedbacks between states or components of the system.
+>- Characterize system components or states.
+>- Figure out which are the most important <span class="alert">relationships</span>.
+>- Create a model of the system that lets you look at the implications of these relationships.
 </div>
 <div class="column" style="flex:40%">
 <img src="./area_level_health_diez.png">
@@ -88,19 +99,7 @@ From Diez Roux et al. 2011
   <div class="imgcolumn"><img class="fragment" src="../images/reinforcing_feedback.png"></div>
 </div>
 
-# Spatial systems (of systems) {.center .sectionbreak}
-
-# Working with complex systems means dealing with <span class="alert">messes</span>. {.r-fit-text}
-
-<img src="./mess_management.png">
-
-# Our friend <span class="alert">scale</span> is back {.imgslide}
-
-<img src= "../images/connected_outbreaks.png">
-
-How many outbreaks we see is really a function of what scale we're looking at or care about.
-
-# A systems perspective on your <span class="alert">problem</span> topic. 
+# A spatial systems perspective on your <span class="alert">problem</span> topic. 
 
 Spend 15m on your own: 
 
@@ -109,7 +108,7 @@ Spend 15m on your own:
 >- Diagramming out these relationships using the approach from the Diez Roux et al. paper.
 >- Focus on *simplicity*, i.e. if you don't think it needs to be there...it doesn't!
 
-<p class = "fragment">Spend 10m in pairs explaining the working of your systems.</p>
+<p class = "fragment">Spend 20m in small groups comparing the workings of your systems.</p>
 
 ## Useful tools for diagramming systems
 
@@ -118,6 +117,34 @@ Spend 15m on your own:
 - Powerpoint/Google slides
 - Paper/pencil
 
+# Spatial systems (of systems) {.center .sectionbreak}
+
+# Working with complex systems means dealing with <span class="alert">messes</span>.
+
+<img src="./mess_management.png">
+
+## A mess is a systems of systems. {.quote}
+
+<blockquote>
+"What we do experience are large and complex sets of interacting problems, dynamic systems of problems... [W]e refer to these as messes. Our focus is on the <span class = "alert">management</span> of messes rather than the solution of problems. Mess management requires planning, not problem solving.
+</blockquote>
+
+From Ackoff 1981, "The Art and Science of Mess Management"
+
+## Approaches to mess management.
+
+>1. *Clinical:* Holistic and diagnostic in nature; takes in the whole mess without a theory of how it fits together.
+
+>2. *Research:* Focused on breaking down the *mess* into minimally-interacting constituent parts and solving each as an independent problem.
+
+>3. *Design:* Adaptive & iterative and combines the more holistic clinical approach that is continually updated with research findings. 
+
+
+## Can be thought about in terms of the problem of <span class="alert">scale</span>. {.imgslide}
+
+<img src= "../images/connected_outbreaks.png">
+
+How many outbreaks we see is really a function of what scale we're looking at or care about.
 
 # Next Time {.imgslide}
 
