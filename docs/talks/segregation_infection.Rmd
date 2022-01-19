@@ -75,9 +75,14 @@ From Enserink and Kupferschmidt, *Science* 2020
 Economic and racial inequality in infection and disease risk</li></span></span>
 </ul>
 
-<p class="fragment" style="text-align: left;">Why wasn't inequality central to pandemic preparedness?<p>
+# Inequity in infection and death has been clear from the outset of the COVID-19 pandemic {.imgslide}
 
-
+<div class="r-stack">
+  <img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600">
+  <img class="fragment" src="../images/harvard_inequality_on_top_of_inequality.png" width="400">
+  <img class="fragment" src="../images/mistrust_communities_of_color.png">
+  <img class="fragment" src="../images/minorities_covid_uk.png">
+  <img class="fragment" src="../images/omicron_black_chicago.png"></div>
 
 # The myth of the <span class="alert">equal opportunity infector</span>
 
@@ -87,15 +92,6 @@ Economic and racial inequality in infection and disease risk</li></span></span>
   <img class="fragment" src="../images/equal_opportunity_rural.png">
   <img class="fragment" src="../images/equal_opportunity_delta.png">
   </div>
-
-# Inequity in infection and death has been clear from the outset of the COVID-19 pandemic {.imgslide}
-
-<div class="r-stack">
-<img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600">
-<img class="fragment" src="../images/harvard_inequality_on_top_of_inequality.png" width="400">
-<img class="fragment" src="../images/mistrust_communities_of_color.png">
-<img class="fragment" src="../images/minorities_covid_uk.png">
-<img class="fragment" src="../images/omicron_black_chicago.png"></div>
 
 # What might explain this inequality in <span class="alert">mortality</span>? 
 
