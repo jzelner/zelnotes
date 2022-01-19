@@ -40,7 +40,7 @@ include_local_graphics <- function(x) {
   </p>
   </div>
   <div class="itemr">
-  <img src="../images/epid_logo.png">
+  <img src="../images/Epid_external_horiz.png">
   </div>
 </div>
 
@@ -65,16 +65,30 @@ From Enserink and Kupferschmidt, *Science* 2020
 
 # Early pandemic models focused on <span class="alert">established</span> priorities
 
->- Age-specific incidence and mortality.
->- Hospital and ICU capacity.
->- Short- and long-term forecasting of incidence and mortality.
->- Impacts of lockdowns on infection risk.
+<ul>
+<li class="fragment">Age-specific incidence and mortality.</li>
+<li class="fragment">Hospital and ICU capacity.</li>
+<li class="fragment">Short-term forecasting of population incidence and mortality</li> 
+<li class="fragment">Impacts of lockdowns on infection risk.</li>
+<span class="fragment">
+<span class="fragment strike highlight-red"><li>
+Economic and racial inequality in infection and disease risk</li></span></span>
+</ul>
 
-<p class="fragment">
-<span class="alert">Inequality</span> was not one of the key early foci.
-</p>
+<p class="fragment" style="text-align: left;">Why wasn't inequality central to pandemic preparedness?<p>
 
-# Inequity in infection and death was clear from the outset {.imgslide}
+
+
+# The myth of the <span class="alert">equal opportunity infector</span>
+
+<div class="r-stack">
+  <img class="fragment" src="../images/equal_opportunity_virus.png">
+  <img class="fragment" src="../images/equal_opportunity_herald.png">
+  <img class="fragment" src="../images/equal_opportunity_rural.png">
+  <img class="fragment" src="../images/equal_opportunity_delta.png">
+  </div>
+
+# Inequity in infection and death has been clear from the outset of the COVID-19 pandemic {.imgslide}
 
 <div class="r-stack">
 <img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600">
@@ -83,26 +97,31 @@ From Enserink and Kupferschmidt, *Science* 2020
 <img class="fragment" src="../images/minorities_covid_uk.png">
 <img class="fragment" src="../images/omicron_black_chicago.png"></div>
 
-# Speculation about causes of disparate mortality relied on well-worn ideas about <span class="alert">health disparities</span>
+# What might explain this inequality in <span class="alert">mortality</span>? 
 
-<div class="row">
+<div class="toprow">
   <div class="textcolumn">
   <ul>
   <li class="fragment">Higher prevalence of comorbidities, e.g. obesity</li>
   <li class="fragment">Poorer access to healthcare</li>
-  <li class="fragment">Multigenerational households</li>
+  <li class="fragment">Residence in multigenerational households</li>
   <li class="fragment">Prevalence of "essential work"</li>
   </div>
-  <div class="imgcolumn"><img src="../images/twice_as_deadly_nyt.png"></div>
+  <div style="flex:50%"><img src="../images/twice_as_deadly_nyt.png"></div>
 </div>
 
 
+# Mental models guide and <span class="alert">constrain</span> our thinking {.quote}
 
-# Who are transmission models <span class="alert">for</span>?
+  <blockquote>[M]ental models and empirical data keep each other in check - [Sir Peter Medawar] described them respectively as the ‘bride’ and ‘groom’ of science — and scientific progress in any discipline occurs by the back-and-forth dialogue between their two ‘voices’.”</blockquote>
+
+[From Greenhalgh 2021: *Miasmas, mental models and preventive public health*](https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017)
+
+# Who are epidemiological models <span class="alert">for</span>?
 
 >- Public health officials
 >- Scientists
 >- Politicians
 >- Media
 
-<p class="fragment">What <span class="alert">perspective</span> do these groups have in common?</p>
+<p class="fragment" style="text-align: center;">What <span class="alert">perspective</span> do these groups have in common?</p>
