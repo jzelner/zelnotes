@@ -31,18 +31,16 @@ include_local_graphics <- function(x) {
 
 # There are no equal opportunity infectors {#title}
 
-<div class="spacedrow">
-  <div class="iteml">
-  <p style="font-size:0.5em">
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
       Jon Zelner  
-      *10th Annual Conference to Increase Diversity in Mathematical Modeling and Public Health* 
+      *10th Annual Conference to Increase Diversity*  
+      *in Mathematical Modeling and Public Health*   
       1/21/2022 
   </p>
-  </div>
-  <div class="itemr">
-  <img src="../images/Epid_external_horiz.png">
-  </div>
 </div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/Epid_external_horiz.png" width="400"></div>
 
 # Goals
 
