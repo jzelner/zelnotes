@@ -134,12 +134,19 @@ li:not(:last-child) {
 }
 
 #footerDiv{
-    width: 100%;
+    width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
 
 }
 #footerImg{
-    width: 85%;
+    width: 100%;
+}
+
+.paddeddiv {
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 200px;
+  padding-left: 0px;
 }
