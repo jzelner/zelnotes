@@ -93,8 +93,7 @@ From Diez Roux et al. 2011
 # Types of feedback
 <div class="row">
   <div class="textcolumn">
-  <p><span class="alert">Reinforcing Feedback:</span> When an action gives rise to counter-action, totally or partially
-    balancing out the initial one.</p>
+  <p><span class="alert">Reinforcing Feedback:</span> When an action gives rise to more of the same action.</p>
   </div>
   <div class="imgcolumn"><img class="fragment" src="../images/reinforcing_feedback.png"></div>
 </div>
@@ -149,6 +148,7 @@ How many outbreaks we see is really a function of what scale we're looking at or
 # Next Time {.imgslide}
 
 <img class="r-stretch" src="../images/cholera-on-thames.jpg" height="400" width="auto">
+
 
 Start to make our way into the [1854 London Cholera Outbreak](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+2/Sessions/1.+Walking+into+a+Cholera+epidemic)
 
