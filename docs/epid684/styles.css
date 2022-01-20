@@ -132,3 +132,14 @@ li:not(:last-child) {
 .imgcolumn {
     flex: 30%;
 }
+
+#footerDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#footerImg{
+    width: 85%;
+}
