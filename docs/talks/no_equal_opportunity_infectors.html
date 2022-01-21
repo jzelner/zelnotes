@@ -7,26 +7,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reset.css">
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reveal.css">
+  <link rel="stylesheet" href="reveal.js-3.3.0.1/css/reveal.css"/>
 
+
+
+<link rel="stylesheet" href="reveal.js-3.3.0.1/css/theme/solarized.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
   <style type="text/css">
-    /* CSS from pandoc style.html() */
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-                  </style>
-
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/theme/solarized.css" id="theme">
-
-  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/chalkboard/style.css">
-  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/customcontrols/style.css">
-
-  <style type="text/css">
-  /* some tweaks to reveal css */
     .reveal h1 { font-size: 2.0em; }
     .reveal h2 { font-size: 1.5em;  }
     .reveal h3 { font-size: 1.25em;	}
@@ -36,6 +25,9 @@
     .reveal .slides>section>section {
       padding: 0px 0px;
     }
+
+
+
     .reveal table {
       border-width: 1px;
       border-spacing: 2px;
@@ -61,9 +53,399 @@
       border-style: dotted;
       border-color: gray;
     }
+
+    .reveal .slide-menu-button {
+      left: 105px !important;
+    }
+
   </style>
 
-    <link rel="stylesheet" href="../epid684/styles.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="..\epid684\styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
     <script src="header-attrs-2.11/header-attrs.js"></script>
     <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
     <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -75,16 +457,12 @@
 
 <section id="title" class="title-slide slide level1">
 <h1>There are no equal opportunity infectors</h1>
-<div class="spacedrow">
-<div class="iteml">
-<p style="font-size:0.5em">
+<p style="font-size:0.5em; text-align: center;">
 Jon Zelner<br />
 <em>10th Annual Conference to Increase Diversity in Mathematical Modeling and Public Health</em> 1/21/2022
 </p>
-</div>
-<div class="itemr">
-<img src="../images/Epid_external_horiz.png">
-</div>
+<div id="footerDiv" class="itemr">
+<img class="footerImg" src="../../assets/epibayeslogo.png"><img class="footerImg" src="../images/Epid_external_horiz.png">
 </div>
 </section>
 
@@ -265,42 +643,65 @@ Prevalence of “essential work”
 </div>
 </div>
 </section></section>
+<section id="epibayes-team" class="title-slide slide level1">
+<h1>Epibayes Team</h1>
+<div class="teamPicsDiv">
+<!-- Jon -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/jon.jpg"> <a class="teamName" href="https://epibayes.io/author/jon-zelner/" target="_blank">Jon Zelner</a>
+</div>
+<!-- Hannah -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/hannah.png"> <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" arget="_blank">Hannah Steinberg</a>
+</div>
+<!-- Joey -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/joey.png"> <a class="teamName" href="https://epibayes.io/author/joey-dickens/" target="_blank">Joey Dickens</a>
+</div>
+<!-- Kelly -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/kelly.png"> <a class="teamName" href="https://epibayes.io/author/kelly-broen/" target="_blank">Kelly Broen</a>
+</div>
+<!-- Krzysztof -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/krzysztof.jpg"> <a class="teamName" href="https://epibayes.io/author/krzysztof-sakrejda/" target="_blank">Krzysztof Sakrejda</a>
+</div>
+<!-- Paul -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/paul.jpg"> <a class="teamName" href="https://epibayes.io/author/paul-delamater/" target="_blank">Paul Delamater</a>
+</div>
+<!-- Ramya -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/ramya.png"> <a class="teamName" href="https://epibayes.io/author/ramya-naraharisetti/"  target="_blank">Ramya Naraharisetti</a>
+</div>
+<!-- Rob -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/robert.jpg"> <a class="teamName" href="https://epibayes.io/author/rob-trangucci/" target="_blank">Rob Trangucci</a>
+</div>
+<!-- Stephanie -->
+<div class="teamMember">
+<img class="teamPic" src="../images/labmembers/stephanie.png"> <a class="teamName" href="https://epibayes.io/author/stephanie-choi/" target="_blank">Stephanie Choi</a>
+</div>
+</div>
+</section>
     </div>
   </div>
 
-  <script src="reveal.js-4.2.1/dist/reveal.js"></script>
-  
-  <!-- reveal.js plugins -->
-  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
-  <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
-  <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
-  
+  <script src="reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="reveal.js-3.3.0.1/js/reveal.js"></script>
+
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display controls in the bottom right corner
         controls: true,
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
         // Display a presentation progress bar
         progress: true,
-        // Can be used to limit the contexts in which the slide number appears
-        showSlideNumber: 'all',
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
+        // Display the page number of the current slide
+        slideNumber: false,
         // Push each slide change to the browser history
-        // Implies `hash: true`
         history: true,
         // Enable keyboard shortcuts for navigation
         keyboard: true,
@@ -310,58 +711,38 @@ Prevalence of “essential work”
         center: false,
         // Enables touch navigation on devices with touch input
         touch: true,
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
+        // Loop the presentation
+        loop: false,
+        // Change the presentation direction to be RTL
+        rtl: false,
         // Turns fragments on and off globally
         fragments: true,
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: true,
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
         // Flags if we should show a help overlay when the questionmark
         // key is pressed
         help: true,
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten
         // by using a data-autoslide attribute on your slides
         autoSlide: 0,
         // Stop auto-sliding after user input
         autoSlideStoppable: true,
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
         // Transition style
         transition: 'fade', // none/fade/slide/convex/concave/zoom
         // Transition speed
         transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
-        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
         // Number of slides away from the current that are visible
         viewDistance: 3,
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-        // The display mode that will be used to show slides
-        display: 'block',
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
 
         menu: {
-          // Configuration from
-          // https://github.com/denehyg/reveal.js-menu#configuration
-   
    
     
     
@@ -369,45 +750,34 @@ Prevalence of “essential work”
     
     
     
-    
  
- 
- 
- 
- 
-          // option not supported for change
-          loadIcons: false, // using rmarkdown provided own.
           custom: false,
           themes: false,
-          // themesPath: 'dist/theme/',
           transitions: false
         },
 
 
+
         chalkboard: {
+          toggleNotesButton: true,
+          toggleChalkboardButton: true,
           theme: 'whiteboard',
         },
-        customcontrols: {
-            controls: [
-            	{ icon: '<i class="fa fa-pen-square"></i>',
-            	  title: 'Toggle chalkboard (B)',
-            	  action: 'RevealChalkboard.toggleChalkboard();'
-            	},
-            	{ icon: '<i class="fa fa-pen"></i>',
-            	  title: 'Toggle notes canvas (C)',
-            	  action: 'RevealChalkboard.toggleNotesCanvas();'
-            	}
-            ]
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
         },
 
         // Optional reveal.js plugins
-        plugins: [
-          RevealMenu,
-          RevealChalkboard,
-          RevealCustomControls,
+        dependencies: [
+          { src: 'reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+          { src: 'reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
         ]
       });
-
     </script>
   <!-- dynamically load mathjax for compatibility with self-contained -->
   <script>
