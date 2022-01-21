@@ -251,7 +251,7 @@ If you're interested in learning more about our work, check our lab site at [epi
 
 <figure>
 <a href="https://epibayes.io">
-<img src="../../assets/epibayeslogo.png">
+<img src="../images/epibayeslogo.png">
 </a>
 </figure>
 
