@@ -33,26 +33,29 @@ include_local_graphics <- function(x) {
 
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
-      Jon Zelner  
       *10th Annual Conference to Increase Diversity*  
       *in Mathematical Modeling and Public Health*   
-      1/21/2022 
-  </p>
+      1/21/2022
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io)
+    </p>
 </div>
 
 <div class="itemr" id="footerDiv"><img id="footerImg" src="../images/Epid_external_horiz.png" width="400"></div>
 
 # Goals
 
->- Discuss why epidemiological models - and modelers - have ignored inequality in our approach to pandemic preparedness.
->- Suggest an alternate path that builds on the many strengths and successes of modeling in the COVID-19 response.
->- Highlight why developing models that reflect a diversity of understandings about how transmission systems work is essential for equitable preparedness and population health.
+>- Discuss why epidemiological models - and <span class="alert">modelers</span> - have ignored inequality in our approach to pandemic preparedness.
+>- Suggest an <span class="alert">alternate path</span> that builds on the many strengths and successes of modeling in the COVID-19 response.
+>- Highlight why developing models that reflect a diversity of understandings about <span class="alert">how transmission systems work</span> is essential for equitable preparedness and population health.
 
 # {.imgslide}
 
 <h1 style="font-size:1.5em"><span class="alert">Modelers</span> have been key to COVID-19 response</h1>  
 
-<img src="../images/life_or_death_covid.png" width="400">
+<img src="../images/life_or_death_covid.png" width="400" style="width: 50%;">
 
 From Enserink and Kupferschmidt, *Science* 2020
 
@@ -185,15 +188,15 @@ Key Questions:
 
 # Historical analyses have repeatedly demonstrated inequity in prior pandemics {.imgslide}
 
-<a href="https://pubmed.ncbi.nlm.nih.gov/27872284/">
-<img src="../images/grantz_disparities_1918.png">
-</a>
+<img style="width: 70%" src="../images/grantz_disparities_1918.png" width="800">
 
-# The mechanisms of inequity were quickly identified, but our models weren't ready for them {.quote}
+[Grantz et al., *PNAS* 2016](https://pubmed.ncbi.nlm.nih.gov/27872284/)
 
-<img src="../images/racial_capitalism_mcclure.png">
+# The mechanisms of inequity were quickly identified, but our models weren't ready for them {.imgslide}
 
-# COVID-19 provides an opportunity to reflect on what the goals of transmission models should be {.quote}
+<img style="width: 70%;" src="../images/racial_capitalism_mcclure.png">
+
+# COVID-19 provides an opportunity to reflect on the goals of transmission modeling {.quote}
 
 <blockquote>
   COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and
@@ -218,7 +221,7 @@ From Zelner et al. "There are no equal opportunity infectors." PLOS Computationa
 
 # These <span class="alert">equity-oriented</span> models let us ask crucial questions about the causes of disparity {.imgslide}
 
-<img src="../images/nande_evictions_covid_transmission.png">
+<img style="width: 70%" src="../images/nande_evictions_covid_transmission.png">
 
 From Nande et al. ["The effect of eviction moratoria on the transmission of SARS-CoV-2"](https://doi.org/10.1038/s41467-021-22521-5
 ), Nature Communications, 2021
@@ -227,7 +230,18 @@ From Nande et al. ["The effect of eviction moratoria on the transmission of SARS
 
 >- It matters <span class="alert">who</span> is developing the model.
 >- Modeling needs to reflect diveristy in <span class="alert">intellectual perspectives</span>
->- And life experiences
->- And economic and political interests
+>- And <span class="alert">life experiences</span>
+>- And <span class="alert">economic</span> and <span class="alert">political</span> interests
+
+# Thanks!
+
+If you're interested in learning more about our work, check our lab site at [epibayes.io](https://epibayes.io)
 
 
+<figure>
+<a href="https://epibayes.io">
+<img src="../../assets/epibayeslogo.png">
+</a>
+</figure>
+
+<p style="font-size: 0.9em; text-align: center;">Get in touch at `jzelner@umich.edu`!</p>
