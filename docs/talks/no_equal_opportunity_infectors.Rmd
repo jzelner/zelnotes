@@ -44,7 +44,7 @@ include_local_graphics <- function(x) {
 
 # Goals
 
->- Discuss why epidemiological models (and modelers) have ignored inequality in our approach to pandemic preparedness.
+>- Discuss why epidemiological models - and modelers - have ignored inequality in our approach to pandemic preparedness.
 >- Suggest an alternate path that builds on the many strengths and successes of modeling in the COVID-19 response.
 >- Highlight why developing models that reflect a diversity of understandings about how transmission systems work is essential for equitable preparedness and population health.
 
@@ -62,7 +62,25 @@ From Enserink and Kupferschmidt, *Science* 2020
 sub-national pandemic preparedness and response plans. A pandemic plan is thus a <span class="alert">living document</span> which is reviewed regularly and revised if necessary...based on the lessons learnt from outbreaks or a pandemic, or from a
 simulation exercise."</blockquote>
 
-[WHO 2011](https://www.euro.who.int/en/health-topics/communicable-diseases/influenza/pandemic-influenza/pandemic-preparedness)
+[WHO
+2011](https://www.euro.who.int/en/health-topics/communicable-diseases/influenza/pandemic-influenza/pandemic-preparedness)
+
+# Much of the power of models comes from how they shape our <span class="alert">intuition</span>
+
+Models can let us:
+
+<div class="toprow">
+  <div class="textcolumn"><ul>
+    <li class = "fragment">Characterize rates of transmission, severe disease and death in assorted populations.</li>
+    <li class = "fragment">Estimate the impact of medical interventions on risk.</li>
+    <li class="fragment">Explore the implications of social and political change on infection risk.</li>
+    </ul></div>
+
+  <div style="flex:50%"><blockquote style="font-size: 0.6em;">
+    Intuition pumps are cunningly designed [thought experiments, which] <span class="alert">focus the reader's attention on "the important"
+    features</span>, and...deflect the
+    reader from bogging down in hard-to-follow details. (From Dennett, 1984)</blockquote></div>
+</div>
 
 # Early pandemic models focused on key <span class="alert">priorities</span>
 
@@ -147,22 +165,63 @@ Key Questions:
   <li class="fragment">Distributions of infection and mortality by age.</li>
   <span class="fragment">
     <span class="fragment strike highlight-red">
-      <li>Distribution of infection and mortality by ethnicity.</li></span></span>
+      <li>Distribution of infection and mortality by socieconomic status and race/ethnicity.</li></span></span>
 </ul>
 
-# Epidemiological modeling has emerged from a rich tradition in <span class="alert">population ecology</span>
+# Modeling of <span class="alert">acute infections</span> has emerged from a rich tradition in population ecology
 
->- Key model parameters like $R_0$ describe *average* properties of infection in a whole population.
+>- Key model parameters like $R_0$ traditionally describe *average* properties of infection in a well-mixed population.
 >- Key ideas are borrowed from classic models of predator/prey dynamics and birth/death processes.
->- Ecological modeling has a deep toolkit for characterizing <span class="alert">demographic</span> and <span class="alert">spatial</span> variation in outcomes.
->- But these tools have yet to make the leap to characterizing the <span class="alert">socio-structural</span> determinants of infection.
+>- Ecological modeling has an extensive toolkit for characterizing <span class="alert">demographic</span> and <span class="alert">spatial</span> variation in outcomes.
+>- But we have been slow to make the leap to characterizing the <span class="alert">socio-structural</span> determinants of infection.
 
 # OK, but this was so <span style="color:red">obvious!</span>
 
 <a href="/gif/charlie-brown-and-lucy-kicking-the-football-HCU0O8"
   title="Charlie Brown and Lucy - kicking the FOOTBALL"><img src="https://i.makeagif.com/media/2-02-2018/HCU0O8.gif"
     alt="Charlie Brown and Lucy - kicking the FOOTBALL"></a>
-<div style="font-size:12px;">How did we miss this critical dimension of preparedness?</div>
+
+<div style="font-size:1em;">How did we miss the fact that <span class="alert">justice</span> is a critical dimension of preparedness?</div>
+
+# Historical analyses have repeatedly demonstrated inequity in prior pandemics
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/27872284/">
+<img src="../images/grantz_disparities_1918.png">
+</a>
+
+# The mechanisms of inequity were quickly identified, but our models weren't ready for them {.quote}
+
+<img src="../images/racial_capitalism_mcclure.png">
+
+# COVID-19 provides an opportunity to reflect on who and what transmission models are for
+
+<blockquote>
+  COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and
+  systems that create health disparities in good times and inflate them in a crisis. <span class="alert">The US must develop a new kind of
+  “herd immunity,” whereby resistance to the spread of poor health in the population occurs when a sufficiently high
+  proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to
+  negative social determinants.</span>
+</blockquote>
+ From Williams & Cooper, ["COVID-19 and Health Equity—A New Kind of “Herd Immunity”](https://jamanetwork.com/journals/jama/fullarticle/2766096), JAMA, 6/23/2020
+
+# What could an <span class="alert">alternative</span> framework look like? {.imgslide}
+
+<img src="../images/vulnerability_racism_flow.png">
+
+From Zelner et al. "There are no equal opportunity infectors." PLOS Computational Biology, *In Press* (Preprint available [here](https://arxiv.org/abs/2109.00580).)
+
+# This shift is already well underway
+
+<a href="https://elifesciences.org/articles/66601"></a>
+<img src="../images/ma_race_ethnic_disparities.png">
+</a>
+
+# These <span class="alert">equity-oriented</span> models let us ask crucial questions about the causes of disparity
+
+<img src="../images/nande_evictions_covid_transmission.png">
+
+From Nande et al. ["The effect of eviction moratoria on the transmission of SARS-CoV-2"](https://doi.org/10.1038/s41467-021-22521-5
+), Nature Communications, 2021
 
 # Modeler $\to$ Mental Model $\to$ Transmission Model
 
@@ -170,24 +229,5 @@ Key Questions:
 >- Modeling needs to reflect diveristy in <span class="alert">intellectual perspectives</span>
 >- And life experiences
 >- And economic and political interests
->- Historically, modeling has skewed White, male & wealthier, and the failures of preparedness reflect those roots.
-
-# What could an <span class="alert">alternative</span> framework look like? {.imgslide}
-
-<img src="../images/vulnerability_racism_flow.png">
-
-
-## What might explain this inequality in <span class="alert">mortality</span>? 
-
-<div class="toprow">
-  <div class="textcolumn">
-  <ul>
-  <li class="fragment">Higher prevalence of comorbidities, e.g. obesity</li>
-  <li class="fragment">Poorer access to healthcare</li>
-  <li class="fragment">Residence in multigenerational households</li>
-  <li class="fragment">Prevalence of "essential work"</li>
-  </div>
-  <div style="flex:50%"><img src="../images/twice_as_deadly_nyt.png"></div>
-</div>
 
 
