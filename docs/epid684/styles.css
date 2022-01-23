@@ -136,17 +136,40 @@ li:not(:last-child) {
 #footerDiv{
     width: 50%;
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: space-between;
 
 }
-#footerImg{
+.footerImg{
+    height: 100px;
+}
+.teamPicsDiv{
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    grid-auto-rows: minmax(100px, auto);
 }
+.teamMember{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.teamName{
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}
+.teamName::after{
+    /* content:' \2192' */
+}
+.teamPic{
+    height: 100px;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+    border-radius: 50% !important;
 
-.paddeddiv {
-  padding-top: 0px;
-  padding-right: 30px;
-  padding-bottom: 200px;
-  padding-left: 0px;
 }
