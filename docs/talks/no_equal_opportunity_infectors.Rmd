@@ -63,7 +63,6 @@ simulation exercise."</blockquote>
 [WHO 2011](https://www.euro.who.int/en/health-topics/communicable-diseases/influenza/pandemic-influenza/pandemic-preparedness)
 
 # Early pandemic models focused on key <span class="alert">priorities</span>
-
 <ul>
   <li class="fragment">Age-specific incidence and mortality.</li>
   <li class="fragment">Hospital and ICU capacity.</li>
@@ -77,7 +76,6 @@ simulation exercise."</blockquote>
 </ul>
 
 # Economic and racial inequity is a central story of the COVID-19 pandemic {.imgslide}
-
 <div class="r-stack">
   <img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600">
   <img class="fragment" src="../images/harvard_inequality_on_top_of_inequality.png" width="400">
@@ -190,7 +188,7 @@ Key Questions:
  <!-- Hannah -->
  <div class="teamMember">
   <img class="teamPic" src="../images/labmembers/hannah.png">
-  <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" arget="_blank">Hannah Steinberg</a>
+  <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" target="_blank">Hannah Steinberg</a>
  </div>
  <!-- Joey -->
  <div class="teamMember">

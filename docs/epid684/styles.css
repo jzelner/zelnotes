@@ -41,8 +41,7 @@
 .reveal blockquote {
     font-size: 0.8em;
     background: #e7e5e5;
-    border-left: 10px solid rgb(141, 133, 133);
-    
+    border-left: 10px solid rgb(141, 133, 133);   
 }
 
 
@@ -143,6 +142,8 @@ li:not(:last-child) {
 .footerImg{
     height: 100px;
 }
+
+/* team members slide */
 .teamPicsDiv{
     width: 100%;
     display: grid;
@@ -172,4 +173,32 @@ li:not(:last-child) {
     margin-bottom: 5px !important;
     border-radius: 50% !important;
 
+}
+
+/* for crediting team members on slide */
+.teamCredit{
+    display: block;
+    width: auto;
+
+    /* fixed position takes the block out of the DOM 
+    (other elements aren't impacted by where this block is)*/
+    position: fixed;
+
+    /* right-aligned and top-aligned
+    (change right to left: 0; to move into left corner) */
+    right: 0;
+    top: 0;
+
+    /* gives the block a translucent background color */
+    background-color: rgba(192, 164, 130, 0.445);
+
+    /* contents are snugly within the block */
+    padding: 10px !important;
+}
+.teamCredit > .teamMember {
+    width: 100%;
+}
+.teamCredit > .teamMember > .teamPic{
+    width: 80px !important;
+    height: 80px !important;
 }
