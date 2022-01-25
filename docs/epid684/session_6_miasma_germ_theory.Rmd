@@ -65,7 +65,7 @@ include_local_graphics <- function(x) {
 
 4. How did Snow use evidence to start pushing back on miasma?
 
-#
+# {data-background-image="../images/snow_map.png"}
 
 <h1 style="font-size: 3em; color: white; -webkit-text-stroke:2px black">The Road to the 1854 Outbreak</h1>
 
