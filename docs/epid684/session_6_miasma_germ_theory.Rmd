@@ -127,7 +127,7 @@ include_local_graphics <- function(x) {
   <div style="flex:50%"><img src="../images/snow_water_map.jpg">
     <p style="font-size: 0.5em">Snow's Water Supply Map</p></div>
 </div>
-
+-
 
 
 
