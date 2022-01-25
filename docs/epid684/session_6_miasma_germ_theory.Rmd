@@ -128,6 +128,9 @@ include_local_graphics <- function(x) {
     <p style="font-size: 0.5em">Snow's Water Supply Map</p></div>
 </div>
 
+
+
+
 ## Snow's map of water suppliers
 
 <img src="../images/snow_water_map.jpg">
@@ -176,6 +179,5 @@ include_local_graphics <- function(x) {
 <a href="https://sph-umich.shinyapps.io/smoothing">
 <img src="../images/smoothing_front_page.png" width="600"> 
 </a>
-
 
 <p style="text-align: center;"><a href="https://sph-umich.shinyapps.io/smoothing">Smoothing!</a><p>
