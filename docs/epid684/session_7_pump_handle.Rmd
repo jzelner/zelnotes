@@ -54,6 +54,7 @@ What actually caused the end of the Golden Square outbreak?
 
 # Agenda
 
+>- Assignment logistics
 >- Wrapping up *The Ghost Map*
 >- <span class="alert">Smoothing</span> hands-on.
 
