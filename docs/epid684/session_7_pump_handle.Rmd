@@ -35,7 +35,7 @@ include_local_graphics <- function(x) {
   <p style="font-size:0.5em; text-align: left;">
       EPID 684  
       Spatial Epidemiology  
-      1/25/2022 
+      1/27/2022 
       <br><br>
       Jon Zelner  
       `jzelner@umich.edu`  
