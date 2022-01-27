@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Social inequality in infectious disease transmission</title>
+  <title>Removing the Pump Handle</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -63,7 +63,7 @@
     }
   </style>
 
-    <link rel="stylesheet" href="../epid684/styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>
     <script src="header-attrs-2.11/header-attrs.js"></script>
     <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
     <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -74,126 +74,114 @@
 
 
 <section id="title" class="title-slide slide level1">
-<h1>There are no equal opportunity infectors</h1>
-<div class="spacedrow">
-<div class="iteml">
-<p style="font-size:0.5em">
-Jon Zelner<br />
-<em>10th Annual Conference to Increase Diversity in Mathematical Modeling and Public Health</em> 1/21/2022
+<h1>Removing the Pump Handle</h1>
+<div class="paddeddiv">
+<p style="font-size:0.5em; text-align: left;">
+EPID 684<br />
+Spatial Epidemiology<br />
+1/25/2022 <br><br> Jon Zelner<br />
+<code>jzelner@umich.edu</code><br />
+<a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<div class="itemr">
-<img src="../images/Epid_external_horiz.png">
+<div id="footerDiv" class="itemr">
+<img id="footerImg" src="../images/epid_logo.png" width="400">
 </div>
-</div>
+</section>
+
+<section id="todays-theme" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Today’s <span class="alert">Theme</span></h1>
+<p><img src="../images/broad_street_pump.jpg"></p>
+<p>What actually caused the end of the Golden Square outbreak?</p>
 </section>
 
 <section id="agenda" class="title-slide slide level1">
 <h1>Agenda</h1>
-
-</section>
-
-<section id="who-am-i" class="title-slide slide level1">
-<h1>Who am I?</h1>
 <ul>
-<li class="fragment">Infectious disease epidemiologist and sociologist</li>
-<li class="fragment">Assistant Professor of Epidemiology at UM since 2017</li>
-<li class="fragment">Core faculty member in the <em>Center for Social Epidemiology and Population Health</em> (CSEPH) at UM</li>
-<li class="fragment">Research group focused on infectious disease (<a href="https://epibayes.io">epibayes.io</a>)</li>
-<li class="fragment">PhD in Sociology and Public Policy from Michigan (2011)</li>
-<li class="fragment">Teach undergrad and grad courses on <span class="alert">spatial epidemiology</span> and the <span class="alert">social history of infectious disease</span></li>
+<li class="fragment">Wrapping up <em>The Ghost Map</em></li>
+<li class="fragment"><span class="alert">Smoothing</span> hands-on.</li>
 </ul>
 </section>
 
-<section id="section" class="title-slide slide level1 imgslide">
-<h1 class="imgslide"></h1>
-<h1 style="font-size:1.5em">
-<span class="alert">Modelers</span> have been key to COVID-19 response
-</h1>
-<p><img src="../images/life_or_death_covid.png" width="400"></p>
-<p>From Enserink and Kupferschmidt, <em>Science</em> 2020</p>
+<section id="consilience" class="title-slide slide level1">
+<h1>Consilience!</h1>
+<blockquote>
+<p><span class="alert">The strength of [Snow’s] model derived from its ability to use observed phenomena on one scale to make predictions about behavior on other scales up and down the chain.</span>” Observed failure of certain organ systems of the body could predict behavior of the whole person, which could in turn predict behavior in the social body en masse.” (p. 148)</p>
+</blockquote>
+<p class="fragment" style="text-align: center;">
+What might be a bit off about this pronouncement?
+</p>
 </section>
 
-<section id="early-pandemic-models-focused-on-established-priorities" class="title-slide slide level1">
-<h1>Early pandemic models focused on <span class="alert">established</span> priorities</h1>
+<section id="some-questions" class="title-slide slide level1">
+<h1>Some Questions</h1>
+<p>Take <span class="alert">10m</span> in small groups:</p>
 <ul>
-<li class="fragment">
-Age-specific incidence and mortality.
-</li>
-<li class="fragment">
-Hospital and ICU capacity.
-</li>
-<li class="fragment">
-Short-term forecasting of population incidence and mortality
-</li>
-<li class="fragment">
-Impacts of lockdowns on infection risk.
-</li>
-<span class="fragment"> <span class="fragment strike highlight-red">
-<li>
-Economic and racial inequality in infection and disease risk
-</li>
-</span></span>
+<li class="fragment">What was the most likely route by which cholera was introduced to the Broad Street Pump?</li>
+<li class="fragment">Why didn’t the outbreak spread <span class="alert">exponentially</span>?</li>
+<li class="fragment">What is the most plausible explanation for why the outbreak ended?</li>
 </ul>
 </section>
 
-<section id="inequity-in-infection-and-death-has-been-clear-from-the-outset-of-the-covid-19-pandemic" class="title-slide slide level1 imgslide">
-<h1 class="imgslide">Inequity in infection and death has been clear from the outset of the COVID-19 pandemic</h1>
-<div class="r-stack">
-<img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600"> <img class="fragment" src="../images/harvard_inequality_on_top_of_inequality.png" width="400"> <img class="fragment" src="../images/mistrust_communities_of_color.png"> <img class="fragment" src="../images/minorities_covid_uk.png"> <img class="fragment" src="../images/omicron_black_chicago.png">
-</div>
+<section id="more-miasma-debunking" class="title-slide slide level1">
+<h1>More <span class="alert">miasma</span> debunking</h1>
+<blockquote>
+<p>[Snow’s] experience with choloform and ether had also endowed [him] with an intuitive grasp of the way that gases disperse in the environment. Ether could be deadly in a concentrated form, delivered directly to the patient’s lungs. <span class="alert">But a doctor delivering it, standing a foot away from the patient, wouldn’t feel its effects in the slightest, because the density of ether molecules in the air dropped at a precipitous rate the farther removed one was from the inhaler itself.</span> (p.145)</p>
+</blockquote>
 </section>
 
-<section id="the-myth-of-the-equal-opportunity-infector" class="title-slide slide level1">
-<h1>The myth of the <span class="alert">equal opportunity infector</span></h1>
-<div class="r-stack">
-<img class="fragment" src="../images/equal_opportunity_virus.png"> <img class="fragment" src="../images/equal_opportunity_herald.png"> <img class="fragment" src="../images/equal_opportunity_rural.png"> <img class="fragment" src="../images/equal_opportunity_delta.png">
-</div>
-</section>
-
-<section id="what-might-explain-this-inequality-in-mortality" class="title-slide slide level1">
-<h1>What might explain this inequality in <span class="alert">mortality</span>?</h1>
+<section id="putting-the-mechanism-on-the-map" class="title-slide slide level1">
+<h1>Putting the <span class="alert">mechanism</span> on the map</h1>
 <div class="toprow">
+<div style="flex:70%">
+<blockquote style="font-size: 0.6em;">
+“In his mind snow was already drawing maps. he’d imagined an overview of the Golden Square neighborhood, with a <span class="alert">boundary line running an erratic circle around the Broad Street pump.</span> Every person inside that border lived closer to the poisoned well; everyone outside would have had reason to draw water from a different source.” (p. 141)
+</blockquote>
+</div>
 <div class="textcolumn">
 <ul>
 <li class="fragment">
-Higher prevalence of comorbidities, e.g. obesity
+10 cases outside the boundary.
 </li>
 <li class="fragment">
-Poorer access to healthcare
+2 were tailor &amp; son on Cross st.
 </li>
 <li class="fragment">
-Residence in multigenerational households
+3 were children who went to school near the pump.
 </li>
 <li class="fragment">
-Prevalence of “essential work”
+3 more regularly drank from the pump.
 </li>
-</div>
-<div style="flex:50%">
-<img src="../images/twice_as_deadly_nyt.png">
-</div>
-</div>
-</section>
-
-<section id="mental-models-guide-and-constrain-our-thinking" class="title-slide slide level1 quote">
-<h1 class="quote">Mental models guide and <span class="alert">constrain</span> our thinking</h1>
-<blockquote>
-[M]ental models and empirical data keep each other in check - [Sir Peter Medawar] described them respectively as the ‘bride’ and ‘groom’ of science — and scientific progress in any discipline occurs by the back-and-forth dialogue between their two ‘voices’.”
-</blockquote>
-<p><a href="https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017">From Greenhalgh 2021: <em>Miasmas, mental models and preventive public health</em></a></p>
-</section>
-
-<section id="who-are-epidemiological-models-for" class="title-slide slide level1">
-<h1>Who are epidemiological models <span class="alert">for</span>?</h1>
-<ul>
-<li class="fragment">Public health officials</li>
-<li class="fragment">Scientists</li>
-<li class="fragment">Politicians</li>
-<li class="fragment">Media</li>
+<li class="fragment">
+2 more could be chalked up to the typical toll of Cholera in a given weekend.
+</li>
 </ul>
-<p class="fragment" style="text-align: center;">
-What <span class="alert">perspective</span> do these groups have in common?
-</p>
+</div>
+</div>
+</section>
+
+<section id="scale-scale-scale" class="title-slide slide level1">
+<h1>Scale, scale, scale</h1>
+<blockquote>
+<p>“If the symptoms of the cholera concentrated around the small intestine, then there must be some telltale characteristic in the eating and drinking habits of cholera victims. If cholera was waterborne, then the patterns of infection must correlate with the patterns of water distribution in London’s neighborhoods.” (p. 148)</p>
+</blockquote>
+</section>
+
+<section id="strength-of-snows-explanation-rested-on-nuts-and-bolts-analysis." class="title-slide slide level1">
+<h1>Strength of Snow’s explanation rested on <span class="alert">nuts and bolts</span> analysis.</h1>
+<ul>
+<li class="fragment">Cesspool in the basement of 40 Broad was the source of the outbreak.</li>
+<li class="fragment">Others got sick in 40 Broad over the course of the week, so why did they not add additional fuel to the 🔥?</li>
+<li class="fragment">Only the Lewis family had access to the basement cesspool, while others threw their waste out the…🪟.</li>
+</ul>
+</section>
+
+<section id="smoothing" class="title-slide slide level1">
+<h1>Smoothing</h1>
+<p><a href="https://sph-umich.shinyapps.io/smoothing"> <img src="../images/smoothing_front_page.png" width="600"> </a></p>
+<p style="text-align: center;">
+<a href="https://sph-umich.shinyapps.io/smoothing">Smoothing!</a>
+<p>
 </section>
     </div>
   </div>
