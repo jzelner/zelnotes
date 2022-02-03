@@ -1,0 +1,136 @@
+---
+pagetitle: "Breaking the laws of Health Geography"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "../epid684/styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
+
+## This function uses the `here` package to make it easy to include graphics in a directory
+## relative to the project root
+include_local_graphics <- function(x) {
+  knitr::include_graphics(here::here(x))
+}
+```
+
+# Breaking the Laws of Health Geography {#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 594   
+      2/3/2022  
+      <br><br>
+      Jon Zelner   
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io)
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/Epid_external_horiz.png" width="400"></div>
+
+# Agenda
+
+>- <span class="alert">Final project</span> timeline
+>- Discussing the <span class="alert">laws of health geography</span>
+>- Hands-on <span class="alert">smoothing</span> activity
+
+# Final Project
+
+>- Final form of your project is <span class="alert">up to you</span>.
+>- Please feel free to continue with your 592 topic if that is of interest! 
+>- Weekly project checkpoints are there to make sure you are able to make progress in the (<span class="alert">limited</span>) time we have.
+>- Ultimately, I want you to do what is most <span class="alert">useful</span> and interesting for you.
+
+# The "First Law" of Geography {.quote .center}
+
+<figure>
+  <blockquote>
+    "Everything is related to everything else. But near things are more related than distant things."
+  </blockquote>
+  <figcaption> -Waldo Tobler, 1969</figcaption>
+</figure>
+
+## {background-iframe="https://www.youtube.com/embed/kRsF9S8JqBI?autoplay=1"}
+
+# Why is the first law useful? {.quote .center}
+
+<figure>
+<blockquote>
+"[I]magine a world in which [TFL] is not true. In such a world, the full range of conditions could be encountered in every minute portion of the world. <span class="alert">Every room, for example, might contain the full observed range of the Earth’s topographic variation, from the bottom of the Marianas Trench to the summit of Mount Everest[.]</span> 
+</blockquote>
+<figcaption> -Goodchild, 2004 p. 301</figcaption>
+</figure>
+
+## "A world of white noise" {.imgslide}
+
+<img src="../images/tv_static.png" width="100%">
+
+"White noise" has lots of variation with little autocorrelation.
+
+# More to the story?
+
+Goodchild argues that:
+
+>- *Variation* is more fundamental than *autocorrelation*.
+>- Without spatial variation there is only perfect autocorrelation.
+>- Maybe *variation* needs to be the real First Law?
+>- Doesn't discount role of correlation, just puts them in order.
+
+# Spatial autocorrelation + variation in the real world {.imgslide .r-fit-text}
+
+<img src="../images/texarkana_measles.png" width="100%">
+
+Measles cases in Texarkana, Tex and Texarkana, Ark in 1970
+
+
+# What is <span class="alert">smoothing</span>?
+
+<div class="fragment">
+<iframe src="https://giphy.com/embed/X0iqiPHFdrEctzDKMU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p style="text-align: center;"> Smoothing lets us separate signal from noise.</p>
+</div>
+
+# What are some examples of epidemiological <span class="alert">signals</span>?
+
+>- Causal <span class="alert">relationship</span> between a risk factor and an outcome.
+>- Trend in a <span class="alert">time series</span>
+>- Disease <span class="alert">hotspot</span> in a spatial dataset.
+
+# What are some sources of <span class="alert">noise</span> we might encounter in epidemiological data?
+
+>- Random variation, i.e. <span class="alert">process noise</span>.
+>- Observation <span class="alert">error</span>.
+>- Exposure <span class="alert">misclassification</span>.
+
+# A hands-on example
+
+<a href="https://sph-umich.shinyapps.io/smoothing">
+<img src="../images/smoothing_front_page.png" width="600"> 
+</a>
+
+<p style="text-align: center;"><a href="https://sph-umich.shinyapps.io/smoothing">Smoothing!</a><p>
+
+# Next Time
+
+# {.imgslide}
+<h1 class="r-fit-text">Characterizing autocorrelation and variation is tricky</h1>
+
+<img src="../images/morans_i_example.png" width="100%">
+
+Using a measure like *Moran's I* this is <span class="alert">anti</span>- correlated, but we can see qualitatively that there is more going on.
