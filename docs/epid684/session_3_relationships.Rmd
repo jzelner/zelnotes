@@ -70,7 +70,6 @@ Goodchild argues that:
 >- Maybe *variation* needs to be the real First Law?
 >- Doesn't discount role of correlation, just puts them in order.
 
-
 # Spatial autocorrelation + variation in the real world {.imgslide .r-fit-text}
 
 ```{r echo=FALSE, out.width="60%", fig.align="center"}
@@ -84,7 +83,7 @@ Outbreaks of measles in two cities with very different vaccination coverages.
 ```{r echo=FALSE, out.width='40%', fig.align="center", fig.cap="Checkerboard-like example of high spatial autocorrelation"}
 include_local_graphics("images/morans_i_example.png")
 ```
-Using a measure like *Moran's I* this is perfectly correlated, but we can see qualitatively that there is more going on.
+Using a measure like *Moran's I* this is <span class="alert">anti</span>- correlated, but we can see qualitatively that there is more going on.
 
 # Some Questions 
 

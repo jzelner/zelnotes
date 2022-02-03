@@ -29,6 +29,7 @@ include_local_graphics <- function(x) {
 }
 ```
 
+
 # Removing the Pump Handle {#title}
 
 <div class="paddeddiv">
