@@ -66,7 +66,7 @@ include_local_graphics <- function(x) {
   <figcaption> -Waldo Tobler, 1969</figcaption>
 </figure>
 
-## {background-iframe="https://www.youtube.com/embed/kRsF9S8JqBI?autoplay=1"}
+# {background-iframe="https://www.youtube.com/embed/kRsF9S8JqBI?autoplay=1"}
 
 # Why is the first law useful? {.quote .center}
 
@@ -77,9 +77,9 @@ include_local_graphics <- function(x) {
 <figcaption> -Goodchild, 2004 p. 301</figcaption>
 </figure>
 
-## "A world of white noise" {.imgslide}
+# "A world of white noise" {.imgslide}
 
-<img src="../images/tv_static.png" width="100%">
+<img src="../images/tv_static.jpeg" width="100%">
 
 "White noise" has lots of variation with little autocorrelation.
 
