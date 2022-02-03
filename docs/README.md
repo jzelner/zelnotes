@@ -3,7 +3,7 @@
 
 ## Epid 594
 
-[Session 1: Breaking the Laws of Health Geography](https://jzelner.github.io/epid594/session_1_toblers_first_law.html)  
+[Session 1: Breaking the Laws of Health Geography](https://jzelner.github.io/document-garden/epid594/session_1_toblers_first_law.html)  
 ## Epid 684
 
 [Session 4: Spatial thinking is systems thinking](https://jzelner.github.io/document-garden/epid684/session_4_spatial_systems.html)  
