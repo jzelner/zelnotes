@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Clustering</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reveal.css">
+
+  <style type="text/css">
+    /* CSS from pandoc style.html() */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+                  </style>
+
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/theme/solarized.css" id="theme">
+
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/chalkboard/style.css">
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/customcontrols/style.css">
+
+  <style type="text/css">
+  /* some tweaks to reveal css */
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+  </style>
+
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="header-attrs-2.11/header-attrs.js"></script>
+    <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="title" class="title-slide slide level1">
+<h1>What is clustering, anyway?</h1>
+<div class="paddeddiv">
+<p style="font-size:0.5em; text-align: left;">
+EPID 684<br />
+Spatial Epidemiology<br />
+2/8/2022 <br><br> Jon Zelner<br />
+<code>jzelner@umich.edu</code><br />
+<a href="https://epibayes.io"><code>epibayes.io</code></a>
+</p>
+</div>
+<div id="footerDiv" class="itemr">
+<img id="footerImg" src="../images/epid_logo.png" width="400">
+</div>
+</section>
+
+<section id="the-february-slump" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">The February Slump</h1>
+<p><img src="../images/feb_struggle_howie.jpg"></p>
+<p>The struggle is real. 🥶</p>
+</section>
+
+<section id="agenda" class="title-slide slide level1">
+<h1>Agenda</h1>
+<ul>
+<li class="fragment">What is <span class="alert">clustering</span>?</li>
+<li class="fragment">What is a <span style="color: red">hotspot</span> 🔥, anyway?.</li>
+<li class="fragment">Interrogating the hotspot and cluster ideas with respect to your projects.</li>
+</ul>
+</section>
+
+<section id="why-might-one-undertake-a-cluster-based-study" class="title-slide slide level1">
+<h1><span class="alert">Why</span> might one undertake a cluster-based study?</h1>
+<ul>
+<li class="fragment">Public Health Response.</li>
+<li class="fragment">Hypothesis testing.</li>
+<li class="fragment">Identifying key <span class="alert">causal mechansisms</span>.</li>
+</ul>
+</section>
+
+<section id="reasoning-about-clusters-is-tricky" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Reasoning about clusters is <span class="alert">tricky</span></h1>
+<p><img src="../images/texas_sharp_shooter.png" width="50%"></p>
+<p>The Texas Sharpshooter 🎯 Problem is an example of a <span class="alert">logical fallacy</span> that can come up in the analysis of spatial clusters.</p>
+</section>
+
+<section id="what-is-a-hotspot" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">What is a <span style="color: red">hotspot</span>?</h1>
+<div class="r-stack">
+<img class="fragment" src="../images/covid_hotspot_omicron.png"> <img class="fragment" src="../images/covid_hotspot_hamilton.png"> <img class="fragment" src="../images/covid_hotspot_dekalb.png"> <img class="fragment" src="../images/covid_hotspot_detector.png">
+</div>
+<p><span class="fragment">A hotspot is often in the eye of the beholder…</span></p>
+</section>
+
+<section id="more-detail-is-necessary-to-make-the-hotspot-concept-useful" class="title-slide slide level1">
+<h1>More detail is necessary to make the hotspot concept useful</h1>
+<blockquote>
+<p>We recommend that the meaning of a “hotspot” be made <em>explicit</em> by use of an appropriate modifier such as: “burden hotspot,” to denote areas of elevated disease prevalence or incidence; “transmission” or “risk hotspot,” to denote areas of elevated transmission efficiency or a higher risk of disease acquisition; and “emergence hotspot,” to denote areas with an increased probability of disease emergence or reemergence. (Lessler et al., 2017)</p>
+</blockquote>
+</section>
+
+<section id="a-cluster-can-represent-multiple-facets-of-risk" class="title-slide slide level1">
+<h1>A cluster can represent multiple facets 💎 of risk</h1>
+<ul>
+<li class="fragment">Spatial aggregation of a disease <span class="alert">outcome</span>.</li>
+<li class="fragment">Clustering of a specific <span class="alert">exposure risk</span>.</li>
+<li class="fragment">Evidence of <span class="alert">social processes</span> that concentrate disadvantage and multiple risks.</li>
+</ul>
+</section>
+
+<section id="our-turn" class="title-slide slide level1">
+<h1>Our Turn!</h1>
+<p>Relate the hotspot/clustering metaphors to your <span class="alert">project topic area</span> with respect to:</p>
+<ol type="1">
+<li><p><a href="https://miro.com/app/board/uXjVOOuiZ_w=/?moveToWidget=3458764518440056419&amp;cot=14">Public Health Response</a></p></li>
+<li><p><a href="https://miro.com/app/board/uXjVOOuiZ_w=/?moveToWidget=3458764518440374406&amp;cot=14">Applied and Academic Research</a></p></li>
+<li><p><a href="https://miro.com/app/board/uXjVOOuiZ_w=/?moveToWidget=3458764518440723984&amp;cot=14">Potential Pitfalls</a></p></li>
+</ol>
+</section>
+
+<section id="next-time" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Next Time</h1>
+<p><img src = "../images/chicago_area_segregation.jpeg"></p>
+<p><a href="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+3/Sessions/3.+Residential+Segregation+and+the+Social+Drivers+of+Clustered+Risk">Residential Segregation as a Fundamental Cause of Health Inequality</a></p>
+<!-- 
+<img src="../images/wont_you_be_my_neighbor.jpg" width="100%">
+
+Defining spatial <span class="alert">weights</span> and who is <span class="alert">neighbors</span> with who is key to measuring clustering. -->
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js-4.2.1/dist/reveal.js"></script>
+  
+  <!-- reveal.js plugins -->
+  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
+  <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
+  <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
+  
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+        // Display a presentation progress bar
+        progress: true,
+        // Can be used to limit the contexts in which the slide number appears
+        showSlideNumber: 'all',
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+        // Push each slide change to the browser history
+        // Implies `hash: true`
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+        // The display mode that will be used to show slides
+        display: 'block',
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        menu: {
+          // Configuration from
+          // https://github.com/denehyg/reveal.js-menu#configuration
+   
+   
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ 
+ 
+ 
+          // option not supported for change
+          loadIcons: false, // using rmarkdown provided own.
+          custom: false,
+          themes: false,
+          // themesPath: 'dist/theme/',
+          transitions: false
+        },
+
+
+        chalkboard: {
+          theme: 'whiteboard',
+        },
+        customcontrols: {
+            controls: [
+            	{ icon: '<i class="fa fa-pen-square"></i>',
+            	  title: 'Toggle chalkboard (B)',
+            	  action: 'RevealChalkboard.toggleChalkboard();'
+            	},
+            	{ icon: '<i class="fa fa-pen"></i>',
+            	  title: 'Toggle notes canvas (C)',
+            	  action: 'RevealChalkboard.toggleNotesCanvas();'
+            	}
+            ]
+        },
+
+        // Optional reveal.js plugins
+        plugins: [
+          RevealMenu,
+          RevealChalkboard,
+          RevealCustomControls,
+        ]
+      });
+
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
