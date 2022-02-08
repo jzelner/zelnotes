@@ -45,7 +45,7 @@ include_local_graphics <- function(x) {
 
 <div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
 
-# The February Slump {.imgslide}
+# The <span style="color: #aad4e5">February</span> Slump {.imgslide}
 
 <img src="../images/feb_struggle_howie.jpg">
 
