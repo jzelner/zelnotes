@@ -13,6 +13,8 @@
 [Session 8: Mental Models](https://jzelner.github.io/document-garden/epid684/session_8_mental_models.html)  
 [Session 9: Lab Day!](https://jzelner.github.io/document-garden/epid684/session_9_lab_day.html)    
 [Session 10: Intro to Hotspots and Clustering](https://jzelner.github.io/document-garden/epid684/session_10_clustering.html)
+[Session 11: Racism, Segregation and the Fundamental Causes of Spatial Health Inequality](https://jzelner.github.io/document-garden/epid684/session_11_fundamental_cause.html)
+
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
