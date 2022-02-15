@@ -170,7 +170,7 @@ Where:
 
 # Reflects <span class="alert">qualitative</span> differences in contact {.imgslide}
 
-<img src ="../examples/output/motif/iso_2.pdf">
+<embed src ="../examples/output/motif/iso_2.pdf">
 
 As concentration of minority group increases, isolation does as well
 
