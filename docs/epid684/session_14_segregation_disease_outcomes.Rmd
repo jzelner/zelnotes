@@ -1,0 +1,177 @@
+---
+pagetitle: "Relating residential segregation to disease outcomes"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+
+# Residential segregation as a cause of health disparities {#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      3/8/2022  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+# Theme for <span class="alert">this week</span> {.imgslide}
+
+<img src="../images/chicago_area_segregation.jpeg" width="100%">
+
+<span class="alert">How</span> does segregation impact health?
+
+# Agenda
+
+>- Feedback from mid-term check-in
+>- Segregation and COPD risk
+>- Segregation and STI risk
+
+# Mid-term Feedback
+
+>- Things seem to be generally going well. 
+>- Broad interest in diving into some more <span class="alert">methods</span> detail.
+>- Hierarchical/<span class="alert">multi-level</span> models relevant to a number of final projects.
+>- Interest in exploring methods-related spatial questions like <span class="alert">modifiable areal unit problem</span> and <span class="alert">ecological fallacies</span>.
+>- Interest in exposure to basic <span class="alert">mapping</span> using <i class="fab fa-r-project"></i>
+
+# Health outcomes/systems to focus on from a spatial perspective 
+
+>- HIV
+>- Opioids
+>- Intimate partner violence
+>- Infectious disease transmission models
+>- Zoonotic infections/OneHealth
+>- Climate change and human health
+
+# How should we spend our remaining <span class="alert">12</span> class meetings?
+
+>- We will spend significant time on lecture/hands-on activities focused on different spatial analysis <span class="alert">methods</span>.
+
+>- I will pick papers that use these tools to address <span class="alert">substantive epidemiological questions</span>.
+
+>- We will have time in-class for peer feedback on the work/writing you have done for your final projects.
+
+>- Is in-class time to work on projects helpful? If so, should we do more of this sooner or later?
+
+# Segregation and Gonhorrhea Risk in the U.S. {.imgslide}
+
+<img src="../images/biello_segregation_measures.png" width="100%">
+
+The many measures of segregation employed by Biello et al.
+
+# What is the *isolation* index?
+
+Often defined as the proportion of contacts an individual in a *minority* group in a population has with members of that same group.
+
+# Sometimes paired with the <span class="alert">interaction</span> index
+
+Interaction quantifies the proportion of *minority* group member's contacts that occur with the *majority* group.
+
+# How do you measure isolation?
+
+$$
+Z = \sum_{i} \frac{a_{i}}{A} \frac{a_{i}}{n_i}
+$$
+
+Where:
+
+- $a_i$: Number of minority  members in area $i$
+- $b_i$: Number of majority group members in area $i$
+- $A$ total number of minority group members
+- $B$ total number of majority group members, where $A < B$.
+- $n_i$ number individuals in area $i$, i.e. $a_i + b_i$
+
+# What is *unevvenness* or *dissimilarity*?
+
+>- The proportion of members of a group that would have to move to a new location to end up with a random distribution of those individuals in space.
+
+>- Goes from 0 to 1.
+
+# How do you measure *dissimilarity*?
+
+$$
+D = \frac{1}{2} \sum_{i=1} \mid \frac{a_i}{A} - \frac{b_i}{B} \mid
+$$
+
+Where:
+
+- $a_i$: Number of minority  members in area $i$
+- $b_i$: Number of majority group members in area $i$
+- $A$ total number of minority group members
+- $B$ total number of majority group members, where $A < B$.
+
+# What about the other measures?
+
+>- Centralization
+>- Clustering
+>- Concentration
+
+# What might not sit right about this statement?
+
+> Isolation may increase the risk for gonorrhea through its effect on social factors as well. Social norms — which also can be transmitted — have been shown to be associated with sexual risk among adolescents and among Black women.In isolated communities, within group norms for risky sexual behavior might be strengthened. (Biello et al. p.1275)
+
+# What are the characteristics of <span class="alert">COPD</span>?
+
+>- Chronic inflammation of airways and alveoli.
+>- Characterized by chronic cough and sputum production.
+>- Severity of cough and sputum associated with worse COPD outcomes.
+>- Increased risk of respiratory infections.
+
+# How does segregation impact <span class="alert">COPD</span> disparities? {.imgslide}
+
+<img src="../images/woo_copd_dag.png">
+
+# Why is <span class="alert">mediation</span> analysis useful for understanding impact of segregation on health?
+
+<img src="../images/mediation_diagram.png">
+
+<span class="fragment">Segregation is a construct reflecting a complex mix of social and environmental factors.</span>
+
+# What does a mediation model <span class="alert">measure</span>?
+
+>- <span class="alert">Total effect:</span> Relationship between *distal* factor and outcome including <span class="alert">direct</span> and <span class="alert">indirect</span> effects.
+
+>- <span class="alert">Direct effect:</span> Relationship between *distal* factor and outcome adjusted for <span class="alert">mediator</span>.
+
+>- <span class="alert">Indirect effect:</span> Impact of distal factor <span class="alert">via</span> a more *proximal* one. 
+
+>- In an <span class="alert">additive</span> model: indirect = total - direct
+
+
+# Grappling with the complexity of social-spatial relationships
+
+>- The spatial expression of social inequality is complex.
+
+>- Our measures are necessarily <span class="alert">reductive</span>, and that's OK...
+
+>- <span class="alert">IF and only IF</span> (⟺) we use these measures carefully without losing sight of the mechanisms and outcomes we care about.
+
+>- Going to spend some time making sense of these ideas using [this Miro board](https://miro.com/app/board/uXjVOHe4agI=/?invite_link_id=546695231041).
+
+
+# Next Time
+
+Zooming out to think more about [causal relationships between structural racism and health outcomes](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+3/Sessions/5.+How+do+we+capture+the+causal+impact+of+structural+racism+on+spatial+outcomes%3F).
