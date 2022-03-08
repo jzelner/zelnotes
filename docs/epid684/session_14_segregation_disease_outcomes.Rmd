@@ -46,7 +46,9 @@ output:
 # Agenda
 
 >- Feedback from mid-term check-in
+
 >- Segregation and COPD risk
+
 >- Segregation and STI risk
 
 # Mid-term Feedback
