@@ -11,11 +11,12 @@
 [Session 6: Miasma vs. Germ Theory](https://jzelner.github.io/document-garden/epid684/session_6_miasma_germ_theory.html)  
 [Session 7: Removing the Pump Handle](https://jzelner.github.io/document-garden/epid684/session_7_pump_handle.html)   
 [Session 8: Mental Models](https://jzelner.github.io/document-garden/epid684/session_8_mental_models.html)  
-[Session 9: Lab Day!](https://jzelner.github.io/document-garden/epid684/session_9_lab_day.html)    
-[Session 10: Intro to Hotspots and Clustering](https://jzelner.github.io/document-garden/epid684/session_10_clustering.html)
+[Session 9: Lab Day!](https://jzelner.github.io/document-garden/epid684/session_9_lab_day.html)  
+[Session 10: Intro to Hotspots and Clustering](https://jzelner.github.io/document-garden/epid684/session_10_clustering.html)  
 [Session 11: Racism, Segregation and the Fundamental Causes of Spatial Health Inequality](https://jzelner.github.io/document-garden/epid684/session_11_fundamental_cause.html)  
-[Session 13: In-class presentation workshop](https://jzelner.github.io/document-garden/epid684/session_13_destination_workshop.html)
-[Session 14: Measuring the impact of segregation on health outcomes](https://jzelner.github.io/document-garden/epid684/session_14_segregation_disease_outcomes.html)
+[Session 13: In-class presentation workshop](https://jzelner.github.io/document-garden/epid684/session_13_destination_workshop.html)  
+[Session 14: Measuring the impact of segregation on health outcomes](https://jzelner.github.io/document-garden/epid684/session_14_segregation_disease_outcomes.html)  
+[Session 15: Using theory to connect structural racism to health outcomes](https://jzelner.github.io/document-garden/epid684/session_15_measuring_structural_racism.html)  
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)

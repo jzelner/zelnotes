@@ -1,0 +1,142 @@
+---
+pagetitle: "Relating residential segregation to disease outcomes"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+
+# Why theory is key to connecting <span class="alert">structural racism</span> to health outcomes {#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      3/10/2022  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+# Today's <span class="alert">Theme</span> {.quoteslide}
+
+How can we appropriately <span class="alert">measure</span> the impacts of structural racism on spatial health inequality?
+
+# Agenda
+
+>- Methodological considerations in the measurement of <span class="alert">structural racism</span>.
+
+>- Measuring the impact of segregation over the <span class="alert">lifecourse</span> on CVD risk.
+
+>- Mind-mapping of key concepts and outcomes re: segregation, structural racism, and health inequality wrt your final projects.
+
+# <span class="alert">Values</span> and <span class="alert">biases</span> are baked into the ways we measure...everything. {.imgslide}
+
+<img src="../images/adkins-jackson-structural-racism.png" width="100%">
+
+Suggestions for accurately measuring the nature of and impact of structural racism on health outcomes (From Adkins-Jackson et al., 2021)
+
+# How does exposure to racial residential segregation impact cardiovascular disease (CVD) risk?
+
+>- Kershaw et al. used longitudinal data from 2280 Black participants of a cohort study taking place in 4 cities. 
+
+>- Neighborhood-level intensity of exposure to segregation was a key input to the model.
+
+>- Variation in <span class="alert">systolic blood pressure</span> was used as an indicator of CVD risk.
+
+# How might <span class="alert">residential segregation</span> impact CVD risk?
+
+>- Stress
+
+>- Access to medical care
+
+>- Quality of overall physical environment.
+
+>- Food access 
+
+>- And on, and on...
+
+# How can we measure <span class="alert">individual-level</span> exposure to segregation?
+
+>- Measures like <span class="alert">isolation</span>, <span class="alert">dissimilarity</span>, <span class="alert">centralization</span> are all summaries of segregation or clustering in a given area.
+
+>-  Statistics like the Getis-Ord $G_i^*$ allow us to capture <span class="alert">local variation</span> in exposure.
+
+>- $G_i$ is the predecessor to $G_i^*$. Captures the same basic idea but is a bit more intutive.
+
+>- Uses information on a location and its surrounding areas to estimate local intensity.
+
+# Getis-Ord $G_i$ statistic
+
+$$G_{i}(d)=\frac{\sum_{j}w_{ij}(d)x_j}{\sum_{j}x_j}$$
+
+Where:
+
+>- $d$ is the maximum <span class="alert">distance</span> to consider clustering 
+
+>- $w_{ij}(d)=1$ if place $i$ and place $j$ are within $d$ of each other, and 0 otherwise. (When $i=j$, $w_{ij}=0$)
+
+>- $x_j$ is the variable of interest
+
+>- Yields an estimate of both <span class="alert">strength of clustering</span> and approximate statistical significance.
+
+# Lets us go from this...
+
+![Tornado incidence from Frazier 2019](../images/tornado_incidence.png)
+
+# To this...
+
+![Tornado hot and cold spots identified in Frazier 2019](../images/tornado_getis_ord.png)
+
+# Long-term cohort design in Kershaw et al. allows study of <span class="alert">within-person</span> changes in exposure to segregation.
+
+>- Allows adjustment for individual-level factors such as age, sex, physical activity, smoking, etc. 
+
+>- Can measure <span class="alert">changes</span> in segregation intensity in neighborhood of origin and destination for people who have moved.
+
+>- Have to be sure that people who moved are <span class="alert">not systematically different</span> from those who didn't.
+
+# Higher intensity of segregation <span class="alert">$\to$</span> higher blood pressure.
+ 
+>- People who moved from a high- to lower-segregation context experienced small but meaningful decreases in blood pressure. 
+
+>- Suggests that policies facilitating neighborhood mobility could have positive health effects.
+
+>- Reliance on SBP as a <span class="alert">proxy</span> for CVD is a limitation, but a common one when the outcome is relatively rare and the effect is subtle - even if it is important.
+
+# Doing better work on structural racism requires <span class="alert">creativity</span> 
+
+> We must think beyond our training, statistical tests, and practices that dismiss methodologies that we may be unfamiliar with. There is scholarship being overlooked that proposes new approaches we could explore..., <span class="alert">but we cannot move forward with capturing variables like structural racism if we do not explore our creativity</span>. (From Adkins-Jackson 2021)
+
+# Time to <span class="alert">grapple</span> with the complexity of social-spatial relationships in our own work
+
+>- The spatial expression of social inequality is complex.
+
+>- Our measures are necessarily <span class="alert">reductive</span>, and that's OK...
+
+>- <span class="alert">IF and only IF</span> (⟺) we use these measures carefully without losing sight of the mechanisms and outcomes we care about.
+
+>- Lets spend some time making sense of these ideas using [this Miro board](https://miro.com/app/board/uXjVOHe4agI=/?invite_link_id=546695231041).
+
+# Next Time
+
+[Relating the mechanisms of structural racism to infectious disease transmission.](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+3/Sessions/6.+Mechanistic+linkages+between+structural+racism+and+infectious+disease+transmission)
