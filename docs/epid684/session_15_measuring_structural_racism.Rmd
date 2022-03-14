@@ -1,5 +1,5 @@
 ---
-pagetitle: "Relating residential segregation to disease outcomes"
+pagetitle: "Using theory to connect structural racism to health outcomes"
 fontsize: 12pt
 urlcolor: blue
 output: 

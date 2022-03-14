@@ -16,7 +16,9 @@
 [Session 11: Racism, Segregation and the Fundamental Causes of Spatial Health Inequality](https://jzelner.github.io/document-garden/epid684/session_11_fundamental_cause.html)  
 [Session 13: In-class presentation workshop](https://jzelner.github.io/document-garden/epid684/session_13_destination_workshop.html)  
 [Session 14: Measuring the impact of segregation on health outcomes](https://jzelner.github.io/document-garden/epid684/session_14_segregation_disease_outcomes.html)  
-[Session 15: Using theory to connect structural racism to health outcomes](https://jzelner.github.io/document-garden/epid684/session_15_measuring_structural_racism.html)  
+[Session 15: Using theory to connect structural racism to health outcomes](https://jzelner.github.io/document-garden/epid684/session_15_measuring_structural_racism.html) 
+[Session 16: Mechanistic linkages between segregation and infectious disease transmission](https://jzelner.github.io/document-garden/epid684/session_16_segregation_transmission.html)  
+
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
