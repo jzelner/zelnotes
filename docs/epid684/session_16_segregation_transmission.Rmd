@@ -70,6 +70,10 @@ Figure from [Zelner et al. 2022](https://journals.plos.org/ploscompbiol/article?
 
 Hands-on with a [mechanistic version](https://sph-umich.shinyapps.io/segregation-transmission/) of this model
 
+# Give us some feedback!
+
+Please use this [Google Form](https://forms.gle/zAubRMzGGvFwsgG27) to let us know how this activity worked for you!
+
 # Taking the <span class="alert">long view</span> on segregation and infection
 
 >- What examples of infection <span class="alert">reinforcing</span> segregation do Finn and Kobayashi draw on? 
