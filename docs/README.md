@@ -18,7 +18,7 @@
 [Session 14: Measuring the impact of segregation on health outcomes](https://jzelner.github.io/document-garden/epid684/session_14_segregation_disease_outcomes.html)  
 [Session 15: Using theory to connect structural racism to health outcomes](https://jzelner.github.io/document-garden/epid684/session_15_measuring_structural_racism.html) 
 [Session 16: Mechanistic linkages between segregation and infectious disease transmission](https://jzelner.github.io/document-garden/epid684/session_16_segregation_transmission.html)  
-[Session 17: Nonvaccination and the spatial clustering of susceptibility](https://jzelner.github.io/document-garden/epid684/session_17_nonvaccination_clustering.html)
+[Session 17: Nonvaccination and the measurement of spatially clustered susceptibility](https://jzelner.github.io/document-garden/epid684/session_17_nonvaccination_clustering.html) 
 
 # Presentations
 
