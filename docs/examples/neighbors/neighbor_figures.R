@@ -58,16 +58,16 @@ queen_arrows <- function(g, x0, y0) {
 df <- make_checkerboard(dim = 8)
 
 g <- plain_grid_plot(df)
-ggsave("output/neighbors/checkerboard.pdf")
+ggsave("output/neighbors/checkerboard.png")
 
 center <- c(4, 4)
 dirs <- nsew(center[1],center[2])
 g <- rook_arrows(plain_grid_plot(df), center[1], center[2])
-ggsave("output/neighbors/rook.pdf")
+ggsave("output/neighbors/rook.png")
 
 g2 <- queen_arrows(plain_grid_plot(df), center[1], center[2])
-ggsave("output/neighbors/corners.pdf")
+ggsave("output/neighbors/corners.png")
 
 g2 <- queen_arrows(g, center[1], center[2])
-ggsave("output/neighbors/queen.pdf")
+ggsave("output/neighbors/queen.png")
 

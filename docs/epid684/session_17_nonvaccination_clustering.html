@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Nonvaccination and the spatial clustering of susceptibility</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reveal.css">
+
+  <style type="text/css">
+    /* CSS from pandoc style.html() */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+                  </style>
+
+  <link rel="stylesheet" href="reveal.js-4.2.1/dist/theme/solarized.css" id="theme">
+
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/chalkboard/style.css">
+  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/customcontrols/style.css">
+
+  <style type="text/css">
+  /* some tweaks to reveal css */
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+  </style>
+
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="header-attrs-2.11/header-attrs.js"></script>
+    <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="title" class="title-slide slide level1">
+<h1>Measuring the spatial clustering of non-vaccination and its implications for population health</h1>
+<div class="paddeddiv">
+<p style="font-size:0.5em; text-align: left;">
+EPID 684<br />
+Spatial Epidemiology<br />
+3/17/2022<br />
+<br><br> Jon Zelner<br />
+<code>jzelner@umich.edu</code><br />
+<a href="https://epibayes.io"><code>epibayes.io</code></a>
+</p>
+</div>
+<div id="footerDiv" class="itemr">
+<img id="footerImg" src="../images/epid_logo.png" width="400">
+</div>
+</section>
+
+<section id="todays-theme" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Today’s <span class="alert">Theme</span></h1>
+<p><img src="../images/olive_spatial_nonvax.png"></p>
+<p>Measuring and understanding the public health implications of <span class="alert">spatially clustered</span> susceptibility through the lens of vaccine 💉 hesitancy.</p>
+</section>
+
+<section id="agenda" class="title-slide slide level1">
+<h1>Agenda</h1>
+<ul>
+<li class="fragment">Characterizing <span class="alert">spatial heterogeneity</span> and <span class="alert">clustering</span> of non-vaccination in the U.S.</li>
+</ul>
+<ul>
+<li class="fragment">Introduction to <span class="alert">Moran’s I</span> and the concept of spatial neighbor weighting.</li>
+</ul>
+<ul>
+<li class="fragment">Comparing conclusions drawn by using isolation,</li>
+</ul>
+</section>
+
+<section id="some-questions-about-olive-et-al." class="title-slide slide level1">
+<h1>Some questions about <span class="alert">Olive et al.</span></h1>
+<ul>
+<li class="fragment">What might explain the increase in spatial clustering of non-medical exemptions to pediatric vaccination over time?</li>
+</ul>
+<ul>
+<li class="fragment">What are the public health implications of this kind of spatially-clustered <span class="alert">susceptibility</span> to infections like measles?</li>
+</ul>
+<ul>
+<li class="fragment">How could this information be used to <span class="alert">prevent outbreaks</span>?</li>
+</ul>
+<ul>
+<li class="fragment">What do you think might be limitaitons of a <span class="alert">spatially focused</span> approach to the problem of vaccine hesitancy?</li>
+</ul>
+</section>
+
+<section id="a-new-metric-has-entered-the-arena" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">A new <span class="alert">metric</span> has entered the arena!</h1>
+<p><img src="../images/masters_et_al_scaled_clustering.png"></p>
+<p>Clustering measures over time and across scales, from Masters et al. 2021.</p>
+</section>
+
+<section id="bringing-space-into-clustering-metrics" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Bringing <span class="alert">space</span> into clustering metrics</h1>
+<p><img src="https://64.media.tumblr.com/046af944a3a42bc92b0662ae1a85c6b9/tumblr_ogjqbe07Yb1u501aoo1_400.gifv"></p>
+<p>First, we have to decide who are <span class="alert">neighbors</span> are!</p>
+</section>
+
+<section id="what-is-a-spatial-neighbor" class="title-slide slide level1">
+<h1>What is a <span class="alert">spatial neighbor</span>?</h1>
+<ul>
+<li class="fragment">A spatial area that is related to the one of interest.</li>
+</ul>
+<ul>
+<li class="fragment">Areas that are touching are called <em>contiguity neighbors</em>.</li>
+</ul>
+<ul>
+<li class="fragment"><span class="alert">But:</span> Contiguity is not a necessary or sufficient condition for two places to be neighbors.</li>
+</ul>
+<ul>
+<li class="fragment">How else could neighbors/neighborhoods defined?</li>
+</ul>
+</section>
+
+<section id="contiguity-neighbors-are-defined-in-terms-of-chess-moves." class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Contiguity neighbors are defined in terms of <em>chess moves</em>.</h1>
+<p><img src="../examples/output/neighbors/checkerboard.png"></p>
+</section>
+
+<section id="areas-sharing-a-border-have-rooks-contiguity" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Areas sharing a <em>border</em> have Rook’s contiguity</h1>
+<p><img src="../examples/output/neighbors/rook.png"></p>
+</section>
+
+<section id="but-what-about-the-corners" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">But what about the <span class="alert">corners</span>?</h1>
+<p><img src="../examples/output/neighbors/corners.png"></p>
+</section>
+
+<section id="areas-sharing-at-least-a-single-vertex-have-queens-contiguity" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Areas sharing at least a single <em>vertex</em> have <em>Queen’s</em> contiguity</h1>
+<p><img src="../examples/output/neighbors/queen.png"></p>
+</section>
+
+<section id="we-can-translate-these-into-spatial-weights" class="title-slide slide level1">
+<h1>We can translate these into spatial <span class="alert">weights</span></h1>
+<ul>
+<li class="fragment">These represent the <span class="alert">strength</span> of spatial interaction</li>
+</ul>
+<ul>
+<li class="fragment">Simplest is to assign <span class="math inline">\(w_{ij} = 1\)</span> for neighbors and <span class="math inline">\(w_{ij} = 0\)</span> otherwise.</li>
+</ul>
+<ul>
+<li class="fragment">Weights can vary with distance and other attributes, such as travel time.</li>
+</ul>
+</section>
+
+<section id="choice-of-weights-has-to-be-motivated-by-theory" class="title-slide slide level1">
+<h1>Choice of weights has to be motivated by <span class="alert">theory</span></h1>
+<ul>
+<li class="fragment">Selected weights should reflect our understanding of the underlying spatial <em>process</em> at work.</li>
+</ul>
+<ul>
+<li class="fragment">This could include social factors, biological features of the disease of interest, environmental factors, etc.</li>
+</ul>
+<ul>
+<li class="fragment">Necessary to look at multiple ways of specifying weights to see if your outcomes are <em>robust</em> to different definitions.</li>
+</ul>
+</section>
+
+<section id="what-is-morans-i" class="title-slide slide level1">
+<h1>What is Moran’s I?</h1>
+<ul>
+<li class="fragment">A measure of spatial <em>autocorrelation</em> in outcomes between <em>areas</em>.</li>
+</ul>
+<ul>
+<li class="fragment">A measure of <span class="alert">global</span> clustering.</li>
+</ul>
+<ul>
+<li class="fragment">Takes values from -1 to 1</li>
+</ul>
+<ul>
+<li class="fragment">A very commonly used (and misused) measure of spatial clustering</li>
+</ul>
+</section>
+
+<section id="what-does-it-measure" class="title-slide slide level1">
+<h1>What does it measure?</h1>
+<ul>
+<li class="fragment"><span class="alert">Negative</span> values of <em>I</em> indicate that neighboring areas are more likely to be dissimilar to each other than non-neighboring ones.</li>
+</ul>
+<ul>
+<li class="fragment"><span class="alert">Positive</span> values indicate that neighboring values are more likely to be similar to each other.</li>
+</ul>
+<ul>
+<li class="fragment">Can accomodate a range of ways of calculating values and distances, but here we’ll stick to something simple.</li>
+</ul>
+</section>
+
+<section id="how-is-it-calculated" class="title-slide slide level1">
+<h1>How is it calculated?</h1>
+<p><span class="math display">\[
+I = \frac{N}{W} \frac{\sum_{i} \sum_{j} w_{ij} (x_i - \bar{x})(x_j - \bar{x})}{\sum_{i}(x_i \bar{x})^2}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li class="fragment">N is the number of spatial areas.</li>
+<li class="fragment">W is the sum of all the spatial </li>
+<li class="fragment"><span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span> are the values of the i-th and j-th cells</li>
+<li class="fragment"><span class="math inline">\(w_{ij}\)</span> indicates whether i &amp; j are <span class="alert">neighbors</span> (yes = 1, no = 0 )</li>
+<li class="fragment"><span class="math inline">\(w_ij = 0\)</span> when <span class="math inline">\(i = j\)</span></li>
+<li class="fragment"><span class="math inline">\(\bar{x}\)</span> is the mean value of x across all squares</li>
+</ul>
+</section>
+
+<section id="in-words-please" class="title-slide slide level1">
+<h1>In <span class="alert">words</span>, please?</h1>
+<p><span class="math display">\[
+I = \frac{N}{W} \frac{\sum_{i} \sum_{j} w_{ij} (x_i - \bar{x})(x_j - \bar{x})}{\sum_{i}(x_i \bar{x})^2}
+\]</span></p>
+<p>
+How far is the <span class="fragment highlight-current-red">product of the difference from the population mean of <span class="math inline">\(x_i\)</span> values in neighboring squares </span> from the <span class="fragment highlight-current-red">average distance from the mean for all squares?</span>
+</p>
+</section>
+
+<section id="lets-start-by-looking-at-how-this-works-using-rooks-contiguity" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Let’s start by looking at how this works using <em>Rook’s</em> contiguity</h1>
+<p><img src="../examples/output/neighbors/rook.png"></p>
+</section>
+
+<section id="as-close-as-you-can-get-to--1" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">As close as you can get to -1</h1>
+<p><img src="../examples/output/moran/checkerboard.png"></p>
+</section>
+
+<section id="as-clustered-as-you-can-get-to-1" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">As clustered as you can get <span class="math inline">\(\to\)</span> 1</h1>
+<p><img src="../examples/output/moran/clustered.png"></p>
+</section>
+
+<section id="randomly-distributed-approx-0" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Randomly distributed <span class="math inline">\(\approx\)</span> 0</h1>
+<p><img src="../examples/output/moran/random.png"></p>
+</section>
+
+<section id="randomly-distributed-approx-0-1" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Randomly distributed <span class="math inline">\(\approx\)</span> 0</h1>
+<p><img src="../examples/output/moran/random_2.png"></p>
+</section>
+
+<section id="how-does-the-choice-of-weights-impact-this" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">How does the choice of weights impact this?</h1>
+<p><img src="../examples/output/neighbors/queen.png"></p>
+<p>Let’s try with Queen’s contiguity!</p>
+</section>
+
+<section id="different-weights-to-a-different-result" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Different weights <span class="math inline">\(\to\)</span> A different result…</h1>
+<div class="r-stack">
+<img class="fragment fade-out" data-fragment-index="0" src="../examples/output/moran/checkerboard_queen.png"> <img class="fragment current-visible" data-fragment-index="0" src="../examples/output/moran/clustered_queen.png"> <img class="fragment" src="../examples/output/moran/random_queen.png">
+</div>
+</section>
+
+<section id="what-can-we-learn-with-this" class="title-slide slide level1">
+<h1>What can we learn with this?</h1>
+<ul>
+<li class="fragment">Understand whether the distribution of a disease across <span class="alert">areas</span> is clustered.</li>
+</ul>
+<ul>
+<li class="fragment">Sensitive to the choice of weights, shape of spatial units, and on and on…</li>
+</ul>
+<ul>
+<li class="fragment">Still a <span class="alert">global</span> measure, i.e. says something about the average, but may obscure more <span class="alert">local</span> patterns.</li>
+</ul>
+</section>
+
+<section id="focusing-in-on-non-vaccination-risks-in-michigan" class="title-slide slide level1">
+<h1>Focusing in on non-vaccination risks in <span class="alert">Michigan</span></h1>
+<ul>
+<li class="fragment">What do you think the most important <span class="alert">takeaway</span> from Masters et al. is?</li>
+</ul>
+<ul>
+<li class="fragment">How does our choice of measure impact the conclusions we draw <span class="alert">over time</span> ?</li>
+</ul>
+<ul>
+<li class="fragment">Why do you think <span class="alert">aggregating</span> data across spatial scales can have such a strong impact on our measures?</li>
+</ul>
+<ul>
+<li class="fragment">What are some of the potential <span class="alert">practical implications</span> of the error that comes from this kind of aggregation?</li>
+</ul>
+</section>
+
+<section id="next-time" class="title-slide slide level1">
+<h1>Next Time</h1>
+<ul>
+<li class="fragment">Looking at what happens when we try to target spatially clustered non-vaccination: A case study from Michigan</li>
+</ul>
+<ul>
+<li class="fragment">Discussing the <span class="alert">Thiel index</span> approach to clustering and segregation</li>
+</ul>
+<ul>
+<li class="fragment">Actually doing the hands-on!</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js-4.2.1/dist/reveal.js"></script>
+  
+  <!-- reveal.js plugins -->
+  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
+  <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
+  <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
+  
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+        // Display a presentation progress bar
+        progress: true,
+        // Can be used to limit the contexts in which the slide number appears
+        showSlideNumber: 'all',
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+        // Push each slide change to the browser history
+        // Implies `hash: true`
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+        // The display mode that will be used to show slides
+        display: 'block',
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        menu: {
+          // Configuration from
+          // https://github.com/denehyg/reveal.js-menu#configuration
+   
+   
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ 
+ 
+ 
+          // option not supported for change
+          loadIcons: false, // using rmarkdown provided own.
+          custom: false,
+          themes: false,
+          // themesPath: 'dist/theme/',
+          transitions: false
+        },
+
+
+        chalkboard: {
+          theme: 'whiteboard',
+        },
+        customcontrols: {
+            controls: [
+            	{ icon: '<i class="fa fa-pen-square"></i>',
+            	  title: 'Toggle chalkboard (B)',
+            	  action: 'RevealChalkboard.toggleChalkboard();'
+            	},
+            	{ icon: '<i class="fa fa-pen"></i>',
+            	  title: 'Toggle notes canvas (C)',
+            	  action: 'RevealChalkboard.toggleNotesCanvas();'
+            	}
+            ]
+        },
+
+        // Optional reveal.js plugins
+        plugins: [
+          RevealMenu,
+          RevealChalkboard,
+          RevealCustomControls,
+        ]
+      });
+
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
