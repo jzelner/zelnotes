@@ -40,7 +40,7 @@ output:
 
 <img src="../images/olive_spatial_nonvax.png">
 
-Measuring and understanding the public health implications of <span class="alert">spatially clustered</span> susceptibility through the lens of vaccine 💉 hesitancy.
+(Still) Measuring and understanding the public health implications of <span class="alert">spatially clustered</span> susceptibility through the lens of vaccine 💉 hesitancy.
 
 # Agenda
 
