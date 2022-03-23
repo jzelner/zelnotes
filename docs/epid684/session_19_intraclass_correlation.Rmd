@@ -1,0 +1,164 @@
+---
+pagetitle: "Local spatial clustering of non-vaccination"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+
+# Comparing the impact of individual vs. contextual variation using <span class="alert">intraclass correlation</span>{#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      3/24/2022  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+# Today's <span class="alert">Theme</span> {.imgslide}
+
+<img src="../images/merlo_sim_data.png">
+
+How can we characterize the relative importance of <span class="alert">individual</span> vs. <span class="alert">contextual</span> drivers of variation?
+
+# Agenda
+
+>- Review the concept of <span class="alert">intraclass correlation</span>
+
+>- Set goals for in-class workshop on 3/31
+
+
+# What is intraclass correlation?
+
+>- A measure of <span class="alert">global</span> clustering.
+
+>- Measures the amount of the <span class="alert">total variance</span> in an outcome that is clustered within vs. between <span class="alert">groups</span>
+
+>- Groups can include households, neighborhoods, cities, etc.
+
+>- ICC is useful when there is individual-level and spatial variation but it is not clear which is <span class="alert">most important</span>
+
+# What is variance?
+
+>- <span class="alert">Square</span> of the average deviation from the mean
+
+>- So, if standard deviation: $\sigma$ = 10$, Variance: $\sigma^2$ = 100.
+
+# The total variance is the <span class="alert">sum</span> of the within- and between-group variances
+
+$$
+\sigma^2_{Total}=\sigma^2_N+\sigma^2_I
+$$
+
+- $\sigma^2_N$ = \alert{Between-neighborhood} variance in outcomes.
+
+- $\sigma^2_I$ = Individual level variance in outcomes (\alert{within-neighborhood} variation)
+
+# We can then use these to calculate the ICC
+
+$$
+ICC=\frac{\sigma_{N}^2}{\sigma_{N}^2+\sigma_{I}^2}
+$$
+
+In words: the ICC is the proportion of the total variation in the outcome that occurs *within* the units we care about.
+
+# A simple worked example {.imgslie}
+
+<img src="../examples/icc/output/ind_sbp_hist.png">
+
+500 observations of blood pressure with $\bar{x}$ = 120, $\sigma^2$ = 8
+
+# Plotting by neighborhood shows that there is more than just <span class="alert">individual</span> variation {.imgslide}
+
+<img src="../examples/icc/output/ind_sbp_means.png">
+
+# Use <span class="alert">neighborhood means</span> to estimate between-neighborhood variance
+
+<img src="../examples/icc/output/ind_neigh_sbp_means.png">
+
+# We can use this information to calculate the ICC
+
+>- Total Variance = 8
+
+>- Neighborhood Variance = 3
+
+>- Individual Variance = Total - Neighborhood = 5
+
+>- ICC = $\frac{\text{individual variance}}{\text{total variance}}$ = .375
+
+# What does that mean?
+
+>- About 38% of variation in SBP outcomes is attributable to neighborhood.
+
+>- Seems like a lot, but importance is ultimately relative to the what biological and public health mechanisms are of interest.
+
+>- Provides a <span class="alert">basis for comparison</span> with other locations.
+
+# Preparing for <span class="alert">What route will you take?</span> workshop
+
+>- Why are we doing this?
+
+>- How should you prepare?
+
+# Effective <span class="alert">communication</span> of spatial questions and analyses is central to the goals of this course.
+
+>- Identify well-posed spatial problems in public health and epidemiology.
+
+>- Articulate concrete, informed, goals for spatially-focused public health interventions and research.
+
+>- Suggest appropriate theoretical and analytic frameworks for understanding spatial variation in public health problems and interventions and policies meant to ameliorate them.
+
+# Since these are <span class="alert">difficult</span> and <span class="alert">complex</span> problems, good feedback is essential to getting your message across {.imgslide}
+
+<img src = "../images/septa_trolley.png">
+
+What does this trolley have to do with feedback? Let me tell you a story...
+
+# What does helpful feedback <span class="alert">do</span>? {.imgslide}
+
+<img src= "../images/feedback_loop_example.jpg">
+
+Generate insights that facilitate <span class="alert">improvement</span> or <span class="alert">growth</span> in the topic at hand
+
+# What makes for <span class="alert">helpful</span> feedback?
+
+>- Take the perspective of a peer or member of the intended audience who wants to learn about the topic, rather than a teacher/evaluator with an interest in finding <span class="alert">flaws</span>.
+
+>- Start by really trying to understand what your partner is <span class="alert">trying to acheive</span>. 
+
+>- Be <span class="alert">specific</span> in your feedback and keep it close to the paper you're reading.
+
+>- Ask questions: If something doesn't make sense, explain what about it is confusing and ask what they were trying to accomplish. 
+
+>- Flag things you find interesting as well as those that are unclear. Knowing what is working is as or <span class="alert">more</span> important than knowing what isn't.
+
+>- Suggest resources or ideas that might help your partner advance their project.
+
+>- [What else?](https://docs.google.com/document/d/13yQxaLqkOsn-SEzS0By8Fo59B_skG3HYYbsu6K4PRGY/edit?usp=sharing)
+
+# Next Time {.imgslide}
+
+<img src="../images/radon_entry.png">
+
+[Radon as a window into multi-level modeling](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+4/2.+Digging+into+the+multi-level+approach+to+spatial+analysis)

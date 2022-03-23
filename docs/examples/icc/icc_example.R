@@ -1,6 +1,4 @@
 require(ggplot2)
-require(ragg)
-
 mu_pop <- 120
 
 sigma_pop <- 5
@@ -21,7 +19,7 @@ geom_vline(xintercept = mean(ind_sbp), linetype = "dashed") +
 xlab("Systolic Blood Pressure (SBP)") +
 ylab("N")
 
-pdf("output/ind_sbp_hist.pdf", width = 6, height = 4)
+png("output/ind_sbp_hist.png", width = 600, height = 400)
 print(hg)
 dev.off()
 
@@ -36,7 +34,7 @@ ylab("Neighborhood Mean SBP") +
 theme_bw() +
 ylim(sbp_limits)
 
-pdf("output/neighborhood_sbp_means.pdf", width = 6, height = 4)
+png("output/neighborhood_sbp_means.png", width = 600, height = 400)
 plot(ng)
 dev.off()
 
@@ -50,7 +48,7 @@ theme_bw() +
 theme(legend.position = "none") +
 ylim(sbp_limits)
 
-pdf("output/ind_sbp_means.pdf", width = 6, height = 4)
+png("output/ind_sbp_means.png", width = 600, height = 400)
 print(ig)
 dev.off()
 
@@ -64,7 +62,7 @@ theme_bw() +
 theme(legend.position = "none") +
 ylim(sbp_limits)
 
-pdf("output/ind_neigh_sbp_means.pdf", width = 6, height = 4)
+png("output/ind_neigh_sbp_means.png", width = 600, height = 400)
 print(ig2)
 dev.off()
 
