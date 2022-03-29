@@ -99,7 +99,7 @@ Spatial Epidemiology<br />
 <section id="agenda" class="title-slide slide level1">
 <h1>Agenda</h1>
 <ul>
-<li class="fragment">Quick overview of thursday in-class workshop.</li>
+<li class="fragment">Quick overview of prep for thursday <a href="https://docs.google.com/document/d/1M5Cc-kkibFTGMcLi43pxGTSzZrv5hUg7_dC2puhgNp8/edit">in-class workshop</a>.</li>
 </ul>
 <ul>
 <li class="fragment"><span class="alert">Worked example</span> of three approaches to multi-level modeling.</li>
@@ -210,10 +210,14 @@ y_i = \alpha + \beta x + \epsilon_i
 
 <section id="door-2-fit-a-different-model-to-each-cluster" class="title-slide slide level1">
 <h1>Door 🚪 #2: Fit a <span class="alert">different model</span> to each cluster</h1>
-<p><span class="alert">npooled approach:</span> U Fit a separate model to each unit (<span class="math inline">\(j\)</span>), assuming outcomes in each unit are independent:</p>
 <ul>
-<li><p><span class="math inline">\(y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}\)</span></p></li>
-<li><p><span class="math inline">\(\epsilon_{ij} \sim N(0, \sigma_{j}^2)\)</span></p></li>
+<li class="fragment"><span class="alert">Unpooled approach:</span>Fit a separate model to each unit (<span class="math inline">\(j\)</span>), assuming outcomes in each unit are independent:</li>
+</ul>
+<ul>
+<li class="fragment">Model looks like: <span class="math inline">\(y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}\)</span></li>
+</ul>
+<ul>
+<li class="fragment">Where: <span class="math inline">\(\epsilon_{ij} \sim N(0, \sigma_{j}^2)\)</span></li>
 </ul>
 </section>
 
@@ -252,14 +256,16 @@ y_i = \alpha + \beta x + \epsilon_i
 <section id="door-3-partial-pooling" class="title-slide slide level1">
 <h1>Door 🚪 #3: Partial Pooling 🏊!</h1>
 <ul>
-<li><span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}\)</span></li>
+<li class="fragment">Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:</li>
 </ul>
-<div class="fragment">
-<p>Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:</p>
 <ul>
-<li><p><span class="math inline">\(\epsilon_{i} \sim N(0, \sigma_{i}^2)\)</span></p></li>
-<li><p><span class="math inline">\(\epsilon_{j} \sim N(0, \sigma_{j}^2)\)</span></p>
-</div></li>
+<li class="fragment">Model looks like: <span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}\)</span></li>
+</ul>
+<ul>
+<li class="fragment">Where: <span class="math inline">\(\epsilon_{i} \sim N(0, \sigma_{i}^2)\)</span></li>
+</ul>
+<ul>
+<li class="fragment">And: <span class="math inline">\(\epsilon_{j} \sim N(0, \sigma_{j}^2)\)</span></li>
 </ul>
 </section>
 
@@ -278,7 +284,7 @@ y_i = \alpha + \beta x + \epsilon_i
 
 <section id="imagine-youre-in-the-radon-system-business" class="title-slide slide level1 imgslide">
 <h1 class="imgslide">Imagine you’re in the <span class="alert">radon system</span> business</h1>
-<p><img src="../images/jz_radon.jpg"></p>
+<p><img src="../images/jz_radon.jpg" style="width:25%"></p>
 <p>My very own radon mitigation system!</p>
 </section>
 
@@ -295,12 +301,18 @@ y_i = \alpha + \beta x + \epsilon_i
 
 <section id="as-the-soil-uranium-increases-so-does-baseline-county-level-radon" class="title-slide slide level1 imgslide">
 <h1 class="imgslide">As the soil uranium ☢️ increases, so does baseline county-level radon</h1>
-<p><img src="../images/gelman_county_uranium.png"></p>
+<p><img src="../images/gelman_county_uranium.png" style="width:70%"></p>
 </section>
 
-<section id="partial-pooling-most-benefits-places-with-less-data" class="title-slide slide level1 imgslide">
-<h1 class="imgslide">Partial pooling most benefits places with <span class="alert">less data</span></h1>
-<p><img src="../images/gelman_basement_effect.png"></p>
+<section id="counties-with-lots-of-soil-uranium-seem-like-a-good-bet-for-business" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Counties with lots of soil uranium seem like a good bet for business</h1>
+<p><img src="../images/radon_map.png"></p>
+</section>
+
+<section id="partial-pooling-most-benefits-predictions-for-places-with-less-data" class="title-slide slide level1 imgslide">
+<h1 class="imgslide">Partial pooling most benefits predictions for places with <span class="alert">less data</span></h1>
+<p><img src="../images/gelman_basement_effect.png" style="width:70%"></p>
+<p>Light dotted line = full pooling; Light solid line = no pooling; Dark line = partial pooling</p>
 </section>
 
 <section id="next-time" class="title-slide slide level1 imgslide">

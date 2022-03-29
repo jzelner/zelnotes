@@ -43,7 +43,7 @@ output:
 
 # Agenda
 
->- Quick overview of thursday in-class workshop.
+>- Quick overview of prep for thursday [in-class workshop](https://docs.google.com/document/d/1M5Cc-kkibFTGMcLi43pxGTSzZrv5hUg7_dC2puhgNp8/edit).
 
 >- <span class="alert">Worked example</span> of three approaches to multi-level modeling.
 
@@ -258,13 +258,14 @@ plot(g)
 ```
 
 
-# Door 🚪 #2: Fit a <span class="alert">different model</span>  to each cluster
+# Door 🚪 #2: Fit a <span class="alert">different model</span> to each cluster
 
-<span class="alert">npooled approach:</span> U Fit a separate model to each unit ($j$), assuming outcomes in each unit are independent:
 
-- $y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}$
+>- <span class="alert">Unpooled approach:</span>Fit a separate model to each unit ($j$), assuming outcomes in each unit are independent:
 
-- $\epsilon_{ij} \sim N(0, \sigma_{j}^2)$
+>- Model looks like: $y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}$
+
+>- Where: $\epsilon_{ij} \sim N(0, \sigma_{j}^2)$
 
 # <span class="danger">More danger!</span>
 
@@ -290,13 +291,14 @@ Totally unpooled models run the risk of <span class="alert">overfitting</span> t
 
 # Door 🚪 #3: Partial Pooling 🏊!
 
-- $y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}$
 
-<div class="fragment">Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:
+>- Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:
 
-- $\epsilon_{i} \sim N(0, \sigma_{i}^2)$
+>- Model looks like: $y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}$
 
-- $\epsilon_{j} \sim N(0, \sigma_{j}^2)$</div>
+>- Where: $\epsilon_{i} \sim N(0, \sigma_{i}^2)$
+
+>- And: $\epsilon_{j} \sim N(0, \sigma_{j}^2)$
 
 # What does partial pooling get us?
 
@@ -309,7 +311,7 @@ Totally unpooled models run the risk of <span class="alert">overfitting</span> t
 
 # Imagine you're in the <span class="alert">radon system</span> business {.imgslide}
 
-<img src="../images/jz_radon.jpg">
+<img src="../images/jz_radon.jpg" style="width:25%">
 
 My very own radon mitigation system!
 
@@ -324,11 +326,18 @@ In small groups:
 
 # As the soil uranium ☢️ increases, so does baseline county-level radon {.imgslide}
 
-<img src="../images/gelman_county_uranium.png">
+<img src="../images/gelman_county_uranium.png" style="width:70%">
 
-# Partial pooling most benefits places with <span class="alert">less data</span> {.imgslide}
+# Counties with lots of soil uranium seem like a good bet for business {.imgslide}
 
-<img src="../images/gelman_basement_effect.png">
+<img src="../images/radon_map.png">
+
+
+# Partial pooling most benefits predictions for places with <span class="alert">less data</span> {.imgslide}
+
+<img src="../images/gelman_basement_effect.png" style="width:70%">
+
+Light dotted line = full pooling; Light solid line = no pooling; Dark line = partial pooling 
 
 # Next Time {.imgslide}
 
