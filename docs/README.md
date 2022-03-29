@@ -20,8 +20,8 @@
 [Session 16: Mechanistic linkages between segregation and infectious disease transmission](https://jzelner.github.io/document-garden/epid684/session_16_segregation_transmission.html)  
 [Session 17: Nonvaccination and the measurement of spatially clustered susceptibility](https://jzelner.github.io/document-garden/epid684/session_17_nonvaccination_clustering.html)  
 [Session 18: Local spatial clustering](https://jzelner.github.io/document-garden/epid684/session_18_local_clustering_nonvax.html)  
-[Session 19: Intraclass correlation](https://jzelner.github.io/document-garden/epid684/session_19_intraclass_correlation.html)
-
+[Session 19: Intraclass correlation](https://jzelner.github.io/document-garden/epid684/session_19_intraclass_correlation.html)  
+[Session 20: The threefold path of multi-level modeling](https://jzelner.github.io/document-garden/epid684/session_20_threefold_path.html)
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)

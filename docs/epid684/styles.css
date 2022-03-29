@@ -89,6 +89,11 @@
     color: orange;
 }
 
+.danger {
+    color: red;
+}
+
+
 li:not(:last-child) {
     margin-bottom: 10px;
 }
