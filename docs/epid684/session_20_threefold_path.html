@@ -1,87 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-0.9.166">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>The threefold path of multi-level modeling</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reset.css">
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/reveal.css">
-
-  <style type="text/css">
-    /* CSS from pandoc style.html() */
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-                  </style>
-
-  <link rel="stylesheet" href="reveal.js-4.2.1/dist/theme/solarized.css" id="theme">
-
-  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/chalkboard/style.css">
-  <link rel="stylesheet" href="reveal.js-4.2.1/plugin/customcontrols/style.css">
-
-  <style type="text/css">
-  /* some tweaks to reveal css */
-    .reveal h1 { font-size: 2.0em; }
-    .reveal h2 { font-size: 1.5em;  }
-    .reveal h3 { font-size: 1.25em;	}
-    .reveal h4 { font-size: 1em;	}
-
-    .reveal .slides>section,
-    .reveal .slides>section>section {
-      padding: 0px 0px;
-    }
-    .reveal table {
-      border-width: 1px;
-      border-spacing: 2px;
-      border-style: dotted;
-      border-color: gray;
-      border-collapse: collapse;
-      font-size: 0.7em;
-    }
-
-    .reveal table th {
-      border-width: 1px;
-      padding-left: 10px;
-      padding-right: 25px;
-      font-weight: bold;
-      border-style: dotted;
-      border-color: gray;
-    }
-
-    .reveal table td {
-      border-width: 1px;
-      padding-left: 10px;
-      padding-right: 25px;
-      border-style: dotted;
-      border-color: gray;
-    }
   </style>
 
-    <link rel="stylesheet" href="styles.css"/>
-    <script src="header-attrs-2.11/header-attrs.js"></script>
-    <link href="font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-    <link href="font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+  <script src="session_20_threefold_path_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="session_20_threefold_path_files/libs/quarto-html/quarto.js"></script>
+  <script src="session_20_threefold_path_files/libs/quarto-html/popper.min.js"></script>
+  <script src="session_20_threefold_path_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="session_20_threefold_path_files/libs/quarto-html/anchor.min.js"></script>
+  <link href="session_20_threefold_path_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="session_20_threefold_path_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="session_20_threefold_path_files/libs/bootstrap/bootstrap.min.js"></script>
+  <link href="session_20_threefold_path_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="session_20_threefold_path_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
-<body>
-  <div class="reveal">
-    <div class="slides">
+<body class="fullcontent">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
-
-<section id="title" class="title-slide slide level1">
+<main class="content" id="quarto-document-content">
+<section id="title" class="level1">
 <h1>The threefold path of multilevel modeling</h1>
 <div class="paddeddiv">
 <p style="font-size:0.5em; text-align: left;">
-EPID 684<br />
-Spatial Epidemiology<br />
-3/24/2022<br />
-<br><br> Jon Zelner<br />
-<code>jzelner@umich.edu</code><br />
+EPID 684<br>
+Spatial Epidemiology<br>
+3/24/2022<br>
+<br><br> Jon Zelner<br>
+<code>jzelner@umich.edu</code><br>
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
@@ -89,72 +48,87 @@ Spatial Epidemiology<br />
 <img id="footerImg" src="../images/epid_logo.png" width="400">
 </div>
 </section>
-
-<section id="todays-theme" class="title-slide slide level1 imgslide">
+<section id="todays-theme" class="level1 imgslide">
 <h1 class="imgslide">Today’s <span class="alert">Theme</span></h1>
 <p><img src="../images/radon_entry.png"></p>
 <p><a href="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+4/2.+Digging+into+the+multi-level+approach+to+spatial+analysis">How do hierarchical models make the most use of multi-level data</a></p>
 </section>
-
-<section id="agenda" class="title-slide slide level1">
+<section id="agenda" class="level1">
 <h1>Agenda</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Quick overview of prep for thursday <a href="https://docs.google.com/document/d/1M5Cc-kkibFTGMcLi43pxGTSzZrv5hUg7_dC2puhgNp8/edit">in-class workshop</a>.</li>
+<li>Quick overview of prep for thursday <a href="https://docs.google.com/document/d/1M5Cc-kkibFTGMcLi43pxGTSzZrv5hUg7_dC2puhgNp8/edit">in-class workshop</a>.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="alert">Worked example</span> of three approaches to multi-level modeling.</li>
+<li><span class="alert">Worked example</span> of three approaches to multi-level modeling.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Discussion of Gelman Minnesota radon ☢️ example</li>
+<li>Discussion of Gelman Minnesota radon ☢️ example</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="lets-extend-the-blood-pressure-model-from-merlo-et-al.-to-include-a-riskprotective-factor." class="title-slide slide level1">
-<h1>Let’s <span class="alert">extend</span> the blood pressure model from Merlo et al. to include a <span class="alert">risk/protective</span> factor.</h1>
+<section id="lets-extend-the-blood-pressure-model-from-merlo-et-al.-to-include-a-riskprotective-factor." class="level1">
+<h1>Let’s <span class="alert">extend</span> the blood pressure model from Merlo et al.&nbsp;to include a <span class="alert">risk/protective</span> factor.</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Simulated study where we sample 1000 individuals (<span class="math inline">\(i\)</span>) from 20 neighborhoods (<span class="math inline">\(j\)</span>) and measure:</li>
+<li>Simulated study where we sample 1000 individuals (<span class="math inline">\(i\)</span>) from 20 neighborhoods (<span class="math inline">\(j\)</span>) and measure:</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="math inline">\(y_{ij}\)</span> is <span class="alert">continuous</span> systolic blood pressure (SBP) for individual <span class="math inline">\(i\)</span> in location <span class="math inline">\(j\)</span>.</li>
+<li><span class="math inline">\(y_{ij}\)</span> is <span class="alert">continuous</span> systolic blood pressure (SBP) for individual <span class="math inline">\(i\)</span> in location <span class="math inline">\(j\)</span>.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="math inline">\(x_i \in [0,1]\)</span> is a binary exposure indicating whether the individual gets regular physical exercise.</li>
+<li><span class="math inline">\(x_i \in [0,1]\)</span> is a binary exposure indicating whether the individual gets regular physical exercise.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="math inline">\(\beta\)</span> is an increase in <span class="math inline">\(y_i\)</span> associated with the exposure</li>
+<li><span class="math inline">\(\beta\)</span> is an increase in <span class="math inline">\(y_i\)</span> associated with the exposure</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="math inline">\(\alpha\)</span> is <span class="alert">mean</span> SBP in the absence of exposure</li>
+<li><span class="math inline">\(\alpha\)</span> is <span class="alert">mean</span> SBP in the absence of exposure</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="how-can-we-deal-with-the-fact-that-people-are-clustered-within-locations" class="title-slide slide level1">
+<section id="how-can-we-deal-with-the-fact-that-people-are-clustered-within-locations" class="level1">
 <h1>How can we deal with the fact that people are <span class="alert">clustered</span> within locations?</h1>
-<iframe src="https://giphy.com/embed/nz6qNPDA0dpsxbY0rl" width="480" height="304" frameBorder="0" class="giphy-embed" allowFullScreen>
+<iframe src="https://giphy.com/embed/nz6qNPDA0dpsxbY0rl" width="480" height="304" frameborder="0" class="giphy-embed" allowfullscreen="">
 </iframe>
 <p>You have <span class="alert">three choices</span>: Which 🚪 will you choose?</p>
 </section>
-
-<section id="door-1-ignore-clustering-and-fit-a-normal-glm" class="title-slide slide level1">
+<section id="door-1-ignore-clustering-and-fit-a-normal-glm" class="level1">
 <h1>Door 🚪 #1: Ignore clustering and fit a normal GLM</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><em>Pool</em> data across all units, i.e. ignore clustering.</li>
+<li><em>Pool</em> data across all units, i.e.&nbsp;ignore clustering.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">i.e. fit model <span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_i\)</span></li>
+<li>i.e.&nbsp;fit model <span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_i\)</span></li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Is this typically a good idea?</li>
+<li>Is this typically a good idea?</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="no" class="title-slide slide level1 imgslide">
+<section id="no" class="level1 imgslide">
 <h1 class="imgslide"><span style="color:red">NO!</span></h1>
 <p><img src="../images/regression_dragon_1.jpg"></p>
 <p>Complete pooling ignores potential sources of <em>observed</em> and <em>unobserved</em> unit-level <span class="alert">confounding</span>.</p>
 </section>
-
-<section id="full-pooling-of-clustered-data-violates-assumption-of-independent-errors" class="title-slide slide level1">
+<section id="full-pooling-of-clustered-data-violates-assumption-of-independent-errors" class="level1">
 <h1><span class="alert">Full pooling</span> of clustered data violates assumption of independent errors</h1>
 <p>A <span class="alert"> fully pooled</span> model:</p>
 <p><span class="math display">\[
@@ -167,128 +141,216 @@ y_i = \alpha + \beta x + \epsilon_i
 \text{i.i.d.} \epsilon \sim Normal(0, \sigma^2)
 \]</span></p>
 </section>
-
-<section id="your-residuals-should-look-like-this" class="title-slide slide level1">
+<section id="your-residuals-should-look-like-this" class="level1">
 <h1>Your <span class="alert">residuals</span> should look like this</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-1-1.png" title="Example of residuals for model with clustered errors" alt="Example of residuals for model with clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of residuals for model with clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="your-residuals-should-look-like-this-1" class="title-slide slide level1">
+<section id="your-residuals-should-look-like-this-1" class="level1">
 <h1>Your <span class="alert">residuals</span> should look like this</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-2-1.png" title="Example of residuals for model with clustered errors" alt="Example of residuals for model with clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of residuals for model with clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.9" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.9" class="level1">
 <h1>If you ignore clustering (ICC = 0.9)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-3-1.png" title="Clustered errors" alt="Clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.9-1" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.9-1" class="level1">
 <h1>If you ignore clustering (ICC = 0.9)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-4-1.png" title="Example of residuals for model with clustered errors" alt="Example of residuals for model with clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of residuals for model with clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.5" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.5" class="level1">
 <h1>If you ignore clustering (ICC = 0.5)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-5-1.png" title="Clustered errors" alt="Clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.5-1" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.5-1" class="level1">
 <h1>If you ignore clustering (ICC = 0.5)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-6-1.png" title="Example of residuals for model with clustered errors" alt="Example of residuals for model with clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of residuals for model with clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.25" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.25" class="level1">
 <h1>If you ignore clustering (ICC = 0.25)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-7-1.png" title="Clustered errors" alt="Clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="if-you-ignore-clustering-icc-0.25-1" class="title-slide slide level1">
+<section id="if-you-ignore-clustering-icc-0.25-1" class="level1">
 <h1>If you ignore clustering (ICC = 0.25)</h1>
-<p><img src="session_20_threefold_path_files/figure-revealjs/unnamed-chunk-8-1.png" title="Example of residuals for model with clustered errors" alt="Example of residuals for model with clustered errors" width="768" /></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="session_20_threefold_path_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of residuals for model with clustered errors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
-<section id="door-2-fit-a-different-model-to-each-cluster" class="title-slide slide level1">
+<section id="door-2-fit-a-different-model-to-each-cluster" class="level1">
 <h1>Door 🚪 #2: Fit a <span class="alert">different model</span> to each cluster</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment"><span class="alert">Unpooled approach:</span>Fit a separate model to each unit (<span class="math inline">\(j\)</span>), assuming outcomes in each unit are independent:</li>
+<li><span class="alert">Unpooled approach:</span>Fit a separate model to each unit (<span class="math inline">\(j\)</span>), assuming outcomes in each unit are independent:</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Model looks like: <span class="math inline">\(y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}\)</span></li>
+<li>Model looks like: <span class="math inline">\(y_{ij} = \alpha_j + \beta_j x_i + \epsilon_{ij}\)</span></li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Where: <span class="math inline">\(\epsilon_{ij} \sim N(0, \sigma_{j}^2)\)</span></li>
+<li>Where: <span class="math inline">\(\epsilon_{ij} \sim N(0, \sigma_{j}^2)\)</span></li>
 </ul>
+</blockquote>
 </section>
-
-<section id="more-danger" class="title-slide slide level1">
+<section id="more-danger" class="level1">
 <h1><span class="danger">More danger!</span></h1>
 <p><img src="../images/regression_dino.jpg"></p>
 <p>Totally unpooled models run the risk of <span class="alert">overfitting</span> the data, particularly in small samples.</p>
 </section>
-
-<section id="specific-dangers-of-unpooled-models" class="title-slide slide level1">
+<section id="specific-dangers-of-unpooled-models" class="level1">
 <h1>Specific dangers of unpooled models</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Some places may have few observations, making <em>unpooled</em> models impractical</li>
+<li>Some places may have few observations, making <em>unpooled</em> models impractical</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">We may want to allow the effect of an exposure to be consistent across location.</li>
+<li>We may want to allow the effect of an exposure to be consistent across location.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Will have nothing to say about data from a new location</li>
+<li>Will have nothing to say about data from a new location</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="how-would-our-ideal-model-split-the-difference-between-fully-pooled-and-totally-unpooled" class="title-slide slide level1">
+<section id="how-would-our-ideal-model-split-the-difference-between-fully-pooled-and-totally-unpooled" class="level1">
 <h1>How would our <span class="alert">ideal</span> model split the difference between fully pooled and totally unpooled?</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Encode the <span class="alert">assumption</span> that places are similar unless data tell us otherwise.</li>
+<li>Encode the <span class="alert">assumption</span> that places are similar unless data tell us otherwise.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Be <span class="alert">flexible</span> enough to reflect information in new data without <span class="alert">overfitting</span>.</li>
+<li>Be <span class="alert">flexible</span> enough to reflect information in new data without <span class="alert">overfitting</span>.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Give answers equivalent to the <span class="alert">fully pooled</span> and <span class="alert">unpooled</span> approaches if that is what the data actually suggest.</li>
+<li>Give answers equivalent to the <span class="alert">fully pooled</span> and <span class="alert">unpooled</span> approaches if that is what the data actually suggest.</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="door-3-partial-pooling" class="title-slide slide level1">
+<section id="door-3-partial-pooling" class="level1">
 <h1>Door 🚪 #3: Partial Pooling 🏊!</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:</li>
+<li>Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Model looks like: <span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}\)</span></li>
+<li>Model looks like: <span class="math inline">\(y_{ij} = \alpha + \beta x_i + \epsilon_{i} + \epsilon_{j}\)</span></li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Where: <span class="math inline">\(\epsilon_{i} \sim N(0, \sigma_{i}^2)\)</span></li>
+<li>Where: <span class="math inline">\(\epsilon_{i} \sim N(0, \sigma_{i}^2)\)</span></li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">And: <span class="math inline">\(\epsilon_{j} \sim N(0, \sigma_{j}^2)\)</span></li>
+<li>And: <span class="math inline">\(\epsilon_{j} \sim N(0, \sigma_{j}^2)\)</span></li>
 </ul>
+</blockquote>
 </section>
-
-<section id="what-does-partial-pooling-get-us" class="title-slide slide level1">
+<section id="what-does-partial-pooling-get-us" class="level1">
 <h1>What does partial pooling get us?</h1>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">This approach accommodates variation across units without assuming they have <em>no</em> similarity.</li>
+<li>This approach accommodates variation across units without assuming they have <em>no</em> similarity.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">Allows us to include covariates both about individuals and their spatial context.</li>
+<li>Allows us to include covariates both about individuals and their spatial context.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
 <ul>
-<li class="fragment">More likely to make accurate <span class="alert">out-of-sample</span> predictions than the fully-pooled or unpooled examples.</li>
+<li>More likely to make accurate <span class="alert">out-of-sample</span> predictions than the fully-pooled or unpooled examples.</li>
 </ul>
+</blockquote>
 </section>
-
-<section id="imagine-youre-in-the-radon-system-business" class="title-slide slide level1 imgslide">
+<section id="imagine-youre-in-the-radon-system-business" class="level1 imgslide">
 <h1 class="imgslide">Imagine you’re in the <span class="alert">radon system</span> business</h1>
 <p><img src="../images/jz_radon.jpg" style="width:25%"></p>
 <p>My very own radon mitigation system!</p>
 </section>
-
-<section id="how-could-you-useextend-the-information-in-the-gelman-paper-to" class="title-slide slide level1">
+<section id="how-could-you-useextend-the-information-in-the-gelman-paper-to" class="level1">
 <h1>How could you use/extend the information in the Gelman paper to:</h1>
 <p>In small groups:</p>
 <ol type="1">
@@ -298,194 +360,105 @@ y_i = \alpha + \beta x + \epsilon_i
 <li>Anything else?</li>
 </ol>
 </section>
-
-<section id="as-the-soil-uranium-increases-so-does-baseline-county-level-radon" class="title-slide slide level1 imgslide">
+<section id="as-the-soil-uranium-increases-so-does-baseline-county-level-radon" class="level1 imgslide">
 <h1 class="imgslide">As the soil uranium ☢️ increases, so does baseline county-level radon</h1>
 <p><img src="../images/gelman_county_uranium.png" style="width:70%"></p>
 </section>
-
-<section id="counties-with-lots-of-soil-uranium-seem-like-a-good-bet-for-business" class="title-slide slide level1 imgslide">
+<section id="counties-with-lots-of-soil-uranium-seem-like-a-good-bet-for-business" class="level1 imgslide">
 <h1 class="imgslide">Counties with lots of soil uranium seem like a good bet for business</h1>
 <p><img src="../images/radon_map.png"></p>
 </section>
-
-<section id="partial-pooling-most-benefits-predictions-for-places-with-less-data" class="title-slide slide level1 imgslide">
+<section id="partial-pooling-most-benefits-predictions-for-places-with-less-data" class="level1 imgslide">
 <h1 class="imgslide">Partial pooling most benefits predictions for places with <span class="alert">less data</span></h1>
 <p><img src="../images/gelman_basement_effect.png" style="width:70%"></p>
 <p>Light dotted line = full pooling; Light solid line = no pooling; Dark line = partial pooling</p>
 </section>
-
-<section id="next-time" class="title-slide slide level1 imgslide">
+<section id="next-time" class="level1 imgslide">
 <h1 class="imgslide">Next Time</h1>
 <ul>
 <li>In-class workshop</li>
 </ul>
+
 </section>
-    </div>
-  </div>
-
-  <script src="reveal.js-4.2.1/dist/reveal.js"></script>
-  
-  <!-- reveal.js plugins -->
-  <script src="reveal.js-4.2.1/plugin/menu/menu.js"></script>
-  <script src="reveal.js-4.2.1/plugin/chalkboard/plugin.js"></script>
-  <script src="reveal.js-4.2.1/plugin/customcontrols/plugin.js"></script>
-  
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-        // Display controls in the bottom right corner
-        controls: true,
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-        // Display a presentation progress bar
-        progress: true,
-        // Can be used to limit the contexts in which the slide number appears
-        showSlideNumber: 'all',
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-        // Push each slide change to the browser history
-        // Implies `hash: true`
-        history: true,
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-        // Enable the slide overview mode
-        overview: true,
-        // Vertical centering of slides
-        center: false,
-        // Enables touch navigation on devices with touch input
-        touch: true,
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-        // Turns fragments on and off globally
-        fragments: true,
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: true,
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Transition style
-        transition: 'fade', // none/fade/slide/convex/concave/zoom
-        // Transition speed
-        transitionSpeed: 'default', // default/fast/slow
-        // Transition style for full page slide backgrounds
-        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-        // The display mode that will be used to show slides
-        display: 'block',
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        menu: {
-          // Configuration from
-          // https://github.com/denehyg/reveal.js-menu#configuration
-   
-   
-    
-    
-    
-    
-    
-    
-    
- 
- 
- 
- 
- 
-          // option not supported for change
-          loadIcons: false, // using rmarkdown provided own.
-          custom: false,
-          themes: false,
-          // themesPath: 'dist/theme/',
-          transitions: false
-        },
-
-
-        chalkboard: {
-          theme: 'whiteboard',
-        },
-        customcontrols: {
-            controls: [
-            	{ icon: '<i class="fa fa-pen-square"></i>',
-            	  title: 'Toggle chalkboard (B)',
-            	  action: 'RevealChalkboard.toggleChalkboard();'
-            	},
-            	{ icon: '<i class="fa fa-pen"></i>',
-            	  title: 'Toggle notes canvas (C)',
-            	  action: 'RevealChalkboard.toggleNotesCanvas();'
-            	}
-            ]
-        },
-
-        // Optional reveal.js plugins
-        plugins: [
-          RevealMenu,
-          RevealChalkboard,
-          RevealCustomControls,
-        ]
-      });
-
-    </script>
-  <!-- dynamically load mathjax for compatibility with self-contained -->
-  <script>
-    (function () {
-      var script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-      document.getElementsByTagName("head")[0].appendChild(script);
-    })();
-  </script>
-
-<script>
-  (function() {
-    if (window.jQuery) {
-      Reveal.addEventListener( 'slidechanged', function(event) {  
-        window.jQuery(event.previousSlide).trigger('hidden');
-        window.jQuery(event.currentSlide).trigger('shown');
-      });
+</main>
+<!-- /main column -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
-  })();
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
 </script>
+</div> <!-- /content -->
 
 
-  </body>
-</html>
+</body></html>

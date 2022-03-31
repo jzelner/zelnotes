@@ -4,7 +4,7 @@ fontsize: 12pt
 urlcolor: blue
 output: 
   revealjs::revealjs_presentation:
-    theme: "solarize"
+    theme: ["solarize", "styles.scss"]
     transition: "fade"
     css: "styles.css"
     self_contained: false
@@ -33,15 +33,17 @@ output:
     </p>
 </div>
 
+
 <div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
 
-# Today's <span class="alert">Theme</span> {.imgslide}
+# Today's <span class="alert">Theme</span> {.imgslide} 
 
 <img src="../images/radon_entry.png">
 
 [How do hierarchical models make the most use of multi-level data ](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+4/2.+Digging+into+the+multi-level+approach+to+spatial+analysis)
 
 # Agenda
+
 
 >- Quick overview of prep for thursday [in-class workshop](https://docs.google.com/document/d/1M5Cc-kkibFTGMcLi43pxGTSzZrv5hUg7_dC2puhgNp8/edit).
 
@@ -290,7 +292,6 @@ Totally unpooled models run the risk of <span class="alert">overfitting</span> t
 >- Give answers equivalent to the <span class="alert">fully pooled</span> and <span class="alert">unpooled</span> approaches if that is what the data actually suggest.
 
 # Door 🚪 #3: Partial Pooling 🏊!
-
 
 >- Allow <span class="alert">effects</span> to vary across clusters, but constrain them to come from the same distribution:
 
