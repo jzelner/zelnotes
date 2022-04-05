@@ -1,0 +1,62 @@
+---
+pagetitle: "Applied hierarchical modeling"
+author: 
+  - name: Jon Zelner
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        csl: "../../assets/american-journal-of-epidemiology.csl"
+        extract-media: session_22_applied_hierarchical_files/images
+---
+
+## Understanding the promise and perils of hierarchical modeling
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      4/5/2022  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="440" height="100"}
+
+## Agenda
+
+- Discussing Subramanian et al. paper [@subramanian2005a]
+
+- Hands-on with some multi-level models.
+
+## Discussion Questions
+
+
+
+1. What is the <span class="alert">goal</span> of the hierarchical modeling exercise in Subramanian et al.[@subramanian2005a]
+
+2. What is learned from the inclusion of multiple levels of <span class="alert">scale</span> (i.e. block group, census tract) in this analysis?
+
+3. What do you think 1-2 important <span class="alert">takeaways</span> are from reading this analysis?
+
+Use [this document](https://docs.google.com/document/d/1y8GsRLdW13IhckMF_3K4PHdHPy-eY46bzemKiaJOO6Y/edit?usp=sharing) to share your conclusions
+
+
+## Area-level covariates explained more spatial variation in <span class="alert">mortality</span> for Black vs. White residents {.imgslide}
+
+![](../images/subramanian_table_4.png)
+
+Table 4 from [@subramanian2005a]
+
+## Capturing color and random variation with multi-level models {.imgslide}
+
+![](../images/hierarchical_hands_on.png)
+
+Time to [generate some data](https://sph-umich.shinyapps.io/hierarchical_models)
+
+
+## References

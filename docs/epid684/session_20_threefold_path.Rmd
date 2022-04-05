@@ -85,6 +85,8 @@ You have <span class="alert">three choices</span>: Which 🚪 will you choose?
 Complete pooling ignores potential sources of *observed* and *unobserved* unit-level <span class="alert">confounding</span>.
 
 
+
+
 # <span class="alert">Full pooling</span> of clustered data violates assumption of independent errors
 
 A <span class="alert"> fully pooled</span> model:

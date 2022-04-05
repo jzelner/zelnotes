@@ -4,6 +4,8 @@ format:
     revealjs:
         theme: [solarized, styles.scss]
         incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        csl: "../../assets/american-journal-of-epidemiology.csl"
 ---
 
 ## <span class="alert">What Route Will You Take?</span> Workshop
@@ -20,13 +22,15 @@ format:
     </p>
 </div>
 
-![](../images/epid_logo.png){.absolute bottom=0 right=50 width="350" height="100"}
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
 
 ## Agenda
-
+a
 - Spend ~10m digesting feedback from your partner(s)
 - ~20m discussion of each project
-- ~10m end-of-class debrief
+- ~10m end-of-class debrief 
 - Preview of next time 
 
 ## <span class="alert">Instructions</span> for the workshop
@@ -42,4 +46,3 @@ format:
 # Next Time
 
 ## {background-iframe="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+4/4.+Applications+of+the+multi-level+approach+to+spatial+health+data" background-interactive=true}
-

@@ -4,3 +4,4 @@ output/*.*
 _targets
 *.log
 *.aux
+/.quarto/

@@ -18,8 +18,7 @@ output:
         toggleChalkboardButton: true
         toggleNotesButton: true
 ---
-
-
+  
 # Measuring the spatial clustering of non-vaccination and its implications for population health {#title}
 
 <div class="paddeddiv">
