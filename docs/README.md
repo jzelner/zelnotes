@@ -21,8 +21,8 @@
 [Session 17: Nonvaccination and the measurement of spatially clustered susceptibility](https://jzelner.github.io/document-garden/epid684/session_17_nonvaccination_clustering.html)  
 [Session 18: Local spatial clustering](https://jzelner.github.io/document-garden/epid684/session_18_local_clustering_nonvax.html)  
 [Session 19: Intraclass correlation](https://jzelner.github.io/document-garden/epid684/session_19_intraclass_correlation.html)  
-[Session 20: The threefold path of multi-level modeling](https://jzelner.github.io/document-garden/epid684/session_20_threefold_path.html) 
-[Session 22: Applied hierarchical models](https://jzelner.github.io/document-garden/epid684/session_22_applied_hierarchical.html) . 
+[Session 20: The threefold path of multi-level modeling](https://jzelner.github.io/document-garden/epid684/session_20_threefold_path.html)  
+[Session 22: Applied hierarchical models](https://jzelner.github.io/document-garden/epid684/session_22_applied_hierarchical.html)  
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
