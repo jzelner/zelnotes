@@ -35,8 +35,6 @@ format:
 
 ## Discussion Questions
 
-
-
 1. What is the <span class="alert">goal</span> of the hierarchical modeling exercise in Subramanian et al.[@subramanian2005a]
 
 2. What is learned from the inclusion of multiple levels of <span class="alert">scale</span> (i.e. block group, census tract) in this analysis?
@@ -52,11 +50,18 @@ Use [this document](https://docs.google.com/document/d/1y8GsRLdW13IhckMF_3K4PHdH
 
 Table 4 from [@subramanian2005a]
 
-## Capturing color and random variation with multi-level models {.imgslide}
+## Capturing <span class="alert">systematic</span> and <span class="alert">random</span> variation with multi-level models {.imgslide}
 
 ![](../images/hierarchical_hands_on.png)
 
 Time to [generate some data](https://sph-umich.shinyapps.io/hierarchical_models)
+
+## Next Time {.imgslide}
+
+![](../images/creature_from_the_black_lagoon_franchise_retrospective.jpg)
+
+The [Modifiable Areal Unit Problem!](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+5/What+do+you+measure+when+you+measure+place+effects%3F+Confronting+the+modifiable+areal+unit+problem.html)
+
 
 
 ## References
