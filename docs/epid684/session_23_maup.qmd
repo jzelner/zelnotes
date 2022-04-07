@@ -1,5 +1,5 @@
 ---
-pagetitle: "Modifiable areal unit problem"
+pagetitle: "The Modifiable areal unit problem"
 author: 
   - name: Jon Zelner
 format: 
