@@ -46,7 +46,7 @@ Residential neighborhoods
 Egocentric neighborhoods
 : Defined <span class="alert">relative to the individual's location</span>, may incorporate patterns of movement and exposure specific to them.
 
-# <span style="color:white">It came from the MAUP!</span> {background-image="../images/creature_from_the_black_lagoon_franchise_retrospective.jpg"}
+# <span style="color:white">It came from the MAUP!</span> {background-image="https://www.denofgeek.com/wp-content/uploads/2016/05/creature_from_the_black_lagoon_franchise_retrospective.jpg"}
 
 ## <span class="alert">Scale</span> Effects {.imgslide}
 
