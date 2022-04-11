@@ -14,7 +14,7 @@ format:
 ## Multi-dimensional and multi-scale approaches to residential segregation
 
 <div class="paddeddiv">
-  <p style="font-size:0.5em; text-align: left;"
+  <p style="font-size:0.5em; text-align: left;">
       EPID 684  
       Spatial Epidemiology  
       4/12/2022  
