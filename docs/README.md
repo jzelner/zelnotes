@@ -24,7 +24,7 @@
 [Session 20: The threefold path of multi-level modeling](https://jzelner.github.io/document-garden/epid684/session_20_threefold_path.html)  
 [Session 22: Applied hierarchical models](https://jzelner.github.io/document-garden/epid684/session_22_applied_hierarchical.html)  
 [Session 23: The modifiable areal unit problem](https://jzelner.github.io/document-garden/epid684/session_23_maup.html)  
-[Session 24: Hierarchical and multi-dimensional segregation](https://jzelner.github.io/document-garden/epid684/session_24_hierarchical_segregation.html)
+[Session 24: Hierarchical and multi-dimensional segregation](https://jzelner.github.io/document-garden/epid684/session_24_multidimensional_segregation.html)
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
