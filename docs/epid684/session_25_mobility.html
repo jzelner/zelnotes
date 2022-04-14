@@ -3,12 +3,12 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.166">
   <meta name="author" content="Jon Zelner">
-  <title>Modifiable areal unit problem</title>
+  <title>Mobility!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="session_22_applied_hierarchical_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="session_22_applied_hierarchical_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="session_25_mobility_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="session_25_mobility_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -36,19 +36,19 @@
       margin-left: 2em;
     }
   </style>
-  <link rel="stylesheet" href="session_22_applied_hierarchical_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="session_25_mobility_files/libs/revealjs/dist/theme/quarto.css" id="theme">
 
-  <script src="session_22_applied_hierarchical_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/quarto-html/popper.min.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="session_22_applied_hierarchical_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="session_22_applied_hierarchical_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="session_22_applied_hierarchical_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <link href="session_22_applied_hierarchical_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="session_22_applied_hierarchical_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="session_22_applied_hierarchical_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="session_22_applied_hierarchical_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <script src="session_25_mobility_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="session_25_mobility_files/libs/quarto-html/tabby.min.js"></script>
+  <script src="session_25_mobility_files/libs/quarto-html/popper.min.js"></script>
+  <script src="session_25_mobility_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <link href="session_25_mobility_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="session_25_mobility_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="session_25_mobility_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link href="session_25_mobility_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="session_25_mobility_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="session_25_mobility_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="session_25_mobility_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -340,41 +340,120 @@
     <div class="slides">
 
 
-<section id="the-modifiable-areal-unit-problem" class="slide level2">
-<h2>The Modifiable Areal Unit Problem 😱</h2>
+<section id="using-cellphone-mobility-data-to-make-sense-of-infection-heterogeneity" class="slide level2">
+<h2>Using cellphone mobility data to make sense of infection heterogeneity</h2>
 <div class="paddeddiv">
 <p style="font-size:0.5em; text-align: left;">
 EPID 684<br>
 Spatial Epidemiology<br>
-4/7/2022<br>
+4/14/2022<br>
 <br><br> Jon Zelner<br>
 <code>jzelner@umich.edu</code><br>
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<p><img data-src="session_22_applied_hierarchical_files/images/822b59d9096568865721b4be8cc6f8e903d43188.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
+<p><img data-src="session_25_mobility_files/images/822b59d9096568865721b4be8cc6f8e903d43188.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li class="fragment"><p>Components of the MAUP</p></li>
-<li class="fragment"><p>Implications of looking at different scales</p></li>
+<li class="fragment"><p>What are the uses and challenges provided by 📱 <span class="alert">mobility data</span> ?</p></li>
+<li class="fragment"><p>How can mobility data tell us about patterns of social <span class="alert">segregation</span> and inequality?</p></li>
+<li class="fragment"><p>Smoothing in 2D</p></li>
 </ul>
 </section>
-<section id="scale-effects" class="slide level2 imgslide">
-<h2><span class="alert">Scale</span> Effects</h2>
+<section id="mobility-data-have-become-more-prominent-during-the-covid-19-pandemic" class="slide level2 imgslide">
+<h2>Mobility data have become more prominent during the COVID-19 pandemic</h2>
 
-<img data-src="session_22_applied_hierarchical_files/images/52efd614a81ce3588629c9d579e53872a1a2c926.png" class="r-stretch"><p><span class="alert">Aggregating</span> up from low- to high-level spatial units results in biased estimates of measles outbreak risk.<span class="citation" data-cites="masters2020">(<a href="#/ref-masters2020" role="doc-biblioref" onclick="return false;">1</a>)</span></p>
+<img data-src="session_25_mobility_files/images/91ace82474230ff052243637c3f741b2d889bac2.png" class="r-stretch quarto-figure-center"><p class="caption">Relating mobility to COVID-19 spread in the early days of the pandemic <span class="citation" data-cites="glanz2020">(<a href="#/ref-glanz2020" role="doc-biblioref" onclick="return false;">1</a>)</span></p></section>
+<section id="what-can-mobility-data-capture-that-is-relevant-to-understanding-infectious-disease-transmission" class="slide level2">
+<h2>What can mobility data capture that is <span class="alert">relevant</span> to understanding infectious disease transmission?</h2>
+<div class="fragment">
+<p><img data-src="session_25_mobility_files/images/9067f0f56d22e10e5a00db1d72f6d7bad18174d9.png"></p>
+</div>
 </section>
-<section id="zonation-effects" class="slide level2">
-<h2><span class="alert">Zonation</span> Effects</h2>
+<section id="mobility-data-have-revealed-potential-drivers-of-inequities-in-covid-19-risk" class="slide level2">
+<h2>Mobility data have revealed potential drivers of <span class="alert">inequities</span> in COVID-19 risk</h2>
 
-<img data-src="session_22_applied_hierarchical_files/images/e38366edabdcf79b37d70289133e53736c80ab26.png" class="r-stretch"><p>Different neighborhood <span class="alert">boundaries</span> at the same scale result in different estimates of local N0<sub>2</sub> exposure. <span class="citation" data-cites="parenteau2011">(<a href="#/ref-parenteau2011" role="doc-biblioref" onclick="return false;">2</a>)</span></p>
+<img data-src="session_25_mobility_files/images/79b775ac3d130c13ac4ff739ca24a1b91d6bf7d0.png" class="r-stretch quarto-figure-center"><p class="caption">Changes in mobility by income decile in early 2020 in the U.S. from Chang et al. <span class="citation" data-cites="chang2020">(<a href="#/ref-chang2020" role="doc-biblioref" onclick="return false;">2</a>)</span></p></section>
+<section id="income-related-mobility-differences-reflect-differential-occupational-exposures" class="slide level2">
+<h2>Income-related mobility differences reflect differential <span class="alert">occupational</span> exposures</h2>
+
+<img data-src="session_25_mobility_files/images/112f214fe21ea206a645d53add43f2d4656e6e5b.png" class="r-stretch quarto-figure-center"><p class="caption">Estimated infections acquired in different types of locations by income decile from <span class="citation" data-cites="chang2020">(<a href="#/ref-chang2020" role="doc-biblioref" onclick="return false;">2</a>)</span></p></section>
+<section id="have-become-important-inputs-to-theoretical-models" class="slide level2">
+<h2>Have become important <span class="alert">inputs</span> to theoretical models</h2>
+
+<img data-src="session_25_mobility_files/images/ea995adabca3d4ec27d1879eaff572cd4c10bd55.png" class="r-stretch quarto-figure-center"><p class="caption">Mobility data were used to simulate SARS-CoV-2 transmission under different housing policy scenarios in <span class="citation" data-cites="nande2021">(<a href="#/ref-nande2021" role="doc-biblioref" onclick="return false;">3</a>)</span></p></section>
+<section id="cell-phone-data-come-in-different-shapes-and-sizes" class="slide level2">
+<h2>Cell phone data come in different shapes and sizes</h2>
+
+<img data-src="session_25_mobility_files/images/018a3ac0238768b3b5147e2f26268359a59b85e2.png" class="r-stretch quarto-figure-center"><p class="caption">Relationships between population covered and cellphone data type <span class="citation" data-cites="grantz2020">(<a href="#/ref-grantz2020" role="doc-biblioref" onclick="return false;">4</a>)</span></p></section>
+<section id="a-lot-of-processing-and-analysis-choices-take-place-between-data-collection-and-use" class="slide level2">
+<h2>A lot of <span class="alert">processing</span> and analysis <span class="alert">choices</span> take place between data collection and use</h2>
+
+<img data-src="session_25_mobility_files/images/030a9813cb82fa176fa8788026ac4ee7b6d6122b.png" class="r-stretch quarto-figure-center"><p class="caption">Using cellphone data to craft mobility networks in Italy during COVID-19 <span class="citation" data-cites="pepe2020">(<a href="#/ref-pepe2020" role="doc-biblioref" onclick="return false;">5</a>)</span></p></section>
+<section id="what-might-be-worrisome-about-the-rise-of-mobility-data-in-epidemiology" class="slide level2">
+<h2>What might be worrisome about the rise of mobility data in epidemiology?</h2>
+<ul>
+<li class="fragment"><p>Privacy 🕵️</p></li>
+<li class="fragment"><p>May drive technocratic vs.&nbsp;principled approaches to policy and decision-making</p></li>
+<li class="fragment"><p>Focus in on <span class="alert">micro factors</span> with sufficient attention to the macro drivers of micro behavior.</p></li>
+<li class="fragment"><p>Data may not be representative of variation in intensity and nature of contact.</p></li>
+<li class="fragment"><p>Simulation models built off of these data may appear more <span class="alert">authoritative</span> but have no more predictive usefulness than less-complex models.</p></li>
+</ul>
 </section>
-<section id="next-time" class="slide level2 imgslide">
-<h2>Next Time</h2>
+<section>
+<section id="mobility-neighborhood-disadvantage-and-covid-19-risk" class="title-slide slide level1 center">
+<h1>Mobility Neighborhood Disadvantage and COVID-19 🦠 risk</h1>
 
-<img data-src="session_22_applied_hierarchical_files/images/618c56f21c80136c72917cd32d55985ecca62b47.jpg" class="r-stretch"><p>The <a href="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+5/What+do+you+measure+when+you+measure+place+effects%3F+Confronting+the+modifiable+areal+unit+problem.html">Modifiable Areal Unit Problem!</a></p>
+</section>
+<section id="what-is-the-distinction-between-residential-and-mobility-neighborhood-disadvantage" class="slide level2">
+<h2>What is the distinction between <span class="alert">residential</span> and <span class="alert">mobility</span> neighborhood disadvantage?</h2>
+
+<img data-src="session_25_mobility_files/images/85396ed6ea993bc4c021bd99ae41bac6524a04d0.png" class="r-stretch quarto-figure-center"><p class="caption">How do Levy at all conceptualize the meaning of MND and RND for risk? <span class="citation" data-cites="levy2022">(<a href="#/ref-levy2022" role="doc-biblioref" onclick="return false;">6</a>)</span></p></section>
+<section id="what-is-triple-neighborhood-disadvantagetnd" class="slide level2">
+<h2>What is <span class="alert">triple neighborhood disadvantage</span>(TND)?</h2>
+<ul>
+<li class="fragment"><p>Extends the concept of neighborhood disadvantage to include <span class="alert">connected</span> locations.</p></li>
+<li class="fragment"><p>This includes neighborhood of residence, neighborhoods visited by people in a given location, and neighborhoods sending visitors to the neighborhood of interest.</p></li>
+<li class="fragment"><p>MND has been shown to be associated with increased violence risk after adjusting for RND <span class="citation" data-cites="levy2020 sampson2020">(<a href="#/ref-levy2020" role="doc-biblioref" onclick="return false;">7</a>,<a href="#/ref-sampson2020" role="doc-biblioref" onclick="return false;">8</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="mnd-predicts-increased-covid-19-cases-after-adjustment-for-rnd" class="slide level2">
+<h2>MND predicts increased COVID-19 cases after adjustment for RND</h2>
+
+<img data-src="session_25_mobility_files/images/8ed7a20b2423f952a149a4ec4399626207a99243.png" class="r-stretch"></section>
+<section id="mnd-rnd-are-strong---but-variable---mediators-of-associations-with-raceethnicty" class="slide level2">
+<h2>MND &amp; RND are strong - but <span class="alert">variable</span> - mediators of associations with race/ethnicty</h2>
+
+<img data-src="session_25_mobility_files/images/6a175ae18cb634ae336f9dc937a4a53d0719e20d.png" class="r-stretch quarto-figure-center"><p class="caption">Mediation of neighborhood percent Black residents by RND, MND</p></section>
+<section id="these-effects-vary-across-groups" class="slide level2">
+<h2>These effects <span class="alert">vary</span> across groups</h2>
+
+<img data-src="session_25_mobility_files/images/11ba89f64ba6b37c7e57fa69de6f29e7a906bb9d.png" class="r-stretch quarto-figure-center"><p class="caption">Mediation of neighborhood percent Hispanic residents by RND, MND</p></section></section>
+<section>
+<section id="smoothing-in-2-dimensions" class="title-slide slide level1 center">
+<h1><span class="alert">Smoothing</span> in 2 Dimensions 🗺️</h1>
+
+</section>
+<section id="final-hands-on" class="slide level2">
+<h2>Final hands-on!</h2>
+<p><a href="https://sph-umich.shinyapps.io/smoothing/#section-smoothing-in-two-dimensions">https://sph-umich.shinyapps.io/smoothing/</a></p>
+<div class="fragment">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BbeilmP2wY8?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p><span class="alert">Also:</span> The last time you have to hear me talk about this Lisa Simpson video!</p>
+</div>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<ul>
+<li class="fragment"><p>Last class! (🍪)</p></li>
+<li class="fragment"><p>Come prepared with 1-3 references you think your classmates (present and future) should read.</p></li>
+<li class="fragment"><p>Will compile an <span class="alert">annotated bibliography</span> that I will post on the course site for your reference and for anyone else who might be interested.</p></li>
+<li class="fragment"><p>Wrap-up discussion about <span class="alert">how the course went</span>.</p></li>
+<li class="fragment"><p><span class="alert">Open office hrs</span> for balance of time for anyone who wants to check in about projects etc.</p></li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -382,30 +461,48 @@ Spatial Epidemiology<br>
 
 </div>
 <div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-masters2020" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Masters NB, Eisenberg MC, Delamater PL, et al. <a href="https://doi.org/10.1073/pnas.2011529117">Fine-scale spatial clustering of measles nonvaccination that increases outbreak potential is obscured by aggregated reporting data</a>. <em>Proceedings of the National Academy of Sciences</em>. 2020;</div>
+<div id="ref-glanz2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Glanz J, Carey B, Holder J, et al. Where <span>America Didn</span>’t <span>Stay Home Even</span> as the <span>Virus Spread</span>. <em>The New York Times</em> [electronic article]. 2020;(<a href="https://www.nytimes.com/interactive/2020/04/02/us/coronavirus-social-distancing.html">https://www.nytimes.com/interactive/2020/04/02/us/coronavirus-social-distancing.html</a>). (Accessed April 11, 2022)</div>
 </div>
-<div id="ref-parenteau2011" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Parenteau M-P, Sawada MC. <a href="https://doi.org/10.1186/1476-072X-10-58">The modifiable areal unit problem (<span>MAUP</span>) in the relationship between exposure to <span>NO2</span> and respiratory health</a>. <em>International Journal of Health Geographics</em>. 2011;10(1):58. </div>
+<div id="ref-chang2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Chang S, Pierson E, Koh PW, et al. <a href="https://doi.org/10.1038/s41586-020-2923-3">Mobility network models of <span>COVID-19</span> explain inequities and inform reopening</a>. <em>Nature</em>. 2020;1–8. </div>
+</div>
+<div id="ref-nande2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Nande A, Sheen J, Walters EL, et al. <a href="https://doi.org/10.1038/s41467-021-22521-5">The effect of eviction moratoria on the transmission of <span>SARS-CoV-2</span></a>. <em>Nature Communications</em>. 2021;12(1):2274. </div>
+</div>
+<div id="ref-grantz2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Grantz KH, Meredith HR, Cummings DAT, et al. <a href="https://doi.org/10.1038/s41467-020-18190-5">The use of mobile phone data to inform analysis of <span>COVID-19</span> pandemic epidemiology</a>. <em>Nature Communications</em>. 2020;11(1):4961. </div>
+</div>
+<div id="ref-pepe2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Pepe E, Bajardi P, Gauvin L, et al. <a href="https://doi.org/10.1038/s41597-020-00575-2"><span>COVID-19</span> outbreak response, a dataset to assess mobility changes in <span>Italy</span> following national lockdown</a>. <em>Scientific Data</em>. 2020;7(1):230. </div>
+</div>
+<div id="ref-levy2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Levy BL, Vachuska K, Subramanian SV, et al. <a href="https://doi.org/10.1126/sciadv.abl3825">Neighborhood socioeconomic inequality based on everyday mobility predicts <span>COVID-19</span> infection in <span>San Francisco</span>, <span>Seattle</span>, and <span>Wisconsin</span></a>. <em>Science Advances</em>. 2022;8(7):eabl3825. </div>
+</div>
+<div id="ref-levy2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Levy BL, Phillips NE, Sampson RJ. <a href="https://doi.org/10.1177/0003122420972323">Triple <span>Disadvantage</span>: <span>Neighborhood Networks</span> of <span>Everyday Urban Mobility</span> and <span>Violence</span> in <span>U</span>.<span>S</span>. <span>Cities</span></a>. <em>American Sociological Review</em>. 2020;85(6):925–956. </div>
+</div>
+<div id="ref-sampson2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Sampson RJ, Levy BL. <a href="https://doi.org/10.1007/s12552-019-09273-0">Beyond <span>Residential Segregation</span>: <span>Mobility-Based Connectedness</span> and <span>Rates</span> of <span>Violence</span> in <span>Large Cities</span></a>. <em>Race and Social Problems</em>. 2020;12(1):77–86. </div>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="session_22_applied_hierarchical_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="session_25_mobility_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
 
