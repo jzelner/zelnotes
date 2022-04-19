@@ -39,10 +39,9 @@ format:
 
 ##  How far we've come<span class="fragment alert" data-fragment-index=1>...or have we?</span>{.imgslide}
 
-:::{.fragment data-fragment-index=1}
-![](../images/memes/howie_snow.png){width=450}
-Howie was not pleased with yesterday's last gasp of Winter ❄️
-:::
+![Howie was not pleased with yesterday's last gasp of Winter ❄️
+](../images/memes/howie_snow.png)
+
 
 
 ## Tobler's "First Law" {.center}
@@ -156,7 +155,17 @@ Take 15-20m:
 
   - Merlo J, Chaix B, Yang M, Lynch J, Rastam L. A brief conceptual tutorial of multilevel analysis in social epidemiology: linking the statistical concept of clustering to the idea of contextual phenomenon. J Epidemiol Community Health. 2005;59(6):443-449. doi:10.1136/jech.2004.023473
 
+## Constructing a '<span class="alert">time capsule</span>' annotated bibliography
+
 3. Write a short (<span class="alert">~1 para</span>) blurb explaining what you found interesting/useful/surprising about each reference.
+
+## That's it! 
+
+- I'll hang around to answer any questions you might have about projects, etc.
+
+- Please submit <span class="alert">final products</span> and self assessments by 4/26.
+
+- Stay in touch!
 
 
 ## References
