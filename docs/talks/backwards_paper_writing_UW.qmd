@@ -112,11 +112,11 @@ format:
 :::
 
 
-## Backwards paper writing is just a  <span class="alert">goal-oriented</span> approach to research and writing
+## Backwards writing is a <span class="alert">goal-oriented</span> approach 
 
 :::{.columns}
 
-:::{.column width=60%}
+:::{.column width=70%}
 
 1. Set <span class="alert">high-level</span> scientific and professional goals for your work. 
 
@@ -128,7 +128,7 @@ format:
 
 :::
 
-:::{.column width=40%}
+:::{.column width=30%}
 ![](../images/backwards_writing_flow.png)
 :::
 
