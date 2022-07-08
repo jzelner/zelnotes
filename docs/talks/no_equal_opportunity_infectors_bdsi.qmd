@@ -8,7 +8,7 @@ format:
         incremental: true
         bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
         csl: "../../assets/american-journal-of-epidemiology.csl"
-        extract-media: no_equal_opportunity_infectors_bdsi/images
+        extract-media: no_equal_opportunity_infectors_bdsi_files/images
 ---
 
 ## There are no equal opportunity infectors
