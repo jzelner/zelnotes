@@ -27,7 +27,7 @@ format:
 
 
 ## Agenda
-a
+
 - Spend ~10m digesting feedback from your partner(s)
 - ~20m discussion of each project
 - ~10m end-of-class debrief 

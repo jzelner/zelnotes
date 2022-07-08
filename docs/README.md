@@ -31,5 +31,7 @@
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
 
+[There Are No Equal Opportunity Infectors](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors_bdsi.html)
+
 [Backwards paper writing for UW demography seminar](https://jzelner.github.io/document-garden/talks/backwards_paper_writing_UW.html)
 
