@@ -99,12 +99,21 @@ According to our friends at Wikipedia, social history is:
 
 ## <span class="alert">How</span>, exactly, are we going to do that?
 
-- [Course Homepage](https://zelnotes.io/teaching/PUBHLTH405/Social+History+of+Infectious+Disease)
+
+Half of the class take 10m to review and diagram out the themes of the course:
+
 
 - [Syllabus](https://zelnotes.io/teaching/PUBHLTH405/PUBHLTH+405+Syllabus)
 
+- [Key Texts](https://zelnotes.io/teaching/PUBHLTH405/Key+Books+%26+Other+Resources)
+
+Other half, do the same but for the semester-long project:
+
 - [Semester project](https://zelnotes.io/teaching/PUBHLTH405/pathogen+project/Pathogen+Project)
+
+Everyone may want to look at the [Course Homepage](https://zelnotes.io/teaching/PUBHLTH405/Social+History+of+Infectious+Disease)
+
 
 ## Next Time
 
-[Plans for Session 2](https://zelnotes.io/teaching/PUBHLTH405/modules/Laying+the+Foundation/2.+Why+take+a+historical+perspective+on+infectious+disease%3F)
+[Why take a historical perspective on infectious disease?](https://zelnotes.io/teaching/PUBHLTH405/modules/Laying+the+Foundation/2.+Why+take+a+historical+perspective+on+infectious+disease%3F)
