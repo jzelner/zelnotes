@@ -50,7 +50,7 @@ format:
 
 :::
 :::{.column width=60%}
-![Me: Basically interested in how infectious diseases get from one person or place to another.](../images/jz_online_image.png)
+![Me: Basically interested in how infectious diseases get from one person or place to another.](../images/zelner_headshot.jpg)
 :::
 :::
 
@@ -88,7 +88,7 @@ According to our friends at Wikipedia, social history is:
 
 > "An area of history that focuses on the "lived experience of the past".
 
-# The three main tasks of social history include:
+## The three main tasks of social history:
 
 1. Documenting large <span class="alert">structural</span> changes; 
 2. Reconstructing the experiences of <span class="alert">ordinary people</span> in the course of those changes; and 
@@ -96,9 +96,8 @@ According to our friends at Wikipedia, social history is:
 
 (See [Tilly 1985](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/50992/218.pdf) for more info)
 
-# So, how, exactly are we going to do that?
 
-## Plans for the term
+## <span class="alert">How</span>, exactly, are we going to do that?
 
 - [Course Homepage](https://zelnotes.io/teaching/PUBHLTH405/Social+History+of+Infectious+Disease)
 
