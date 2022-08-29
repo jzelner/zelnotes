@@ -1,0 +1,111 @@
+---
+pagetitle: "First day!"
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        csl: "../../assets/american-journal-of-epidemiology.csl"
+        cap-location: "bottom"
+---
+
+## What is this class all about?
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
+## Agenda
+
+- Introductions
+
+- Review course syllabus
+
+- Discuss the goals of the semester-long project
+
+- Answer any other questions
+
+## Who am I & what do I do?
+
+:::{.columns}
+:::{.column width=40%}
+
+- Infectious disease epidemiology
+
+- Social epidemiology
+
+- Spatial analysis/transmission modeling
+
+- Teaching this class is always a highlight of my year. 
+
+:::
+:::{.column width=60%}
+![Me: Basically interested in how infectious diseases get from one person or place to another.](../images/jz_online_image.png)
+:::
+:::
+
+## What will we do this term?
+
+- Examine how social and biological systems influence each other to produce spatio-temporal patternns of infection.
+
+- Go deep on the mechanisms that create historical and present-day inequalities in infection. 
+
+- Think about how these understandings should influence how we intervene in socio-biological systems of infection.
+
+- Our overarching goal is to draw lessons from the <span class="alert">epidemiological past</span> that can help us in the present and future.
+
+- Develop and explore your own questions about the social and biological mechanisms driving infectious disease transmission.
+
+## Jumping in with both feet 🤿
+
+What do you think the most important ways are that social systems impact (5m on your own):
+
+1. Infectious disease <span class="alert">transmission</span> and,
+
+2. Infectious disease <span class="alert"> outcomes</span> (i.e. severe disease, disability, and death)?
+
+## With your neighbors 🏘️
+
+Spend another <span class="alert">5-10m</span> discussing these questions:
+
+1. What do you think a social history *is*, <span class="alert">anyway</span>?
+
+2. Why might it be important to take a <span class="alert">social historical</span> perspective on infectious disease? 
+
+## What is a social history?
+
+According to our friends at Wikipedia, social history is:
+
+> "An area of history that focuses on the "lived experience of the past".
+
+# The three main tasks of social history include:
+
+1. Documenting large <span class="alert">structural</span> changes; 
+2. Reconstructing the experiences of <span class="alert">ordinary people</span> in the course of those changes; and 
+3. <span class="alert">Connecting</span> the two
+
+(See [Tilly 1985](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/50992/218.pdf) for more info)
+
+# So, how, exactly are we going to do that?
+
+## Plans for the term
+
+- [Course Homepage](https://zelnotes.io/teaching/PUBHLTH405/Social+History+of+Infectious+Disease)
+
+- [Syllabus](https://zelnotes.io/teaching/PUBHLTH405/PUBHLTH+405+Syllabus)
+
+- [Semester project](https://zelnotes.io/teaching/PUBHLTH405/pathogen+project/Pathogen+Project)
+
+## Next Time
+
+[Plans for Session 2](https://zelnotes.io/teaching/PUBHLTH405/modules/Laying+the+Foundation/2.+Why+take+a+historical+perspective+on+infectious+disease%3F)
