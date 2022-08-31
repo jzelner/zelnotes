@@ -80,7 +80,7 @@ format:
 > "New medical technologies — antibiotics, vaccines, psychotropic  medications, and a host of other clinical interventions—provided apolitical means of attacking disease without disrupting the social order." [@fairchild2010]
 :::
 :::{.column width=50%}
-![Medical innovation often takes place in the context of more <span class="alert">cyclical</span> patterns of human history](../images/20220831104346.png)  
+![Medical innovation often takes place in the context of more <span class="alert">cyclical</span> patterns of human history](../images/20220831104346.png){width=70%}  
 :::
 :::
 
