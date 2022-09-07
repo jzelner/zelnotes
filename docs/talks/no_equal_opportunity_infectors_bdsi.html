@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.347">
+<script src="no_equal_opportunity_infectors_bdsi_files/libs/clipboard/clipboard.min.js"></script>
+<script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tabby.min.js"></script>
+<script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/popper.min.js"></script>
+<script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Jon Zelner">
   <title>No equal opportunity infectors</title>
@@ -19,13 +25,6 @@
     ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="no_equal_opportunity_infectors_bdsi_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <script src="no_equal_opportunity_infectors_bdsi_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/popper.min.js"></script>
-  <script src="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="no_equal_opportunity_infectors_bdsi_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="no_equal_opportunity_infectors_bdsi_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="no_equal_opportunity_infectors_bdsi_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="no_equal_opportunity_infectors_bdsi_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -315,7 +314,7 @@
     }
   </style>
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -329,7 +328,7 @@
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<p><img data-src="no_equal_opportunity_infectors_bdsi_files/images/822b59d9096568865721b4be8cc6f8e903d43188.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
+<p><img data-src="no_equal_opportunity_infectors_bdsi_files/mediabag/../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
 </section>
 <section id="goals" class="slide level2">
 <h2>Goals</h2>
@@ -575,8 +574,10 @@ Zelner et al.&nbsp;(2022), <a href="https://journals.plos.org/ploscompbiol/artic
 <section id="thanks" class="slide level2">
 <h2>Thanks!</h2>
 <p>If you’re interested in learning more about our work, check our lab site at <a href="https://epibayes.io">epibayes.io</a></p>
-
-<img src="../images/epibayeslogo.png" class="r-stretch"><p style="font-size: 0.9em; text-align: center;">
+<figure>
+<a href="https://epibayes.io"> <img src="../images/epibayeslogo.png"> </a>
+</figure>
+<p style="font-size: 0.9em; text-align: center;">
 Get in touch at <code>jzelner@umich.edu</code>!
 </p>
 </section></section>
@@ -589,7 +590,7 @@ Get in touch at <code>jzelner@umich.edu</code>!
 </div>
 <!-- Hannah -->
 <div class="teamMember">
-<img class="teamPic" src="../images/labmembers/hannah.png"> <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" arget="_blank">Hannah Steinberg</a>
+<img class="teamPic" src="../images/labmembers/hannah.png"> <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" arget="_blank" href="">Hannah Steinberg</a>
 </div>
 <!-- Joey -->
 <div class="teamMember">
@@ -837,6 +838,24 @@ Get in touch at <code>jzelner@umich.edu</code>!
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);

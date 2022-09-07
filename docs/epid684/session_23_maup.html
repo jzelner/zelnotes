@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.347">
+<script src="session_23_maup_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session_23_maup_files/libs/quarto-html/tabby.min.js"></script>
+<script src="session_23_maup_files/libs/quarto-html/popper.min.js"></script>
+<script src="session_23_maup_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="session_23_maup_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session_23_maup_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="session_23_maup_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Jon Zelner">
   <title>The Modifiable areal unit problem</title>
@@ -38,13 +44,6 @@
     }
   </style>
   <link rel="stylesheet" href="session_23_maup_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <script src="session_23_maup_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="session_23_maup_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="session_23_maup_files/libs/quarto-html/popper.min.js"></script>
-  <script src="session_23_maup_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="session_23_maup_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="session_23_maup_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="session_23_maup_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="session_23_maup_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="session_23_maup_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="session_23_maup_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -334,7 +333,7 @@
     }
   </style>
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -351,7 +350,7 @@ Spatial Epidemiology<br>
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<p><img data-src="session_23_maup_files/images/822b59d9096568865721b4be8cc6f8e903d43188.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
+<p><img data-src="session_23_maup_files/mediabag/../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
@@ -386,25 +385,25 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
 <section id="scale-effects" class="slide level2 imgslide">
 <h2><span class="alert">Scale</span> Effects</h2>
 <div class="fragment">
-<p><img data-src="session_23_maup_files/images/52efd614a81ce3588629c9d579e53872a1a2c926.png"></p>
+<p><img data-src="session_23_maup_files/mediabag/../images/masters_pnas_scales.png"></p>
 <p><span class="alert">Aggregating</span> up from low- to high-level spatial units results in biased estimates of measles outbreak risk.<span class="citation" data-cites="masters2020">(<a href="#/ref-masters2020" role="doc-biblioref" onclick="return false;">1</a>)</span></p>
 </div>
 </section>
 <section id="zonation-effects" class="slide level2 imgslide">
 <h2><span class="alert">Zonation</span> Effects</h2>
 <div class="fragment">
-<p><img data-src="session_23_maup_files/images/e38366edabdcf79b37d70289133e53736c80ab26.png"></p>
+<p><img data-src="session_23_maup_files/mediabag/../images/ottawa_no2.png"></p>
 <p>Different neighborhood <span class="alert">boundaries</span> at the same scale result in different estimates of local N0<sub>2</sub> exposure. <span class="citation" data-cites="parenteau2011">(<a href="#/ref-parenteau2011" role="doc-biblioref" onclick="return false;">2</a>)</span></p>
 </div>
 </section>
 <section id="administrative-boundaries-are-very-important-for-characterizing-variation-in-policy-related-outcomes" class="slide level2">
 <h2><span class="alert">Administrative boundaries</span> are very important for characterizing variation in policy-related outcomes</h2>
 
-<img data-src="session_23_maup_files/images/bf0e48ee51a390d41b8d77d4fed0d4f87012e59d.png" class="r-stretch quarto-figure-center"><p class="caption">Case rates of measles between Texarkana, TX and Texarkana, AR reflected state-level policy differences <span class="citation" data-cites="landrigan1972a">(<a href="#/ref-landrigan1972a" role="doc-biblioref" onclick="return false;">3</a>)</span></p></section>
+<img data-src="session_23_maup_files/mediabag/../images/texarkana_measles.png" class="r-stretch quarto-figure-center"><p class="caption">Case rates of measles between Texarkana, TX and Texarkana, AR reflected state-level policy differences <span class="citation" data-cites="landrigan1972a">(<a href="#/ref-landrigan1972a" role="doc-biblioref" onclick="return false;">3</a>)</span></p></section>
 <section id="environmental-exposures-like-air-pollution-do-not-respect-administrative-boundaries" class="slide level2">
 <h2>Environmental exposures like <span class="alert">air pollution</span> do not respect administrative boundaries</h2>
 
-<img data-src="session_23_maup_files/images/1ca9427bf75b6032412e9be9a2614e44d1b1683d.png" class="r-stretch quarto-figure-center"><p class="caption">Variation in N0<sub>2</sub> exposure in Ottawa, Ontario <span class="citation" data-cites="parenteau2011">(<a href="#/ref-parenteau2011" role="doc-biblioref" onclick="return false;">2</a>)</span></p></section>
+<img data-src="session_23_maup_files/mediabag/../images/ottawa_no2_continuous.png" class="r-stretch quarto-figure-center"><p class="caption">Variation in N0<sub>2</sub> exposure in Ottawa, Ontario <span class="citation" data-cites="parenteau2011">(<a href="#/ref-parenteau2011" role="doc-biblioref" onclick="return false;">2</a>)</span></p></section>
 <section id="what-does-any-of-this-have-to-do-with-me" class="slide level2">
 <h2>What does any of this have to do with <span class="alert">me</span>?</h2>
 <p>Take 5-10m to <span class="alert">identify</span> using this <a href="https://miro.com/welcomeonboard/OEo2U0VDVkpiamhseVdMN243NTJHVkVpdk9iU0ZZSk1OeEJMQ09nell0NDE1aXpKUkMzRFBWbldMdXl0YWVmcXwzMDc0NDU3MzUwNDM2MzA5MTQx?invite_link_id=606920066591">miro board</a>:</p>
@@ -416,7 +415,7 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
 <section id="why-should-we-be-concerned-about-the-tyrrany-of-neighborhoods" class="slide level2 imgslide">
 <h2>Why should we be concerned about the <span class="alert">tyrrany of neighborhoods</span>?</h2>
 <div class="fragment">
-<p><img data-src="session_23_maup_files/images/85a56e3bba7e8fc037821bfb587ae1173118b250.png"> Not all exposures happen at a single scale (From <span class="citation" data-cites="petrovic2020">(<a href="#/ref-petrovic2020" role="doc-biblioref" onclick="return false;">4</a>)</span>)</p>
+<p><img data-src="session_23_maup_files/mediabag/../images/petrovic_neighborhood_scales.png"> Not all exposures happen at a single scale (From <span class="citation" data-cites="petrovic2020">(<a href="#/ref-petrovic2020" role="doc-biblioref" onclick="return false;">4</a>)</span>)</p>
 </div>
 </section>
 <section id="a-thought-experiment-about-scales" class="slide level2">
@@ -433,8 +432,8 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="session_23_maup_files/images/8c168baa48a1532b26460f572bd60d7f3cde130c.png"></p>
-<p></p><figcaption aria-hidden="true">Variation within and between egocentric neighborhoods declines with increasing size <span class="citation" data-cites="petrovic2022">(<a href="#/ref-petrovic2022" role="doc-biblioref" onclick="return false;">5</a>)</span></figcaption><p></p>
+<p><img data-src="session_23_maup_files/mediabag/../images/petrovic_amsterdam_income.png"></p>
+<p></p><figcaption>Variation within and between egocentric neighborhoods declines with increasing size <span class="citation" data-cites="petrovic2022">(<a href="#/ref-petrovic2022" role="doc-biblioref" onclick="return false;">5</a>)</span></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -444,8 +443,8 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="session_23_maup_files/images/b715215cf62179a758c5eecfcfaadbac70abdf98.png"></p>
-<p></p><figcaption aria-hidden="true">Share of low income people in neighborhood becomes a weaker predictor of individual income as scale increases <span class="citation" data-cites="petrovic2022">(<a href="#/ref-petrovic2022" role="doc-biblioref" onclick="return false;">5</a>)</span></figcaption><p></p>
+<p><img data-src="session_23_maup_files/mediabag/../images/petrovic_amsterdam_2.png"></p>
+<p></p><figcaption>Share of low income people in neighborhood becomes a weaker predictor of individual income as scale increases <span class="citation" data-cites="petrovic2022">(<a href="#/ref-petrovic2022" role="doc-biblioref" onclick="return false;">5</a>)</span></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -462,7 +461,7 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
 <section id="next-time" class="slide level2 imgslide">
 <h2>Next Time</h2>
 
-<img data-src="session_23_maup_files/images/b24696f3ebff17a4240c5bae9d574ac52477a2d6.png" class="r-stretch quarto-figure-center"><p class="caption">Examining segregation as a multi-scalar, multi-dimensional phenomenon</p></section>
+<img data-src="session_23_maup_files/mediabag/../images/lichter_high_macro_segregation.png" class="r-stretch quarto-figure-center"><p class="caption">Examining segregation as a multi-scalar, multi-dimensional phenomenon</p></section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div class="footer footer-default">
@@ -699,6 +698,24 @@ Defined <span class="alert">relative to the individual’s location</span>, may 
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
