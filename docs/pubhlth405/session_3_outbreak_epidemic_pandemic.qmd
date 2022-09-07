@@ -1,0 +1,201 @@
+---
+pagetitle: "Outbreak, epidemic, pandemic"
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Outbreak, epidemic, pandemic
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
+## Agenda
+
+:::{.columns}
+:::{.column width=50%}
+- What is an epidemic?
+
+  - According to the CDC?
+  - According to Rosenberg?
+  - According to <span class="alert">us</span>?
+
+:::
+:::{.column width=50%}
+
+:::
+:::
+ 
+## The different types of <span class="alert">infectious disease events</span> according to the CDC
+
+:::{.columns}
+
+:::{.column width=30%}
+
+:::{.nonincremental}
+- Outbreak
+
+- Epidemic
+
+- Endemic
+
+- Pandemic
+:::
+
+:::
+:::{.column width=70%}
+- Take 5m in small groups to discuss what differentiates these from each other. 
+
+- What types of social and historical factors  are likely to influence each of these types of events
+
+- How are they similar? 
+
+- How might they differ?
+:::
+
+:::
+
+
+
+## What does it mean to take <span class="alert">dramaturgical</span> perspective 🎭 on epidemics? 
+
+:::{.fragment}
+:::{.columns}
+:::{.column width=50%}
+> "A true epidemic is <span class="alert">an event</span>, not a trend." [@rosenberg2020a]
+:::
+:::{.column width=50%}
+![1918 Influenza pandemic: An event?](../images/20220907105450.png) 
+:::
+:::
+:::
+
+
+## Epidemic as a play in three acts:
+
+1. Progressive <span class="alert">Revelation</span>
+
+2. Managing <span class="alert">Randomness</span>
+
+3. Negotiating Public <span class="alert">Response</span>
+
+## Progressive Revelation
+
+:::{.columns}
+:::{.column width=40%}
+> Only when the presence of an epidemic becomes unavoidable is there public admission of its existence. <span class="alert">Bodies must accumulate and the sick must suffer in increasing numbers</span> before officials acknowledge what can no longer be ignored. [@rosenberg2020a, p.566]
+:::
+:::{.column width=60%}
+
+:::{.r-stack}
+
+:::{.fragment .fade-out fragment-index=1}
+![Reuters, 12/31/2019](../images/20220907125434.png)  
+:::
+
+:::{.fragment .fade-in-then-out fragment-index=1}
+![New York Times, 1/20/2020](../images/20220907125243.png)  
+:::
+
+:::{.fragment .fade-in-then-out fragment-index=2}
+![New York Times, 2/20/2020](../images/20220907110534.png)  
+:::
+
+:::{.fragment .fade-in-then-out fragment-index=3}
+![Statehouse news bureau, 3/9/2020](../images/20220907124659.png)  
+:::
+
+:::{.fragment .fade-in-then-out fragment-index=4}
+![bbc.com, 3/11/2020](../images/20220907115712.png)  
+:::
+
+:::{.fragment .fade-in fragment-index=5}
+![Only after cases were identified in Michigan was a <span class="alert">state of emergency</span> declared here. (clickondetroit.com, 3/11/2020)](../images/20220907115325.png)  
+:::
+
+
+:::
+:::
+
+
+:::
+
+
+## Managing Randomness
+
+:::{.columns}
+:::{.column width=40%}
+> Accepting the existence of an epidemic implies — in some sense demands — the creation of a framework within which its dismaying arbitrariness may be managed. <span class="alert">Collective agreement on that explanatory framework</span> may be seen as the inevitable second stage in any epidemic. [@rosenberg2020a, pp.567]
+:::
+:::{.column width=60%}
+   ![In the absence of clarity, we can end up with some strange ideas about cause and effect...](../images/20220907111024.png)  
+:::
+:::
+
+
+## Public Response
+
+:::{.columns}
+:::{.column width=40%}
+>  In the stress of an epidemic..., <span class="alert">failure to take action constitutes action</span>.  An epidemic might in this sense be likened to a trial, with policy choices constituting the possible verdicts. [@rosenberg2020a, pp.569]
+
+:::
+:::{.column width=60%}
+
+:::{.r-stack}
+:::{.fragment .fade-out fragment-index=1}
+   ![Action - or lack of action - in an epidemic is clearly a function of the social and political environment of the time in which it takes place.](../images/20220907111453.png)
+:::
+
+:::{.fragment .fade-in fragment-index=1} 
+   ![Outwardly visible signifiers of prevention clearly also have a <span class="alert">dramaturgical</span> element](../images/20220907114014.png)
+:::
+:::
+:::
+
+:::
+
+## How can we <span class="alert">apply</span> Rosenberg's take to real-world problems?
+
+- To what extent do Rosenberg's criteria and those of the CDC align with each other?
+
+- Which set of definitions is more useful from a day-to-day perspective? 
+
+- Could we integrate Rosenberg's ideas into a revised set of guidelines?
+
+## <span class="alert">Revising</span> CDC's definitions  
+
+:::{.columns}
+:::{.column width=50%}
+- We are going to take a shot at doing a bit of what this <span class="alert">tweet suggests</span>:
+
+- Try to channel some of the ideas from "What is an epidemic?" to <span class="alert">revise</span> widely-used CDC definitions and guidance.
+
+- Open up [this document](https://docs.google.com/document/d/1KDZubj5-MlLY6K6vLBlRHn1DkMkGg8C8DzerdEIG21Q/edit?usp=sharing) and read the instructions to get started.
+:::
+:::{.column width=50%}
+   <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Public health would work better if we stopped mischaracterizing it as an academic field and instead defined it as a necessarily political practice that depends upon synthesizing tools from history, anthropology, epidemiology, geography, planetary sciences, biology, statistics etc</p>&mdash; Eric Reinhart (@_Eric_Reinhart) <a href="https://twitter.com/_Eric_Reinhart/status/1565309851672186883?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+:::
+:::
+
+
+## Next Time
+
+[Explaining Epidemics](https://zelnotes.io/teaching/PUBHLTH405/modules/Laying+the+Foundation/4.+Explaining+Epidemics)
+
+## References
