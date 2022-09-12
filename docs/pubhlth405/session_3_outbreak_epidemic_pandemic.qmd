@@ -190,6 +190,7 @@ format:
 :::{.column width=50%}
    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Public health would work better if we stopped mischaracterizing it as an academic field and instead defined it as a necessarily political practice that depends upon synthesizing tools from history, anthropology, epidemiology, geography, planetary sciences, biology, statistics etc</p>&mdash; Eric Reinhart (@_Eric_Reinhart) <a href="https://twitter.com/_Eric_Reinhart/status/1565309851672186883?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
 :::
 :::
 

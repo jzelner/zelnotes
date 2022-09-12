@@ -97,7 +97,7 @@ What are the different modes of common-source outbreaks and epidemics?
 ## What characterizes a <span class="alert">propagated</span> epidemic?
 
 :::{.fragment .fade-in fragment-index=1}
-![Transmission!](../images/20220909115550.png) 
+![Transmission!](../images/20220909115550.png){width=60%}
 :::
 
 :::{.fragment .fade-in fragment-index=2}
@@ -130,7 +130,7 @@ In broad strokes, what do the mechanisms that Rosenberg identifies in 'Explainin
 ## How would <span class="alert">you</span> summarize the critique that is made in the Mamelund piece? 
 
 :::{.columns}
-:::{.column width=50%}
+:::{.column width=60%}
 - What common fallacy about <span class="alert">pandemics</span> do Mamelund and Dimka identify?
 
 - What <span class="alert">motivations</span> do they identify for deeper study of the 1918 influenza pandemic in the context of COVID?
@@ -139,7 +139,7 @@ In broad strokes, what do the mechanisms that Rosenberg identifies in 'Explainin
 
 - Thinking back to the [Krishnan piece](https://www.dropbox.com/s/leby8v8cnq66f9b/krishnan_et_al_2020_historical_insights_on_coronavirus_disease_2019_%28covid-19%29%2C_the_1918_influenza.pdf?dl=0) from the beginning of the term, do they come up with a similar or different conclusion?
 :::
-:::{.column width=50%}
+:::{.column width=40%}
    ![Multi-level socio-biological framework from Mamelund & Dimka](../images/20220909095557.png)  
 :::
 :::
