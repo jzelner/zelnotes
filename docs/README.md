@@ -27,6 +27,12 @@
 [Session 24: Hierarchical and multi-dimensional segregation](https://jzelner.github.io/document-garden/epid684/session_24_multidimensional_segregation.html)  
 [Session 26: Mobility data and infection risk](https://jzelner.github.io/document-garden/epid684/session_25_mobility.html)  
 [Session 27: Wrapping up](https://jzelner.github.io/document-garden/epid684/session_26_wrap_up.html)
+
+# PUBHLTH 405
+[Session 3: Outbreak, Epidemic, Pandemic](https://jzelner.github.io/document-garden/pubhlth405/session_3_outbreak_epidemic_pandemic.html)
+[Session 4: Explaining Epidemics](https://jzelner.github.io/document-garden/pubhlth405/session_4_explaining_epidemics.html)
+[Session 5: Walking into a Cholera outbreak](https://jzelner.github.io/document-garden/pubhlth405/session_5_ghost_map_intro.html)
+
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
