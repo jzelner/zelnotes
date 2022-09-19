@@ -31,8 +31,11 @@ format:
 
 - How did Snow use different levels of <span class="alert">scale</span> to push back on the ☁️<span style="color:green">miasma</span>☁️ theory of cholera infection?
 
-- If time: pathogen project work time
+- If time: pathogen project groups work
 
+## Here we are, relevant as ever...
+
+![What phase of Rosenberg's outbreak trajectory would this put us in?](../images/20220919114028.png)  
 
 ## John Snow, pioneering anesthesiologist
 
@@ -100,7 +103,13 @@ What is another term that describes this approach?
 ## Another word for this is <span class="alert">consilience</span>
 
 > "In science and history, <span class="alert">consilience</span>...is the principle that evidence from independent, unrelated sources can "converge" on strong conclusions. That is, when multiple sources of evidence are in agreement, the conclusion can be very strong even when none of the individual sources of evidence is significantly so on its own."([Wikipedia definition of consilence](https://en.wikipedia.org/wiki/Consilience))
-## Snow built his understanding with information from <span class="alert">multiple sources</span>
+
+## Your turn to make connections <span class="alert">across scales</span>
+
+![We will use this [Miro board](https://miro.com/app/board/uXjVPWBomlk=/?share_link_id=219375095326) to get started on your group's representation of Snow's multi-scale connections](../images/20220916111609.png)  
+
+
+## First: Discuss how Snow built his understanding with information from <span class="alert">multiple sources</span> (~10m)
 
 - Personal experience
 
@@ -110,14 +119,9 @@ What is another term that describes this approach?
 
 - William Farr's tables of cholera deaths
 
+-  Anything else?
 
-
-## Your turn to make connections <span class="alert">across scales</span>
-
-![Go to this [Miro board](https://miro.com/app/board/uXjVPWBomlk=/?share_link_id=219375095326) to get started on your group's representation of Snow's multi-scale connections](../images/20220916111609.png)  
-
-
-## Some questions to chew over in your groups
+## Some other questions that might be helpful to chew over in your groups
 
 1. Why was miasma a compelling explanation for outbreaks of Cholera in South London?
 
