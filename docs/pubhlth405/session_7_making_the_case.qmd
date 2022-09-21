@@ -1,0 +1,185 @@
+---
+pagetitle: "Walking into Golden Square"
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Making the case for the water supply 
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+## Agenda
+
+- Review Snow's pre-1854 explorations
+
+- Discuss his analysis of the Golden Square outbreak
+
+## {data-background-image="../images/snow_map.png"}
+
+<h1 style="font-size: 3em; color: white; -webkit-text-stroke:2px black">Snow's Road to the 1854 Outbreak</h1>
+
+## Rewind to 1848 {auto-animate="true"}
+
+<img src="../images/elbe_arrival.png" width="400">
+
+## Rewind to 1848 {auto-animate="true"}
+
+<img src="../images/elbe_blenkinsopp.png">
+
+## Rewind to 1848 {auto-animate="true"}
+
+<img src="../images/elbe_spread.png">
+
+## I smell a rat...
+
+> "[I]t was stretching matters beyond belief to suggest that the room should suddenly become prone to those <span class="alert">poisonous vapors</span> the very day it was occupied by a sailor traveling from a city beseiged by the disease."
+
+## In Snow's words {transition-speed="slow"}
+
+:::{.columns}
+:::{.column width=50%}
+> "Who can doubt that the case of John Harnold...was the true cause of the malady in Blenkinsopp...And if cholera be communicated in some instances, is there not the strongest possibility that it is so in the others - in short, that <span class="alert">similar effects depend on similar causes<span>."
+
+:::
+:::{.column width=50%}
+
+:::{.r-stack}
+:::{.fragment .shrink fragment-index=1}
+  ![](../images/jon_snow.jpg)
+:::
+
+:::{.r-stack .fragment .fade-left fragment-index=1 }
+  ![](../images/john_snow.jpg) 
+:::
+
+:::
+:::
+:::
+
+## What happened in the 1849 <span class="alert">Thomas street outbreak</span> that drove these ideas home for Snow?
+
+:::{.fragment}
+> "Whether you looked at the evidence on the scale of an urban courtyard or on the scale of entire city neighborhoods, the same pattern repeated itself: the cholera seemed to segment itself around shared water supplies. <span class="alert">If the miasma theory were right, why would it draw such arbitrary distinctions?</span> Why would the cholera devastate one building but leave the one next door unscathed? Why would one slum suffer twice the losses as a slum with arguably worse sanitary conditions?" (Johnson, p.74)
+:::
+
+## {data-background-image="../images/snow_water_map.jpg"}
+
+<h1 style="font-size: 3em; color: white; -webkit-text-stroke:2px black">The Grand Experiment</h1>
+
+## What was the *experimentum crucis*?
+
+- Snow took advantage of changes in infrastructure to compare neighborhoods served with contaminated and clean water.
+
+- Example of a natural experiment.
+
+- Exploits some kind of random variation in exposure to make causal inferences where they would otherwise not be possible.
+
+- What are some other examples of a natural experiment?
+
+
+## Changes in London water service provided an opportunity for Snow
+<div class="toprow">
+  <div class="textcolumn">
+  <ul>
+  <li>Around 1850, parliament mandated that all water companies move their intake beyond the <span class="alert">outflow of the Thames by 1855</span></li>
+  <li class="fragment">In south London there were two major water suppliers: Southwark & Vauxhall (S&V) and Lambeth.</li>
+  <li class="fragment">Lambeth moved the intake up in 1852, but S&V waited until 1855.</li>
+  </div>
+
+  <div style="flex:50%"><img src="../images/snow_water_map.jpg">
+    <p style="font-size: 0.5em">Snow's Water Supply Map</p></div>
+</div>
+
+## Snow's map of water suppliers
+
+<img src="../images/snow_water_map.jpg">
+
+## Conducting the grand experiment
+
+- Snow divided data into sub-districts of South London organized by water supplier.
+
+- 12 were served by only S&V, 3 by Lambeth alone
+
+- <span class="alert">1/100</span> people died of Cholera in S&V only districts, but none among the > 14K living in Lambeth districts
+
+## What made the Grand Experiment <span class="alert">inconclusive</span>?
+
+-  16 sub-districts were served by both suppliers
+
+- Within these districts, water service was overlapping at a fine scale.
+
+- Snow went door-to-door...but people living in these districts often had no idea where their water came from.
+
+- So, he collected water from them and tried to find evidence of the causal agent of Cholera in the sample
+
+# <span class="alert">The Pump!</span> {data-background-image="../images/broad_street_pump.jpg"} 
+
+## Snow searched for exceptions that prove the rule to convince skeptics
+
+> Snow knew that the case would be made in the exceptions to the rule. What he needed now were aberrations, deviations from the norm. <span class="alert">Pockets of life where you would expect death, pockets of death where you would expect life.</span>  (p.140)
+
+
+## Snow's experience with anesthesia contributed to his <span class="alert">miasma</span> debunking
+
+> [Snow's] experience with choloform and ether had also endowed [him] with an intuitive grasp of the way that gases disperse in the environment. Ether could be deadly in a concentrated form, delivered directly to the patient’s lungs. <span class="alert">But a doctor delivering it, standing a foot away from the patient, wouldn’t feel its effects in the slightest, because the density of ether molecules in the air dropped at a precipitous rate the farther removed one was from the inhaler itself.</span>  (p.145)
+
+## In your groups from last time: What happened, exactly, in Golden Square?
+
+- What was the most likely route by which cholera was introduced to the Broad Street Pump?
+
+- Why didn't the outbreak spread <span class="alert">exponentially</span>?
+
+- What is the most plausible explanation for why the outbreak ended?
+
+## Return of the Diagram!
+
+![We will continue to use this [Miro board](https://miro.com/app/board/uXjVPWBomlk=/?share_link_id=219375095326) to connect Snow's pre-1854 explorations to the 1854 outbreak](../images/20220916111609.png)  
+
+
+## Put the <span class="alert">mechanism</span> on the map
+
+<div class="toprow">
+  <div style="flex:70%"><blockquote style="font-size: 0.6em;">"In his mind snow was already drawing maps. he’d imagined an overview of the Golden Square neighborhood, with a <span class="alert">boundary line running an erratic circle around the Broad Street pump.</span> Every person inside that border lived closer to the poisoned well; everyone outside would have had reason to draw water from a different source." (p. 141)</blockquote></div>
+  <div class="textcolumn"><ul>
+      <li class="fragment">10 cases outside the boundary.</li>
+      <li class="fragment">2 were tailor & son on Cross st.</li>
+      <li class="fragment">3 were children who went to school near the pump.</li>
+      <li class="fragment">3 more regularly drank from the pump.</li>
+      <li class="fragment">2 more could be chalked up to the typical toll of Cholera in a given weekend.</li>
+    </ul>
+  </div>
+  
+</div>
+
+## Scale, scale, scale (again!)
+
+> "If the symptoms of the cholera concentrated around the small intestine, then there must be some telltale characteristic in the eating and drinking habits of cholera victims. <span class="alert">If cholera was waterborne, then the patterns of infection must correlate with the patterns of water distribution in London's neighborhoods.</span>" (p. 148)
+
+## Strength of Snow's explanation rested on <span class="alert">nuts and bolts</span> analysis.
+
+- Cesspool in the basement of 40 Broad was the source of the outbreak. 
+
+- Others got sick in 40 Broad over the course of the week, so why did they not add additional fuel to the 🔥?
+
+- Only the Lewis family had access to the basement cesspool, while others threw their waste out the...🪟.
+
+## Next Time
+
+[From the Pump Handle to the Present](https://zelnotes.io/teaching/PUBHLTH405/modules/John+Snow+and+the+Broad+Street+Pump/4.+How+much+distance+is+there+from+the+pump+handle+to+the+present%3F)
+
+## References
