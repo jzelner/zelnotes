@@ -34,7 +34,7 @@
 [Session 4: Explaining Epidemics](https://jzelner.github.io/document-garden/pubhlth405/session_4_explaining_epidemics.html)  
 [Session 5: Walking into a Cholera outbreak](https://jzelner.github.io/document-garden/pubhlth405/session_5_ghost_map_intro.html)  
 [Session 6: Miasma!](https://jzelner.github.io/document-garden/pubhlth405/session_6_miasma.html)  
-[Session 7: Making the Case](ttps://jzelner.github.io/document-garden/pubhlth405/session_7_making_the_case.html)
+[Session 7: Making the Case](https://jzelner.github.io/document-garden/pubhlth405/session_7_making_the_case.html)
 
 
 # Presentations
