@@ -1,0 +1,185 @@
+---
+pagetitle: "Infectious Fear 1"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Historical epidemiology of African-American TB
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+## Agenda
+
+- Logistics
+
+- Some basics of TB epidemiology
+
+- Collectively making sense of Chs 1 & 2 of *Infectious Fear*
+
+:::{.notes}
+
+*Goals*
+
+
+:::
+
+## Logistics
+
+- Configuration assignment currently due 10/12
+
+- Two scheduled in-class work days before group presentations (10/19, 10/24)
+
+- <span class="alert">A proposal:</span>
+  
+  - Make configuration assignment a <span class="alert">group assignment</span> due M 10/19
+
+  - Move one in-class work day up to 10/12 
+
+  - During each of these work sessions I will have ~10-15m 'office hrs' with each group to answer questions and help troubleshoot both the configuration assignment and presentations.
+
+## Models, Mental
+
+:::{.columns}
+:::{.column width=50%}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">My teenager just came to me and said the words every parent dreads hearing: “Dad, I need to memorize the Krebs cycle” <a href="https://t.co/1YjYg2mQOR">pic.twitter.com/1YjYg2mQOR</a></p>&mdash; Mark Lewis (@marklewismd) <a href="https://twitter.com/marklewismd/status/1576677683408228353?ref_src=twsrc%5Etfw">October 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+:::
+:::{.column width=50%}
+
+:::{.fragment}
+A more serious question: What are we talking about when we talk about a <span class="alert">mental model</span>, anyway?
+:::
+
+:::
+:::
+
+
+
+# <span class="white">TB!</span> {background-image="../images/tb_bacillus_sem.jpg"}
+
+## Respiratory infection with transmission facilitated by <span class="alert">close contact</span>
+
+![Anti-TB poster from the American Lung Association](../images/tb_transmission.png)
+
+## Repeat exposure plays an important role in TB <span class="alert">epidemiology</span>
+
+- <span class="alert">Primary Infection:</span> On first infection, individuals are more likely to have rapid onset of severe disease and are at higher immediate risk of death.
+
+- <span class="alert">Secondary Infection:</span> On subsequent exposures, individuals are less likely to develop disease quickly and those that do may have longer-term, chronic infections. 
+
+- Why is this distinction important in the first two chapters of <span class="alert">Infectious Fear</span>?
+
+## TB can become <span class="alert">latent</span> or dormant in the body and re-emerge
+
+:::{.r-stack}
+:::{.fragment .fade-out fragment-index=1}
+![Individuals can transition from latent to active TB and back](../images/latent_vs_active_tb.jpg){height=500}
+:::
+:::{.fragment .fade-in fragment-index=1}
+![Latent TB involves the forming of a protective <span class="alert">granuloma</span> which prevents spread but also allows the bacteria to hide out and re-emerge. (Image from [@ehlers2013])](../images/20220930100225.png){height=600}  
+:::
+:::
+
+## TB Diagnosis
+
+:::{.columns}
+:::{.column width=50%}
+
+<span class="alert">Active TB</span>
+
+![Chest x-ray of primary TB](../images/20220930112316.png)  
+
+:::
+
+
+:::{.column width=50%}
+:::{.fragment}
+
+<span class="alert">Latent TB</span>
+
+![Tuberculin skin test for latent TB](../images/20220930112143.png){height=400}  
+
+:::
+:::
+:::
+
+## TB incidence now highest in Sub-Saharan Africa 
+
+![Global TB incidence from the [2021 WHO Global TB Report](https://www.who.int/publications/i/item/9789240037021)](../images/who_tb_incidence_2020.png)
+
+## TB incidence rates are now strongly correlated with HIV prevalence
+
+![Proportion of new and relapse TB cases that are HIV+ in 2020](../images/hiv_prevalence_tb_2020.png)
+
+## TB remains the <span class="alert">most common cause of death</span> from infectious disease worldwide
+
+![](../images/global_causes_of_death_2019.png)
+
+## In the U.S., TB declined dramatically over the course of the 20th century
+
+![What happened at the time where the red line is?](../images/20220930102609.png)  
+
+## <span class="alert">But:</span> It is likely that COVID-19 has slowed or <span class="alert">reversed</span> the decline of TB in the U.S.
+
+![What are the likely implications of this backsliding for <span class="alert">health equity</span>? (Image from [CDC](https://www.cdc.gov/nchhstp/newsroom/2022/world-tb-day-2022.html))](../images/cdc_tb_covid.jpg)
+
+# Infectious Fear
+
+## ⏲️ 5m response
+
+Open up this [google doc](https://docs.google.com/document/d/12acwQXd3-FE2MP38Up_TsBDFPwf0RtLEVw143KwIB8c/edit?usp=sharing) and write down:
+
+- What were you confused 😵‍💫 by and would like to discuss/clarify?
+
+- What was your most important takeaway from these initial chapters?
+
+- What surprised 😲 you most?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, seconds = 0)
+```
+
+
+## Why is the book called <span class="alert">Infectious Fear</span>?
+
+:::{.fragment}
+> This book is primarily concerned with two overlapping and mutually informative periods in U.S. urban history: the <span class="alert">era of infectious fear all but vanquished by the discovery of antimicrobial therapies</span>, and a period, before the Second World War, when health policy and social policy were, comparatively speaking, overwhelmingly dominated by politics derived from <span class="alert">local rather than federal mandates</span>. [@roberts2009, p.20]
+:::
+
+## How has this statement aged into the COVID era?
+
+> No naive nostalgia for the germ is presumed in imagining, for example, that many of the health problems of post-war inner cities, many of which are not infectious but are nonetheless tied to geography, might have appeared more urgent—as public health problems as opposed to simply social or moral problems—had there still existed a disease that <span class="alert">plainly...illustrated the geographical links among class, geography, and health</span>. [@roberts2009, p.40]
+
+## Making Sense of Chapters 1 & 2
+
+- Open up this [Miro board](https://miro.com/app/board/uXjVPRxj_pQ=/?share_link_id=765671544644) (pw: `phthisis`)
+
+- In groups, work on filling in the picture I have started for each chapter.
+
+- Groups will get a chance to report out to the class and explain their different interpretations.
+
+## Next Time
+
+![Chs 3 & 4: Connecting <span class="alert">residential segregation</span> to infectious disease transmission.](../images/20221003131100.png)  
+
+## <span class="alert">Important:</span> Problem of segregation is not unique to the U.S. or to entirely racialized distinctions
+
+![Residential segregation of Muslims and Hindus in Delhi, India (from [@susewind2017])](../images/20220930143032.png)  
+
+## References
