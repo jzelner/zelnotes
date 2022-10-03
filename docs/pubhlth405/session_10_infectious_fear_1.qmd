@@ -56,7 +56,7 @@ format:
 ## Models, Mental
 
 :::{.columns}
-:::{.column width=50%}
+:::{.column width=70%}
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">My teenager just came to me and said the words every parent dreads hearing: “Dad, I need to memorize the Krebs cycle” <a href="https://t.co/1YjYg2mQOR">pic.twitter.com/1YjYg2mQOR</a></p>&mdash; Mark Lewis (@marklewismd) <a href="https://twitter.com/marklewismd/status/1576677683408228353?ref_src=twsrc%5Etfw">October 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 :::
 :::{.column width=50%}
@@ -67,7 +67,6 @@ A more serious question: What are we talking about when we talk about a <span cl
 
 :::
 :::
-
 
 
 # <span class="white">TB!</span> {background-image="../images/tb_bacillus_sem.jpg"}
@@ -88,10 +87,10 @@ A more serious question: What are we talking about when we talk about a <span cl
 
 :::{.r-stack}
 :::{.fragment .fade-out fragment-index=1}
-![Individuals can transition from latent to active TB and back](../images/latent_vs_active_tb.jpg){height=500}
+![Individuals can transition from latent to active TB and back](../images/latent_vs_active_tb.jpg){height=400}
 :::
 :::{.fragment .fade-in fragment-index=1}
-![Latent TB involves the forming of a protective <span class="alert">granuloma</span> which prevents spread but also allows the bacteria to hide out and re-emerge. (Image from [@ehlers2013])](../images/20220930100225.png){height=600}  
+![Latent TB involves the forming of a protective <span class="alert">granuloma</span> which prevents spread but also allows the bacteria to hide out and re-emerge. (Image from [@ehlers2013])](../images/20220930100225.png){height=400}  
 :::
 :::
 
