@@ -6,6 +6,7 @@ format:
         theme: [solarized, styles.scss]
         incremental: true
         bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        scrollable: true
         #csl: "../../assets/american-journal-of-epidemiology.csl"
 ---
 
@@ -154,7 +155,7 @@ countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=TRUE)
 :::
 
 
-## What are the <span class="alert">dimensions</span> of residential segregation? {.smaller}
+## What are the <span class="alert">dimensions</span> of residential segregation? {.smaller .scrollable}
 
 Some canonical definitions from [@massey1988]:
 
@@ -164,12 +165,10 @@ Evenness
 : "Minority members may be distributed so that they are overrepresented in some areas and underrepresented in others, varying on the characteristic of <span class="alert">evenness</span>."
 
 Exposure
-
 : "[Minority group members] may be distributed so that their exposure to majority members is limited by virtue of rarely <span class="alert">sharing a neighborhood</span> with them."
 
 
 Concentration
-
 : "They may be spatially concentrated <span class="alert">within a very small area</span>, occupying less physical space than majority members."
 
 :::
