@@ -1,0 +1,270 @@
+---
+pagetitle: "Infectious Fear 2"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Making sense of the Landscape of Health
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+## Agenda
+
+- Digesting Chapters 3 & 4 (35m)
+
+- A little more detail about <span class="alert">residential segregation</span>.
+
+- Preview of next time.
+
+## Snowball ☃️ discussion about Chs 3 & 4
+
+1. Spend a few minutes <span class="alert">on your own</span>, thinking about and adding a quick response to what struck you most about the readings.
+
+2. <span class="alert">Pair up</span> and discuss the next question.
+
+3. Join pairs into groups of <span class="alert">4</span> for the next discussion.
+
+4. Groups of <span class="alert">6-8</span> for final question.
+
+## ⏲️ On your own
+
+Spend a few minutes going back over the text and put your answers to these questions in [this google doc](https://docs.google.com/document/d/12acwQXd3-FE2MP38Up_TsBDFPwf0RtLEVw143KwIB8c/edit?usp=sharing):
+
+- What is Roberts referring to when he describes the <span class="alert">landscape of health</span> in Chapter 3?
+
+- What were you most confused or surprised about in these chapters? 
+
+- What struck you as most important?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0)
+```
+
+
+## In <span class="alert">pairs</span> 
+
+:::{.columns}
+:::{.column width=50%}
+
+- Focusing on Chapter 3, what does the discussion in this chapter add to our understanding of how segregation and racism act as <span class="alert">fundamental causes</span> of health inequality?
+
+- What other diseases - <span class="alert">infectious and non-communicable</span> - were linked to racial residential segregation and living conditions during the late 19th and early 20th centuries? 
+
+- How does this information support - or not - the role of racism and SES as <span class="alert">fundamental causes</span> in TB disparities?
+
+:::
+:::{.column width=50%}
+![Pneumonia deaths by race showed large disparities - what other infections had similar dynamics?](../images/20221004094933.png)  
+:::
+:::
+
+```{r}
+library(countdown)
+countdown(minutes = 8, warn_when = 120, seconds = 0, top=0, play_sound=TRUE)
+```
+## In groups of <span class="alert">four</span> 
+
+:::{.columns}
+:::{.column width=50%}
+- What are the <span class="alert">push</span> and <span class="alert">pull</span> factors that Roberts invokes to exlpain the emergence of the Druid Hill Corridor as a Black ghetto characterized by intense segregation and high rates of TB and other infectious diseases?
+
+- In chapter 4, what similarities and differences did you see been <span class="alert">infected house theory</span> and the miasmatic theories discussed in *The Ghost Map*? 
+
+  - What were some surprising implications of infected house theory for public health <span class="alert">surveillance</span> and intervention? 
+:::
+:::{.column width=50%}
+   ![](../images/20221004094629.png)  
+:::
+:::
+
+```{r}
+library(countdown)
+countdown(minutes = 10, seconds = 0, warn_when = 120, top = 0, play_sound=TRUE)
+```
+ 
+
+## In groups of <span class="alert">6-8</span>
+
+ - Identify the most important built environment, biological and social mechanisms Roberts describes that link <span class="alert">segregation</span> in Baltimore to racial inequities in TB outcomes.
+
+:::{.fragment}
+Go back to your initial reflections:
+
+- What do you remain confused or unsure about? 
+
+- What most surprised/struck you in these chapters?
+
+- Drop a comment on any items you think have been resolved through your discussions.
+
+:::
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=TRUE)
+```
+
+# What is residential segregation?
+
+
+
+## How would you define <span class="alert">residential segregation</span>?
+
+
+
+:::{.fragment .fade-in-then-semi-out fragment-index=1}
+> "Racial residential (i.e., housing) segregation is one of the most pervasive patterns in American metropolitan areas and a powerful engine of racial stratification. <span class="alert">Whites and blacks are separated into different residential neighborhoods with markedly different resources to support health and well-being over the life course.</span>" [@acevedo-garcia2008]
+:::
+
+:::{.fragment .fade-in fragment-index=2}
+
+> At a general level, residential segregation is the degree to which two or more groups live separately from one another, in different parts of the urban environment. <span class="alert">This general understanding masks considerable underlying complexity, however, for groups may live apart from one another and be "segregated" in a variety of ways.</span> [@massey1988]
+:::
+
+
+## Residential segregation is a <span class="alert">multi-scale</span> phenomenon
+:::{.columns}
+:::{.column width=50%}
+:::{.fragment fragment-index=1}
+   ![National patterns of race/ethnic residential segregation.](../images/racial_dot_map.png)
+:::
+:::
+:::{.column width=50%}
+
+:::{.fragment fragment-index=2}
+![Schematic of macro-segregation patterns characteristic of SE Michigan [@lichter2015]](../images/lichter_high_macro.png)
+:::
+:::
+:::
+
+
+## What are the <span class="alert">dimensions</span> of residential segregation? {.smaller}
+
+Some canonical definitions from [@massey1988]:
+
+:::{.columns}
+:::{.column width=50%}
+Evenness
+: "Minority members may be distributed so that they are overrepresented in some areas and underrepresented in others, varying on the characteristic of <span class="alert">evenness</span>."
+
+Exposure
+
+: "[Minority group members] may be distributed so that their exposure to majority members is limited by virtue of rarely <span class="alert">sharing a neighborhood</span> with them."
+
+
+Concentration
+
+: "They may be spatially concentrated <span class="alert">within a very small area</span>, occupying less physical space than majority members."
+
+:::
+:::{.column width=50%}
+Centralization
+
+: "They may be spatially centralized, <span class="alert">congregating around the urban core</span>, and occupying a more central location than the majority."
+
+Clustering
+
+: "[A]reas of minority settlement may be tightly clustered to form <span class="alert">one large contiguous enclave</span>, or be scattered widely around the urban area."
+
+:::{.fragment}
+<span class="alert">Do any of these describe the patterns of segregation described in Infectious Fear?</span>
+:::
+:::
+:::
+
+## Alley houses
+
+> "In the lower-rent alleys between these two avenues could be found poorer blacks, who resided in one- or two-story houses whose front steps in many cases were separated from the opposite house by no more than six or eight feet of cobblestone or dirt."
+
+## A Typology of Segregation
+
+Grigoryeva and Ruef define three types of segregation:
+
+Primary (P)
+: Separation of groups across administrative or political boundaries.
+
+Secondary (S)
+: Separation of groups in *physical space*
+
+Tertiary (T) 
+: Function of residential street layout that influence *pedestrian paths*.
+
+## A Typology of Segregation
+
+![](../images/grigoryeva_segregation.png)
+
+
+
+## Clearly-defined \alert{primary} segregation
+
+![](../images/chicago_segregation_map.png)
+
+
+## Fine-scale residential segregation in Washington, D.C. (1888)
+
+![Sanborn Fire Insurance Company Map for Washington D.C. in 1888](../images/logan_alley_segregation.png)
+
+
+## Pattern was pervasive throughout D.C.
+
+![Map of a larger area of DC ](../images/logan_more_dc_alley_segregation.png)
+
+## So: How do we <span class="alert">measure</span> this type of segregation?
+
+:::{.columns}
+:::{.column width=60%}
+- Classic approach, e.g. [@massey1988], only captures <span class="alert">primary</span> segregation.
+
+- Grigoryeva & Ruef noticed that information could be extracted from the order in which <span class="alert">19th century census takers visited houses</span>. [@grigoryeva2015]
+
+- Data were recorded sequentially in their records as they went 🏠 to 🏠.
+
+- Compared observed sequences of black and white households to a random distribution to measure the extent of <span class="alert">tertiary segregation</span>.
+
+- Called their measure the *Sequential Index of Segregation* (SIS)
+
+:::
+:::{.column width=40%}
+   ![Example path of a census-taker through a segregated southern neighborhood in 1880.](../images/grigoryeva_census_map.png)
+:::
+:::
+
+
+## Different <span class="alert">measures</span> $\to$ different <span class="alert">answers</span>
+
+![D = index of dissimilarity, a measure of <span class="alert">evenness</span>](../images/grigoryeva_segregation_table_1.png)
+
+:::{.fragment}
+What do you think this implies for how we should <span class="alert">approach</span> the measurement/characterization of segregation?
+:::
+
+## Next time
+
+:::{.columns}
+:::{.column width=50%}
+- Read Ch. 5 of *Infectious Fear*
+
+- [Chowkwanyun M, Reed AL. Racial Health Disparities and Covid-19 — Caution and Context. _New England Journal of Medicine_. 2020;383(3):201-203.](https://www.dropbox.com/sh/gpzxgon1zw1pimv/AAAHPPfugABb75F_vQ-fHeOFa?dl=0) doi:[10.1056/NEJMp2012910](https://doi.org/10.1056/NEJMp2012910)
+:::
+:::{.column width=50%}
+   ![[Using maps to conflate risk with race.](https://zelnotes.io/teaching/PUBHLTH405/modules/Residential+Segregation+and+Tuberculosis+Infection/4.+Infectious+Fear+3+-+Conflating+risk+and+race+in+public+health+surveillance)](../images/20221005093842.png)  
+:::
+:::
+
+## References
