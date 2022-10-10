@@ -37,7 +37,10 @@
 [Session 7: Making the Case](https://jzelner.github.io/document-garden/pubhlth405/session_7_making_the_case.html)  
 [Session 8: Miasmas and other mental models](https://jzelner.github.io/document-garden/pubhlth405/session_8_miasmas_mental_models.html) 
 [Session 9: Fundamental Causes](https://jzelner.github.io/document-garden/pubhlth405/session_9_fundamental_causes.html)  
-[Session 10: Infectious Fear 1](https://jzelner.github.io/document-garden/pubhlth405/session_10_infectious_fear_1.html)  
+[Session 10: Infectious Fear 1](https://jzelner.github.io/document-garden/pubhlth405/session_10_infectious_fear_1.html)
+[Session 11: Infectious Fear 2](https://jzelner.github.io/document-garden/pubhlth405/session_11_infectious_fear_2.html)  
+[Session 12: Infectious Fear 3](https://jzelner.github.io/document-garden/pubhlth405/session_12_infectious_fear_3.html)  
+
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
