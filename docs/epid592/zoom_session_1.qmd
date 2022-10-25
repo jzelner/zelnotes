@@ -1,0 +1,137 @@
+---
+pagetitle: "EPID 592 First Session!"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        scrollable: true
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Spatial epidemiology as a mindset and a toolkit
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+    EPID 592  
+    Spatial Epidemiology  
+    Zoom Session 1  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io)
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
+## Goals for today
+
+- Answer any <span class="alert">burning</span> 🔥 questions about Week 1 and the class in general.
+
+- <span class="alert">Digest</span> and <span class="alert">synthesize</span> Week 1 content.
+
+- Think ahead to Week 2.
+
+## Agenda 
+
+- Who am I and why do I care so much about spatial epidemiology (~10m)
+
+- Week 1 questions and concerns (~25m)
+
+- Zoom fatigue 🥱/bio break (5m)
+
+- Week 1 concept-mapping (~30m)
+
+- Looking ahead to Week 2 (~5m)
+
+## Who am I & what do I do?
+
+:::{.columns}
+:::{.column width=40%}
+
+- Infectious disease epidemiologist.
+
+- Trained as a social epidemiologist/sociologist (UM Sociology PhD 2011).
+
+- Research group focused on health geography and transmission modeling.
+
+- Infection <span class="alert">inequity</span> is the theme that motivates most of our work.
+
+
+:::
+:::{.column width=60%}
+![Me: Basically interested in how infectious diseases get from one person or place to another.](../images/zelner_headshot.jpg)
+:::
+:::
+
+## Got a first-hand feel for what it's like to think spatially about an emerging public health event {.imgslide}
+
+<img src="../images/covidmapping_april_2022.png">
+
+Cumulative incidence of COVID-19 in Michigan 3/2020-3/2022 (from [covidmapping.org](https://www.covidmapping.org))
+
+## <span class="alert">Week 1</span> Recap 
+
+We have covered a lot of territory:
+
+- What is <span class="alert">spatial epidemiology</span>, anyway? 
+
+- What is the role of <span class="alert">mapping</span> 🗺️ in spatial epid?
+
+- Spatial patterns of health outcomes as the output of complex socio-epidemiological <span class="alert">systems</span> ⚙️.
+
+## What questions or ideas did this week's readings, videos, and assignments spark ✨?
+
+Open up this [google doc](https://docs.google.com/document/d/1tRzmusTtqK51G5I2jHhDeFpT_Kh54Vw5nLwfaXrOFhY/edit?usp=sharing) and add your answer to each of the following questions:
+
+1. In 1-2 sentences, how would you describe what <span class="alert">spatial epidemiology</span> is?
+
+2. What did you find most surprising or interesting from the course this week?
+
+3. What left you confused or would be helpful to <span class="alert">clarify</span>?
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 120, seconds = 0, play_sound=TRUE)
+```
+
+# Break!
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Bringing the threads 🧶 together with a mind-mapping exercise
+
+:::{.columns}
+:::{.column width=50%}
+- Much like a geographic map, a mind-map uses distance/connections to help us think about the relatedness of concepts.
+
+- Start with a central problem or question and branch out from there.
+
+- Goal is to use this exercise to clarify connections between readings from this week and set an agenda going forward.
+:::
+:::{.column width=50%}
+   ![Example mind map from my son's preschool ca. 2017](../images/mind_map_example.png){width=60%}
+
+:::
+:::
+## Lets take some time to <span class="alert">map out</span> these ideas and their connections.
+
+- Going to break into 4 groups
+
+- Spend 5-7m on each of four questions as a group in a breakout room.
+
+- Goal is to <span class="alert">synthesize</span> material from the week and build on each other's understanding.
+
+- At the end, we will briefly review all of the maps and pick out <span class="alert">major themes</span>.
+
+## Building your mind maps
+
+   ![Motivating questions are available in [this Miro board](https://miro.com/app/board/uXjVPKV4LZA=/?share_link_id=51250319196)](../images/20221025131943.png)  
+
+
