@@ -10,7 +10,7 @@ format:
         #csl: "../../assets/american-journal-of-epidemiology.csl"
 ---
 
-## Spatial epidemiology as a mindset and a toolkit
+## Spatial epidemiology as a mindset 🧠 and a toolkit 🧰
 
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
