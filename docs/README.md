@@ -40,7 +40,8 @@
 [Session 10: Infectious Fear 1](https://jzelner.github.io/document-garden/pubhlth405/session_10_infectious_fear_1.html)
 [Session 11: Infectious Fear 2](https://jzelner.github.io/document-garden/pubhlth405/session_11_infectious_fear_2.html)  
 [Session 12: Infectious Fear 3](https://jzelner.github.io/document-garden/pubhlth405/session_12_infectious_fear_3.html)  
-[Session 13: Residential segregation and the spatial epidemiology of infection](https://jzelner.github.io/document-garden/pubhlth405/session_13_segregation_infection.html) 
+[Session 13: Residential segregation and the spatial epidemiology of infection](https://jzelner.github.io/document-garden/pubhlth405/session_13_segregation_infection.html)  
+[Session 15: Presentations II](https://jzelner.github.io/document-garden/pubhlth405/session_15_presentations_2.html)  
 
 # EPID 592/594
 

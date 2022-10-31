@@ -73,6 +73,16 @@ format:
 
 Cumulative incidence of COVID-19 in Michigan 3/2020-3/2022 (from [covidmapping.org](https://www.covidmapping.org))
 
+## Spatial models are just <span class="alert">mental models</span> formalizing the relationships between spatial arrangements and disease outcomes
+
+<blockquote>[M]ental models and empirical data keep each other in check - [Sir Peter Medawar] described them 
+  respectively as the ‘bride’ and ‘groom’ of science — and scientific progress in any discipline occurs by the
+  back-and-forth dialogue between their two ‘voices’.”</blockquote>
+
+  [From Greenhalgh 2021: *Miasmas, mental models and preventive public
+  health*](https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017)
+
+
 ## <span class="alert">Week 1</span> Recap 
 
 We have covered a lot of territory:
@@ -135,3 +145,19 @@ countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
    ![Motivating questions are available in [this Miro board](https://miro.com/app/board/uXjVPKV4LZA=/?share_link_id=51250319196)](../images/20221025131943.png)  
 
 
+## Next Week
+
+:::{.columns}
+:::{.column width=50%}
+- Why focus on a historical outbreak in a course on spatial epidemiology?
+
+- Detailed examination of interacting social, environmental and biological forces.
+
+- Shows the long arc of learning behind a dramatic and important event in epidemiological history.
+
+- Shows how spatial analysis is at the center of much epidemiological practice even if we don't always notice it.
+:::
+:::{.column width=50%}
+   ![John Snow and the 1854 London Cholera outbreak](../images/snow_cholera_map.jpg)
+:::
+:::
