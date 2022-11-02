@@ -1,0 +1,192 @@
+---
+pagetitle: "Segregation and infection"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## <span class="alert">Residential segregation</span> and the spatial epidemiology of infection 
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social Epidemiology of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+## Agenda
+
+- Reflecting on Fiasco Episode 1 & prep for Q&A on 11/9 (~30m)
+
+- Mid-semester survey (~10m)
+
+- Why is stigma a <span class="alert">fundamental cause</span> of health inequity? (~30m)
+
+- If time: looking at feedback from project presentations
+
+# Episode 1: Gay Plague
+
+
+## Past is <span class="alert">always</span> prologue...
+
+:::{.r-stack}
+
+:::{.fragment .fade-out fragment-index=1}
+![The Washington Post, 1981](../images/20221102095130.png){width=80%}
+:::  
+
+:::{.fragment .fade-in-then-out fragment-index=1}
+![Infection Control Today, 2012](../images/20221102095335.png){width=70%}  
+:::
+
+:::{.fragment .fade-in-then-out fragment-index=2}
+![NPR, 2017](../images/20221102095214.png){width=70%}  
+:::
+
+:::{.fragment .fade-in-then-out}
+![Kaiser Health News, 2020](../images/20221102095423.png){width=70%}  
+:::
+
+:::
+
+## Reflecting on what you listened to
+
+In this [google doc](https://docs.google.com/document/d/1iHtIa94D2avmCJQkTfzcLYkj-IEQX28dKpA2ncio4AI/edit), answer the following questions on your own: 
+
+1. What did you find most interesting or surprising in this episode? 
+
+2. What concepts/readings from earlier in the term did your listening to this episode bring to mind?
+
+3. What would you like to know more about the making of this episode and about this podcast more generally?
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 120, seconds = 0, play_sound=TRUE)
+```
+
+
+
+## Opening chapters of the AIDS pandemic are straight out of <span class="alert">Charles Rosenberg's</span> playbook
+
+
+:::{.columns}
+:::{.column width=50%}
+> "A true epidemic is <span class="alert">an event</span>, not a trend." [@rosenberg2020a]
+:::
+:::{.column width=50%}
+![1918 Influenza pandemic: An event](../images/20220907105450.png){width=70%} 
+
+:::{.fragment}
+![HIV Crisis: An <span class="alert">ongoing</span> event](../images/world_aids_day.jpg){width=70%}
+:::
+
+:::
+:::
+
+
+## Epidemic as a play in three acts:
+
+1. Progressive <span class="alert">Revelation</span>
+
+2. Managing <span class="alert">Randomness</span>
+
+3. Negotiating Public <span class="alert">Response</span>
+
+## Progressive Revelation
+
+:::{.columns}
+:::{.column width=40%}
+> Only when the presence of an epidemic becomes unavoidable is there public admission of its existence. <span class="alert">Bodies must accumulate and the sick must suffer in increasing numbers</span> before officials acknowledge what can no longer be ignored. [@rosenberg2020a, p.566]
+:::
+:::{.column width=60%}
+
+[First NBC News Story on HIV/AIDS](https://youtu.be/1LKJ5ZzzL0w)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wVx0DDnGTkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
+
+:::
+
+
+## Managing Randomness
+
+> Accepting the existence of an epidemic implies — in some sense demands — the creation of a framework within which its dismaying arbitrariness may be managed. <span class="alert">Collective agreement on that explanatory framework</span> may be seen as the inevitable second stage in any epidemic. [@rosenberg2020a, pp.567]
+
+
+
+## Public Response
+
+:::{.columns}
+:::{.column width=40%}
+>  In the stress of an epidemic..., <span class="alert">failure to take action constitutes action</span>.  An epidemic might in this sense be likened to a trial, with policy choices constituting the possible verdicts. [@rosenberg2020a, pp.569]
+
+:::
+:::{.column width=60%}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oMjCQt3KaRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[UK Don't Inject AIDS PSA](https://youtu.be/Pe9B5EDFazU)
+
+:::
+:::
+
+## Mid-semester check-in
+
+![Please fill out [this google form](https://forms.gle/DFVq9yAb4hSi1bqG8)](../images/20221102104727.png)  
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 120, seconds = 0, play_sound=TRUE)
+```
+
+# Stigma as a fundamental cause of health inequity
+
+## What is <span class="alert">stigma</span> and why does it drive inequity in health outcomes?
+
+Based on [@hatzenbuehler2013]:
+
+- How would you define the concept of stigma?
+
+- What is the relationship between stigma and other fundamental causes like racism and SES?
+
+- What avenues for prevention or intervention does an understanding of the role of stigma as a fundamental cause open up?
+
+## What is problematic about analyzing or addressing one stigmatized status at a time?
+
+![Table 1 from [@hatzenbuehler2013]](../images/20221101153931.png) 
+
+## How are the health effects of stigma maintained over time?
+
+![What is going on in this figure?](../images/20221101154514.png)
+
+## Stigma serves to create and maintain <span class="alert">power imbalances
+</span>
+
+<span class="alert">In pathogen groups:</span> Can you come up with some examples - relevant to your pathogen if possible - in which disease-related stigma serves to:
+
+1.<span class="alert"> Keep people down</span> via social and economic exploitation.
+
+2. <span class="alert">Keep people in</span> via the enforcement of restrictive social norms.
+
+3. <span class="alert">Keep people away</span> as a means of avoiding contact with individuals perceived to be diseased. 
+
+
+## Next Time
+
+- Episodes 2 & 3
+
+
+## References

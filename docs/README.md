@@ -42,10 +42,14 @@
 [Session 12: Infectious Fear 3](https://jzelner.github.io/document-garden/pubhlth405/session_12_infectious_fear_3.html)  
 [Session 13: Residential segregation and the spatial epidemiology of infection](https://jzelner.github.io/document-garden/pubhlth405/session_13_segregation_infection.html)  
 [Session 15: Presentations II](https://jzelner.github.io/document-garden/pubhlth405/session_15_presentations_2.html)  
+[Session 16: Gay Plague](https://jzelner.github.io/document-garden/pubhlth405/session_16_gay_plague.html)  
 
 # EPID 592/594
 
 [Zoom Session 1](https://jzelner.github.io/document-garden/epid592/zoom_session_1.html)
+
+[Zoom Session 2](https://jzelner.github.io/document-garden/epid592/zoom_session_2.html)
+
 # Presentations
 
 [Keynote talk for 10th Annual Conference on Increasing Diversity in Modeling and Public Health](https://jzelner.github.io/document-garden/talks/no_equal_opportunity_infectors.html)
