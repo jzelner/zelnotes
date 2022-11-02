@@ -1,5 +1,5 @@
 ---
-pagetitle: "Segregation and infection"
+pagetitle: "Grappling with an emerging pandemic"
 format: 
     revealjs:
         show-notes: false
@@ -9,12 +9,12 @@ format:
         #csl: "../../assets/american-journal-of-epidemiology.csl"
 ---
 
-## <span class="alert">Residential segregation</span> and the spatial epidemiology of infection 
+## Grappling with an emerging pandemic
 
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
       PUBHLTH 405  
-      Social Epidemiology of Infectious Disease  
+      Social History of Infectious Disease  
       University of Michigan School of Public Health
       <br><br>
       Jon Zelner  
