@@ -44,19 +44,19 @@ format:
 :::{.r-stack}
 
 :::{.fragment .fade-out fragment-index=1}
-![The Washington Post, 1981](../images/20221102095130.png){width=80%}
+![The Washington Post, 1981](../images/20221102095130.png){width=40%}
 :::  
 
 :::{.fragment .fade-in-then-out fragment-index=1}
-![Infection Control Today, 2012](../images/20221102095335.png){width=70%}  
+![Infection Control Today, 2012](../images/20221102095335.png){width=50%}  
 :::
 
 :::{.fragment .fade-in-then-out fragment-index=2}
-![NPR, 2017](../images/20221102095214.png){width=70%}  
+![NPR, 2017](../images/20221102095214.png){width=50%}  
 :::
 
 :::{.fragment .fade-in-then-out}
-![Kaiser Health News, 2020](../images/20221102095423.png){width=70%}  
+![Kaiser Health News, 2020](../images/20221102095423.png){width=50%}  
 :::
 
 :::
@@ -86,10 +86,10 @@ countdown(minutes = 10, warn_when = 120, seconds = 0, play_sound=TRUE)
 > "A true epidemic is <span class="alert">an event</span>, not a trend." [@rosenberg2020a]
 :::
 :::{.column width=50%}
-![1918 Influenza pandemic: An event](../images/20220907105450.png){width=70%} 
+![1918 Influenza pandemic: An event](../images/20220907105450.png){width=60%} 
 
 :::{.fragment}
-![HIV Crisis: An <span class="alert">ongoing</span> event](../images/world_aids_day.jpg){width=70%}
+![HIV Crisis: An <span class="alert">ongoing</span> event](../images/world_aids_day.jpg){width=60%}
 :::
 
 :::
