@@ -36,8 +36,10 @@ format:
 
 - Review feedback from in-class presentations and make project plans
 
-## Consistent feedback on class activities
+## What should we <span class="alert">keep</span>, and what's for the birds?
 
+:::{.columns}
+:::{.column width=50%}
 - Miro boards 👎
 
 - Classmates not showing up 👎 
@@ -47,6 +49,12 @@ format:
 - Digesting readings and pre-lecture content through in-class questions in google docs 👍
 
 - Food 🍩 🍬 👍 
+:::
+:::{.column width=50%}
+   ![My kids, not actually penguins. 🐧](../images/20221107140641.png){width=70%}  
+
+:::
+:::
 
 ## Always a balancing act 🤸‍♂️
 
