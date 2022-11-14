@@ -61,3 +61,4 @@
 
 [Backwards paper writing for UW demography seminar](https://jzelner.github.io/document-garden/talks/backwards_paper_writing_UW.html)
 
+[Clustering!](https://jzelner.github.io/document-garden/talks/clustered_data_guest_lecture.html)
