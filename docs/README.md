@@ -43,7 +43,9 @@
 [Session 13: Residential segregation and the spatial epidemiology of infection](https://jzelner.github.io/document-garden/pubhlth405/session_13_segregation_infection.html)  
 [Session 15: Presentations II](https://jzelner.github.io/document-garden/pubhlth405/session_15_presentations_2.html)  
 [Session 16: Gay Plague](https://jzelner.github.io/document-garden/pubhlth405/session_16_gay_plague.html)   
-[Session 16: Fiasco Eps 2 & 3](https://jzelner.github.io/document-garden/pubhlth405/session_17_fiasco_2.html)  
+[Session 17: Fiasco Eps 2 & 3](https://jzelner.github.io/document-garden/pubhlth405/session_17_fiasco_2.html)  
+[Session 19: Patient Zero](https://jzelner.github.io/document-garden/pubhlth405/session_19_patient_zero.html)  
+
 
 # EPID 592/594
 
