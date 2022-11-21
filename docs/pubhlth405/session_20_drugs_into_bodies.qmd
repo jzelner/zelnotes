@@ -1,0 +1,159 @@
+---
+pagetitle: "Manufacturing Stigma"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## "Drugs into Bodies"
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social History of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+## Agenda
+
+- Episodes 6 & 7 of Fiasco
+
+- "We have the tools" 🧰 and the failure of <span class="alert">technocracy</span> during COVID-19
+
+- If time 🕰️: Project work time 
+
+## Coming in for a landing 🛬
+
+![We all have that late November feeling...](../images/sleepy_bee.jpg)
+
+## Activists confront the challenge of breaking through mainstream <span class="alert">complacency</span>
+
+![New York Times, 1986](../images/20221121104519.png)  
+
+## "Why we fight"
+
+![AIDS activist Vito Russo in 1988](../images/20221121104110.png)  
+
+[Speech](https://www.youtube.com/watch?v=C0Q8p0HCQEs)
+
+## On your own
+
+- What struck and/or surprised you most in these episodes?
+
+- What questions do you have about the episodes or reading?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+# An (extremely) brief history of ACT UP
+
+## ACT UP Protest at the FDA (1988)
+
+![](../images/20221121092951.png)  
+
+## Storm the NIH (1990)
+
+![](https://s3.amazonaws.com/icptmsdata/u/n/i/d/unidentified_photographer_1189_2000_465357_displaysize.jpg)
+
+## ACT UP defined a more confrontational and <span class="alert">dramaturgical</span> approach
+
+<iframe src="https://player.vimeo.com/video/444036076?h=edda54bdae" width="640" height="472" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p>San Francisco Channel 7 news coverage of the September 5, 1991 ACT-UP action putting a giant condom on Jesse Helms&#039;s house.<br />
+<br />
+
+## From the ACT UP perspective
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TS-w4Pqvkuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## An enduring and historic direct action
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">TBT. The invoice for the giant condom we put on Senator Jesse Helms&#39; house. WATCH us do it: <a href="https://t.co/loRazGvCeL">https://t.co/loRazGvCeL</a> <a href="http://t.co/yAiJ3EYQzT">pic.twitter.com/yAiJ3EYQzT</a></p>&mdash; Peter Staley 🇺🇦 (@peterstaley) <a href="https://twitter.com/peterstaley/status/636958891075436544?ref_src=twsrc%5Etfw">August 27, 2015</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Tim Bailey's Political Funeral (1993){.smaller}
+
+:::{.columns}
+:::{.column width=50%}
+
+> ACT UP showed that political silence and inaction were <span class="alert">hostile, not neutral acts</span>. The group collectively made the ill and dying's struggle to reverse the conditions that made AIDS a social and political crisis, visible and audible. 
+
+:::{.fragment}
+> The Marys extended this work of support for the ill and dying, taking on the condition of death, <span class="alert">which had previously conceptualized as activism's limit</span>. They made the dead PWA body matter, and through the formation of political affinity, infused the corpse with the <span class="alert">power to speak</span>. (From Levine, 2020: ["How to do things with dead bodies"](https://hemisphericinstitute.org/en/emisferica-61/6-1-essays/how-to-do-things-with-dead-bodies.html))
+:::
+
+:::
+:::{.column width=50%}
+![Tim Bailey's Political Funeral (1993)](../images/20221121102149.png)  
+:::
+:::
+
+
+## ACT UP activists have maintained influence
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">So, before this site crashes, please use my DMs to suggest candidates to fill Tony Fauci’s shoes as NIAID Director. I’m on the NIH search committee that will find and interview candidates (<a href="https://twitter.com/NIHDirector?ref_src=twsrc%5Etfw">@NIHDirector</a> makes the final call). /1 <a href="https://t.co/lB12PfHjQQ">pic.twitter.com/lB12PfHjQQ</a></p>&mdash; Peter Staley 🇺🇦 (@peterstaley) <a href="https://twitter.com/peterstaley/status/1593659938030911488?ref_src=twsrc%5Etfw">November 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## In small groups
+
+- How did the HIV activism of the late 1980s/early 1990s confront socioeconomic and racial inequity? What were the gaps?
+
+- How did listening to these episodes change how you think about clinical trials - from both a scientific and social perspective? 
+
+- What lessons from ACT UP and other HIV/AIDS activists do you think translate well to the present day? Which might not and why?
+
+```{r}
+library(countdown)
+countdown(minutes = 15, warn_when = 120, seconds = 0, play_sound=FALSE)
+```
+
+
+#  We have the tools 🧰
+
+
+## "We have <span class="alert">all</span> the tools..."
+
+![](../images/20221121090929.png)  
+
+## Reflects a <span class="alert">technocratic</span> approach to managing a pandemic.
+
+![Time Magazine, Dec 2021](../images/20221121091155.png)  
+
+## Wait, we <span class="alert">don't</span> have all the tools?
+
+![STAT News, Nov 2022](../images/20221121091245.png)  
+
+## Some questions...
+
+- What lessons from the history of the HIV crisis should make us skeptical of the "we have the tools" approach to COVID-19 that Gonsalves critiques?
+
+- What are <span class="alert">the tools</span> anyway?
+
+- What would a more fundamental-cause inflected approach to the pandemic suggest are the most important compoentns of the toolkit?
+
+## What might explain the incoherent, individualized approach to COVID-19 we are now experiencing?
+
+![The Atlantic, Nov 2022](../images/20221121091535.png)  
+
+## After Thanksgiving 🍠
+
+- In-class project workshop (M, 11/28)
+
+- Lightning presentations (W, 11/30)
+
+- Last episode of *Fiasco* & thinking about the future (11/5)
+
+- Last day of class/partial project workday
+
+## References

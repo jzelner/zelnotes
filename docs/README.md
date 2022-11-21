@@ -45,7 +45,7 @@
 [Session 16: Gay Plague](https://jzelner.github.io/document-garden/pubhlth405/session_16_gay_plague.html)   
 [Session 17: Fiasco Eps 2 & 3](https://jzelner.github.io/document-garden/pubhlth405/session_17_fiasco_2.html)  
 [Session 19: Patient Zero](https://jzelner.github.io/document-garden/pubhlth405/session_19_patient_zero.html)  
-
+[Session 20: Drugs into Bodies](https://jzelner.github.io/document-garden/pubhlth405/session_20_drugs_into_bodies.html)
 
 # EPID 592/594
 
