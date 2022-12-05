@@ -1,0 +1,128 @@
+---
+pagetitle: "No Harm"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+---
+
+## Pushing up against the limits of progress 
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      PUBHLTH 405  
+      Social History of Infectious Disease  
+      University of Michigan School of Public Health
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+## Agenda
+
+- Reflecting on *Fiasco* as a whole
+
+- What is <span class="alert">harm reduction</span> and why is it so controversial?
+
+- "How to Hide a Plague"
+
+- Time to incorporate feedback from presentations
+
+## How do we go from a pandemic to an endemic disease? (~9m)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OlFQ26SpGM0?start=138" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Fiasco has taken us from the emergence of HIV to its managment as a chronic, <span class="alert">endemic</span> infection
+
+In the [google doc](https://docs.google.com/document/d/1iHtIa94D2avmCJQkTfzcLYkj-IEQX28dKpA2ncio4AI/edit): 
+
+- What surprised or struck you the most in the final episode, "No Harm"?
+
+- What is your biggest takeaway from listening to the series as a whole?
+
+- What do you still want to know?
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+
+
+## Tracking the evolution of COVID from a collective to an individual problem (~5m)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OlFQ26SpGM0?start=677" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Needle exchange programs are clearly effective
+
+- Prevent transmission of HIV, HCV and other pathogens among people who inject drugs (PWID)
+
+- Increased rates of spontaneous hepatatis C clearence among PWID participating in needle exchange. [@kaberg2018]
+
+- Needle exchange is one approach to <span class="alert">harm reduction</span>.
+
+- Harm reduction implicitly assumes that these are collective rather than individual <span class="alert">moral</span> problems to solve.
+
+## What explains moral opposition to needle exchange and harm reduction more generally?
+
+![Survey-based research suggested that placing a strong value on moral 'purity' was predictive of reduced support for needle exchange [@christie2019]](../images/20221205090145.png)  
+
+## These attitudes impact people who participate in these programs
+
+![From [@szott2020] ](../images/20221205091410.png)  
+
+## Earlier testing and case-finding could have slowed a large HIV outbreak in Indiana
+
+![Modeling results from [@gonsalves2018a]](../images/20221205092406.png)  
+
+## Some questions for the class:
+
+- What similarities and differences do you see in the social trajectory of the COVID pandemic vs. the HIV pandemic?
+
+- Was HIV ever treated as a collective problem? If so, for whom?
+
+## Some questions to think about during the next clip 🎬
+
+- Do you buy Feldman's arguments about the normalization of COVID?
+
+- Are there parallels in the ways scientific authority was used and abused during the early days of HIV and throughout the COVID-19 pandemic?
+
+- If we don't hide pandemics to get back to some form of normal everyday life, what is the <span class="alert">alternative</span>? 
+
+## Being an effective participant in the conversation, you have to be clear about the interests that shape it (~15m)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OlFQ26SpGM0?start=1745" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## In small groups
+
+- Do you buy Feldman's arguments about the normalization of COVID?
+
+- Are there parallels in the ways scientific authority was used and abused during the early days of HIV and throughout the COVID-19 pandemic?
+
+- If we don't hide pandemics to get back to some form of normal everyday life, what is the <span class="alert">alternative</span>? 
+
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+
+## Next time
+
+- Last class!
+
+- Brief wrap-up of the term & opportunity for feedback
+
+- Pathogen project group work time
+
+## References
