@@ -1,5 +1,5 @@
 ---
-pagetitle: "Manufacturing Stigma"
+pagetitle: "Drugs into Bodies"
 format: 
     revealjs:
         show-notes: false
@@ -9,7 +9,7 @@ format:
         #csl: "../../assets/american-journal-of-epidemiology.csl"
 ---
 
-## "Drugs into Bodies"
+## "Drugs into Bodies": Reflecting on the legacy of HIV/AIDS activism
 
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
@@ -110,6 +110,8 @@ countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
 - How did the HIV activism of the late 1980s/early 1990s confront socioeconomic and racial inequity? What were the gaps?
 
 - How did listening to these episodes change how you think about clinical trials - from both a scientific and social perspective? 
+
+- Are there echoes of John Snow's explorations in the drug development process? Why or why not?
 
 - What lessons from ACT UP and other HIV/AIDS activists do you think translate well to the present day? Which might not and why?
 

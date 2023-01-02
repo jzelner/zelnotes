@@ -26,6 +26,7 @@ format:
 <div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
 
 
+
 ## Agenda
 
 - Reflecting on *Fiasco* as a whole

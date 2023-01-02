@@ -87,7 +87,7 @@ A more serious question: What are we talking about when we talk about a <span cl
 
 :::{.r-stack}
 :::{.fragment .fade-out fragment-index=1}
-![Individuals can transition from latent to active TB and back](../images/latent_vs_active_tb.jpg){height=400}
+![Individuals can transition from latent to active TB and back](../images/latent_vs_active_tb.jpg){height=4`00}
 :::
 :::{.fragment .fade-in fragment-index=1}
 ![Latent TB involves the forming of a protective <span class="alert">granuloma</span> which prevents spread but also allows the bacteria to hide out and re-emerge. (Image from [@ehlers2013])](../images/20220930100225.png){height=400}  
