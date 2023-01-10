@@ -1,0 +1,76 @@
+---
+pagetitle: "Maps and more"
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+        cap-location: "bottom"
+---
+
+## More than maps?
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      University of Michigan School of Public Health  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
+
+## Agenda
+
+- Readings
+
+- "Good Map 😇, Bad Map 👿"
+
+- If time: Overview of Roadmap Project
+
+## Making sense of today's readings 
+
+- Did the Kirby piece impact your understanding of what spatial epidemiology is or isn't? How?
+
+- Is the distinction between spatial epidemiology and <span class="alert">medical geography</span> made by Kirby et al. meaningful?
+
+- Which of the <span class="alert">analytic tools</span> mentioned in this piece are most relevant to your own research or practice interests?
+
+- Any points of confusion? Other questions?
+
+```{r}
+library(countdown)
+countdown(minutes = 10, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Good Map, Bad Map
+
+- [Activity](https://zelnotes.io/teaching/EPID684/Activities/Good+Map%2C+Bad+Map) description
+
+- [Slides](https://docs.google.com/presentation/d/1TMGl5Nl5k2K2uO-dv6VQSTEOSrPvZ3u22-7z_rInO_w/edit?usp=sharing)
+
+```{r}
+library(countdown)
+countdown(minutes = 15, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Roadmap Project
+
+- Project is really focused on how to do something useful with spatial ideas and data in public health.
+
+- Take a few minutes to look at the components of the assignment. 
+
+- Think about some of the ideas in the Koch piece; are they relevant to what you are interested in doing?
+
+## Next Time
+
+<iframe src="https://giphy.com/embed/gEfrwXsPRk14Q" width="480" height="361" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>Making sense of distance and other forms of spatial relatedness</p>
+
+# References
