@@ -86,16 +86,15 @@ In a few minutes I'll ask you to:
 
 ## Differences in accesibility to HIV care across Sub-Saharan Africa reflect local and regional variation epidemiological conditions and policies 
 
-![Number of people living with HIV within a 60 min non-motorized trip to an HIV clinic (from @kim2021a)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/408c2811-43ec-45aa-8d89-3fec6d222806/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230112/us-west-2/s3/aws4_request&X-Amz-Date=20230112T143554Z&X-Amz-Expires=86400&X-Amz-Signature=a57f6478384b70f63a49ff55aa808e7c5b33988ed4d6a802155c71be7cd67cad&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Number of people living with HIV within a 60 min non-motorized trip to an HIV clinic (from @kim2021a)](../images/20230112141054.png)  
 
 ## North American dispersal of HIV reflects international travel and local sexual networks
 
-![Spread of HIV through North America reconstructed using whole-genome sequence data (from @worobey2016)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3b6ca017-3723-4a3d-89e1-bd06f0d11fd9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230112/us-west-2/s3/aws4_request&X-Amz-Date=20230112T143110Z&X-Amz-Expires=86400&X-Amz-Signature=ed3008303087303c0ec45f5828d7a6e3a0dbd97f2252bf9bd2f07e9d365b7749&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Spread of HIV through North America reconstructed using whole-genome sequence data (from @worobey2016)](../images/20230112141023.png)  
 
 ## County-level clustering of diabetes incidence reflects variation in state and local policy and wealth
 
-![From @brazil2022](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7ff52af2-74a4-487b-a90b-00e53656c5fb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230111/us-west-2/s3/aws4_request&X-Amz-Date=20230111T143303Z&X-Amz-Expires=86400&X-Amz-Signature=e6f8028e4217dada5fda0e21361158c9d3ff185513fffdf21e695d32460d4976&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
-
+![From @brazil2022](../images/20230112140926.png)  
 ## Between- and within-city variation in outcomes
 
 ![Outbreaks of measles in two cities with very different vaccination coverages.
@@ -107,7 +106,7 @@ In a few minutes I'll ask you to:
 
 ## Social connectivity with an <span class="alert">institutional amplifier</span> drives neighborhood risk
 
-![Spillover of multi-drug resistant TB from a jail in Lima, Peru (From @warren2018)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/55fd5977-a032-4ea4-88fd-a815f0fe1094/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230111/us-west-2/s3/aws4_request&X-Amz-Date=20230111T142535Z&X-Amz-Expires=86400&X-Amz-Signature=fec05f3ed5010be07fda34d6efd5296999c2c454797a97afa889192de954bfe7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Spillover of multi-drug resistant TB from a jail in Lima, Peru (From @warren2018)](../images/20230112140845.png)
 
 ## ⚡ Jump-starting the roadmap project ⚡
 
