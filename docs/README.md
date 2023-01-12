@@ -7,6 +7,7 @@
 ## Epid 684
 [Session 1: What is spatial epidemiology?](https://jzelner.github.io/document-garden/epid684/what_is_spatial_epidemiology.html)
 [Session 2: Maps and more?](https://jzelner.github.io/document-garden/epid684/session_2_maps_and_more.html)
+[Session 3: Spatial epidemiology is all about relationships](https://jzelner.github.io/document-garden/epid684/session_3_relationships.html)
 [Session 4: Spatial thinking is systems thinking](https://jzelner.github.io/document-garden/epid684/session_4_spatial_systems.html)  
 [Session 5: Introduction to the Ghost Map](https://jzelner.github.io/document-garden/epid684/session_5_ghost_map_intro.html)  
 [Session 6: Miasma vs. Germ Theory](https://jzelner.github.io/document-garden/epid684/session_6_miasma_germ_theory.html)  
