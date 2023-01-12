@@ -1,0 +1,128 @@
+---
+pagetitle: "Spatial epidemiology is all about relationships"
+format: 
+    revealjs:
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        #csl: "../../assets/american-journal-of-epidemiology.csl"
+        cap-location: "bottom"
+---
+
+## Spatial epidemiology is all about relationships
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      University of Michigan School of Public Health  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+
+
+## Agenda 
+
+- Overview of the Roadmap project
+
+- Tobler's first law and other words to live by
+
+- Road-testing project topics with insights from Tobler, Miller and Goodchild
+
+## The "First Law" of Geography
+
+<figure>
+  <blockquote>
+    "Everything is related to everything else. But near things are more related than distant things."
+  </blockquote>
+  <figcaption> -Waldo Tobler, 1969</figcaption>
+</figure>
+
+
+## What makes the first law useful? 
+
+>"[I]magine a world in which [TFL] is not true. In such a world, the full range of conditions could be encountered in every minute portion of the world. Every room, for example, might contain the <span class="alert">full observed range of the Earth’s topographic variation</span>, from the bottom of the Marianas Trench to the summit of Mount Everest[.] [@goodchild2004, p.301]
+
+## {background-iframe="https://www.youtube.com/embed/kRsF9S8JqBI?autoplay=1"}
+
+## No first law $\to$ "A world of white noise" 
+
+!["White noise", like TV static, is characterized by high variation but minimal autocorrelation.](../images/tv_static.jpeg)
+
+## But wait...there's more!
+
+Goodchild argues that:
+
+- *Variation* is more fundamental than *autocorrelation*.
+
+- Without spatial variation there is only perfect autocorrelation.
+
+- Maybe the omnipresence of *variation* should be the First Law?
+
+- Doesn't discount role of <span class="alert">correlation</span>, just puts them in order.
+
+## How do these 'laws' relate to your own interests?
+
+In a few minutes I'll ask you to:
+
+- Think about the epidemiological system you want to focus on for your project.
+
+- What kinds of mechanisms do you think are important as drivers of spatial *variation*? 
+
+- How about <span class="alert">clustering</span>?
+
+- At what <span class="alert">scales</span> are these patterns likely to emerge?
+
+# Different <span class="alert">mechanisms</span> ⚙️ play out at different spatial scales
+
+## Global patterns of malaria are likely to be impacted by climate change
+
+![Warming temperatures will result in changing habitat suitability for malaria-transmitting mosquitoes 🦟](../images/20230112094146.png)  
+
+## Differences in accesibility to HIV care across Sub-Saharan Africa reflect local and regional variation epidemiological conditions and policies 
+
+![Number of people living with HIV within a 60 min non-motorized trip to an HIV clinic (from @kim2021a)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/408c2811-43ec-45aa-8d89-3fec6d222806/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230112/us-west-2/s3/aws4_request&X-Amz-Date=20230112T143554Z&X-Amz-Expires=86400&X-Amz-Signature=a57f6478384b70f63a49ff55aa808e7c5b33988ed4d6a802155c71be7cd67cad&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+
+## North American dispersal of HIV reflects international travel and local sexual networks
+
+![Spread of HIV through North America reconstructed using whole-genome sequence data (from @worobey2016)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3b6ca017-3723-4a3d-89e1-bd06f0d11fd9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230112/us-west-2/s3/aws4_request&X-Amz-Date=20230112T143110Z&X-Amz-Expires=86400&X-Amz-Signature=ed3008303087303c0ec45f5828d7a6e3a0dbd97f2252bf9bd2f07e9d365b7749&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+
+## County-level clustering of diabetes incidence reflects variation in state and local policy and wealth
+
+![From @brazil2022](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7ff52af2-74a4-487b-a90b-00e53656c5fb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230111/us-west-2/s3/aws4_request&X-Amz-Date=20230111T143303Z&X-Amz-Expires=86400&X-Amz-Signature=e6f8028e4217dada5fda0e21361158c9d3ff185513fffdf21e695d32460d4976&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+
+## Between- and within-city variation in outcomes
+
+![Outbreaks of measles in two cities with very different vaccination coverages.
+(From @landrigan1972a)](../images/texarkana_measles.png)
+
+## Clustering of cases within a neighborhood containing an environmental point source
+
+![John Snow's 1854 London Cholera outbreak map](../images/20230111092801.png) 
+
+## Social connectivity with an <span class="alert">institutional amplifier</span> drives neighborhood risk
+
+![Spillover of multi-drug resistant TB from a jail in Lima, Peru (From @warren2018)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/55fd5977-a032-4ea4-88fd-a815f0fe1094/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230111/us-west-2/s3/aws4_request&X-Amz-Date=20230111T142535Z&X-Amz-Expires=86400&X-Amz-Signature=fec05f3ed5010be07fda34d6efd5296999c2c454797a97afa889192de954bfe7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+
+## ⚡ Jump-starting the roadmap project ⚡
+
+For the balance of the time today:
+
+- Think about which epidemiological systems you are interested in focusing on for your project.
+
+- What kinds of mechanisms do you think are important as drivers of spatial *variation* in these systems?
+
+- How about <span class="alert">clustering</span> or spatial <span class="alert">autocorrelation</span>?
+
+- At what <span class="alert">scales</span> are these patterns likely to emerge? 
+
+## Next Time
+
+- Stay tuned!
+
+## References
