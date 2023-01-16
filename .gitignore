@@ -1,7 +1,5 @@
 .DS_store
 *.Rdata
-output/*.*
 _targets
-*.log
-*.aux
 /.quarto/
+.vscode
