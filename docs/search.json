@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "epid684/class_4_spatial_variation.html",
+    "href": "epid684/class_4_spatial_variation.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "In this session, we will focus in on the problem of how we can use epidemiological data to examine the role of Tobler’s first law - the universality of spatial relatedness - as well as Goodchild’s revised first law - the ubiquity of spatial variation - in epidemiology data.\n\n\nPlease read the following two selections. The first is a short article introducing the concept of a disease ‘hotspot’ and the second is a more in-depth treatment of the idea of disease clustering:\n\nRead the piece “What is a Hotspot, Anyway?” by Lessler et al. (2017)\nAnd Chapter 3: Interpreting Clusters of Disease Events from from Lawson et al. (2016)\n\n\n\n\nDuring the first half of class, we will discuss the readings and key concepts in them and I will introduce the concept of kernel smoothing and its application to epidemiologic data as a tool for visualizing and identifying disease clusters.\nIn the second half of class, we will complete a hands-on activity in which we will experiment with smoothing different types of simulated data using this interactive tutorial."
+  },
+  {
+    "objectID": "epid684/index.html",
+    "href": "epid684/index.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "Welcome to EPID 684\nIn this course, we will take an exploratory and collaborative approach to defining and understanding the key problems and approaches to spatial problems in epidemiology and public health.  Through reading historical and contemporary examples of spatial analysis in public health, completing hands-on labs that give a sense of how key mechanisms and methods work, and pursuing an independent research project, you be able to identify the most important biological, social and environmental mechanisms that drive spatial patterns of risk. You will be able to answer key questions about the relevant spatial scale of analysis for a given problem (e.g. neighborhoods vs. cities) and identify key spatial statistics for characterizing spatial clustering relevant to your public health topics of interest.  At the end of this term, you will have a strong foundation for pursuing additional study of specific topics in spatial epidemiology, advanced statistical methods relevant to spatial analysis, and the creation of maps and other data visualizations that effectively convey these ideas."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "EPID 684"
+  }
+]

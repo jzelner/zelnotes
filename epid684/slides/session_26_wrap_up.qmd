@@ -1,0 +1,164 @@
+---
+pagetitle: "Last Day!"
+author: 
+  - name: Jon Zelner
+---
+
+## Wrapping up
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      4/19/2022  
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+![](/images/epid_logo.png){.absolute bottom=0 right=50 width="440" height="100"}
+
+## Agenda
+
+- Where have we been?
+
+- Leaving a time capsule for ourselves and  the next cohort of spatial epid students.
+
+- Office hours
+
+# A brief review of the term...
+
+##  How far we've come<span class="fragment alert" data-fragment-index=1>...or have we?</span>{.imgslide}
+
+![Howie was not pleased with yesterday's last gasp of Winter ❄️
+](/images/memes/howie_snow.png)
+
+
+
+## Tobler's "First Law" {.center}
+
+>   "*Everything is related to everything else. But near things are more related than distant things.*" -Waldo Tobler, 1969
+
+## Applied spatial epidemiology is about <span class="alert">mess management</span>  
+
+<blockquote>
+"What we do experience are large and complex sets of interacting problems, dynamic <span class="alert">systems</span> of problems... [W]e refer to these as messes. Our focus is on the <span class = "alert">management</span> of messes rather than the solution of problems." - From Ackoff 1981, "The Art and Science of Mess Management"
+</blockquote>
+
+## Scale, scale, scale<span class="fragment alert" data-fragment-index=1>...and more scale!</span> 
+
+![How many outbreaks you see depends on the level you look at.](/images/connected_outbreaks.png)
+
+## John Snow's hands-on approach 
+
+:::{.columns}
+:::{.column width=50%}
+  <blockquote style="font-size:0.7em;">
+      "He sits alone in his cluttered flat, <span style="color:green">frogs croaking</span> 🐸 around him, illuminated only by candlelight. After a few minutes tinkering...he fastens the mouthpiece over his face and releases the gas. Within seconds, his head hits the desk. Then minutes later, he wakes, consults his watch through blurre vision. He reaches for his pen, and starts recording the data."</blockquote>
+:::
+:::{.column width=50%}
+![](/images/john_snow.jpg)
+:::
+:::
+
+## Seeing cities as epidemiological <span class="alert">systems</span> 
+:::{.columns}
+:::{.column width=50%}
+> "The bird’s-eye view of the city, the sense of the urban universe as a system, as a mass phenomenon—this imaginative breakthrough is as crucial to the eventual outcome of the Broad Street epidemic as any other factor." [@johnson2007, p.97]
+:::
+:::{.column width=50%}
+![John Snow's map of London water service areas](/images/snow_water_map.jpg)
+:::
+:::
+
+## Mental (<span class="alert">spatial</span>) models are sticky 
+
+![Inspired by Greenhalgh [@greenhalgh2021]](/images/cholera_galaxy_brain.jpg)
+
+## Dislodging these requires interrogating the <span class="alert">values</span> and <span class="alert">biases</span> baked into the ways we measure...everything. {.imgslide}
+
+<img src="/images/adkins-jackson-structural-racism.png" width="100%">
+
+Suggestions for accurately measuring the nature of and impact of structural racism on health  outcomes (FromAdkins-Jackson et al., 2021 [@adkins-jackson2021])
+
+## Our <span class="alert">analytic</span> models need to align with our <span class="alert">theoretical</span> ones
+
+```{r, echo=FALSE, fig.cap="Errors from a model that ignores spatial clustering"}
+require(ggplot2)
+icc <- 0.9
+total_var <- 1
+cluster_sigma <- sqrt(icc * total_var)
+ind_sigma <- sqrt((1 - icc) * total_var)
+ind_cluster <- 100
+ncluster <- 10
+#cluster_sigma <- 1
+#ind_sigma <- 0.2
+
+cluster_ids <- sort(rep(1:ncluster, ind_cluster))
+
+cluster_means <- rnorm(ncluster, sd = cluster_sigma)
+ind_vals <- rnorm(n = length(cluster_ids), mean = cluster_means[cluster_ids], sd = ind_sigma)
+
+df <- data.frame(x = ind_vals, cluster = cluster_ids)
+
+g <- ggplot(df, aes(x = x, cluster = cluster_ids)) +
+  geom_histogram(binwidth = 0.05, aes(y=..density..)) +
+  xlab("Distance from mean") +
+  ylab("Density") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = sqrt(total_var))) +
+  theme_bw()
+
+
+plot(g)
+```
+
+# <span style="color:white">There are no perfect models, but we try to avoid the worst fallacies. </span> {background-image="https://www.denofgeek.com/wp-content/uploads/2016/05/creature_from_the_black_lagoon_franchise_retrospective.jpg"}
+
+## Newer, <span class="alert">multi-scale approaches</span> help but they don't solve every problem
+
+![An example where segregation is primarily explained by *within-unit* variation. (from Lichter & Parisi [@lichter2015])](/images/lichter_low_macro.png)
+
+## <span class="alert">BIG DATA</span> are also useful, but create their own problems {.imgslide}
+
+![Relating mobility to COVID-19 spread in the early days of the pandemic [@glanz2020]](/images/cellphone_mobility_covid.png)
+
+# How far did we come in acheiving our own <span class="alert">goals</span> 🥅?
+
+## Spend 5-10m on our own reflecting on how the class sessions and assignments did/didn't help acheive these course goals:
+
+1. Become effective in the application of spatial ideas to real-world problems in epidemiology.
+
+2. Apply a <span class="alert">spatial systems</span> approach to public health.
+
+3. Select <span class="alert">appropriate quantitative tools</span> for addressing spatial public health problems.
+
+4. Use spatial analysis as a tool for <span class="alert">advancing health justice and equity</span>.
+
+
+## Constructing a 'time capsule' annotated bibliography
+
+Take 15-20m:
+
+1. Open up [this document](https://docs.google.com/document/d/1RKcbZZZIEKZgn5seKhUa2X7f-iFKI5cGTWuhBuu3gc4/edit?usp=sharing).
+  - Make a <span class="alert">new header</span> with your project topic/area of interest & name/email if you are OK sharing.
+
+2. Insert <span class="alert">2-3 formatted references</span> in something like the *Epidemiology* style, e.g:
+
+  - Merlo J, Chaix B, Yang M, Lynch J, Rastam L. A brief conceptual tutorial of multilevel analysis in social epidemiology: linking the statistical concept of clustering to the idea of contextual phenomenon. J Epidemiol Community Health. 2005;59(6):443-449. doi:10.1136/jech.2004.023473
+
+## Constructing a '<span class="alert">time capsule</span>' annotated bibliography
+
+3. Write a short (<span class="alert">~1 para</span>) blurb explaining what you found interesting/useful/surprising about each reference.
+
+## That's it! 
+
+- I'll hang around to answer any questions you might have about projects, etc.
+
+- Please submit <span class="alert">final products</span> and self assessments by 4/26.
+
+- Stay in touch!
+
+
+## References

@@ -1,6 +1,29 @@
 project:
-  title: "document-garden"
-  execute-dir: file
+  type: website
+  output-dir: docs
+  render: 
+      - "*.qmd"
+      - "!papers"
+      - "!epid592"
+      - "!epid594"
+      - "!pubhlth405"
+      - "!talks"
+website:
+  title: "Zelnotes"
+  sidebar:
+    contents:
+      section: Epid 684
+      contents: epid684/*
 
+execute:
+  freeze: auto
 
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+    resource-path: 
+          - "images"
 

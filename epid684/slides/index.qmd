@@ -1,0 +1,7 @@
+1. [Session 1](session_1_what_is_spatial_epidemiology.qmd)  
+
+2. [Session 2](session_2_maps_and_more.qmd)
+
+3. [Session 3](session_3_relationships.qmd)
+
+3. [Session 4](session_4_spatial_systems.qmd)
