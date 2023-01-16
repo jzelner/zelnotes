@@ -1,0 +1,77 @@
+# Syllabus 
+
+We will have 28 total class meetings, which we will use for a mix of discussion, hands-on activities and project work. The topics we focus on in our in-class sessions are selected to support your own work on the semester-long [Roadmap Project](roadmap-project/index.qmd)
+
+This semester, we will meet in SPH I 2695 from 1:30-2:50pm, Tuesdays and Thursdays, beginning 1/5. If you are unable to attend class in-person, please use this [zoom link](https://umich.zoom.us/j/99504833290) to participate remotely.
+
+Please review the [course policies](policies.qmd) for information about attendance, grading and other issues.
+
+***
+## Module 1: What are the ingredients of a spatial problem in epidemiology?
+
+In this first module, we will start to get our heads around what we actually mean when we talk about spatial epidemiology. First and foremost, we'll ask the question of *why* space matters in public health, *when* it does and does not, and what tools are available to us to diagnose and address spatial problems where they exist.
+
+1. Where are we going?  (1/5)  
+2. Maps and More  (1/10)  
+3. Spatial epidemiology is all about relationships]]  (1/12)  
+4. [What tools can we use to understand spatial variation and clustering?](class_4_spatial_variation.qmd) (1/17)
+
+***
+
+## Module 2: Spatial analysis and the foundations of modern epidemiology. (Sessions 5-11)
+
+In this module, we will use an important but often-mischaracterized historical example - the 1854 Broad Street Cholera outbreak and John Snow's historic analysis and intervention in it - to explore what it is that makes a public health problem a spatial one. Specifically, we will look at how this particular outbreak was shaped by the confluence of biological, social, and environmental mechanisms. 
+
+Another important component of this story is one of problem definition: Is the problem transmission of an infectious pathogen, or the spatial aggregation of foul-smelling, disease-causing air? 
+
+During this module, we will use Snow's challenges in convincing a skeptical public and medical establishment of the infectious etiology of Cholera as a springboard for the type of problem definition that is the focus of the [[What is the destination?]] assignment. This will culminate in presentations at the end of this module, and we will use some of the class time prior to these presentations to make progress on this project.
+
+1. Walking into a Cholera epidemic  (1/19)  
+2. Miasma vs. Germ Theory  (1/24)  
+3. Using maps to make the case for an infectious cause (1/26)  
+4. From the pump handle to the present  (1/31)  
+ - [[What is the origin?]] assignment due **1/26**  
+ 
+ 
+***
+## Module 3: Spatial clustering of health as a problem of intersecting social, biological, and environmental systems (Sessions 12-18)
+1. Smoothing lab]] (2/2)  
+2. What is clustering and why should you care?]]  (2/7)  
+
+##### Mini-Module 3.1: Residential segregation and disease clustering
+3. Residential Segregation and the Social Drivers of Clustered Risk  (2/9)  
+In-class project work time & check-in (2/14)  
+
+
+**Sessions 13-15:**  In-class presentation of What is the destination? assignments. (2/16, 2/22)
+-  Mid-term Check-in (Please submit by 2/24)
+
+### Winter Break!  (No class 2/28 & 3/2)
+
+4. Relating Residential Segregation to Disease Outcomes  (3/7)  
+5. How do we capture the causal impact of structural racism on spatial outcomes?   (3/9)   
+6. Mechanistic linkages between structural racism and infectious disease transmission (3/14)  
+7. Public health implications of spatially-clustered non-vaccination  (3/16)   
+8. What happens when we try to intervene on clustered risk?]] (3/23) 
+
+***
+
+## Module 4: Multi-level approaches to spatial analysis and intervention. (Sessions 20-25)
+
+1. Comparing between-place and between-individual variation using intraclass correlation]] (3/23)     
+	 1.  Postcard from the road assignment due 3/24   
+2. Digging into the multi-level approach to spatial analysis (3/28)  
+3. In-class workshop on Postcard from the road assignments. (3/30) 
+4. Applications of the multi-level approach to spatial health data (4/4)
+
+***
+
+## Module 5 (26-28): Working across scales to capture individual and contextual effects on health 
+1. What do you measure when you measure place effects? Confronting the modifiable areal unit problem. (4/6)  
+2. Capturing the multi-scale, multi-dimensional nature of residential segregation (4/11)
+3. Characterizing the impact of individual and collective mobility on disease risks (4/13)
+4. Final Day Wrap-Up (4/18)
+
+### Assignments
+* Final Product Submission (due 4/26)  
+* End of term self-assessment (due 4/26)

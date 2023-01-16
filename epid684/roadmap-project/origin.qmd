@@ -1,0 +1,27 @@
+---
+publish: true
+---
+
+For this assignment, I'm asking you to put together an overview of your spatial problem of interest, where you:
+
+1. Describe the biological, social and environmental factors that are known or suspected to drive spatial variation in your outcome.
+2. Highlight the populations and geographic areas most impacted by it.
+3. Describe and argue for the public health importance of a spatial approach to addressing this problem. 
+
+In this assignment, you will begin building the foundation that will eventually lead to your [[Final Product Submission]] assignment. The purpose of this assignment is for you to build a *useful reference for yourself* that can inform work on your project going forward. Over the course of the term, you will build this reference to form a coherent plan for your final product.
+
+Think of this as being more like a well-annotated lab notebook or a portfolio than a formal research paper. It should still be well-documented and clearly written, but can include different sources of content including references to academic papers, news articles, video clips, and anything else you think is relevant or important for understanding your topic.
+
+#### Defining your problem
+
+You should define your problem with as much specificity as possible. For example, if you are interested in Tuberculosis (TB),  rather than discussing spatial variation of TB infection at a very high level, focus on the problem of TB in a specific city or region. Making things concrete will be key for keeping your project focused and making it useful and interesting to you.
+
+### Learning Objective
+
+Your work on this project will give you the opportunity to refine and demonstrate your skills relating to the  [[Identify well-posed spatial problems in public health and epidemiology.|identification of well-posed spatial public health problems]].
+
+#### Submission
+
+Please [submit this assignment via Canvas](https://umich.instructure.com/courses/497666/assignments/1622311) any time between now (1/18) and midnight on 1/28. 
+
+

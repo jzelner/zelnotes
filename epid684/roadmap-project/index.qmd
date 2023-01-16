@@ -1,0 +1,32 @@
+# Roadmap Project
+
+Throughout the term, you will complete a project in which you identify a problem of interest to you in spatial epidemiology and plot a path towards solving it. You will build and receive feedback on this project from me and your peers over the course of the term. In keeping with the spatial theme of the course, we will call this the *Roadmap* project because you will be asked to chart your own path from a spatial *problem* to a *solution* to the problem you have identified.
+
+The nature of the problem and solution are up to you, but we will all approach it with the objective of being able to apply all of the following skills by the time you complete the project.
+
+Although a lot of the work on this project will be done outside of our course meetings, we will devote several class sessions to working on and presenting materials developed through completing the steps of this project. The stages of this project will address all of the course goals, with a particular focus on the fourth one - focused on integrating different sources of information on a spatial problem in epidemiology - via the final product of this semester-long project.
+
+### Project Stages
+
+You will build towards the final project in stages over the course of the term through the following four sub-assignments:
+
+1. [What is the origin?](origin.qmd) 
+2. [What is the destination?](destination.qmd)
+3. [Postcard from the road](postcard.qmd)
+4. [Final Product](final.qmd)
+
+### Assessment and Grading
+You will be evaluating your own progress and the match between what you were able to accomplish and your goals at the outset. **The point of having this be self-assessed is to make sure you pick something that is of interest and use to you, not what you imagine what I want from you.** Please spend some time thinking about how this project could best address your short- and long-term academic and career goals. 
+
+This could be anything from learning a new analytical skill, deepening your knowledge about a particular epidemiological topic or set of policy/practice tools. 
+
+I encourage you to think about other uses for the final product of this semester-long project: How could you use it to lay the foundation for a fellowship application, create a portfolio to showcase your work to potential employers, or do anything else that is important to you? 
+
+For example, your final product could include any of the following:
+
+1. A podcast episode introducing your topic and some of your ideas/research on it.
+2. A spatial data visualization with accompanying explanation; can be presented in the form of a set of social media posts, a blog entry, or as a printed document.
+3. A policy white paper meant to inform public and political debate around issues related to your problem of choice.
+4. A pamphlet or some other type of public health communication meant to be shared in practice setting, e.g. in a clinic, during outreach, etc.
+
+It could also very well be something not on this list - you just need to justify why you are taking the approach you choose.

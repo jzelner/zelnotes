@@ -1,3 +1,7 @@
 # Welcome to EPID 684
 
+![](/images/snow_cholera_map.jpg)
+
 In this course, we will take an exploratory and collaborative approach to defining and understanding the key problems and approaches to spatial problems in epidemiology and public health.  Through reading historical and contemporary examples of spatial analysis in public health, completing hands-on labs that give a sense of how key mechanisms and methods work, and pursuing an independent research project, you be able to identify the most important biological, social and environmental mechanisms that drive spatial patterns of risk. You will be able to answer key questions about the relevant spatial scale of analysis for a given problem (e.g. neighborhoods vs. cities) and identify key spatial statistics for characterizing spatial clustering relevant to your public health topics of interest.  At the end of this term, you will have a strong foundation for pursuing additional study of specific topics in spatial epidemiology, advanced statistical methods relevant to spatial analysis, and the creation of maps and other data visualizations that effectively convey these ideas.
+
+Please see the [course syllabus](syllabus.qmd) for detailed information on class meetings and assignments.

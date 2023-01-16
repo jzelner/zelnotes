@@ -1,0 +1,12 @@
+---
+title: "Course Meetings"
+listing:
+  contents:
+    - "class*.qmd"
+  sort: 
+    - "date"
+    - "class"
+  date-format: full
+  type: table
+  fields: ["date", "title"]
+---

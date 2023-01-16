@@ -1,5 +1,6 @@
 ---
-order: 1
+class: 4
+date: "1/17/2023"
 ---
 
 # Tools for making sense of spatial variation
