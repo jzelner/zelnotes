@@ -1,0 +1,14 @@
+{
+  "hash": "24da4a7027a05e88a93bd606a6d30827",
+  "result": {
+    "markdown": "---\npagetitle: \"'Destination' project in-class workshop\"\nfontsize: 12pt\nurlcolor: blue\noutput: \n  revealjs::revealjs_presentation:\n    theme: \"solarize\"\n    transition: \"fade\"\n    css: \"styles.css\"\n    self_contained: false\n    lib_dir: \".\"\n    reveal_plugins: [\"chalkboard\", \"menu\"]\n    fig_caption: false\n    toggleFullScreenButton: true\n    reveal_options: \n      chalkboard:\n        theme: \"whiteboard\"\n        toggleChalkboardButton: true\n        toggleNotesButton: true\n---\n\n\n\n# <span class=\"alert\">Destination</span> project in-class workshop {#title}\n\n<div class=\"paddeddiv\">\n  <p style=\"font-size:0.5em; text-align: left;\">\n      EPID 684  \n      Spatial Epidemiology  \n      2/15/2022  \n      <br><br>\n      Jon Zelner  \n      `jzelner@umich.edu`  \n      [`epibayes.io`](https://epibayes.io) \n    </p>\n</div>\n\n<div class=\"itemr\" id=\"footerDiv\"><img id=\"footerImg\" src=\"../images/epid_logo.png\" width=\"400\"></div>\n\n\n# Agenda\n\n>- Ingredients of a successful short talk\n>- Time to work on projects\n>- In-class office hours\n\n\n# Slide headers should be short, clear <span class=\"alert\">statements</span> \n\n>- Header says it all\n>- This makes it easy for folks to follow what you're doing.\n>- Assume everyone will <span class=\"alert\">tune out</span> at some point and need to be re-oriented.\n>- More importantly, this makes it easy for <span class=\"alert\">you</span> to get a feel for the flow of your presentation.\n\n# Choose <span class=\"alert\">simple images</span> that make your point easier to digest {.imgslide}\n\n<img src=\"../images/texarkana_measles.png\">\n\n# Try to keep your <span class=\"alert\">notes</span> off your slides\n\n>- Use the space on your slide to show something that <span class=\"alert\">complements</span> what you're saying rather than just saying it.\n\n>- In other words, don't do what I just did ⬆️\n\n# Give your content room to <span class=\"alert\">breathe</span> 🌬️\n\n>- Assume it will take you at least 1m per slide. \n\n>- Almost always better to go short than long.\n\n>- You will almost never go short even if you think you will.\n\n# This is an opportunity for you to articulate your ideas and get feedback.\n\n>- Not a <span class=\"alert\">high-stakes</span> exercise.\n>- Could actually be <span class=\"alert\">fun</span>, maybe?\n>- Check out this [great paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009554) for more ideas/resources.\n\n# Next Time\n\n\"Destination\" presentations:\n\n1. Rebecca\n2. Rossana\n3. TC & Jiaqi\n4. Shannon\n5. Sarah\n6. Maheen\n7. Matt\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

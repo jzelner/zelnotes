@@ -1,0 +1,14 @@
+{
+  "hash": "41f86849e99642be814030626b64cbdd",
+  "result": {
+    "markdown": "---\npagetitle: \"Lab Day!\"\nfontsize: 12pt\nurlcolor: blue\noutput: \n  revealjs::revealjs_presentation:\n    theme: \"solarize\"\n    transition: \"fade\"\n    css: \"styles.css\"\n    self_contained: false\n    lib_dir: \".\"\n    reveal_plugins: [\"chalkboard\", \"menu\"]\n    fig_caption: false\n    toggleFullScreenButton: true\n    reveal_options: \n      chalkboard:\n        theme: \"whiteboard\"\n        toggleChalkboardButton: true\n        toggleNotesButton: true\n---\n\n::: {.cell}\n\n:::\n\n\n# <strike style=\"color: red\"><span style=\"color: white; -webkit-text-stroke: 1px black;\">Snow</span></strike> Lab Day! {#title}\n\n<div class=\"paddeddiv\">\n  <p style=\"font-size:0.5em; text-align: left;\">\n      EPID 684  \n      Spatial Epidemiology  \n      2/1/2022 \n      <br><br>\n      Jon Zelner  \n      `jzelner@umich.edu`  \n      [`epibayes.io`](https://epibayes.io) \n    </p>\n</div>\n\n<div class=\"itemr\" id=\"footerDiv\"><img id=\"footerImg\" src=\"../images/epid_logo.png\" width=\"400\"></div>\n\n# Agenda\n\n>- Wrap-up discussion of <span class=\"alert\">mind map</span> from last class.\n>- Final trip to <span style=\"color: gold\">Golden Square</span>\n>- If we have time: 1D Smoothing, revisited.\n\n# Mind Maps\n\n[Question 1](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517655932395&cot=14)\n\n[Question 2](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517656172651&cot=14)\n\n[Question 3](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517656431188&cot=14)\n\n\n# Return to <span style=\"color: gold\">Golden Square</span> {.imgslide}\n\n<a href = \"https://sph-umich.shinyapps.io/john-snow-cholera\">\n  <img src=\"../images/snow_cholera_map.jpg\">\n</a>\n\nSaying goodbye by spending some quality time with the [outbreak data](https://sph-umich.shinyapps.io/john-snow-cholera)\n\n# Smoothing!\n\n<a href=\"https://sph-umich.shinyapps.io/smoothing\">\n<img src=\"../images/smoothing_front_page.png\" width=\"600\"> \n</a>\n\n<p style=\"text-align: center;\"><a href=\"https://sph-umich.shinyapps.io/smoothing\">Going hands-on with Tobler's first law</a><p>\n\n\n# Next Time\n\n- What is <span class=\"alert\">clustering</span> and why should you care?\n- Smoothing in <span class=\"alert\">two</span> dimensions.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
