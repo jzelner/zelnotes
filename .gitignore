@@ -4,3 +4,4 @@ _targets
 /.quarto/
 .vscode
 .Rproj.user
+docs
