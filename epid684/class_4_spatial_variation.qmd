@@ -20,4 +20,10 @@ Please read the following two selections. The first is a short article introduci
 
 During the first half of class, we will discuss the readings and key concepts in them and I will introduce the concept of *kernel smoothing* and its application to epidemiologic data as a tool for visualizing and identifying disease clusters. 
 
-In the second half of class, we will complete a guided tutorial going over the basics of [locally-weighted regression](/posts/smoothing.qmd) and, if we have time, a hands-on activity in which we will experiment with smoothing different types of simulated data using this [interactive tutorial](https://sph-umich.shinyapps.io/smoothing).
+In the second half of class, we will complete a guided tutorial going over the basics of [locally-weighted regression](/posts/smoothing.html) and, if we have time, a hands-on activity in which we will experiment with smoothing different types of simulated data using this [interactive tutorial](https://sph-umich.shinyapps.io/smoothing).
+
+## Additional Resources
+
+[Slides](slides/session_4_clustering.qmd)
+
+## References

@@ -12,16 +12,6 @@ format:
 
 ## What is clustering, anyway?
 
-```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
-knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
-
-## This function uses the `here` package to make it easy to include graphics in a directory
-## relative to the project root
-include_local_graphics <- function(x) {
-  knitr::include_graphics(here::here(x))
-}
-```
-
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
       EPID 684  
@@ -101,7 +91,7 @@ countdown(minutes = 2, warn_when = 60, seconds = 0, play_sound=FALSE)
 
 ## A guided tour of smoothing approaches
 
-- [Basics of locally-weighted regression](/posts/smoothing.qmd)
+- [Basics of locally-weighted regression](/posts/smoothing.html)
 
 - If time: [Hands-on with smoothing models](https://sph-umich.shinyapps.io/smoothing)
 
@@ -109,4 +99,4 @@ countdown(minutes = 2, warn_when = 60, seconds = 0, play_sound=FALSE)
 
 ![](/images/john_snow.jpg)
 
-[Time to meet John Snow & co](/epid684/class_5_walking_into_a_cholera_epidemic.qmd)
+[Time to meet John Snow & co](/epid684/class_5_walking_into_a_cholera_epidemic.html)

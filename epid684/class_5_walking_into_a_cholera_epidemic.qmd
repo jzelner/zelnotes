@@ -1,3 +1,7 @@
+---
+date: 1/17/2023
+---
+
 # Walking into a Cholera Epidemic 
 
 ## Before Class
@@ -12,4 +16,4 @@ We will begin discussing one of the foundational stories of modern infectious di
 
 We will also begin making some connections between the historical example laid out in the book and the very real challenges that remain in combating Cholera today, and in communicating new scientific ideas to a not-always-receptive audience.
 
-#### Additional Resources
+## References
