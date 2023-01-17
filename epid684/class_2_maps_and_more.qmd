@@ -1,0 +1,36 @@
+---
+date: 1/10/2023
+---
+
+# Maps and More
+
+## Before Class
+
+Please take some time to read over this excellent introduction to some of the key questions and challenges in spatial epidemiology:
+
+[Kirby RS, Delmelle E, Eberth JM. Advances in spatial epidemiology and geographic information systems.](https://www.dropbox.com/s/x2j7ncnxgfv7d5r/kirby_et_al_2017_advances_in_spatial_epidemiology_and_geographic_information_systems.pdf?dl=0) _Annals of Epidemiology_. 2017;27(1):1-9. doi:[10.1016/j.annepidem.2016.12.001](https://doi.org/10.1016/j.annepidem.2016.12.001)
+
+As well as this piece, which reviews some of the social and technological innovations in spatial epidemiology that have occurred in the wake of the COVID-19 pandemic:
+
+Koch T. Welcome to the revolution: COVID-19 and the democratization of spatial-temporal data. _PATTERNS_. 2021;2(7). doi:[10.1016/j.patter.2021.100272](https://doi.org/10.1016/j.patter.2021.100272) (Open Access)
+
+
+## During Class
+
+For the first half of class, we will go over the components of the [[Roadmap Project]] in detail and discuss any questions you might have about the readings for today.
+
+In the second half of class, we will complete the [[Good Map, Bad Map]] activity, in which you will look for examples of contemporary maps that do and do not effectively convey spatial information. We will use this as a springboard for discussing the power and limitations of maps as presentations of cause-and-effect in epidemiology and beyond. Please use the assigned readings as a guide for this conversation, as they get into some of the tools available for conducting spatial epidemiology and some of the key ideas underlying the health geography perspective.
+
+#### Additional Resources
+
+- [Lecture slides](slides/session_2_maps_and_more.qmd)
+
+- [Google doc](https://docs.google.com/document/d/1xbMtZX27jE3ryZQHAXoQ5SdaiA6rvOVUNdgafp6cPFg/edit?usp=sharing) for in-class activity
+
+- [Slides for in-class activity](https://docs.google.com/presentation/d/1TMGl5Nl5k2K2uO-dv6VQSTEOSrPvZ3u22-7z_rInO_w/edit?usp=sharing) deck for in-class activity
+
+- ["Making maps means making choices"](https://www.dropbox.com/s/icpalupqv2eewi2/EPID592_01-02A_making%20maps%20means%20making%20choices_COURSERA.mp4?dl=0) short recorded lecture
+
+- ["Tools of the trade"](https://www.dropbox.com/s/pqhy69p03h0d0tk/EPID592_1-03_Tools%20of%20Trade_COURSERA.mp4?dl=0) short recorded lecture
+
+- This chapter provides a comprehensive overview of important ideas and topics in spatial epidemiology: [Robb SW, Bauer SE, Vena JE. Chapter 1: Introduction to Different Epidemiologic Perspectives and Applications to Spatial Epidemiology. In: _Handbook of Spatial Epidemiology_. CRC Press; 2016:4-18.](https://www.dropbox.com/s/2ftgocrbeiwbzia/robb_handbook_of_spatial_epi_ch_1.pdf?dl=0) 
