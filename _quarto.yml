@@ -10,10 +10,10 @@ project:
       - "!talks"
 website:
   title: "Zelnotes"
+  site-url: https://zelnotes.io
   sidebar:
       style: "docked"
       contents: auto
-
 
 execute:
   freeze: auto

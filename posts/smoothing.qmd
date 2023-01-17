@@ -1,12 +1,16 @@
 ---
+title: "Codifying Tobler's First Law using Locally Weighted Regression"
 author: "Jon Zelner"
 date: "1/17/2023"
 categories:
   - code
   - tutorial
+page-layout: article
+title-block-style: default
+title-block-banner: false
 ---
 
-# Codifying Tobler's First Law using Locally Weighted Regression
+# Introduction
 
 In this brief tutorial, we will review some basic ideas about smoothing and start thinking through how we can express these ideas mathematically and in R. 
 
