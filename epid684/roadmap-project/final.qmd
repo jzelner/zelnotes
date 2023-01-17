@@ -1,9 +1,0 @@
----
-date_created: 2021-12-19
-publish: true
----
-
-Your final product for this course will be whatever you choose at the conclusion of the in-class workshop using the materials from your previous assignments, particularly the [[Postcard from the road|route]] you selected following the in-class workshop. By the time you get to this stage, the [[What is the origin?|problem]], [[What is the destination?|proposed solution]] and [[Postcard from the road|approach]] should all be clear and now all that is left is to execute the idea! 
-
-**It is OK for the final product to be a work-in-progress at the end of the term.** I would far prefer to see you be ambitious and start something you can continue to carry forward than to narrow your ambitions to meet an end-of-term deadline. 
-

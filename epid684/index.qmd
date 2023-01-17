@@ -1,7 +1,91 @@
-# Welcome to EPID 684
+---
+tbl-colwidths: [10,90]
+---
+# EPID 684: Introduction to Spatial Epidemiology
 
 ![](/images/snow_cholera_map.jpg)
 
-In this course, we will take an exploratory and collaborative approach to defining and understanding the key problems and approaches to spatial problems in epidemiology and public health.  Through reading historical and contemporary examples of spatial analysis in public health, completing hands-on labs that give a sense of how key mechanisms and methods work, and pursuing an independent research project, you be able to identify the most important biological, social and environmental mechanisms that drive spatial patterns of risk. You will be able to answer key questions about the relevant spatial scale of analysis for a given problem (e.g. neighborhoods vs. cities) and identify key spatial statistics for characterizing spatial clustering relevant to your public health topics of interest.  At the end of this term, you will have a strong foundation for pursuing additional study of specific topics in spatial epidemiology, advanced statistical methods relevant to spatial analysis, and the creation of maps and other data visualizations that effectively convey these ideas.
+## Course Goals
 
-Please see the [course syllabus](syllabus.qmd) for detailed information on class meetings and assignments.
+In this course, we will take an exploratory and collaborative approach to defining and understanding the key problems and approaches to spatial problems in epidemiology and public health.  Through reading historical and contemporary examples of spatial analysis in public health, completing hands-on labs that give a sense of how key mechanisms and methods work, and pursuing an independent research project, you be able to identify the most important biological, social and environmental mechanisms that drive spatial patterns of risk. 
+
+You will be able to answer key questions about the relevant spatial scale of analysis for a given problem (e.g. neighborhoods vs. cities) and identify key spatial statistics for characterizing spatial clustering relevant to your public health topics of interest.  At the end of this term, you will have a strong foundation for pursuing additional study of specific topics in spatial epidemiology, advanced statistical methods relevant to spatial analysis, and the creation of maps and other data visualizations that effectively convey these ideas.
+
+# Syllabus 
+
+We will have 28 total class meetings, which we will use for a mix of discussion, hands-on activities and project work. The topics we focus on in our in-class sessions are selected to support your own work on the semester-long [Roadmap Project](roadmap-project/index.qmd)
+
+This semester, we will meet in SPH I 2695 from 1:30-2:50pm, Tuesdays and Thursdays, beginning 1/5. If you are unable to attend class in-person, please use this [zoom link](https://umich.zoom.us/j/99504833290) to participate remotely.
+
+Please review the [course policies](policies.qmd) for information about attendance, grading and other issues.
+
+## Laying the Foundations: What is spatial epidemiology?
+
+In this first module, we will start to get our heads around what we actually mean when we talk about spatial epidemiology. First and foremost, we'll ask the question of *why* space matters in public health, *when* it does and does not, and what tools are available to us to diagnose and address spatial problems where they exist.
+
+ 
+|Date | Topic |
+|---------|:----------|
+| 1/5 | [Where are we going?](class_1_where%20are%20we%20going.qmd) |
+| 1/10 | [Maps and More](class_2_maps_and_more.qmd) |
+| 1/12 | [Spatial epidemiology is all about relationships ](class_4_spatial_variation.qmd) |
+| 1/17 | [What tools can we use to understand spatial variation and clustering?](class_4_spatial_variation.qmd)|
+
+
+## Spatial analysis and the foundations of modern epidemiology
+
+In this module, we will use an important but often-mischaracterized historical example - the 1854 Broad Street Cholera outbreak and John Snow's historic analysis and intervention in it - to explore what it is that makes a public health problem a spatial one. Specifically, we will look at how this particular outbreak was shaped by the confluence of biological, social, and environmental mechanisms. 
+
+Another important component of this story is one of problem definition: Is the problem transmission of an infectious pathogen, or the spatial aggregation of foul-smelling, disease-causing air? 
+
+During this module, we will use Snow's challenges in convincing a skeptical public and medical establishment of the infectious etiology of Cholera as a springboard for the type of problem definition that is the focus of the [Postcards from the Road](roadmap-project/assignment-postcard.qmd) assignment. This will culminate in presentations at the end of this module, and we will use some of the class time prior to these presentations to make progress on this project.
+
+|Date | Topic |
+|---------|:----------|
+| 1/19 | Walking into a Cholera epidemic |
+| 1/24 | Miasma vs. Germ Theory |
+| 1/26 | Using maps to make the case |
+| 1/26 | [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
+| 1/31 | From the pump handle to the present |
+| 2/2 | Hands-on: Mapping the Snow data | 
+  
+
+## Project Progress
+
+|Date | Topic |
+|---------|:----------|
+| 2/7 | In-class project work time & check-in|
+| 2/9 | In-class presentation of [What is the destination?](roadmap-project/assignment-destination.qmd) assignments.|
+| 2/14 | In-class presentation of What is the destination? assignments (cont'd)|
+
+## Spatial clustering of health as a problem of intersecting social, biological, and environmental systems 
+
+|Date|Topic|
+|---------|:----------|
+|2/16| What is clustering and why should you care?| 
+|2/19| Residential Segregation and the Social Drivers of Clustered Risk |
+|2/24| Mid-term Check-in|
+|2/28| Winter Break (no class) |
+|3/2| Winter Break (no class) |
+|3/7| Relating Residential Segregation to Disease Outcomes |
+|3/9| How do we capture the causal impact of structural racism on spatial outcomes? |   
+|3/14| Mechanistic linkages between structural racism and infectious disease |
+|3/16| Public health implications of spatially-clustered non-vaccination |
+
+## Multi-level approaches to spatial analysis and intervention
+
+|Date|Topic|
+|----|:----|
+|3/23| Comparing between-place and between-individual variation using intraclass correlation|
+|3/24| Digging into the multi-level approach to spatial analysis |
+|3/30 | In-class workshop on [Postcard from the road assignments](roadmap-project/assignment-postcard.qmd) |
+|4/4 | Applications of the multi-level approach to spatial health data |
+
+## Working across scales to capture individual and contextual effects on health 
+|Date|Topic|
+|----|:---|
+|4/6 | What do you measure when you measure place effects? Confronting the modifiable areal unit problem. | 
+| 4/11 | Capturing the multi-scale, multi-dimensional nature of residential segregation |
+| 4/13 |  Characterizing the impact of individual and collective mobility on disease risks |
+| 4/18 | Final Day Wrap-Up (4/18) | 
+| 4/26 | Final Product Submission |

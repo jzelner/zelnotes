@@ -1,2 +1,5 @@
-# EPID 684
+# Welcome!
 
+For more information about courses I teach, please see the homepage for the following classes at the University of Michigan:
+
+- [Spatial Epidemiology](epid684/index.qmd)

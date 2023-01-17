@@ -1,5 +1,6 @@
 ---
 pagetitle: "Spatial Systems"
+draft: true
 ---
 ## Spatial systems (of systems)
 

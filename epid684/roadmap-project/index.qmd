@@ -10,10 +10,10 @@ Although a lot of the work on this project will be done outside of our course me
 
 You will build towards the final project in stages over the course of the term through the following four sub-assignments:
 
-1. [What is the origin?](origin.qmd) 
-2. [What is the destination?](destination.qmd)
-3. [Postcard from the road](postcard.qmd)
-4. [Final Product](final.qmd)
+1. [What is the origin?](assignment-origin.qmd) 
+2. [What is the destination?](assginment-destination.qmd)
+3. [Postcard from the road](assignment-postcard.qmd)
+4. [Final Product](assignment-final.qmd)
 
 ### Assessment and Grading
 You will be evaluating your own progress and the match between what you were able to accomplish and your goals at the outset. **The point of having this be self-assessed is to make sure you pick something that is of interest and use to you, not what you imagine what I want from you.** Please spend some time thinking about how this project could best address your short- and long-term academic and career goals. 
