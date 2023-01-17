@@ -12,6 +12,5 @@ listing:
   fields: ["date", "title"]
   filter-ui: false
   sort-ui: false
-
 ---
 

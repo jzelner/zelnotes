@@ -35,6 +35,21 @@ format:
 
 - Hands-on with some smoothing models.
 
+## On your own
+
+Spend a few minutes answering these questions:
+
+- Based on the readings, how would you describe what a disease *cluster* is?
+
+- When might you undertake a cluster study? Is there a difference between a disease cluster and a <span class="alert">hotspot</span> ?
+
+- What are some challenges or pitfalls of cluster analysis?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
 ## <span class="alert">Why</span> might one undertake a cluster-based study?
 
 - Public Health Response.
@@ -74,20 +89,17 @@ The Texas Sharpshooter 🎯 Problem is an example of a <span class="alert">logic
 - Evidence of <span class="alert">social processes</span> that concentrate disadvantage and multiple risks.
 
 
-# Kernel Smoothing
+# Smoothing!
 
 ## Smoothing lets us separate signal 📡 from noise 📣
+
+- Often used to describe or uncover clusters.
 
 - What are some examples of a <span class="alert">spatial signal</span> or information?
 
 - What are some possible sources of noise that could obscure the signal?
 
 - What are some risks associated with mistaking noise $\to$ signal?
-
-```{r}
-library(countdown)
-countdown(minutes = 2, warn_when = 60, seconds = 0, play_sound=FALSE)
-```
 
 ## A guided tour of smoothing approaches
 
