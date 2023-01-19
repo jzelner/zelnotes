@@ -1,0 +1,7 @@
+---
+title: "Blog"
+listing: default
+format:
+  html: 
+    citation: false
+---

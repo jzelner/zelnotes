@@ -1,0 +1,9 @@
+format:
+  html: 
+    code-tools:
+      source: repo
+    citation: true
+
+page-layout: article
+title-block-style: default
+title-block-banner: false
