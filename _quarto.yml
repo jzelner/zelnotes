@@ -1,4 +1,5 @@
 project:
+  title: "Zelnotes"
   type: website
   output-dir: docs
   render: 
@@ -11,9 +12,26 @@ project:
 website:
   title: "Zelnotes"
   site-url: https://zelnotes.io
+  favicon: "assets/epibayeslogo_cropped.png"
+  open-graph: true
   sidebar:
       style: "docked"
-      contents: auto
+      contents:
+        - section: Courses
+          contents:
+            - section: EPID 684 - Spatial Epidemiology
+              contents:
+                - epid684/index.qmd
+                - epid684/policies.qmd
+                - epid684/roadmap-project/index.qmd
+        - posts/index.qmd
+      collapse-level: 3
+
+
+        
+      logo: "assets/epibayeslogo_cropped.png"
+      title: "Zelnotes"
+  repo-url: https://github.com/jzelner/zelnotes 
 
 execute:
   freeze: auto
@@ -26,4 +44,3 @@ format:
     bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
     resource-path: 
           - "images"
-

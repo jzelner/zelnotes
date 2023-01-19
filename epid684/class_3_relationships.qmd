@@ -24,5 +24,8 @@ Goodchild MF. The Validity and Usefulness of Laws in Geographic Information Scie
 - In the second half of class, we will complete a hands-on exercise [focused on introducing the concept of smoothing](https://sph-umich.shinyapps.io/smoothing/), which is an important tool in spatial analysis for visualizing and understanding the causes of patterns of spatial *autocorrelation*.
 
 #### Additional Resources
-- [Slides](slides/session_3_relationships.qmd) 
+- [Slides](slides/session_3_relationships.qmd)
+
+- [Zoom recording of class session](https://umich.zoom.us/rec/share/KYK7IpuIDjdHsxRGKYQMfycI398g8y3DWY8OZ24fhSmurz8IlmnVocCpWKDevREh.WwKLMb-kJm5aSPsZ)
+
 - ["Some Laws of Health Geography"](https://www.dropbox.com/s/ki1llo1m1kygu7e/EPID594_01-01_laws%20of%20Health%20Geography%20-%20making%20sense%20of%20spatial%20data_COURSERA.mp4?dl=0) - pre-recorded video introducing the topics of spatial autocorrelation and spatial variation.

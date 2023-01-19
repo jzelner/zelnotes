@@ -25,6 +25,8 @@ In the second half of class, we will complete the [[Good Map, Bad Map]] activity
 
 - [Lecture slides](slides/session_2_maps_and_more.qmd)
 
+- [Zoom recording of class session](https://umich.zoom.us/rec/share/_rUmKBq1pTE9nOph0XMAc5sll8CqI1jbx0vPo3oP7fXz2LDSpfK0nqT1eUtAjHhT.UHkUstd0kDss7CxG)
+
 - [Google doc](https://docs.google.com/document/d/1xbMtZX27jE3ryZQHAXoQ5SdaiA6rvOVUNdgafp6cPFg/edit?usp=sharing) for in-class activity
 
 - [Slides for in-class activity](https://docs.google.com/presentation/d/1TMGl5Nl5k2K2uO-dv6VQSTEOSrPvZ3u22-7z_rInO_w/edit?usp=sharing) deck for in-class activity

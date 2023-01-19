@@ -12,6 +12,8 @@ In this first session, we will spend the first 30 minutes going over the goals o
 
 - [Slides](slides/session_1_what_is_spatial_epidemiology.qmd)
 
+- [Zoom recording of class session](https://umich.zoom.us/rec/share/rMqI_Z9y232CAT-cTGYbwdjvkYoHJ1OXJWn1c-f6QXE-fXYhMThz9ngE0o5gr7c-.8Sif3gyUEfeHw4K4)
+
 - [Google doc](https://docs.google.com/document/d/1X3EmUPFAsaaq0_DMhFrV0FDKM-RxKQjks8pMEZ0tpu4/edit?usp=sharing) for in-class activity.
 
 - ["What is spatial epidemiology anyway?"](https://www.dropbox.com/s/lgbnz6je52swrns/EPID592_1-01_Welcome-what%20is%20spatial%20epidemiology%20anyway_COURSERA.mp4?dl=0) short recorded lecture.

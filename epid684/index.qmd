@@ -1,9 +1,12 @@
 ---
 tbl-colwidths: [10,90]
----
-# EPID 684: Introduction to Spatial Epidemiology
+aliases: 
+  - "/teaching/EPID684/Theory+and+Applications+of+Spatial+Epidemiology.html"
+--- 
 
-![](/images/snow_cholera_map.jpg)
+# Syllabus
+
+![John Snow's famous map of Cholera deaths during the 1854 Golden Square outbreak](/images/snow_cholera_map.jpg){width=60%}
 
 ## Course Goals
 
@@ -11,7 +14,7 @@ In this course, we will take an exploratory and collaborative approach to defini
 
 You will be able to answer key questions about the relevant spatial scale of analysis for a given problem (e.g. neighborhoods vs. cities) and identify key spatial statistics for characterizing spatial clustering relevant to your public health topics of interest.  At the end of this term, you will have a strong foundation for pursuing additional study of specific topics in spatial epidemiology, advanced statistical methods relevant to spatial analysis, and the creation of maps and other data visualizations that effectively convey these ideas.
 
-# Syllabus 
+# Class Meetings
 
 We will have 28 total class meetings, which we will use for a mix of discussion, hands-on activities and project work. The topics we focus on in our in-class sessions are selected to support your own work on the semester-long [Roadmap Project](roadmap-project/index.qmd)
 
@@ -42,8 +45,8 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 
 |Date | Topic |
 |---------|:----------|
-| 1/19 | Walking into a Cholera epidemic |
-| 1/24 | Miasma vs. Germ Theory |
+| 1/19 | [Walking into a Cholera epidemic](class_5_walking_into_a_cholera_epidemic.qmd) |
+| 1/24 | [Miasma vs. Germ Theory](session_6_miasma.qmd) |
 | 1/26 | Using maps to make the case |
 | 1/26 | [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
 | 1/31 | From the pump handle to the present |

@@ -99,7 +99,7 @@ centuries to come. But <span class="alert">epidemics create a kind of history fr
 
 ![](../images/20220913150936.png)  
 
-## Not all innovations push public health forward
+## Not all innovations push public health forward {.smaller}
 
 :::{.columns}
 :::{.column width=50%}
@@ -111,7 +111,7 @@ centuries to come. But <span class="alert">epidemics create a kind of history fr
 :::
 
 
-## Our <span class="alert">explanations</span> for epidemics have huge consequences
+## Our <span class="alert">explanations</span> for epidemics have huge consequences {.smaller}
 
 :::{.columns}
 :::{.column width=40%}

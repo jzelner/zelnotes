@@ -26,4 +26,6 @@ In the second half of class, we will complete a guided tutorial going over the b
 
 [Slides](slides/session_4_clustering.qmd)
 
+[Zoom recording of class session](https://umich.zoom.us/rec/share/3IgevsRgLZUVpgqaA6Za_D56vPrHVJfdndoXvP8fEK0LL4eWxKCGqbZTpM3GrfKd.gpID3Cc1XMPkNzMl)
+
 ## References
