@@ -1,6 +1,8 @@
 ---
 title: "Blog"
-listing: default
+listing: 
+  categories: true
+  sort: "date desc"
 format:
   html: 
     citation: false

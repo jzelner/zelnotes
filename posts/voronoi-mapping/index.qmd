@@ -1,0 +1,23 @@
+---
+date: 1/20/2023
+title: "Voronoi intensity mapping with d3"
+image: voronoi_philly.jpg
+categories:
+    - tutorial
+    - mapping
+    - d3
+    - javascript
+    - R
+---
+
+![](voronoi_philly.jpg){width=50%}
+
+This is an oldie but a goody from my old blog. 
+
+You can find Pt 1 here:
+
+[Voronoi intensity mapping with D3, Part 1](https://jzelner.github.io/2015/02/26/voronoi/)
+
+And the sequel is here:
+
+[Voronoi intensity mapping with D3, Part 2](http://jzelner.github.io/2015/03/02/voronoi-pt2/)

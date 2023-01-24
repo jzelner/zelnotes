@@ -20,4 +20,6 @@ We will also begin making some connections between the historical example laid o
 
 - [Lecture Slides](slides/session_5_ghost_map_intro.qmd)
 
+- [Zoom recording](https://umich.zoom.us/rec/share/boY0QMMjrEDa555-i5SHKvQOAaQ6fX0lTq-5Sq_P3H-rlMeSzQ3bt5LVN53976My.6_6AcGY3zYIj2HoH)
+
 ## References

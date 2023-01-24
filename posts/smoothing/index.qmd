@@ -5,6 +5,7 @@ date: "1/17/2023"
 categories:
   - code
   - tutorial
+  - statistics
 image: "window-example.png"
 alias: "posts/smoothing.qmd"
 ---

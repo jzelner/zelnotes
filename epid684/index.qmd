@@ -1,8 +1,37 @@
 ---
-tbl-colwidths: [10,90]
+tbl-colwidths: [20,80]
 aliases: 
   - "/teaching/EPID684/Theory+and+Applications+of+Spatial+Epidemiology.html"
 --- 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(lubridate)
+
+date_env <- new.env()
+date_env$n <- 0
+date_env$date <- as.Date("2023-01-03")
+date_formatter <- stamp_date("1/1 (Tue)", quiet=TRUE)
+
+next_date <- function() {
+  day_of_week <- wday(date_env$date, 
+                      label = TRUE, 
+                      abbr = FALSE) 
+  if (day_of_week == "Tuesday") {
+    next_date <- date_env$date + days(2)
+  } else if (day_of_week == "Thursday") {
+    next_date <- date_env$date + days(5)
+  }
+  
+  format_date <- date_formatter(next_date)
+  
+  date_env$date <- next_date
+  date_env$n <- date_env$n + 1
+  
+  
+  return(format_date)
+ 
+}
+```
 
 # Syllabus
 
@@ -29,10 +58,10 @@ In this first module, we will start to get our heads around what we actually mea
  
 |Date | Topic |
 |---------|:----------|
-| 1/5 | [Where are we going?](class_1_where%20are%20we%20going.qmd) |
-| 1/10 | [Maps and More](class_2_maps_and_more.qmd) |
-| 1/12 | [Spatial epidemiology is all about relationships ](class_4_spatial_variation.qmd) |
-| 1/17 | [What tools can we use to understand spatial variation and clustering?](class_4_spatial_variation.qmd)|
+| `r next_date()` | [Where are we going?](class_1_where%20are%20we%20going.qmd) |
+| `r next_date()` | [Maps and More](class_2_maps_and_more.qmd) |
+| `r next_date()`| [Spatial epidemiology is all about relationships ](class_4_spatial_variation.qmd) |
+| `r next_date()` | [What tools can we use to understand spatial variation and clustering?](class_4_spatial_variation.qmd)|
 
 
 ## Spatial analysis and the foundations of modern epidemiology
@@ -45,50 +74,52 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 
 |Date | Topic |
 |---------|:----------|
-| 1/19 | [Walking into a Cholera epidemic](class_5_walking_into_a_cholera_epidemic.qmd) |
-| 1/24 | [Miasma vs. Germ Theory](session_6_miasma.qmd) |
-| 1/26 | Using maps to make the case |
-| 1/26 | [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
-| 1/31 | From the pump handle to the present |
-| 2/2 | Hands-on: Mapping the Snow data | 
+| `r next_date()` | [Walking into a Cholera epidemic](class_5_walking_into_a_cholera_epidemic.qmd) |
+| `r next_date()` | [Miasma vs. Germ Theory](session_6_miasma.qmd) |
+|`r next_date()` | Using maps to make the case |
+|| [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
+| `r next_date()` | From the pump handle to the present |
+| `r next_date()` | Hands-on: Mapping the Snow data | 
   
 
 ## Project Progress
 
 |Date | Topic |
 |---------|:----------|
-| 2/7 | In-class project work time & check-in|
-| 2/9 | In-class presentation of [What is the destination?](roadmap-project/assignment-destination.qmd) assignments.|
-| 2/14 | In-class presentation of What is the destination? assignments (cont'd)|
+| `r next_date()` | In-class project work time & check-in|
+|`r next_date()` | In-class presentation of [What is the destination?](roadmap-project/assignment-destination.qmd) assignments.|
+| `r next_date()` | In-class presentation of What is the destination? assignments (cont'd)|
 
 ## Spatial clustering of health as a problem of intersecting social, biological, and environmental systems 
 
 |Date|Topic|
 |---------|:----------|
-|2/16| What is clustering and why should you care?| 
-|2/19| Residential Segregation and the Social Drivers of Clustered Risk |
-|2/24| Mid-term Check-in|
-|2/28| Winter Break (no class) |
-|3/2| Winter Break (no class) |
-|3/7| Relating Residential Segregation to Disease Outcomes |
-|3/9| How do we capture the causal impact of structural racism on spatial outcomes? |   
-|3/14| Mechanistic linkages between structural racism and infectious disease |
-|3/16| Public health implications of spatially-clustered non-vaccination |
+|`r next_date()`| What is clustering and why should you care?| 
+|`r next_date()`| Residential Segregation and the Social Drivers of Clustered Risk |
+| `r next_date()` | TBD |
+|`r date_formatter(as.Date("2023-02-24"))`| Mid-term Check-in due|
+|`r next_date()`| Winter Break (no class) |
+|`r next_date()`| Winter Break (no class) |
+|`r next_date()`| Relating Residential Segregation to Disease Outcomes |
+|`r next_date()`| How do we capture the causal impact of structural racism on spatial outcomes? |   
+|`r next_date()`| Mechanistic linkages between structural racism and infectious disease |
+|`r next_date()`| Public health implications of spatially-clustered non-vaccination |
 
 ## Multi-level approaches to spatial analysis and intervention
 
 |Date|Topic|
 |----|:----|
-|3/23| Comparing between-place and between-individual variation using intraclass correlation|
-|3/24| Digging into the multi-level approach to spatial analysis |
-|3/30 | In-class workshop on [Postcard from the road assignments](roadmap-project/assignment-postcard.qmd) |
-|4/4 | Applications of the multi-level approach to spatial health data |
+|`r next_date()`| Comparing between-place and between-individual variation using intraclass correlation|
+|`r next_date()`| TBD|
+|`r next_date()`| Digging into the multi-level approach to spatial analysis |
+|`r next_date()`| In-class workshop on [Postcard from the road assignments](roadmap-project/assignment-postcard.qmd) |
+|`r next_date()`| Applications of the multi-level approach to spatial health data |
 
 ## Working across scales to capture individual and contextual effects on health 
 |Date|Topic|
 |----|:---|
-|4/6 | What do you measure when you measure place effects? Confronting the modifiable areal unit problem. | 
-| 4/11 | Capturing the multi-scale, multi-dimensional nature of residential segregation |
-| 4/13 |  Characterizing the impact of individual and collective mobility on disease risks |
-| 4/18 | Final Day Wrap-Up (4/18) | 
-| 4/26 | Final Product Submission |
+|`r next_date()`| What do you measure when you measure place effects? Confronting the modifiable areal unit problem. | 
+|`r next_date()`| Capturing the multi-scale, multi-dimensional nature of residential segregation |
+| `r next_date()`|  Characterizing the impact of individual and collective mobility on disease risks |
+| `r next_date()` | Final Day Wrap-Up  | 
+| `r date_formatter(as.Date("2023-04-26"))` | Final Product Submission |

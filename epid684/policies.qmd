@@ -32,10 +32,20 @@ Following fall break, I will ask you to submit responses to a midterm check-in s
 
 Final course grades will be self-assigned and based on each student's assessment of their progress towards their self-identified goals as well as those identified by me over the course of the term. I reserve the right to revise final grades upwards or downwards if necessary, but will only do this only in rare cases where a student's self-assessed grade is strongly out of alignment with my perception of their performance in the course, and in all others will take the student's self-assessed grade as-is. 
 
-> [!IMPORTANT] The primary factors that would result in a downward revision of a student's self-assessed grade are 1) chronic, unexplained lateness in turning in assignments or not completing assignments, 2) instances of academic dishonesty.
+:::{.callout-important}
+
+## Exceptions to self-grading
+
+The primary factors that would result in a downward revision of a student's self-assessed grade are 1) chronic, unexplained lateness in turning in assignments or not completing assignments, 2) instances of academic dishonesty.
+:::
 
 While consistent in-person attendance is expected, I understand that personal, professional and academic circumstances may periodically impact your ability to attend either in-person or remotely. I will not take attendance during regular course sessions and an excused absence is not required on most days. 
 
-> [!WARNING] However, on days when students are presenting and giving/receiving feedback, attendance or an excused absence is required and unexplained/excused absence may result in a downward revision of your final grade. This requirement reflects a recognition that on these days of class, individual attendance impacts all course members. 
+:::{.callout-important}
+
+## In-class presentations and feedback 
+
+However, on days when students are presenting and giving/receiving feedback, attendance or an excused absence is required and unexplained/excused absence may result in a downward revision of your final grade. This requirement reflects a recognition that on these days of class, individual attendance impacts all course members. 
+:::
 
 Students are also welcome to take the course under the [Satisfactory/Unsatisfactory](https://sph.umich.edu/admissions/policies-procedures/mph-mhsa.html) (S/U) grading scheme offered by SPH if desired.

@@ -9,12 +9,12 @@ format:
         cap-location: "bottom"
 ---
 
-## <span class="alert">First Day:</span> What is spatial epidemiology?
+## <span class="alert">First Day:</span> {{< meta pagetitle >}}
 
 <div class="paddeddiv">
   <p style="font-size:0.5em; text-align: left;">
-      PUBHLTH 405  
-      Social Epidemiology of Infectious Disease  
+      EPID 684  
+      Spatial Epidemiology  
       University of Michigan School of Public Health
       <br><br>
       Jon Zelner  
