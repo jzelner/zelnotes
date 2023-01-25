@@ -63,6 +63,7 @@ First, lets imagine a scenario in which the risk of observing an insect vector s
 2. A normal distribution representing a hotspot about 150m in width beginning 300m in
 
 ```{r}
+require(dplyr)
 ## Sample from two intensity distributions
 c <- 500 ## Number of total cases
 p_hot <- 0.2 ## Proportion of cases in the hotspot 
@@ -71,8 +72,11 @@ c_not <- c-c_hot ## The number of non-hotspot cases.
 x_a <- rexp(c_not, rate = 1/250) ## Sample the locations of non-hotspot cases
 x_b <- rnorm(c_hot, mean = 300, sd = 50) ## Sample the locations of hotspot cases
 x <- c(x_a, x_b) ## Vector of all hotspot locations
-ojs_define(sample=x)
+sample_df <- data.frame(id = 1:length(x), loc = x) %>% filter(x <= 1000)
+cc <- nrow(sample_df)
+ojs_define(sample=sample_df)
 ```
+
 
 <!-- ```{ojs} -->
 <!-- import {Histogram} from "@d3/histogram" -->
@@ -141,7 +145,9 @@ g <- ggplot() + geom_rug(aes(x=x)) +
 geom_line(data = pred_df, aes(x=x, y=y)) + 
 ylab("Density") + geom_line(data = dens_df, aes(x=x,y=y), colour="red") + 
 xlim(0, 1000)
-
+dens_ojs <- dens_df
+dens_ojs$y <- dens_ojs$y*cc
+ojs_define(dens = dens_ojs)
 plot(g)
 ```
 
@@ -157,7 +163,6 @@ for (hv in c(5, 10, 20, 50 ,100, 250)) {
 
   all_df$h <- as.factor(all_df$h)
 
-
 g <- ggplot(all_df) + geom_rug(aes(x=x)) + 
 geom_line(data = dens_df, aes(x=x,y=y), colour="red") + 
 geom_line(aes(x=x, y=y)) + 
@@ -166,6 +171,45 @@ facet_wrap(~ h) +
 xlim(0, 1000)
 
 plot(g)
+```
+```{r}
+#| code-fold: true
+all_df <- data.frame()
+hvals <- seq(1, 200, by = 1)
+for (hv in hvals) {
+  pred_df <- normal_smoother(x, h = hv)
+  pred_df$h <- hv
+  all_df <- rbind(all_df, pred_df) 
+}
+all_df$y <- all_df$y * cc
+ojs_define(hvals = all_df)
+
+```
+
+You can adjust the range of the bandwidth here to get a better sense of the relationship between the smoothed curve (black) and true density (red). Adjust the bin width for the histogram of the underlying data to get a sense of the fit of the model to the underlying data.
+
+```{ojs}
+// |echo: false
+viewof h = Inputs.range([1, 200], {value: 10, step: 1, label: "Bandwidth (m)"})
+viewof bw = Inputs.range([5, 100], {value: 30, step: 1, label: "Bin width (m)"})
+numbins = Math.floor(1000/bw)
+
+dtrans = transpose(hvals)
+Plot.plot({
+y: {grid: true, 
+label: "Density"},
+x: {
+label: "Distance from transect start (m) →"
+},
+    marks: [
+    Plot.rectY(transpose(sample),Plot.binX({y: "count"}, {x: "loc", fill: "steelblue", thresholds: numbins})),
+    Plot.lineY(dtrans, {filter: d => d.h == h, curve: "linear", x:"x",y: d => d.y * bw}),
+    Plot.lineY(transpose(dens), {x:"x", y: d => d.y * bw, curve:"linear", stroke: "red"})
+    ]
+})
+
+
+
 ```
 
 ### Questions
