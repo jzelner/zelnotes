@@ -5,3 +5,8 @@ _targets
 .vscode
 .Rproj.user
 docs
+*.Rproj
+.Rhistory
+# knitr and R markdown default cache directories
+*_cache/
+/cache/

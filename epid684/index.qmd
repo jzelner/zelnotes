@@ -75,9 +75,10 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |Date | Topic |
 |---------|:----------|
 | `r next_date()` | [Walking into a Cholera epidemic](class_5_walking_into_a_cholera_epidemic.qmd) |
+| `r next_date() ` | Class cancelled | 
 | `r next_date()` | [Miasma vs. Germ Theory](session_6_miasma.qmd) |
-|`r next_date()` | Using maps to make the case |
 || [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
+|`r next_date()` | [Using maps to make the case](session_7_using_maps_to_make_the_case.qmd) |
 | `r next_date()` | From the pump handle to the present |
 | `r next_date()` | Hands-on: Mapping the Snow data | 
   
@@ -96,7 +97,6 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |---------|:----------|
 |`r next_date()`| What is clustering and why should you care?| 
 |`r next_date()`| Residential Segregation and the Social Drivers of Clustered Risk |
-| `r next_date()` | TBD |
 |`r date_formatter(as.Date("2023-02-24"))`| Mid-term Check-in due|
 |`r next_date()`| Winter Break (no class) |
 |`r next_date()`| Winter Break (no class) |

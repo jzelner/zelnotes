@@ -1,7 +1,7 @@
 ---
 title: "Making sense of spatial density estimation"
 author: "Jon Zelner"
-date: "1/23/2023"
+date: "1/26/2023"
 categories:
   - code
   - tutorial
@@ -10,6 +10,8 @@ categories:
   - R
 image: kde_example.png
 bibliography: refs.bib
+execute: 
+  cache: true
 ---
 
 When working with spatial data, our analytic task often falls into either of two rough categories.
@@ -63,6 +65,8 @@ First, lets imagine a scenario in which the risk of observing an insect vector s
 2. A normal distribution representing a hotspot about 150m in width beginning 300m in
 
 ```{r}
+#| echo: false
+#| warning: false
 require(dplyr)
 ## Sample from two intensity distributions
 c <- 500 ## Number of total cases
@@ -74,20 +78,7 @@ x_b <- rnorm(c_hot, mean = 300, sd = 50) ## Sample the locations of hotspot case
 x <- c(x_a, x_b) ## Vector of all hotspot locations
 sample_df <- data.frame(id = 1:length(x), loc = x) %>% filter(x <= 1000)
 cc <- nrow(sample_df)
-ojs_define(sample=sample_df)
 ```
-
-
-<!-- ```{ojs} -->
-<!-- import {Histogram} from "@d3/histogram" -->
-<!-- Histogram(sample, { -->
-<!--   width, -->
-<!--   thresholds: 100, -->
-<!--   domain: [0, 1000], -->
-<!--   color: "steelblue", -->
-<!--   height: 240 -->
-<!-- }) -->
-<!-- ``` -->
 
 The figure below shows a histogram of locations sampled from $f(x)$ (vertical bars) overlaid with the true value of $f(x)$ in red:
 
@@ -113,18 +104,18 @@ plot(g)
 Now, imagine we have another set of finely spaced points along the line, and for each, we want to calculate the weight for each. The function below lets us do that:
 
 ```{r}
-normal_smoother <- function(x, h = 10, delta = 1, xmin = 1, xmax = 1000) {
+#| warning: false
+#| echo: false
+#| code-fold: false
+library(evmix)
+library(purrr)
+normal_smoother <- function(x, h = 10, delta = 1, xmin = 1, xmax = 1000, kern = kdgaussian, kernp=kpgaussian) {
 
   ## Make a vector with the input points
   xj <- seq(xmin, xmax, by = delta)
 
   ## Make an empty vector to store the densities
-  xdens <- rep(0, length(xj))
-
-  for (j in 1:length(xj)) {
-    ## This calculates the density at this point while accounting for potential edge effects
-    xdens[j] <- mean(dnorm((xj[j]-x), sd=h)/(1-pnorm(0, mean = xj[j], sd=h)))
-  }
+  xdens <- map_dbl(xj, function(xj) mean(kern(xj-x, bw=h)/kernp(xj, bw=h)))
 
   ## Package everything in a dataframe to return
   df <- data.frame(x=xj, y=xdens)
@@ -147,8 +138,13 @@ ylab("Density") + geom_line(data = dens_df, aes(x=x,y=y), colour="red") +
 xlim(0, 1000)
 dens_ojs <- dens_df
 dens_ojs$y <- dens_ojs$y*cc
-ojs_define(dens = dens_ojs)
 plot(g)
+```
+
+```{r}
+#| echo: false
+#| cache: false
+ojs_define(dens = dens_ojs)
 ```
 
 Now, lets see what happens if we try this for different values of $h$:
@@ -175,23 +171,57 @@ plot(g)
 ```{r}
 #| code-fold: true
 all_df <- data.frame()
-hvals <- seq(1, 200, by = 1)
+hvals <- seq(1, 100, by = 2)
+distvals <- seq(-100, 100, by = 1)
+all_kernvals <- data.frame()
 for (hv in hvals) {
   pred_df <- normal_smoother(x, h = hv)
   pred_df$h <- hv
+  pred_df$smoother <- "gaussian"
   all_df <- rbind(all_df, pred_df) 
+  all_kernvals <- rbind(all_kernvals,data.frame(x=distvals, y=kdgaussian(distvals, bw = hv), smoother = "gaussian", h = hv))
+  
+  pred_df <- normal_smoother(x, h = hv, kern = kduniform, kernp=kpuniform)
+  pred_df$h <- hv
+  pred_df$smoother <- "uniform"
+  all_df <- rbind(all_df, pred_df) 
+  all_kernvals <- rbind(all_kernvals,data.frame(x=distvals, y=kduniform(distvals, bw = hv), smoother = "uniform", h = hv))
+
+  
+  pred_df <- normal_smoother(x, h = hv, kern = kdtricube, kernp=kptricube)
+  pred_df$h <- hv
+  pred_df$smoother <- "tricube"
+  all_df <- rbind(all_df, pred_df) 
+    all_kernvals <- rbind(all_kernvals, data.frame(x=distvals, y=kdtricube(distvals, bw = hv), smoother = "tricube", h = hv))
+    
+  pred_df <- normal_smoother(x, h = hv, kern = kdtriangular, kernp=kptriangular)
+  pred_df$h <- hv
+  pred_df$smoother <- "triangular"
+  all_df <- rbind(all_df, pred_df) 
+    all_kernvals <- rbind(all_kernvals, data.frame(x=distvals, y=kdtriangular(distvals, bw = hv), smoother = "triangular", h = hv))
+
 }
 all_df$y <- all_df$y * cc
-ojs_define(hvals = all_df)
-
 ```
+```{r}
+#| echo: false
+#| cache: false
+ojs_define(sample=sample_df)
+ojs_define(hvals = all_df)
+ojs_define(kernvals = all_kernvals)
+```
+
+## Trying different bandwidths and kernels
+
 
 You can adjust the range of the bandwidth here to get a better sense of the relationship between the smoothed curve (black) and true density (red). Adjust the bin width for the histogram of the underlying data to get a sense of the fit of the model to the underlying data.
 
 ```{ojs}
 // |echo: false
-viewof h = Inputs.range([1, 200], {value: 10, step: 1, label: "Bandwidth (m)"})
-viewof bw = Inputs.range([5, 100], {value: 30, step: 1, label: "Bin width (m)"})
+viewof h = Inputs.range([1, 100], {value: 10, step: 2, label: "Bandwidth (m)"})
+viewof bw = Inputs.range([5, 100], {value: 10, step: 5, label: "Bin width (m)"})
+viewof kern = Inputs.select(["gaussian", "uniform", "tricube", "triangular"], {value: "gaussian", label: "Smoothing kernel"})
+
 numbins = Math.floor(1000/bw)
 
 dtrans = transpose(hvals)
@@ -203,7 +233,7 @@ label: "Distance from transect start (m) →"
 },
     marks: [
     Plot.rectY(transpose(sample),Plot.binX({y: "count"}, {x: "loc", fill: "steelblue", thresholds: numbins})),
-    Plot.lineY(dtrans, {filter: d => d.h == h, curve: "linear", x:"x",y: d => d.y * bw}),
+    Plot.lineY(dtrans, {filter: d => (d.h == h) && (d.smoother == kern), curve: "linear", x:"x",y: d => d.y * bw}),
     Plot.lineY(transpose(dens), {x:"x", y: d => d.y * bw, curve:"linear", stroke: "red"})
     ]
 })
@@ -211,10 +241,32 @@ label: "Distance from transect start (m) →"
 
 
 ```
+The figure below shows the relative amount of weight placed on different points as a function of their distance from the point of interest (0, marked by the vertical red line):
+
+```{ojs}
+// |echo: false
+kv = transpose(kernvals).filter(d => d.h == h && d.smoother == kern)
+Plot.plot({
+y: {grid: true, label: "Relative weight of point as compared to origin"},
+x: {
+label: "Distance from point of interest (m) ↔ "
+},
+marks: [
+//Plot.lineY(kv, {filter: d => (d.smoother == kern), x:"x", y: d => d.y*1000}),
+Plot.lineY(kv, Plot.normalizeY({x:"x", y: "y", basis: "extent"})),
+Plot.ruleX([0], {stroke: "red"})
+]})
+```
 
 ### Questions
 
 - Which of the bandwidth options seems to do the best job in capturing the value of $f(x)$? Why?
+
+- How does the choice of kernel impact the smoothing?
+
+- How do the different kernel functions encode different  assumptions about *distance decay*?
+
+- What is the relationship between the histogram of the data and the smoother? What do you see as you change the histogram bin width relative to the smoothing bandwidth?
 
 
 ## Additional Resources
