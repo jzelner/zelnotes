@@ -79,47 +79,58 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 | `r next_date()` | [Miasma vs. Germ Theory](session_6_miasma.qmd) |
 || [What is the origin?](roadmap-project/assignment-origin.qmd) assignment due | 
 |`r next_date()` | [Using maps to make the case](session_7_using_maps_to_make_the_case.qmd) |
-| `r next_date()` | From the pump handle to the present |
-| `r next_date()` | Hands-on: Mapping the Snow data | 
+| `r next_date()` | [From the pump handle to the present](class_8_miasmas_mental_models.qmd) |
+
   
-
-## Project Progress
-
-|Date | Topic |
-|---------|:----------|
-| `r next_date()` | In-class project work time & check-in|
-|`r next_date()` | In-class presentation of [What is the destination?](roadmap-project/assignment-destination.qmd) assignments.|
-| `r next_date()` | In-class presentation of What is the destination? assignments (cont'd)|
-
-## Spatial clustering of health as a problem of intersecting social, biological, and environmental systems 
-
-|Date|Topic|
-|---------|:----------|
-|`r next_date()`| What is clustering and why should you care?| 
-|`r next_date()`| Residential Segregation and the Social Drivers of Clustered Risk |
-|`r date_formatter(as.Date("2023-02-24"))`| Mid-term Check-in due|
-|`r next_date()`| Winter Break (no class) |
-|`r next_date()`| Winter Break (no class) |
-|`r next_date()`| Relating Residential Segregation to Disease Outcomes |
-|`r next_date()`| How do we capture the causal impact of structural racism on spatial outcomes? |   
-|`r next_date()`| Mechanistic linkages between structural racism and infectious disease |
-|`r next_date()`| Public health implications of spatially-clustered non-vaccination |
-
-## Multi-level approaches to spatial analysis and intervention
+## Introducing the multi-level approach to spatial variation
 
 |Date|Topic|
 |----|:----|
-|`r next_date()`| Comparing between-place and between-individual variation using intraclass correlation|
-|`r next_date()`| TBD|
-|`r next_date()`| Digging into the multi-level approach to spatial analysis |
-|`r next_date()`| In-class workshop on [Postcard from the road assignments](roadmap-project/assignment-postcard.qmd) |
-|`r next_date()`| Applications of the multi-level approach to spatial health data |
+|`r next_date()`| Space meets place |
+|`r next_date()`| Conceptual intro to multi-level regression |
 
-## Working across scales to capture individual and contextual effects on health 
+## Destination Project Progress
+
+|Date|Topic|
+|----|:----|
+|`r next_date()`| In-class project workshop |
+| `r next_date()` | Destination lightning updates | 
+
+## Mini-module: Fallacies!
+
+|Date|Topic|
+|----|:----|
+|`r next_date()`| Ecological Fallacies  |
+|`r next_date()`| From continuous space to discrete places: The modifiable areal unit problem |
+
+**Winter break - no class!** `r next_date()` & `r next_date()`  
+
+## Postcards from the Road
+
+|Date | Topic |
+|---------|:----------|
+| `r next_date()` | Postcards from the Road I|
+|`r next_date()` | Postcards from the Road II|
+| `r next_date()` | Postcards from the Road III|
+|`r next_date()`| Postcards from the Road IV |
+
+## Deep Dive: Understanding the impact of residential segregation on disease outcomes
+
+|Date|Topic|
+|---------|:----------|
+|`r next_date()`| Residential Segregation and the Social Drivers of Clustered Risk |
+|`r next_date()`| Relating Residential Segregation to Disease Outcomes |
+|`r next_date()`| How do we capture the causal impact of structural racism on spatial outcomes? |   
+|`r next_date()`| Mechanistic linkages between structural racism and infectious disease |
+
+
+## Coming around the bend: The present and future of spatial epidemiology 
+
 |Date|Topic|
 |----|:---|
-|`r next_date()`| What do you measure when you measure place effects? Confronting the modifiable areal unit problem. | 
-|`r next_date()`| Capturing the multi-scale, multi-dimensional nature of residential segregation |
+|`r next_date()`| Final Product Workshop |
+|`r next_date()`| TBD | 
+|`r next_date()`| TBD |
 | `r next_date()`|  Characterizing the impact of individual and collective mobility on disease risks |
-| `r next_date()` | Final Day Wrap-Up  | 
+| `r next_date()` | Last Day! Wrap-Up  | 
 | `r date_formatter(as.Date("2023-04-26"))` | Final Product Submission |

@@ -12,5 +12,6 @@ We will begin to explore the concept of a _natural experiment,_ which is what 
 
 ## Additional Resources
 
-[Slides](slides/session_6_miasma.qmd)
+[Slides](slides/session_6_miasma.qmd)  
+
 [Spatial density estimation exercise](/posts/spatial-density/index.html)

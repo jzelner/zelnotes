@@ -1,0 +1,11 @@
+{
+  "hash": "4489932e57bfeb8097606d4ba48ad134",
+  "result": {
+    "markdown": "# Miasma vs. Germ Theory\n\nIn this session, we will discuss the competing causal explanations for infection during the London Cholera Outbreak, specifically _miasma_ theory, which posited that infection was transmitted solely via noxious air, and _germ_ theory, which posited that there was an infectious agent transmitted from person to person. One of the big takeaways from this session's readings is that Snow used spatial information to make the argument that observed spatial patterns of Cholera could not be explained well at all by miasma theory, but instead was more consistent with the _transmission_ of some infectious agent, i.e. _V. Cholerae_. \n\n## Before Class\n\nContinue reading *The Ghost Map, Ch 3-4 (pp 56-109)* [@johnson2007]\n\n## During Class\n\nWe will begin to explore the concept of a _natural experiment,_ which is what Snow's _experimenta crucis_ (described in the readings) was an early example of. We will discuss both how such studies can be valuable, and also how they can go wrong, or at least open up a number of questions while answering others.\n\n## Additional Resources\n\n[Slides](slides/session_6_miasma.qmd)\n[Spatial density estimation exercise](/posts/spatial-density/index.html)\n\n::: {.cell execution_count=1}\n``` {.julia .cell-code}\nz = 100\n```\n\n::: {.cell-output .cell-output-display execution_count=5}\n```\n100\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "session_6_miasma_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

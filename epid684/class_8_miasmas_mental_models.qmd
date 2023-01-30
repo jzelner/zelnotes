@@ -1,0 +1,15 @@
+# Miasmas and (spatial) mental models
+
+Today's class is focused on taking the ideas from *The Ghost Map* into the present. 
+
+## Before Class
+
+### Readings
+
+We will read one paper that gets into direct lessons from the Broad Street Outbreak [@greenhalgh2021], and a short opinion piece discussing the relationship between social disparities and spatial analysis [@chowkwanyun2020]. (Both are open-access and should be downloadable directly from the journal site.)
+
+## During Class
+
+We will finish our exploration of the concept of smoothing with a hands-on tutorial of hotspot detection using kernel density estimation in two dimensions. 
+
+## References
