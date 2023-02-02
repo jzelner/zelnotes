@@ -12,4 +12,8 @@ We will read one paper that gets into direct lessons from the Broad Street Outbr
 
 We will finish our exploration of the concept of smoothing with a hands-on tutorial of hotspot detection using kernel density estimation in two dimensions. 
 
+## Resources 
+
+- [Slides](slides/session_8_miasmas_mental_models.qmd)
+
 ## References
