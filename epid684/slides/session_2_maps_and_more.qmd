@@ -6,7 +6,6 @@ format:
         theme: [solarized, styles.scss]
         incremental: true
         bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
-        #csl: "../../assets/american-journal-of-epidemiology.csl"
         cap-location: "bottom"
 ---
 

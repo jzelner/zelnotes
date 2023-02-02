@@ -4,7 +4,9 @@ format:
     revealjs:
         theme: [solarized, styles.scss]
         incremental: true
-        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        bibliography: 
+          - "/Users/jzelner/repos/bibtex-library/jz_library.bib"
+          - "../refs.bib"
 ---
 
 {{< include _titleslide.qmd >}}
@@ -47,7 +49,7 @@ As described by the philosopher Daniel Dennett:
 :::
 :::{.column width=50%}
    ![A <span class="alert">not-so-metaphorical</span> intuition pump](/images/broad_street_pump.jpg)
-::
+:::
 :::
 
 ## Well thought-out <span class="alert">mental models</span> let us:
@@ -136,6 +138,6 @@ countdown(minutes = 10, warn_when = 60, seconds = 0, play_sound=FALSE)
 
 ## Next Time
 
-
+- Starting to think about spatial vs. place-based approaches.
 
 ## References

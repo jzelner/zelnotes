@@ -4,5 +4,7 @@ format:
     progress: false
     theme: [solarized, styles.scss]
     incremental: true
-    bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+    bibliography: 
+      - /Users/jzelner/repos/bibtex-library/jz_library.bib
+      - ../refs.bib
 search: false
