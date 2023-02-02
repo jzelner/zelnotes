@@ -16,5 +16,7 @@ Read @demaio2017 [📄](https://www.dropbox.com/s/h83r64zas685gkt/De%20Maio%20et
 
 ## Additional Resources
 
+- [Slides](slides/session_8_miasmas_mental_models.qmd)
+
 ### Pre-recorded Videos 
 [Three approaches to analyzing clustered data](https://www.dropbox.com/s/hcyiwe2uxgr5xz2/EPID594_02-03_analyzing%20clustered%20data-%20Three%20Approaches_COURSERA.mp4?dl=0)
