@@ -13,6 +13,8 @@ format:
 
 - Syllabus updates
 
+- General feedback about 'origin assignments'
+
 - Snow's analysis of the Golden Square outbreak
 
 - Hands-on with the Snow data 
@@ -23,7 +25,7 @@ format:
 
 - Destination assignments now a pre-break (short) presentation.
 
-- Changing 'postcards' assignments to be more of a seminar format.
+- Change 'postcards' assignments to be a series of student-run course meetings.
 
 ## Updated postcards assignment 📬
 
@@ -53,6 +55,8 @@ format:
 - Why didn't the outbreak spread <span class="alert">exponentially</span>?
 
 - What is the most plausible explanation for why the outbreak ended?
+
+- How did Snow think about and use information about distance to flag the pump as a key source of risk? 
 
 ```{r}
 library(countdown)

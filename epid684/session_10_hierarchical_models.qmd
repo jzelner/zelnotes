@@ -1,0 +1,20 @@
+# Introduction to hierarchical models for multi-level variation
+
+## Before Class
+
+### Reading
+
+Read @gelman2006 [📄](https://www.dropbox.com/s/szyaxp5f49gi8sq/gelman_2006_multilevel_%28hierarchical%29_modeling.pdf?dl=0), which is a worked example of a multi-level model of variation in household radon intensity, which is an important environmental exposure.
+
+Read @demaio2017 [📄](https://www.dropbox.com/s/h83r64zas685gkt/De%20Maio%20et%20al.%20-%202017%20-%20Racialethnic%20minority%20segregation%20and%20low%20birth%20w.pdf?dl=0), which is a simple but interesting look at within- and between-city variation in low-birthweight outcomes in the U.S. and Canada.
+
+### During Class
+
+- Discussion of the Gelman and DeMaio papers and hierarchical regresion approaches.
+
+- Hands-on with some simulated multi-level data and models.
+
+## Additional Resources
+
+### Pre-recorded Videos 
+[Three approaches to analyzing clustered data](https://www.dropbox.com/s/hcyiwe2uxgr5xz2/EPID594_02-03_analyzing%20clustered%20data-%20Three%20Approaches_COURSERA.mp4?dl=0)

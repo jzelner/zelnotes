@@ -86,8 +86,8 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 
 |Date|Topic|
 |----|:----|
-|`r next_date()`| Space meets place |
-|`r next_date()`| Conceptual intro to multi-level regression |
+|`r next_date()`| [Distinguishing between individual and place effects](session_9_between_place_individual_variation.qmd) |
+|`r next_date()`| [Introduction to hierarchical models of spatial variation](session_10_hierarchical_models.qmd) |
 
 ## Destination Project Progress
 

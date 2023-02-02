@@ -1,0 +1,5 @@
+format:
+  html:
+    bibliography: 
+      - "/Users/jzelner/repos/bibtex-library/jz_library.bib" 
+      - "refs.bib"

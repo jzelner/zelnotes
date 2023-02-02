@@ -1,0 +1,22 @@
+
+# Distinguishing between space and place
+
+## Before Class
+
+Please read [@chaix2005] [📄](https://www.dropbox.com/s/tksxkyu26u80jj6/chaix_et_al_2005_comparison_of_a_spatial_approach_with_the_multilevel_approach_for_investigating.pdf?dl=0) and [@merlo2005] [📄](https://www.dropbox.com/s/oz0mxcdyl3zzvmx/Merlo%20et%20al.%20-%202005%20-%20A%20brief%20conceptual%20tutorial%20of%20multilevel%20analysis.pdf?dl=0). 
+
+
+#### During Class
+
+In class, we will spend time discussing the concept of *intraclass correlation* and the conceptual links between this measure and the other ideas of clustering we have explored so far. 
+
+We will also complete a hands-on exercise that will give a chance to develop some familiarity/comfort with the ideas in the Merlo paper. 
+
+
+## Additional Resources
+
+### Pre-recorded videos
+
+[Notes on notation used for describing spatial statistical models](https://www.dropbox.com/s/3oupv3zaug50fm9/EPID594_02-01_Notes%20on%20Notation%20-%20describing%20spatial%20models_COURSERA.mp4?dl=0)
+
+[Measuring clustering with the Intraclass Correlation Coefficient](https://www.dropbox.com/s/xd18a3yxab8l7oc/EPID594_02-02_Measuring%20Clustering%20-%20Intraclass%20Correlation_COURSERA.mp4?dl=0)

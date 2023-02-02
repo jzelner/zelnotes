@@ -14,4 +14,5 @@ In this session, we will finally make our way into Golden Square and its ongoing
 
 ## Additional Resources
 
-- [Slides](slides/session_7_water.qmd)
+- [Slides](slides/session_7_water.qmd)  
+- [Zoom recording](https://umich.zoom.us/rec/share/UlqvP-EJOadtMxrdFgA9cQ9z5_7oDXsTgM5fjIAMOE0cUTWSExg0wokfIbwIgtkm.H0r0uhzk4WzyDbiC)
