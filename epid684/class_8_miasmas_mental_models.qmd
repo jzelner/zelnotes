@@ -16,4 +16,6 @@ We will finish our exploration of the concept of smoothing with a hands-on tutor
 
 - [Slides](slides/session_8_miasmas_mental_models.qmd)
 
+- [Zoom recording](https://umich.zoom.us/rec/share/wVbFiJdJ_pzQBvphIBLNWUq5xwItT1MAkmY2p-W09sAVYMS3_fbUxO3tuBeNqJQI.z1uMAJTD1VDzwA_t)
+
 ## References
