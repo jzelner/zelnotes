@@ -4,7 +4,7 @@ date: 4/26/2023
 # Final Product
 
 For your culminating assignment, I am asking you to take a step along the path linking your 
-[origin](assignment-origin.qmd) problem to your proposed [destination](assignment-destination.qmd.qmd). 
+[origin](assignment-origin.qmd) problem to your proposed [destination](assignment-destination.qmd). 
 
 This could be any or the following:
 
