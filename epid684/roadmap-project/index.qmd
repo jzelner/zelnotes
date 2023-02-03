@@ -11,7 +11,7 @@ Although a lot of the work on this project will be done outside of our course me
 You will build towards the final project in stages over the course of the term through the following four sub-assignments:
 
 1. [What is the origin?](assignment-origin.qmd) 
-2. [What is the destination?](assginment-destination.qmd)
+2. [What is the destination?](assignment-destination.qmd)
 3. [Postcard from the road](assignment-postcard.qmd)
 4. [Final Product](assignment-final.qmd)
 

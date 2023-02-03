@@ -3,23 +3,19 @@ date: 3/20/2023
 ---
 # Postcards from the road
 
+In this assignment, I am asking you to take over the class for part of a session (~40m) and use this time to:
 
-For your culminating assignment, I am asking you to take a step along the path linking your 
-[origin](assignment-origin.qmd) problem to your proposed [destination](assignment-destination.qmd.qmd). 
+1. Share your expertise on your project topic with the class. 
 
-This could be any or the following:
+2. Showcase the progress you have made on your project to this point.
 
-- A proposal for foundation or government funding to implement the approach you have selected in an affected community,
--  An op-ed or blog post making the case for your approach to the public or policymakers,
--  a policy position paper, or a grant proposal for research funds. 
+3. Get critical feedback on this progress from me and your peers as we head into the final stretch of the semester.
 
-You could also _implement_ a component of your proposed approach by:
+In preparation for your turn leading part of a class session, I am asking you to:
 
-- Conducting a spatial data analysis
-- Constructing a visually-appealing report or pamphlet to be shared with community members,
-- Recording and editing a podcast episode making the case for your approach, making a set of maps, an interactive data visualization, 
-- *Or* something else that works for your problem.
+1. Assign a single reading relevant to your project topic, which other members of the class will read beforehand and come to class prepared to discuss. Prior to settling on a reading, I will ask you to send me three candidate papers and I will help you select one that is well-suited to educating the rest of the class about your project area and stimulating discussion.
 
-In this assignment, I am asking you to _compare_ potential upsides and downsides associated with three potential approaches to your final project. This should be added to the research document you have been compiling over the course of the term, but can otherwise take whatever format you find most useful.  
+2. Prepare to lead discussion and/or an in-class activity relevant to your topic area and the assigned reading. This should involve a mini-lecture (5-10m) providing additional background on your topic area that aids in the interpretation of the reading and prompts for discussion. If you would like to run an in-class activity of some kind that goes beyond posing questions to the class as a whole, please feel free to do so! This could involve small groups, writing a short reflection, etc. 
 
-Be prepared to share this document, as it will be used as the basis for an in-class workshop in which you will discuss your idea with  the class and use our feedback to refine your work in advance of submitting your [final product](final.qmd)
+3. Provide a brief update on your project progress (5-10m), identifying both your ongoing successes and sticking points/frustrations which you could use constructive feedback on soliving. 
+

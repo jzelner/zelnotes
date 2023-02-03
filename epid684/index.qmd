@@ -93,17 +93,22 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 
 |Date|Topic|
 |----|:----|
+| `r next_date()` | [*Destination*  presentations](roadmap-project/assignment-destination.qmd) | 
 |`r next_date()`| In-class project workshop |
-| `r next_date()` | Destination lightning updates | 
 
-## Mini-module: Fallacies!
+## Deep Dive: Understanding the impact of residential segregation on disease outcomes
 
 |Date|Topic|
-|----|:----|
-|`r next_date()`| Ecological Fallacies  |
-|`r next_date()`| From continuous space to discrete places: The modifiable areal unit problem |
+|---------|:----------|
+|`r next_date()`| Residential segregation as a fundamental cause of health inequity |
+|`r next_date()`| Measuring residential segregation |
 
-**Winter break - no class!** `r next_date()` & `r next_date()`  
+**Spring break - no class!** `r next_date()` & `r next_date()`  
+
+|Date|Topic|
+|---------|:----------|
+|`r next_date()`| How do we capture the causal impact of structural racism on non-communicable disease outcomes? |   
+|`r next_date()`| Mechanistic linkages between structural racism and infectious disease |
 
 ## Postcards from the Road
 
@@ -114,22 +119,20 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 | `r next_date()` | Postcards from the Road III|
 |`r next_date()`| Postcards from the Road IV |
 
-## Deep Dive: Understanding the impact of residential segregation on disease outcomes
+## Fallacies! How to get things wrong with spatial data.
 
 |Date|Topic|
-|---------|:----------|
-|`r next_date()`| Residential Segregation and the Social Drivers of Clustered Risk |
-|`r next_date()`| Relating Residential Segregation to Disease Outcomes |
-|`r next_date()`| How do we capture the causal impact of structural racism on spatial outcomes? |   
-|`r next_date()`| Mechanistic linkages between structural racism and infectious disease |
+|----|:----|
+|`r next_date()`| Ecological Fallacies  |
+|`r next_date()`| From continuous space to discrete places: The modifiable areal unit problem |
+|`r next_date()`| Final Product Workshop |
+|`r next_date()`| TBD | 
 
 
 ## Coming around the bend: The present and future of spatial epidemiology 
 
 |Date|Topic|
 |----|:---|
-|`r next_date()`| Final Product Workshop |
-|`r next_date()`| TBD | 
 |`r next_date()`| TBD |
 | `r next_date()`|  Characterizing the impact of individual and collective mobility on disease risks |
 | `r next_date()` | Last Day! Wrap-Up  | 

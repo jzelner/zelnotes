@@ -37,7 +37,7 @@ Mental models, past and <span class="alert">present</span> (or at least recent p
  
   In this paper, I have argued that both the long delays in replacing flawed, miasma-driven approaches to cholera prevention in the nineteenth century and long delays in replacing an exclusively contact-and-droplet model of SARS-CoV-2 prevention with one that includes airborne transmission in the twenty-first had a philosophical explanation in terms of which <span class="alert">mental models of reality</span> prevailed and the extent to which scientists and policymakers favoured <span class="alert">data over theory</span>. [@greenhalgh2021]
 
-## <span class="alert">Intuition pumps</span> are stylized presentations of mental models
+## <span class="alert">Intuition pumps</span> are stylized presentations of mental models {.smaller}
 
 :::{.columns}
 :::{.column width=50%}
