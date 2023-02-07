@@ -10,10 +10,9 @@ Please read [@chaix2005] [📄](https://www.dropbox.com/s/tksxkyu26u80jj6/chaix_
 
 In class, we will spend time discussing the concept of *intraclass correlation* and the conceptual links between this measure and the other ideas of clustering we have explored so far. 
 
-We will also complete a hands-on exercise that will give a chance to develop some familiarity/comfort with the ideas in the Merlo paper. 
-
-
 ## Additional Resources
+
+[Slides](slides/session_9_intraclass_correlation.qmd)
 
 ### Pre-recorded videos
 

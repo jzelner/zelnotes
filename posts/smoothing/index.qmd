@@ -116,7 +116,7 @@ for (i in 1:length(x) ) {
 }
 ```
 
-Now plot the prediucted vs. the observed values:
+Now plot the predicted vs. the observed values:
 
 ```{r}
 g <- ggplot() + geom_point(aes(x=x, y = y)) + 
