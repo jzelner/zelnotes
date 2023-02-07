@@ -1,0 +1,98 @@
+---
+pagetitle: "Residential Segregation and the Epidemiology of Infectious Disease"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+
+# <span class="alert">Residential segregation</span> and the spatial epidemiology of infection {#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      2/15/2022 
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+
+# Agenda
+
+>- Defining and discussing some <span class="alert">measures</span> of residential segregation.
+>- Hands-on activity exploring <span class="alert">mechanistic</span> relationships between segregation and infectious disease transmission.
+
+# What is the *isolation* index?
+
+Often defined as the proportion of contacts an individual in a *minority* group in a population has with members of that same group.
+
+# Sometimes paired with the <span class="alert">interaction</span> index
+
+Interaction quantifies the proportion of *minority* group member's contacts that occur with the *majority* group.
+
+# What are these indices used for? 
+
+>- Quantify the intensity of residential segregation. 
+
+>- Measure exposure of potentially infectious individuals to susceptible individuals.
+
+>- Describe the distribution of plant species across a geographic area.
+
+# How do you measure isolation?
+
+$$
+Z = \sum_{i} \frac{a_{i}}{A} \frac{a_{i}}{n_i}
+$$
+
+Where:
+
+- $a_i$: Number of minority  members in area $i$
+- $b_i$: Number of majority group members in area $i$
+- $A$ total number of minority group members
+- $B$ total number of majority group members, where $A < B$.
+- $n_i$ number individuals in area $i$, i.e. $a_i + b_i$
+
+# How do you measure interaction?
+
+$$
+Z = \sum_{i} \frac{a_{i}}{A} \frac{b_{i}}{n_i}
+$$
+
+Where:
+
+- $a_i$: Number of minority  members in area $i$
+- $b_i$: Number of majority group members in area $i$
+- $A$ total number of minority group members
+- $B$ total number of majority group members, where $A < B$.
+- $n_i$ number individuals in area $i$, i.e. $a_i + b_i$
+
+# Next Time {.imgslide}
+
+<img src = "../images/chicago_area_segregation.jpeg">
+
+[Residential Segregation as a Fundamental Cause of Health Inequality](https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+3/Sessions/3.+Residential+Segregation+and+the+Social+Drivers+of+Clustered+Risk)
+
+<!-- 
+<img src="../images/wont_you_be_my_neighbor.jpg" width="100%">
+
+Defining spatial <span class="alert">weights</span> and who is <span class="alert">neighbors</span> with who is key to measuring clustering. -->

@@ -1,0 +1,83 @@
+---
+pagetitle: "Lab Day!"
+fontsize: 12pt
+urlcolor: blue
+output: 
+  revealjs::revealjs_presentation:
+    theme: "solarize"
+    transition: "fade"
+    css: "styles.css"
+    self_contained: false
+    lib_dir: "."
+    reveal_plugins: ["chalkboard", "menu"]
+    fig_caption: false
+    toggleFullScreenButton: true
+    reveal_options: 
+      chalkboard:
+        theme: "whiteboard"
+        toggleChalkboardButton: true
+        toggleNotesButton: true
+---
+
+```{r setup, echo=FALSE,warning=FALSE,message=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_root(".git/index"))
+
+## This function uses the `here` package to make it easy to include graphics in a directory
+## relative to the project root
+include_local_graphics <- function(x) {
+  knitr::include_graphics(here::here(x))
+}
+```
+
+# <strike style="color: red"><span style="color: white; -webkit-text-stroke: 1px black;">Snow</span></strike> Lab Day! {#title}
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+      EPID 684  
+      Spatial Epidemiology  
+      2/1/2022 
+      <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      [`epibayes.io`](https://epibayes.io) 
+    </p>
+</div>
+
+<div class="itemr" id="footerDiv"><img id="footerImg" src="../images/epid_logo.png" width="400"></div>
+
+# Agenda
+
+>- Wrap-up discussion of <span class="alert">mind map</span> from last class.
+>- Final trip to <span style="color: gold">Golden Square</span>
+>- If we have time: 1D Smoothing, revisited.
+
+# Mind Maps
+
+[Question 1](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517655932395&cot=14)
+
+[Question 2](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517656172651&cot=14)
+
+[Question 3](https://miro.com/app/board/uXjVORxu2mw=/?moveToWidget=3458764517656431188&cot=14)
+
+
+# Return to <span style="color: gold">Golden Square</span> {.imgslide}
+
+<a href = "https://sph-umich.shinyapps.io/john-snow-cholera">
+  <img src="../images/snow_cholera_map.jpg">
+</a>
+
+Saying goodbye by spending some quality time with the [outbreak data](https://sph-umich.shinyapps.io/john-snow-cholera)
+
+# Smoothing!
+
+<a href="https://sph-umich.shinyapps.io/smoothing">
+<img src="../images/smoothing_front_page.png" width="600"> 
+</a>
+
+<p style="text-align: center;"><a href="https://sph-umich.shinyapps.io/smoothing">Going hands-on with Tobler's first law</a><p>
+
+
+# Next Time
+
+- What is <span class="alert">clustering</span> and why should you care?
+- Smoothing in <span class="alert">two</span> dimensions.

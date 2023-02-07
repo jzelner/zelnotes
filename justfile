@@ -1,6 +1,7 @@
+render: 
+    quarto render --to html
 publish:
-    git commit -m "commit before publish" -a 
-    quarto publish --no-browser --no-prompt
+    quarto publish --no-browser --no-prompt --no-render
 
 preview:
     quarto preview

@@ -9,6 +9,7 @@ project:
       - "!epid594"
       - "!pubhlth405"
       - "!talks"
+      
 website:
   title: "Zelnotes"
   site-url: https://zelnotes.io
@@ -26,15 +27,9 @@ website:
                 - epid684/roadmap-project/index.qmd
         - posts/index.qmd
       collapse-level: 3
-
-
-        
       logo: "assets/epibayeslogo_cropped.png"
       title: "Zelnotes"
   repo-url: https://github.com/jzelner/zelnotes 
-
-execute:
-  freeze: auto
 
 format:
   html:
@@ -44,3 +39,6 @@ format:
     bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
     resource-path: 
           - "images"
+
+execute: 
+  freeze: auto
