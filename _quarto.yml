@@ -1,7 +1,7 @@
 project:
   title: "Zelnotes"
   type: website
-  #output-dir: docs
+  output-dir: docs
   render: 
       - "*.qmd"
       - "!papers"
