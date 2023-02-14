@@ -1,0 +1,25 @@
+# Activities & Resources
+
+In our first Zoom session of this course, we will spend some time discussing and thinkikng about the concept of spatial *smoothing* and why it is such a central idea in spatial analysis and medical geography. Specifically, we will spend our time on the following activities:
+
+1. Introductions/logistics (~10m) 
+
+2. Time for feedback/questions about readings and course materials. (~10m)
+
+3. A mini-lecture on the concept of smoothing and why it is important (~10m)
+
+4. A short conceptual introduction to [kernel density estimation in one dimension](/posts/spatial-density/index.qmd) (~10m)
+
+5. Short break (~5m)
+
+6. A [hands-on tutorial](https://sph-umich.shinyapps.io/smoothing/)about way smoothers are employed to make estimates and identify hotspots.(~25m)
+
+7. Wrap-up/housekeeping for next week.
+
+
+
+## Additional Resources
+
+[Lecture slides](slides/session_1_toblers_first_law.qmd)
+
+Another brief tutorial on [smoothing continuous data in one dimension](/posts/smoothing/index.qmd)

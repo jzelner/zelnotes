@@ -1,0 +1,8 @@
+format:
+    html:
+      theme: "cerulean" 
+      css: ../styles.css
+      toc: true
+      bibliography: 
+        - "/Users/jzelner/repos/bibtex-library/jz_library.bib"
+        - "refs.bib"

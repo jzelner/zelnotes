@@ -14,6 +14,8 @@ In class, we will spend time discussing the concept of *intraclass correlation* 
 
 [Slides](slides/session_9_intraclass_correlation.qmd)
 
+[Zoom recording](https://umich.zoom.us/rec/share/KPKTrrjdmkIG4v98kQWdCid2eRnVomMczuVIXZV3wgxH3k_rSePZ-4Cp_QLfoPSt.kj6lxiPrMX0soUrr) of lecture
+
 ### Pre-recorded videos
 
 [Notes on notation used for describing spatial statistical models](https://www.dropbox.com/s/3oupv3zaug50fm9/EPID594_02-01_Notes%20on%20Notation%20-%20describing%20spatial%20models_COURSERA.mp4?dl=0)

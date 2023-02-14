@@ -1,0 +1,9 @@
+format:
+  revealjs: 
+    menu: false
+    progress: false
+    theme: [solarized, styles.scss]
+    incremental: true
+    bibliography: 
+      - /Users/jzelner/repos/bibtex-library/jz_library.bib
+search: false

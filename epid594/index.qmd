@@ -1,0 +1,9 @@
+---
+tbl-colwidths: [20,80]
+--- 
+
+# Zoom Sessions
+
+|Date | Topic|
+|-----|:-----|
+| 2/14| [Smoothing!](session_1_smoothing.qmd)

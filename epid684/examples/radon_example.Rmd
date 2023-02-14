@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(rstanarm)
+library(bayesplot)
+library(ggplot2)
+```
+
+```{r}
+m1 <- stan_lm(log_radon ~ floor + log_uranium, data = radon, prior = R2(0.2, "mean"))
+posterior <- as.matrix(m1)
+g <- mcmc_areas(posterior, pars = c("floor", "log_uranium"))
+plot(g)
+```
+
+```{r}
+m2 <- stan_lmer(log_radon ~ floor + log_uranium + (1 | county), data = radon)
+posterior <- as.matrix(m2)
+g2 <- mcmc_areas(posterior, pars = c("floor", "log_uranium"))
+plot(g2)
+```
+
+```{r}
+library(tidybayes)
+library(dplyr)
+dd <- spread_draws(m2, b[intercept, county]) %>%
+  median_qi() %>%
+  arrange(b)
+
+dd$rank <- 1:nrow(dd)
+
+g <- ggplot(dd, aes(xmin = .lower, xmax = .upper, x = b, y = rank), group = county) + 
+  geom_errorbarh() + geom_vline(xintercept=0)
+```
