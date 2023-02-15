@@ -6,7 +6,6 @@ project:
       - "*.qmd"
       - "!papers"
       - "!epid592"
-      - "!epid594"
       - "!pubhlth405"
       - "!talks"
       
@@ -25,6 +24,9 @@ website:
                 - epid684/index.qmd
                 - epid684/policies.qmd
                 - epid684/roadmap-project/index.qmd
+            - section: EPID 592 - Spatial Epidemiology (Online MPH)
+              contents:
+                - epid594/index.qmd
         - posts/index.qmd
       collapse-level: 3
       logo: "assets/epibayeslogo_cropped.png"

@@ -10,3 +10,4 @@ docs
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
+_site
