@@ -9,7 +9,7 @@
 <meta name="author" content="Jon Zelner">
 <meta name="dcterms.date" content="2023-02-15">
 
-<title>Zelnotes – index</title>
+<title>Zelnotes - Re-creating the radon example with rstanarm and tidybayes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,6 +127,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Zelnotes - Re-creating the radon example with rstanarm and tidybayes">
+<meta property="og:description" content="First, we will load the relevant packages:">
+<meta property="og:image" content="https://zelnotes.io/posts/radon/radon_predictions.png">
+<meta property="og:site-name" content="Zelnotes">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 </head>
 
 <body class="nav-sidebar docked">
@@ -135,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Zelnotes</h1>
+      <h1 class="quarto-secondary-nav-title">Re-creating the <code>radon</code> example with rstanarm and tidybayes</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -225,25 +231,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#re-creating-the-radon-example" id="toc-re-creating-the-radon-example" class="nav-link active" data-scroll-target="#re-creating-the-radon-example">Re-Creating the <code>radon</code> example</a>
-  <ul class="collapse">
+  <li><a href="#setting-up-the-workspace" id="toc-setting-up-the-workspace" class="nav-link active" data-scroll-target="#setting-up-the-workspace">Setting up the workspace</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
   <li><a href="#door-1-full-pooling" id="toc-door-1-full-pooling" class="nav-link" data-scroll-target="#door-1-full-pooling">🚪 Door 1: Full pooling!</a></li>
   <li><a href="#door-2-no-pooling" id="toc-door-2-no-pooling" class="nav-link" data-scroll-target="#door-2-no-pooling">🚪 Door 2: No pooling</a></li>
   <li><a href="#door-3-partial-pooling" id="toc-door-3-partial-pooling" class="nav-link" data-scroll-target="#door-3-partial-pooling">🚪 Door 3: Partial Pooling</a></li>
   <li><a href="#figure-1" id="toc-figure-1" class="nav-link" data-scroll-target="#figure-1">Figure 1</a></li>
   <li><a href="#figure-2" id="toc-figure-2" class="nav-link" data-scroll-target="#figure-2">Figure 2</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Re-creating the <code>radon</code> example with rstanarm and tidybayes</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/jzelner/zelnotes/blob/main/posts/radon/index.qmd"><i class="bi"></i> Code</button></div></div>
+</div>
 
 
-<section id="re-creating-the-radon-example" class="level1">
-<h1>Re-Creating the <code>radon</code> example</h1>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jon Zelner </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 15, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="setting-up-the-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-workspace">Setting up the workspace</h2>
 <p>First, we will load the relevant packages:</p>
 <div class="cell" data-hash="index_cache/html/setup_004de01162177bc6106468e2c8a9933c">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -255,6 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
 <p>First, lets take the raw <code>radon</code> dataset from the <code>rstanarm</code> package and make some minor modifications and additonal datasets that we’ll use for the purposes of modeling and visualizing these data.</p>
@@ -402,16 +434,17 @@ F-statistic: 70.25 on 1 and 917 DF,  p-value: &lt; 2.2e-16</code></pre>
 
 
 </section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
   author = {Jon Zelner},
+  title = {Re-Creating the `Radon` Example with Rstanarm and Tidybayes},
   date = {2023-02-15},
   url = {https://zelnotes.io/posts/radon},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Zelner. 2023. February 15, 2023. <a href="https://zelnotes.io/posts/radon">https://zelnotes.io/posts/radon</a>.
+Jon Zelner. 2023. <span>“Re-Creating the `Radon` Example with Rstanarm
+and Tidybayes.”</span> February 15, 2023. <a href="https://zelnotes.io/posts/radon">https://zelnotes.io/posts/radon</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
