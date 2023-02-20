@@ -44,6 +44,9 @@ If you are not sure if you have these installed or want to update to the latest 
 install.packages(c("ggplot2","tidyr","dplyr","bayesplot","rstanarm","purrr","tidybayes"))
 ```
 
+3. <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jzelner/zelnotes/tree/main/posts/radon" target ="_blank">Download the folder</a> containing this tutorial, unzip it and open an R session inside this newly unzipped `radon` directory. 
+
+# Fitting the models
 
 ## Setting up the workspace
 
@@ -61,7 +64,6 @@ library(purrr)
 library(tidybayes)
 ```
 
-# Fitting the models
 
 ## Data Preparation
 

@@ -94,14 +94,15 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |Date|Topic|
 |----|:----|
 | `r next_date()` | [*Destination*  presentations](roadmap-project/assignment-destination.qmd) | 
-|`r next_date()`| In-class project workshop |
+|`r next_date()`| [In-class project workshop](session_destination_workshop.qmd) |
+
 
 ## Deep Dive: Understanding the impact of residential segregation on disease outcomes
 
 |Date|Topic|
 |---------|:----------|
-|`r next_date()`| Residential segregation as a fundamental cause of health inequity |
-|`r next_date()`| Measuring residential segregation |
+|`r next_date()`| [A step-by-step work-through of the `radon` example](session_radon_walkthrough.qmd) |
+|`r next_date()`| Mapping radon in Minnesota, looking at residuals and making predictions |
 
 **Spring break - no class!** `r next_date()` & `r next_date()`  
 
