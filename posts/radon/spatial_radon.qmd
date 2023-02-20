@@ -1,0 +1,73 @@
+---
+pagetitle: Taking a spatial perspective on the `radon` data
+author: Jon Zelner
+date: "2/23/2022"
+draft: true
+---
+```{r setup}
+#| warning: false
+library(ggplot2)
+library(tidycensus)
+library(dplyr)
+library(rstanarm)
+library(stringr)
+library(spdep)
+```
+
+## Download a shapefile for Minnesota
+
+This is made very easy using the excellent `tidycensus` package.
+
+```{r}
+options(tigris_use_cache = TRUE)
+
+minnesota <- get_acs(
+  state = "MN",
+  geography = "county",
+  variables = "B19013_001",
+  geometry = TRUE,
+  year = 2020
+)
+
+## fix county names to match the radon data
+minnesota <- minnesota %>% 
+  mutate(county = str_replace_all(
+    str_replace_all(
+      toupper(str_remove(NAME, " County, Minnesota")), " ", ""), ".", ""))
+
+minnesota <-
+  minnesota %>% mutate(
+    county = str_remove(NAME, " County, Minnesota") %>% 
+      str_replace_all(" ", "") %>% 
+      str_replace_all("\\.", "") %>% 
+      toupper()
+  ) 
+
+
+radon <- radon %>% mutate(basement = 1 - floor)
+
+m <- lm(log_radon ~ basement, data = radon)
+radon$resid <- resid(m)
+
+county_uranium <- radon %>%
+  group_by(county) %>%
+  summarize(log_uranium = first(log_uranium), 
+            median_radon = median(log_radon),
+            median_resid = median(resid))
+
+aa <- left_join(minnesota, county_uranium)
+
+nb <- poly2nb(aa)
+lw <- nb2listw(nb, style="W", zero.policy=TRUE)
+radon_i <- moran(aa$median_resid, lw, length(nb), Szero(lw),NAOK=TRUE)[1]
+
+```{r}
+g2 <- ggplot(aa) + geom_sf(aes(fill=log_uranium)) + scale_fill_viridis_c()
+plot(g2)
+```
+
+```{r}
+g <- ggplot(aa) + geom_sf(aes(fill=median_resid)) +
+scale_fill_viridis_c()
+plot(g)
+```

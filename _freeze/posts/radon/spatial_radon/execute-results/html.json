@@ -1,0 +1,16 @@
+{
+  "hash": "b82b56a854b4be419959873ef57ea6da",
+  "result": {
+    "markdown": "---\npagetitle: Taking a spatial perspective on the `radon` data\nauthor: Jon Zelner\ndate: \"2/23/2022\"\ndraft: true\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nlibrary(tidycensus)\nlibrary(dplyr)\nlibrary(rstanarm)\nlibrary(stringr)\nlibrary(spdep)\n```\n:::\n\n\n## Download a shapefile for Minnesota\n\nThis is made very easy using the excellent `tidycensus` package.\n\n\n::: {.cell}\n\n```{.r .cell-code}\noptions(tigris_use_cache = TRUE)\n\nminnesota <- get_acs(\n  state = \"MN\",\n  geography = \"county\",\n  variables = \"B19013_001\",\n  geometry = TRUE,\n  year = 2020\n)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nGetting data from the 2016-2020 5-year ACS\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nWarning: • You have not set a Census API key. Users without a key are limited to 500\nqueries per day and may experience performance limitations.\nℹ For best results, get a Census API key at http://api.census.gov/data/\nkey_signup.html and then supply the key to the `census_api_key()` function to\nuse it throughout your tidycensus session.\nThis warning is displayed once per session.\n```\n:::\n\n```{.r .cell-code}\n## fix county names to match the radon data\nminnesota <- minnesota %>% \n  mutate(county = str_replace_all(\n    str_replace_all(\n      toupper(str_remove(NAME, \" County, Minnesota\")), \" \", \"\"), \".\", \"\"))\n\nminnesota <-\n  minnesota %>% mutate(\n    county = str_remove(NAME, \" County, Minnesota\") %>% \n      str_replace_all(\" \", \"\") %>% \n      str_replace_all(\"\\\\.\", \"\") %>% \n      toupper()\n  ) \n\n\nradon <- radon %>% mutate(basement = 1 - floor)\n\nm <- lm(log_radon ~ basement, data = radon)\nradon$resid <- resid(m)\n\ncounty_uranium <- radon %>%\n  group_by(county) %>%\n  summarize(log_uranium = first(log_uranium), \n            median_radon = median(log_radon),\n            median_resid = median(resid))\n\naa <- left_join(minnesota, county_uranium)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nJoining with `by = join_by(county)`\n```\n:::\n\n```{.r .cell-code}\nnb <- poly2nb(aa)\nlw <- nb2listw(nb, style=\"W\", zero.policy=TRUE)\nradon_i <- moran(aa$median_resid, lw, length(nb), Szero(lw),NAOK=TRUE)[1]\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nWarning in lag.listw(listw, z, zero.policy = zero.policy, NAOK = NAOK): NAs in\nlagged values\n```\n:::\n:::\n::: {.cell}\n\n```{.r .cell-code}\ng2 <- ggplot(aa) + geom_sf(aes(fill=log_uranium)) + scale_fill_viridis_c()\nplot(g2)\n```\n\n::: {.cell-output-display}\n![](spatial_radon_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ng <- ggplot(aa) + geom_sf(aes(fill=median_resid)) +\nscale_fill_viridis_c()\nplot(g)\n```\n\n::: {.cell-output-display}\n![](spatial_radon_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "spatial_radon_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
