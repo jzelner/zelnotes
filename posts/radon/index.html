@@ -254,10 +254,10 @@ div.csl-indent {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#preparing-to-run-the-examples" id="toc-preparing-to-run-the-examples" class="nav-link" data-scroll-target="#preparing-to-run-the-examples">Preparing to run the examples</a></li>
-  <li><a href="#setting-up-the-workspace" id="toc-setting-up-the-workspace" class="nav-link" data-scroll-target="#setting-up-the-workspace">Setting up the workspace</a></li>
   </ul></li>
   <li><a href="#fitting-the-models" id="toc-fitting-the-models" class="nav-link" data-scroll-target="#fitting-the-models">Fitting the models</a>
   <ul class="collapse">
+  <li><a href="#setting-up-the-workspace" id="toc-setting-up-the-workspace" class="nav-link" data-scroll-target="#setting-up-the-workspace">Setting up the workspace</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
   <li><a href="#door-1-full-pooling" id="toc-door-1-full-pooling" class="nav-link" data-scroll-target="#door-1-full-pooling">🚪 Door 1: Full pooling!</a></li>
   <li><a href="#door-2-no-pooling" id="toc-door-2-no-pooling" class="nav-link" data-scroll-target="#door-2-no-pooling">🚪 Door 2: No pooling</a></li>
@@ -322,7 +322,7 @@ div.csl-indent {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig2.png" class="img-fluid figure-img"></p>
+<p><img src="fig2.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <p></p><figcaption class="figure-caption">Original Fig 2 from <span class="citation" data-cites="gelman2006">(<a href="#ref-gelman2006" role="doc-biblioref">Gelman 2006</a>)</span></figcaption><p></p>
 </figure>
 </div>
@@ -346,7 +346,13 @@ div.csl-indent {
 <div class="cell" data-hash="index_cache/html/unnamed-chunk-2_40802a148316f2420adf14dd29410dec">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggplot2"</span>,<span class="st">"tidyr"</span>,<span class="st">"dplyr"</span>,<span class="st">"bayesplot"</span>,<span class="st">"rstanarm"</span>,<span class="st">"purrr"</span>,<span class="st">"tidybayes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="3" type="1">
+<li><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jzelner/zelnotes/tree/main/posts/radon" target="_blank">Download the folder</a> containing this tutorial, unzip it and open an R session inside this newly unzipped <code>radon</code> directory.</li>
+</ol>
 </section>
+</section>
+<section id="fitting-the-models" class="level1">
+<h1>Fitting the models</h1>
 <section id="setting-up-the-workspace" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-workspace">Setting up the workspace</h2>
 <p>First, we will load the relevant packages:</p>
@@ -360,9 +366,6 @@ div.csl-indent {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
-<section id="fitting-the-models" class="level1">
-<h1>Fitting the models</h1>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
 <p>First, lets take the raw <code>radon</code> dataset from the <code>rstanarm</code> package and recode the <code>floor</code> variable to be interpretable as the <code>basement</code> one from the original paper: some minor modifications and additonal datasets that we’ll use for the purposes of modeling and visualizing these data.</p>
