@@ -1,0 +1,36 @@
+---
+pagetitle: "Coming to grips with the ☢️ radon ☢️ example"
+---
+
+{{< include _titleslide.qmd >}}
+
+## Today's <span class="alert">Theme</span> {.imgslide} 
+
+<img src="/images/radon_entry.png">
+
+How do hierarchical models make the most use of multi-level data
+
+## Agenda
+
+- Against the culture of <span class="alert">null hypothesis significance testing</span>
+
+## On your own 
+
+- What does Lash mean by the "culture of null hypothesis significance testing" (NHST)?
+
+- What is <span class="alert">prior information</span>? How might including this information impact your estimates?
+
+- What is a proposed alternative oritentation to NHST? 
+
+- Are the ideas/arguments in here relevant to spatial analysis? Why or why not?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Next Time
+
+![Mapping and spatial analysis of the radon data!](../images/minnesota_radon_map.png)  
+
+## References

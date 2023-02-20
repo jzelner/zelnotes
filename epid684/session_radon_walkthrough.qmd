@@ -1,0 +1,43 @@
+# Working through the `radon` example
+
+## Before Class
+
+### Reading
+
+Lash TL. The Harm Done to Reproducibility by the Culture of Null Hypothesis Significance Testing. American Journal of Epidemiology. 2017;186(6):627-635. [doi:10.1093/aje/kwx261](https://doi.org/10.1093/aje/kwx261)
+
+### Preparation for in-class activity
+
+In class, we will be doing a walk-through of how to reproduce the analysis in the radon paper we reviewed in a [previous class session](session_10_hierarchical_models.qmd). To be able to run this, please come to class with your computer set up to run the example:
+
+1. **Install or update to the latest version of RStudio.** The tutorial code will be contained in a Quarto markdown document. Quarto is an updated version of the venerable RMarkdown, and the [newest versions of RStudio include Quarto support by default](https://quarto.org/docs/tools/rstudio.html). 
+
+2. **Set up your R/RStudio installation to be able to load the following packages using the following code**:
+
+```{r}
+#| echo: true
+#| output: false
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(bayesplot)
+library(rstanarm)
+library(purrr)
+library(tidybayes)
+```
+
+If you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:
+
+```{r}
+#| eval: false
+install.packages(c("ggplot2","tidyr","dplyr","bayesplot","rstanarm","purrr","tidybayes"))
+```
+
+If you run into problems with any of these, please let me know!
+
+
+## During Class
+
+- [Slides](slides/session_13_randon_hands_on.qmd)
+
+- You can find the tutorial we are going to work through [here](/posts/radon/index.qmd)
