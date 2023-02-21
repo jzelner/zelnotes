@@ -6,4 +6,5 @@ tbl-colwidths: [20,80]
 
 |Date | Topic|
 |-----|:-----|
-| 2/14| [Smoothing!](session_1_smoothing.qmd)
+| 2/14| [Smoothing!](session_1_smoothing.qmd) | 
+| 2/21| [Hierarchical models](session_2_multilevel.qmd) | 

@@ -1,0 +1,16 @@
+{
+  "hash": "bf9aa9222f10b830223ec7c7b804a1ab",
+  "result": {
+    "markdown": "# Coming to grips with multi-level modeling\n\nFor our second zoom session, we're going to do a bit of a deep dive, hands-on take on multi-level modeling. \n\n## Preparation for in-class activity\n\nIn class, we will be doing a walk-through of how to reproduce the analysis in @gelman2006 using several R-based modeling tools. Before class, please:\n\n1. **Install or update to the latest version of RStudio.** The tutorial code will be contained in a Quarto markdown document. Quarto is an updated version of the venerable RMarkdown, and the [newest versions of RStudio include Quarto support by default](https://quarto.org/docs/tools/rstudio.html). \n\nBefore or at the beginning of class:\n\n2. **Set up your R/RStudio installation to be able to load the following packages using the following code**:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(dplyr)\nlibrary(bayesplot)\nlibrary(rstanarm)\nlibrary(purrr)\nlibrary(tidybayes)\n```\n:::\n\n\nIf you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(c(\"ggplot2\",\"tidyr\",\"dplyr\",\"bayesplot\",\"rstanarm\",\"purrr\",\"tidybayes\"))\n```\n:::\n\n\nIf you run into problems with any of these, please let me know!\n\n## During Class\n\n- [Slide](slides/session_2_multilevel) \n\n- You can find the tutorial we are going to work through [here](/posts/radon/index.qmd)",
+    "supporting": [
+      "session_2_multilevel_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
