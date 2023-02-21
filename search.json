@@ -4,7 +4,7 @@
     "href": "epid594/index.html",
     "title": "Zelnotes",
     "section": "",
-    "text": "Zoom Sessions\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n2/14\nSmoothing!"
+    "text": "Zoom Sessions\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n2/14\nSmoothing!\n\n\n2/21\nHierarchical models"
   },
   {
     "objectID": "epid594/session_1_smoothing.html",
@@ -12,6 +12,13 @@
     "title": "Zelnotes",
     "section": "",
     "text": "In our first Zoom session of this course, we will spend some time discussing and thinking about the concept of spatial smoothing and why it is such a central idea in spatial analysis and medical geography. Specifically, we will spend our time on the following activities:\n\nIntroductions/logistics (~10m)\nTime for feedback/questions about readings and course materials. (~10m)\nA mini-lecture on the concept of smoothing and why it is important (~10m)\nA conceptual introduction to kernel smoothing\nShort break (~5m)\nA short conceptual introduction to kernel density estimation in one dimension (~10m)\nIf time: A hands-on tutorial about way smoothers are employed to make estimates and identify hotspots.(~25m)\nWrap-up/housekeeping for next week.\n\n\n\n\nLecture slides\nAnother brief tutorial on smoothing continuous data in one dimension"
+  },
+  {
+    "objectID": "epid594/session_2_multilevel.html",
+    "href": "epid594/session_2_multilevel.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "For our second zoom session, we’re going to do a bit of a deep dive, hands-on take on multi-level modeling.\n\n\nIn class, we will be doing a walk-through of how to reproduce the analysis in Gelman (2006) using several R-based modeling tools. Before class, please:\n\nInstall or update to the latest version of RStudio. The tutorial code will be contained in a Quarto markdown document. Quarto is an updated version of the venerable RMarkdown, and the newest versions of RStudio include Quarto support by default.\n\nBefore or at the beginning of class:\n\nSet up your R/RStudio installation to be able to load the following packages using the following code:\n\n\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(dplyr)\nlibrary(bayesplot)\nlibrary(rstanarm)\nlibrary(purrr)\nlibrary(tidybayes)\n\nIf you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:\n\ninstall.packages(c(\"ggplot2\",\"tidyr\",\"dplyr\",\"bayesplot\",\"rstanarm\",\"purrr\",\"tidybayes\"))\n\nIf you run into problems with any of these, please let me know!\n\n\n\n\nSlide\nYou can find the tutorial we are going to work through here"
   },
   {
     "objectID": "epid684/class_1_where are we going.html",
