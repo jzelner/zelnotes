@@ -1,5 +1,5 @@
 ---
-pagetitle: "Coming to grips with the ☢️ radon ☢️ example"
+pagetitle: "Measuring spatial and contextual variation"
 ---
 
 {{< include _titleslide.qmd >}}
@@ -8,19 +8,30 @@ pagetitle: "Coming to grips with the ☢️ radon ☢️ example"
 
 <img src="/images/radon_entry.png">
 
-How do hierarchical models make the most use of multi-level data
+Making the most of multi-level data using hierarchical models
 
 ## Agenda
 
-- Against the culture of <span class="alert">null hypothesis significance testing</span>
+- Against the culture of <span class="alert">null hypothesis significance testing</span>. ✊
+
+- Radon ☢️ lab 🧪 ! 
 
 ## On your own 
 
 - What does Lash mean by the "culture of null hypothesis significance testing" (NHST)?
 
-- What is <span class="alert">prior information</span>? How might including this information impact your estimates?
+- What is <span class="alert">prior information</span>? How might including this information impact your parameter and uncertainty estimates?
 
-- What is a proposed alternative oritentation to NHST? 
+- Anything confusing/surprising/particularly interesting in this reading?
+
+```{r}
+library(countdown)
+countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## In pairs
+
+- What is a proposed alternative oritentation to over-focusing on NHST? 
 
 - Are the ideas/arguments in here relevant to spatial analysis? Why or why not?
 
@@ -29,8 +40,14 @@ library(countdown)
 countdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=FALSE)
 ```
 
+## Radon returns!
+
+![](/images/radon_entry.png)
+
+[Radon hands-on activity](/posts/radon/index.qmd)
+
 ## Next Time
 
-![Mapping and spatial analysis of the radon data!](../images/minnesota_radon_map.png)  
+![Mapping radon!](../images/minnesota_radon_map.png)  
 
 ## References

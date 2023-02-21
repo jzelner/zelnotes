@@ -6,7 +6,13 @@ date: "2/15/2023"
 author: "Jon Zelner"
 image: "radon_predictions.png"
 bibliography: refs.bib
---- 
+---
+
+```{r}
+#| echo: false
+#| output: false
+zip("radon.zip", files = c("index.qmd", "fig1.png", "fig2.png", "refs.bib", "radon_predictions.png"))
+```
 
 # Introduction 
 
@@ -39,12 +45,13 @@ library(tidybayes)
 
 If you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:
 
+
 ```{r}
 #| eval: false
 install.packages(c("ggplot2","tidyr","dplyr","bayesplot","rstanarm","purrr","tidybayes"))
 ```
 
-3. <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jzelner/zelnotes/tree/main/posts/radon" target ="_blank">Download the folder</a> containing this tutorial, unzip it and open an R session inside this newly unzipped `radon` directory. 
+3.[Download the zipfile](radon.zip) containing this tutorial, unzip it and open an R session inside this newly unzipped `radon` directory. 
 
 # Fitting the models
 
