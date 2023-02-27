@@ -1,7 +1,7 @@
 ---
 title: "Re-creating the `radon` teaching example with rstanarm and tidybayes"
 execute:
-  cache: true
+  cache: false 
 date: "2/15/2023"
 author: "Jon Zelner"
 image: "radon_predictions.png"
@@ -124,7 +124,7 @@ $$
 In `R` this is easy to implement, because we are implicitly asking the regression model to treat county as a categorical variable if we pass it to it as a `factor` datatype:
 
 ```{r}
-no_pool_m <- lm(log_radon ~ basement + county, data = radon)
+no_pool_m <- lm(log_radon ~ basement + log_uranium + county, data = radon)
 ```
 
 ```{r}
@@ -151,7 +151,7 @@ $$
 
 Where $\epsilon_i \sim N(0, \sigma_i)$ and $\epsilon_j \sim N(0, \sigma_j)$.
 
-To fit this model, we'll use the `rstanarm` package, which uses the Stan Bayesian modeling language under the hook to fit the model. This model introduces another piece of syntax to our equation, which now reads `log_radon ~ basement + log_uranium + (1 | county)`. The interesting part of this is the `(1 | county)` which is a syntax used by `rstanarm` and other hierarchical moodeling packages (such as `lme4`) to specify random intercepts (typically represented by a 1 in the matrix of regressors) for each of a set of clusters, in this case counties. In this model, the county-level intercept terms are implicitly assumed to be normally distributed with unknown variance $\sigma_j$ which will be estimated when the model is fit. 
+To fit this model, we'll use the `rstanarm` package, which uses the Stan Bayesian modeling language under the hook to fit the model. This model introduces another piece of syntax to our equation, which now reads `log_radon ~ basement + log_uranium + (1 | county)`. The interesting part of this is the `(1 | county)` which is a syntax used by `rstanarm` and other hierarchical modeling packages (such as `lme4`) to specify random intercepts (typically represented by a 1 in the matrix of regressors) for each of a set of clusters, in this case counties. In this model, the county-level intercept terms are implicitly assumed to be normally distributed with unknown variance $\sigma_j$ which will be estimated when the model is fit. 
 
 We use the `stan_lmer` function to fit a hierarchical linear model with a normally-distributed response variable, as follows:
 
@@ -342,7 +342,6 @@ plot(g)
 The next step is to then add the median predictions (points) and 1 SE errorbars to the plot, and then fix the theme to match the original figure, et voilà! 
 
 ```{r}
-
 g <- g +  geom_point(aes(x = log_uranium, y = .prediction, group = county)) +
   geom_errorbar(aes(
     x = log_uranium,

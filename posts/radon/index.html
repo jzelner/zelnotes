@@ -195,46 +195,16 @@ div.csl-indent {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">EPID 684 - Spatial Epidemiology</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../epid684/index.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  <a href="../../epid594/index.html" class="sidebar-item-text sidebar-link">Key Concepts in Spatial Analysis (EPID 594)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../epid684/policies.html" class="sidebar-item-text sidebar-link">Course Policies</a>
+  <a href="../../epid684/index.html" class="sidebar-item-text sidebar-link">Spatial and Contextual Epidemiology (EPID 684)</a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../epid684/roadmap-project/index.html" class="sidebar-item-text sidebar-link">Roadmap Project</a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">EPID 592 - Spatial Epidemiology (Online MPH)</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../epid594/index.html" class="sidebar-item-text sidebar-link">Zoom Sessions</a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -311,7 +281,7 @@ div.csl-indent {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_bb6153d0eb64a321b2190c97f5dbea2a">
+<div class="cell">
 
 </div>
 <section id="introduction" class="level1">
@@ -336,7 +306,7 @@ div.csl-indent {
 <li><p><strong>Install or update to the latest version of RStudio.</strong> The tutorial code will be contained in a Quarto markdown document. Quarto (which powers this very website!) is an updated version of the venerable RMarkdown, and the <a href="https://quarto.org/docs/tools/rstudio.html">newest versions of RStudio include Quarto support by default</a>.</p></li>
 <li><p><strong>Set up your R/RStudio installation to be able to load the following packages using the following code</strong>:</p></li>
 </ol>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-2_c1e545c7f6878a6f90f789ca1c90dda6">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -346,7 +316,7 @@ div.csl-indent {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-3_1885872b7db4511d7a55e8375dcefb33">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggplot2"</span>,<span class="st">"tidyr"</span>,<span class="st">"dplyr"</span>,<span class="st">"bayesplot"</span>,<span class="st">"rstanarm"</span>,<span class="st">"purrr"</span>,<span class="st">"tidybayes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>3.<a href="radon.zip">Download the zipfile</a> containing this tutorial, unzip it and open an R session inside this newly unzipped <code>radon</code> directory.</p>
@@ -357,7 +327,7 @@ div.csl-indent {
 <section id="setting-up-the-workspace" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-workspace">Setting up the workspace</h2>
 <p>First, we will load the relevant packages:</p>
-<div class="cell" data-hash="index_cache/html/setup_bd2ab5c9b04b8f5c4b123f3290ca2c12">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -370,11 +340,11 @@ div.csl-indent {
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
 <p>First, lets take the raw <code>radon</code> dataset from the <code>rstanarm</code> package and recode the <code>floor</code> variable to be interpretable as the <code>basement</code> one from the original paper: some minor modifications and additonal datasets that we’ll use for the purposes of modeling and visualizing these data.</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-4_5909bc14f13ccd22d73d8e6cd2b2dbb7">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>basement <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> radon<span class="sc">$</span>floor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can see that that the dataset has all of the variables we need:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-5_5c030e2589493b95c8e70dacd398079e">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>  floor county  log_radon log_uranium basement
 1     1 AITKIN 0.83290912  -0.6890476        0
@@ -394,11 +364,11 @@ y_{ij} = \alpha + \beta x_{ij} + \epsilon_{i}
 \]</span></p>
 <p>Where <span class="math inline">\(x_{ij} = 1\)</span> if a house has a basement and 0 otherwise.</p>
 <p>In R, we can fit this model via least squares using a single line of code:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-6_e8727bd47e57a065c70eb39b7d327bd1">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span><span class="fu">lm</span>(log_radon <span class="sc">~</span> basement, <span class="at">data =</span> radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can call the <code>summary</code> function to get a description of the key coefficients and the goodness-of-fit:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-7_06a9e683e23613ec4dd8a54547b13e31">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -429,107 +399,108 @@ F-statistic: 70.25 on 1 and 917 DF,  p-value: &lt; 2.2e-16</code></pre>
 y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 \]</span></p>
 <p>In <code>R</code> this is easy to implement, because we are implicitly asking the regression model to treat county as a categorical variable if we pass it to it as a <code>factor</code> datatype:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-8_22009452bee97a2c4e58f4e2ce21f3e0">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>no_pool_m <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> county, <span class="at">data =</span> radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>no_pool_m <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> county, <span class="at">data =</span> radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-9_cb33a18a56094036949f7cc2788d3701">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = log_radon ~ basement + county, data = radon)
+lm(formula = log_radon ~ basement + log_uranium + county, data = radon)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
 -3.1794 -0.4449 -0.0065  0.4406  2.6083 
 
-Coefficients:
+Coefficients: (1 not defined because of singularities)
                      Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)           0.19801    0.36711   0.539  0.58977    
-basement              0.68923    0.07062   9.760  &lt; 2e-16 ***
-countyANOKA           0.04337    0.37723   0.115  0.90850    
-countyBECKER          0.66225    0.55568   1.192  0.23369    
-countyBELTRAMI        0.69991    0.45595   1.535  0.12515    
-countyBENTON          0.56730    0.51374   1.104  0.26980    
-countyBIGSTONE        0.64955    0.55519   1.170  0.24235    
-countyBLUEEARTH       1.13764    0.41198   2.761  0.00588 ** 
-countyBROWN           1.10882    0.51404   2.157  0.03129 *  
-countyCARLTON         0.15844    0.42996   0.368  0.71260    
-countyCARVER          0.67877    0.46931   1.446  0.14847    
-countyCASS            0.54085    0.48770   1.109  0.26776    
-countyCHIPPEWA        0.86861    0.51404   1.690  0.09145 .  
-countyCHISAGO         0.19748    0.46931   0.421  0.67402    
-countyCLAY            1.11870    0.41192   2.716  0.00675 ** 
-countyCLEARWATER      0.48106    0.51404   0.936  0.34963    
-countyCOOK           -0.16970    0.62945  -0.270  0.78753    
-countyCOTTONWOOD      0.37977    0.51495   0.737  0.46104    
-countyCROWWING        0.27276    0.41947   0.650  0.51570    
-countyDAKOTA          0.48478    0.37486   1.293  0.19628    
-countyDODGE           0.92958    0.55519   1.674  0.09443 .  
-countyDOUGLAS         0.86332    0.43671   1.977  0.04838 *  
-countyFARIBAULT      -0.10877    0.46902  -0.232  0.81666    
-countyFILLMORE        0.53209    0.62945   0.845  0.39817    
-countyFREEBORN        1.22567    0.43660   2.807  0.00511 ** 
-countyGOODHUE         1.07757    0.41198   2.616  0.00907 ** 
-countyHENNEPIN        0.50555    0.37027   1.365  0.17250    
-countyHOUSTON         0.89971    0.46902   1.918  0.05541 .  
-countyHUBBARD         0.38868    0.48800   0.796  0.42599    
-countyISANTI          0.20364    0.55519   0.367  0.71386    
-countyITASCA          0.08265    0.42458   0.195  0.84571    
-countyJACKSON         1.14926    0.48770   2.356  0.01868 *  
-countyKANABEC         0.38164    0.51404   0.742  0.45804    
-countyKANDIYOHI       1.18859    0.51404   2.312  0.02101 *  
-countyKITTSON         0.72957    0.55568   1.313  0.18957    
-countyKOOCHICHING    -0.01811    0.45595  -0.040  0.96832    
-countyLACQUIPARLE     2.06359    0.62945   3.278  0.00109 ** 
-countyLAKE           -0.40058    0.43671  -0.917  0.35926    
-countyLAKEOFTHEWOODS  0.98897    0.51404   1.924  0.05471 .  
-countyLESUEUR         0.87629    0.48739   1.798  0.07255 .  
-countyLINCOLN         1.43469    0.51374   2.793  0.00535 ** 
-countyLYON            1.09182    0.44500   2.454  0.01435 *  
-countyMAHNOMEN        0.49905    0.81249   0.614  0.53923    
-countyMARSHALL        0.75144    0.43713   1.719  0.08598 .  
-countyMARTIN          0.21958    0.45545   0.482  0.62985    
-countyMCLEOD          0.43240    0.41544   1.041  0.29825    
-countyMEEKER          0.35916    0.48770   0.736  0.46167    
-countyMILLELACS       0.08089    0.62945   0.129  0.89778    
-countyMORRISON        0.29351    0.43671   0.672  0.50171    
-countyMOWER           0.83955    0.41547   2.021  0.04363 *  
-countyMURRAY          1.61419    0.81249   1.987  0.04728 *  
-countyNICOLLET        1.29064    0.51404   2.511  0.01224 *  
-countyNOBLES          1.05532    0.55519   1.901  0.05767 .  
-countyNORMAN          0.39763    0.55494   0.717  0.47386    
-countyOLMSTED         0.45389    0.39368   1.153  0.24927    
-countyOTTERTAIL       0.75231    0.44500   1.691  0.09129 .  
-countyPENNINGTON      0.30346    0.55568   0.546  0.58514    
-countyPINE           -0.07443    0.46902  -0.159  0.87396    
-countyPIPESTONE       0.99059    0.51374   1.928  0.05417 .  
-countyPOLK            0.85212    0.51404   1.658  0.09776 .  
-countyPOPE            0.41963    0.62945   0.667  0.50518    
-countyRAMSEY          0.30923    0.38546   0.802  0.42264    
-countyREDWOOD         1.11084    0.48739   2.279  0.02291 *  
-countyRENVILLE        0.79973    0.55494   1.441  0.14992    
-countyRICE            0.97679    0.42436   2.302  0.02159 *  
-countyROCK            0.44811    0.62945   0.712  0.47673    
-countyROSEAU          0.79505    0.41253   1.927  0.05429 .  
-countySCOTT           0.93542    0.41544   2.252  0.02460 *  
-countySHERBURNE       0.23784    0.44526   0.534  0.59337    
-countySIBLEY          0.38762    0.51404   0.754  0.45102    
-countySTLOUIS         0.03582    0.36957   0.097  0.92281    
-countySTEARNS         0.63089    0.39131   1.612  0.10728    
-countySTEELE          0.71674    0.43019   1.666  0.09607 .  
-countySTEVENS         0.92172    0.62945   1.464  0.14348    
-countySWIFT           0.13949    0.51404   0.271  0.78618    
-countyTODD            0.85192    0.55494   1.535  0.12512    
-countyTRAVERSE        1.13301    0.51374   2.205  0.02770 *  
-countyWABASHA         0.95532    0.45545   2.098  0.03625 *  
-countyWADENA          0.43390    0.48749   0.890  0.37369    
-countyWASECA         -0.18110    0.51374  -0.353  0.72455    
-countyWASHINGTON      0.47614    0.37887   1.257  0.20920    
-countyWATONWAN        1.81287    0.55568   3.262  0.00115 ** 
-countyWILKIN          1.35347    0.81249   1.666  0.09612 .  
-countyWINONA          0.76904    0.41542   1.851  0.06449 .  
-countyWRIGHT          0.77923    0.41560   1.875  0.06115 .  
-countyYELLOWMEDICINE  0.32956    0.62945   0.524  0.60071    
+(Intercept)           0.41546    0.36653   1.133   0.2573    
+basement              0.68923    0.07062   9.760   &lt;2e-16 ***
+log_uranium           0.31557    0.60273   0.524   0.6007    
+countyANOKA           0.09331    0.43757   0.213   0.8312    
+countyBECKER          0.48061    0.53315   0.901   0.3676    
+countyBELTRAMI        0.66971    0.43256   1.548   0.1219    
+countyBENTON          0.39495    0.48401   0.816   0.4147    
+countyBIGSTONE        0.30996    0.67551   0.459   0.6465    
+countyBLUEEARTH       0.83448    0.51182   1.630   0.1034    
+countyBROWN           0.80378    0.59997   1.340   0.1807    
+countyCARLTON         0.04586    0.37525   0.122   0.9028    
+countyCARVER          0.43107    0.49615   0.869   0.3852    
+countyCASS            0.51534    0.46877   1.099   0.2719    
+countyCHIPPEWA        0.56480    0.59755   0.945   0.3448    
+countyCHISAGO         0.21208    0.48245   0.440   0.6603    
+countyCLAY            0.79276    0.54430   1.456   0.1456    
+countyCLEARWATER      0.28251    0.49942   0.566   0.5718    
+countyCOOK           -0.22778    0.60157  -0.379   0.7050    
+countyCOTTONWOOD      0.05517    0.62515   0.088   0.9297    
+countyCROWWING        0.25520    0.40375   0.632   0.5275    
+countyDAKOTA          0.27496    0.36440   0.755   0.4507    
+countyDODGE           0.62887    0.62985   0.998   0.3183    
+countyDOUGLAS         0.59673    0.48599   1.228   0.2198    
+countyFARIBAULT      -0.41932    0.56823  -0.738   0.4608    
+countyFILLMORE        0.18371    0.74874   0.245   0.8062    
+countyFREEBORN        0.93747    0.51259   1.829   0.0678 .  
+countyGOODHUE         0.79808    0.48024   1.662   0.0969 .  
+countyHENNEPIN        0.31857    0.33866   0.941   0.3471    
+countyHOUSTON         0.52337    0.65992   0.793   0.4280    
+countyHUBBARD         0.29765    0.44240   0.673   0.5013    
+countyISANTI          0.22347    0.57060   0.392   0.6954    
+countyITASCA          0.07454    0.41713   0.179   0.8582    
+countyJACKSON         0.83429    0.58898   1.417   0.1570    
+countyKANABEC         0.18104    0.50000   0.362   0.7174    
+countyKANDIYOHI       0.93651    0.54193   1.728   0.0843 .  
+countyKITTSON         0.51458    0.55307   0.930   0.3524    
+countyKOOCHICHING     0.04272    0.51958   0.082   0.9345    
+countyLACQUIPARLE     1.74799    0.71232   2.454   0.0143 *  
+countyLAKE           -0.39978    0.43745  -0.914   0.3610    
+countyLAKEOFTHEWOODS  0.98665    0.51226   1.926   0.0544 .  
+countyLESUEUR         0.59748    0.54564   1.095   0.2738    
+countyLINCOLN         1.07685    0.66669   1.615   0.1066    
+countyLYON            0.74980    0.59204   1.266   0.2057    
+countyMAHNOMEN        0.23440    0.83857   0.280   0.7799    
+countyMARSHALL        0.52966    0.43979   1.204   0.2288    
+countyMARTIN         -0.05021    0.50662  -0.099   0.9211    
+countyMCLEOD          0.17064    0.46154   0.370   0.7117    
+countyMEEKER          0.13416    0.49184   0.273   0.7851    
+countyMILLELACS      -0.07027    0.59899  -0.117   0.9066    
+countyMORRISON        0.10548    0.41098   0.257   0.7975    
+countyMOWER           0.53976    0.51006   1.058   0.2903    
+countyMURRAY          1.27088    0.90250   1.408   0.1594    
+countyNICOLLET        0.99492    0.58811   1.692   0.0911 .  
+countyNOBLES          0.70992    0.68275   1.040   0.2987    
+countyNORMAN          0.09649    0.63071   0.153   0.8784    
+countyOLMSTED         0.15971    0.48458   0.330   0.7418    
+countyOTTERTAIL       0.59947    0.40123   1.494   0.1355    
+countyPENNINGTON      0.10938    0.53979   0.203   0.8395    
+countyPINE           -0.24034    0.43292  -0.555   0.5789    
+countyPIPESTONE       0.62211    0.68128   0.913   0.3614    
+countyPOLK            0.55070    0.59569   0.924   0.3555    
+countyPOPE            0.11346    0.70170   0.162   0.8716    
+countyRAMSEY          0.22371    0.32661   0.685   0.4936    
+countyREDWOOD         0.77780    0.61264   1.270   0.2046    
+countyRENVILLE        0.46219    0.67340   0.686   0.4927    
+countyRICE            0.69839    0.48941   1.427   0.1539    
+countyROCK            0.06403    0.79121   0.081   0.9355    
+countyROSEAU          0.64452    0.36422   1.770   0.0772 .  
+countySCOTT           0.69805    0.43373   1.609   0.1079    
+countySHERBURNE       0.23607    0.44368   0.532   0.5948    
+countySIBLEY          0.09532    0.58419   0.163   0.8704    
+countySTLOUIS        -0.03183    0.31470  -0.101   0.9195    
+countySTEARNS         0.37671    0.43019   0.876   0.3815    
+countySTEELE          0.41415    0.52551   0.788   0.4309    
+countySTEVENS         0.55571    0.76882   0.723   0.4700    
+countySWIFT          -0.17768    0.61369  -0.290   0.7722    
+countyTODD            0.64926    0.54370   1.194   0.2328    
+countyTRAVERSE        0.75854    0.68962   1.100   0.2717    
+countyWABASHA         0.69051    0.50095   1.378   0.1684    
+countyWADENA          0.42853    0.48318   0.887   0.3754    
+countyWASECA         -0.46558    0.57561  -0.809   0.4188    
+countyWASHINGTON      0.30524    0.33621   0.908   0.3642    
+countyWATONWAN        1.53760    0.60466   2.543   0.0112 *  
+countyWILKIN          1.06154    0.85830   1.237   0.2165    
+countyWINONA          0.40541    0.60303   0.672   0.5016    
+countyWRIGHT          0.59019    0.38915   1.517   0.1297    
+countyYELLOWMEDICINE       NA         NA      NA       NA    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -551,13 +522,13 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 \alpha_j = \gamma_0 + \gamma \zeta_{j} + \epsilon_{j}
 \]</span></p>
 <p>Where <span class="math inline">\(\epsilon_i \sim N(0, \sigma_i)\)</span> and <span class="math inline">\(\epsilon_j \sim N(0, \sigma_j)\)</span>.</p>
-<p>To fit this model, we’ll use the <code>rstanarm</code> package, which uses the Stan Bayesian modeling language under the hook to fit the model. This model introduces another piece of syntax to our equation, which now reads <code>log_radon ~ basement + log_uranium + (1 | county)</code>. The interesting part of this is the <code>(1 | county)</code> which is a syntax used by <code>rstanarm</code> and other hierarchical moodeling packages (such as <code>lme4</code>) to specify random intercepts (typically represented by a 1 in the matrix of regressors) for each of a set of clusters, in this case counties. In this model, the county-level intercept terms are implicitly assumed to be normally distributed with unknown variance <span class="math inline">\(\sigma_j\)</span> which will be estimated when the model is fit.</p>
+<p>To fit this model, we’ll use the <code>rstanarm</code> package, which uses the Stan Bayesian modeling language under the hook to fit the model. This model introduces another piece of syntax to our equation, which now reads <code>log_radon ~ basement + log_uranium + (1 | county)</code>. The interesting part of this is the <code>(1 | county)</code> which is a syntax used by <code>rstanarm</code> and other hierarchical modeling packages (such as <code>lme4</code>) to specify random intercepts (typically represented by a 1 in the matrix of regressors) for each of a set of clusters, in this case counties. In this model, the county-level intercept terms are implicitly assumed to be normally distributed with unknown variance <span class="math inline">\(\sigma_j\)</span> which will be estimated when the model is fit.</p>
 <p>We use the <code>stan_lmer</code> function to fit a hierarchical linear model with a normally-distributed response variable, as follows:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-10_ac116894ae0d6c9629a566293610a892">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">stan_lmer</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> county), <span class="at">data =</span> radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because this model is fit by MCMC, we can use draws from the posterior distribution to understand uncertainty in the model. For example, this visualization of the median prediction and credible intervals for the basement and uranium effects can be visualized using the <code>mcmc_areas</code> function from the <code>bayesplot</code> package:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-11_f3d4fc65a907a41eb5d02771b5bb673d">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(m2)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">mcmc_areas</span>(posterior, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"basement"</span>, <span class="st">"log_uranium"</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -574,13 +545,13 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <section id="data-preparation-1" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation-1">Data Preparation</h3>
 <p>Since each row of <code>radon</code> dataset includes an observation of a single house, we need to work backwards to obtain the county-level soil uranium measure for each individual county. This is pretty straightforward to do using the <code>dplyr</code> package:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-12_c50ab14421f7e107185acd41a510a1d9">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>county_uranium <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We will also make a second dataset that we will use for storing the predicted radon levels for households with and without basements each for county. This contains 2 entries for each county, representing observations taken in the basement or on the first floor.</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-13_5b5d6372f367fdca1dd307387087ab5e">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>county_uranium_tmp_1 <span class="ot">&lt;-</span> county_uranium</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>county_uranium_tmp_1<span class="sc">$</span>basement <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>county_uranium_tmp_2 <span class="ot">&lt;-</span> county_uranium</span>
@@ -589,95 +560,99 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>county_dummy_df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(county_uranium_tmp_1, county_uranium_tmp_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we will take each of our fitted models (fully pooled, unpooled and partially pooled) and put their predicted values into our plotting dataset</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-14_5ab3202d782a03394ff223f90a5ab09f">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>county_dummy_df<span class="sc">$</span>pooled_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, county_dummy_df)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>county_dummy_df<span class="sc">$</span>no_pool_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(no_pool_m, county_dummy_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in predict.lm(no_pool_m, county_dummy_df): prediction from a rank-
+deficient fit may be misleading</code></pre>
+</div>
 </div>
 <p>Because the partial pooling model was fit using MCMC, we will take a slightly different approach and use the median of the posterior predictive distribution for each observation, which is analogous to (but not exactly the same as) the OLS predictions from the other models:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-15_98d811acbd62b473a92a12dd387191d0">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Gives posterior median for each prediction.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>county_dummy_df<span class="sc">$</span>partial_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(m2, county_dummy_df) <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span>(<span class="dv">2</span>,median) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Gives posterior median for each prediction.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>county_dummy_df<span class="sc">$</span>partial_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(m2, county_dummy_df) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span>(<span class="dv">2</span>,median) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="plotting" class="level3">
 <h3 class="anchored" data-anchor-id="plotting">Plotting</h3>
 <p>To re-create Figure 1, we will subset out the observed data and predictions for the 8 counties included in the original figure:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-16_6dff8969bcf4da0b55c5414b8658fc62">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Place the county names in a vector we will use to keep track of them</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fig_1_counties <span class="ot">&lt;-</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"LACQUIPARLE"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"AITKIN"</span>,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"KOOCHICHING"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DOUGLAS"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CLAY"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STEARNS"</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RAMSEY"</span>,</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STLOUIS"</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># First, using the `county_dummy_df` with the basement/non-basement predictions in it,</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># subset out the relevant counties and make a new county factor variable which</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># will be used to ensure that the counties in Fig. 1 plot in the right order</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>county_df_fig_1 <span class="ot">&lt;-</span> county_dummy_df <span class="sc">%&gt;%</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(county <span class="sc">%in%</span> fig_1_counties) <span class="sc">%&gt;%</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county2 =</span> <span class="fu">factor</span>(county, <span class="at">levels =</span> fig_1_counties)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(county)</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Now select out the households in the original data that</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="do">## are in each county and create another county-level factor</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="do">## variable in the same order</span></span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>pred_counties <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span> <span class="fu">filter</span>(county <span class="sc">%in%</span> fig_1_counties) <span class="sc">%&gt;%</span></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county2 =</span> <span class="fu">factor</span>(county, <span class="at">levels =</span> fig_1_counties))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Place the county names in a vector we will use to keep track of them</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fig_1_counties <span class="ot">&lt;-</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"LACQUIPARLE"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"AITKIN"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"KOOCHICHING"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DOUGLAS"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CLAY"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STEARNS"</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RAMSEY"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STLOUIS"</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># First, using the `county_dummy_df` with the basement/non-basement predictions in it,</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># subset out the relevant counties and make a new county factor variable which</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co"># will be used to ensure that the counties in Fig. 1 plot in the right order</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>county_df_fig_1 <span class="ot">&lt;-</span> county_dummy_df <span class="sc">%&gt;%</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(county <span class="sc">%in%</span> fig_1_counties) <span class="sc">%&gt;%</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county2 =</span> <span class="fu">factor</span>(county, <span class="at">levels =</span> fig_1_counties)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(county)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Now select out the households in the original data that</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="do">## are in each county and create another county-level factor</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="do">## variable in the same order</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>pred_counties <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span> <span class="fu">filter</span>(county <span class="sc">%in%</span> fig_1_counties) <span class="sc">%&gt;%</span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county2 =</span> <span class="fu">factor</span>(county, <span class="at">levels =</span> fig_1_counties))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once we have the datasets together for the figure, we can begin constructing it using <code>ggplot2</code>:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-17_c4d8ce66b7ebad3c2d27c7d56b5c57ab">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The geom_jitter geom plots the log_radon values for each household and </span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">## jitters the points slightly to avoid overplotting. </span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> pred_counties,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> log_radon, <span class="at">group =</span> county2),</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">0</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.1</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This superimposes the partial-pooling (α + β x_i + ϵ_i +ϵ_j) predictions</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="do">## over the raw data</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1,</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> partial_pred, <span class="at">group =</span> county2),</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"solid"</span>,</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"gray"</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## No-pooling predictions (α_{ij} + β x_i + ϵ_i)</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1, </span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> no_pool_pred, <span class="at">group =</span> county2)</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Full pooling predicitons (α + β x_i + ϵ_i)</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1,</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> pooled_pred, <span class="at">group =</span> county2),</span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, use facet_wrap to arrange the panels in two </span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## rows of four</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(county2), <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"basement"</span>) <span class="sc">+</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"log radon level"</span>) <span class="sc">+</span></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The geom_jitter geom plots the log_radon values for each household and </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">## jitters the points slightly to avoid overplotting. </span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> pred_counties,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> log_radon, <span class="at">group =</span> county2),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">0</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.1</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This superimposes the partial-pooling (α + β x_i + ϵ_i +ϵ_j) predictions</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="do">## over the raw data</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> partial_pred, <span class="at">group =</span> county2),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"solid"</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"gray"</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## No-pooling predictions (α_{ij} + β x_i + ϵ_i)</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1, </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> no_pool_pred, <span class="at">group =</span> county2)</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Full pooling predicitons (α + β x_i + ϵ_i)</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> county_df_fig_1,</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> basement, <span class="at">y =</span> pooled_pred, <span class="at">group =</span> county2),</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, use facet_wrap to arrange the panels in two </span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## rows of four</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(county2), <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"basement"</span>) <span class="sc">+</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"log radon level"</span>) <span class="sc">+</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -690,57 +665,57 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <section id="data-preparation-2" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation-2">Data Preparation</h3>
 <p>The following code allows us to extract predictions at the county level using our prediction dataset. To do this, we use the <code>predicted_draws</code> function from the <code>tidybayes</code> package, which lets us sample from the posterior distribution of the fitted model. The <code>median_qi</code> function, also from tidybayes, lets us calculate the width of a 1 standard error interval (equivalent to the range containing ~17% of the posterior probability mass around the posterior median) used in the original Figure 1 from <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span>:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-18_d38b512a38d1b15d75123c703faec1cd">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> <span class="fu">predicted_draws</span>(m2, county_dummy_df) <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median_qi</span>(<span class="at">.width =</span> <span class="fl">0.17</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(basement <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> <span class="fu">predicted_draws</span>(m2, county_dummy_df) <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median_qi</span>(<span class="at">.width =</span> <span class="fl">0.17</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(basement <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In order to calculate the predicted mean radon at a county level, we need to access the coefficients corresponding to the level two model, including the intercept <span class="math inline">\(\gamma_0\)</span> and the effect of a 1-log change in log-uranium on predicted log-radon, <span class="math inline">\(\gamma_1\)</span>. In order to get these values out of the model, we can use the <code>gather_draws</code> function from tidybayes, which allows us to access the posterior distributions for each of these parameters:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-19_1e9bdcb345d0da62dd696241a2e86d6e">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>uranium_coefs <span class="ot">&lt;-</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_draws</span>(m2, <span class="fu">c</span>(<span class="st">`</span><span class="at">(Intercept)</span><span class="st">`</span>, log_uranium)) <span class="sc">%&gt;%</span> <span class="fu">median_qi</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>uranium_coefs <span class="ot">&lt;-</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_draws</span>(m2, <span class="fu">c</span>(<span class="st">`</span><span class="at">(Intercept)</span><span class="st">`</span>, log_uranium)) <span class="sc">%&gt;%</span> <span class="fu">median_qi</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now it is as simple as calculating the linear predictor <span class="math inline">\(\gamma_0 + \gamma_1 z_j\)</span>, where <span class="math inline">\(z_j\)</span> is the log-uranium measure for the j-th county, and storing this information in a data frame we will use for plotting:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-20_aa9baa334436f3f05bdbaa976f9337bc">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>log_uranium_range <span class="ot">&lt;-</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="fu">min</span>(county_uranium<span class="sc">$</span>log_uranium) <span class="sc">-</span> .<span class="dv">1</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">max</span>(county_uranium<span class="sc">$</span>log_uranium) <span class="sc">+</span> .<span class="dv">1</span>,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>pred_log_radon <span class="ot">&lt;-</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  uranium_coefs<span class="sc">$</span>.value[<span class="dv">1</span>] <span class="sc">+</span> uranium_coefs<span class="sc">$</span>.value[<span class="dv">2</span>] <span class="sc">*</span> log_uranium_range</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>median_radon_pred <span class="ot">&lt;-</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">log_uranium =</span> log_uranium_range, <span class="at">.prediction =</span> pred_log_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>log_uranium_range <span class="ot">&lt;-</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="fu">min</span>(county_uranium<span class="sc">$</span>log_uranium) <span class="sc">-</span> .<span class="dv">1</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">max</span>(county_uranium<span class="sc">$</span>log_uranium) <span class="sc">+</span> .<span class="dv">1</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>pred_log_radon <span class="ot">&lt;-</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  uranium_coefs<span class="sc">$</span>.value[<span class="dv">1</span>] <span class="sc">+</span> uranium_coefs<span class="sc">$</span>.value[<span class="dv">2</span>] <span class="sc">*</span> log_uranium_range</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>median_radon_pred <span class="ot">&lt;-</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">log_uranium =</span> log_uranium_range, <span class="at">.prediction =</span> pred_log_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="plotting-1" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-1">Plotting</h3>
 <p>Now, we can build this figure up one step at a time, starting with our mean predictions:</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-21_429de1f932b0b744bf33723d57b2d488">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dd) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_line</span>(<span class="at">data =</span> median_radon_pred, <span class="fu">aes</span>(<span class="at">x =</span> log_uranium, <span class="at">y =</span> .prediction)) </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dd) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_line</span>(<span class="at">data =</span> median_radon_pred, <span class="fu">aes</span>(<span class="at">x =</span> log_uranium, <span class="at">y =</span> .prediction)) </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The next step is to then add the median predictions (points) and 1 SE errorbars to the plot, and then fix the theme to match the original figure, et voilà!</p>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-22_943ff3de5216abc6da5f80c1e3635643">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> log_uranium, <span class="at">y =</span> .prediction, <span class="at">group =</span> county)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> log_uranium,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> .prediction,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> .lower,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> .upper</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"county-level uranium measure"</span>) <span class="sc">+</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"regression intercept"</span>)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> log_uranium, <span class="at">y =</span> .prediction, <span class="at">group =</span> county)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> log_uranium,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> .prediction,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> .lower,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> .upper</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"county-level uranium measure"</span>) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"regression intercept"</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
