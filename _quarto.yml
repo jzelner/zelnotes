@@ -19,14 +19,8 @@ website:
       contents:
         - section: Courses
           contents:
-            - section: EPID 684 - Spatial Epidemiology
-              contents:
-                - epid684/index.qmd
-                - epid684/policies.qmd
-                - epid684/roadmap-project/index.qmd
-            - section: EPID 592 - Spatial Epidemiology (Online MPH)
-              contents:
-                - epid594/index.qmd
+            - epid594/index.qmd
+            - epid684/index.qmd
         - posts/index.qmd
       collapse-level: 3
       logo: "assets/epibayeslogo_cropped.png"
