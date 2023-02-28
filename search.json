@@ -21,6 +21,13 @@
     "text": "For our second zoom session, we’re going to do a bit of a deep dive, hands-on take on multi-level modeling.\n\n\nIn class, we will be doing a walk-through of how to reproduce the analysis in Gelman (2006) using several R-based modeling tools. Before class, please:\n\nInstall or update to the latest version of RStudio. The tutorial code will be contained in a Quarto markdown document. Quarto is an updated version of the venerable RMarkdown, and the newest versions of RStudio include Quarto support by default.\n\nBefore or at the beginning of class:\n\nSet up your R/RStudio installation to be able to load the following packages using the following code:\n\n\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(dplyr)\nlibrary(bayesplot)\nlibrary(rstanarm)\nlibrary(purrr)\nlibrary(tidybayes)\n\nIf you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:\n\ninstall.packages(c(\"ggplot2\",\"tidyr\",\"dplyr\",\"bayesplot\",\"rstanarm\",\"purrr\",\"tidybayes\"))\n\nIf you run into problems with any of these, please let me know!\n\n\n\n\nSlide\nYou can find the tutorial we are going to work through here\n\n\n\n\n\nZoom recording"
   },
   {
+    "objectID": "epid594/session_3_segregation.html",
+    "href": "epid594/session_3_segregation.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "In this session, we will focus on the quantitative complement to the more-qualitative analysis of residential segregation and infectious disease presented in (Roberts 2009).\nSpeficially, during class we will briefly discuss the readings as well as some of the key measures used to characterize residential segregation. We will complete the following two hands-on exercises (time-permitting):\n\nComparing measures of spatial segregation and clustering.\nExamining the mechanistic implications of residential segregation for infection inequity. (If time ⏳)\n\n\n\n\nSlides\nZoom recording"
+  },
+  {
     "objectID": "epid684/class_1_where are we going.html",
     "href": "epid684/class_1_where are we going.html",
     "title": "Zelnotes",
