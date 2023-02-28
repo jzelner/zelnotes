@@ -17,6 +17,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/spatial_radon/index.html",
       "/posts/radon/index.html",
       "/posts/spatial-density/index.html",
       "/posts/d3-sir/index.html",

@@ -310,10 +310,11 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arm)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you are not sure if you have these installed or want to update to the latest versions, please paste this command into a running R session to download and install:</p>
 <div class="cell">
@@ -370,24 +371,13 @@ y_{ij} = \alpha + \beta x_{ij} + \epsilon_{i}
 <p>We can call the <code>summary</code> function to get a description of the key coefficients and the goodness-of-fit:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = log_radon ~ basement, data = radon)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--3.07857 -0.52950  0.02388  0.53970  2.51502 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.77599    0.06388  12.148   &lt;2e-16 ***
-basement     0.58642    0.06996   8.382   &lt;2e-16 ***
+<pre><code>lm(formula = log_radon ~ basement, data = radon)
+            coef.est coef.se
+(Intercept) 0.78     0.06   
+basement    0.59     0.07   
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.7901 on 917 degrees of freedom
-Multiple R-squared:  0.07116,   Adjusted R-squared:  0.07015 
-F-statistic: 70.25 on 1 and 917 DF,  p-value: &lt; 2.2e-16</code></pre>
+n = 919, k = 2
+residual sd = 0.79, R-Squared = 0.07</code></pre>
 </div>
 </div>
 </section>
@@ -404,109 +394,97 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = log_radon ~ basement + log_uranium + county, data = radon)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3.1794 -0.4449 -0.0065  0.4406  2.6083 
-
-Coefficients: (1 not defined because of singularities)
-                     Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)           0.41546    0.36653   1.133   0.2573    
-basement              0.68923    0.07062   9.760   &lt;2e-16 ***
-log_uranium           0.31557    0.60273   0.524   0.6007    
-countyANOKA           0.09331    0.43757   0.213   0.8312    
-countyBECKER          0.48061    0.53315   0.901   0.3676    
-countyBELTRAMI        0.66971    0.43256   1.548   0.1219    
-countyBENTON          0.39495    0.48401   0.816   0.4147    
-countyBIGSTONE        0.30996    0.67551   0.459   0.6465    
-countyBLUEEARTH       0.83448    0.51182   1.630   0.1034    
-countyBROWN           0.80378    0.59997   1.340   0.1807    
-countyCARLTON         0.04586    0.37525   0.122   0.9028    
-countyCARVER          0.43107    0.49615   0.869   0.3852    
-countyCASS            0.51534    0.46877   1.099   0.2719    
-countyCHIPPEWA        0.56480    0.59755   0.945   0.3448    
-countyCHISAGO         0.21208    0.48245   0.440   0.6603    
-countyCLAY            0.79276    0.54430   1.456   0.1456    
-countyCLEARWATER      0.28251    0.49942   0.566   0.5718    
-countyCOOK           -0.22778    0.60157  -0.379   0.7050    
-countyCOTTONWOOD      0.05517    0.62515   0.088   0.9297    
-countyCROWWING        0.25520    0.40375   0.632   0.5275    
-countyDAKOTA          0.27496    0.36440   0.755   0.4507    
-countyDODGE           0.62887    0.62985   0.998   0.3183    
-countyDOUGLAS         0.59673    0.48599   1.228   0.2198    
-countyFARIBAULT      -0.41932    0.56823  -0.738   0.4608    
-countyFILLMORE        0.18371    0.74874   0.245   0.8062    
-countyFREEBORN        0.93747    0.51259   1.829   0.0678 .  
-countyGOODHUE         0.79808    0.48024   1.662   0.0969 .  
-countyHENNEPIN        0.31857    0.33866   0.941   0.3471    
-countyHOUSTON         0.52337    0.65992   0.793   0.4280    
-countyHUBBARD         0.29765    0.44240   0.673   0.5013    
-countyISANTI          0.22347    0.57060   0.392   0.6954    
-countyITASCA          0.07454    0.41713   0.179   0.8582    
-countyJACKSON         0.83429    0.58898   1.417   0.1570    
-countyKANABEC         0.18104    0.50000   0.362   0.7174    
-countyKANDIYOHI       0.93651    0.54193   1.728   0.0843 .  
-countyKITTSON         0.51458    0.55307   0.930   0.3524    
-countyKOOCHICHING     0.04272    0.51958   0.082   0.9345    
-countyLACQUIPARLE     1.74799    0.71232   2.454   0.0143 *  
-countyLAKE           -0.39978    0.43745  -0.914   0.3610    
-countyLAKEOFTHEWOODS  0.98665    0.51226   1.926   0.0544 .  
-countyLESUEUR         0.59748    0.54564   1.095   0.2738    
-countyLINCOLN         1.07685    0.66669   1.615   0.1066    
-countyLYON            0.74980    0.59204   1.266   0.2057    
-countyMAHNOMEN        0.23440    0.83857   0.280   0.7799    
-countyMARSHALL        0.52966    0.43979   1.204   0.2288    
-countyMARTIN         -0.05021    0.50662  -0.099   0.9211    
-countyMCLEOD          0.17064    0.46154   0.370   0.7117    
-countyMEEKER          0.13416    0.49184   0.273   0.7851    
-countyMILLELACS      -0.07027    0.59899  -0.117   0.9066    
-countyMORRISON        0.10548    0.41098   0.257   0.7975    
-countyMOWER           0.53976    0.51006   1.058   0.2903    
-countyMURRAY          1.27088    0.90250   1.408   0.1594    
-countyNICOLLET        0.99492    0.58811   1.692   0.0911 .  
-countyNOBLES          0.70992    0.68275   1.040   0.2987    
-countyNORMAN          0.09649    0.63071   0.153   0.8784    
-countyOLMSTED         0.15971    0.48458   0.330   0.7418    
-countyOTTERTAIL       0.59947    0.40123   1.494   0.1355    
-countyPENNINGTON      0.10938    0.53979   0.203   0.8395    
-countyPINE           -0.24034    0.43292  -0.555   0.5789    
-countyPIPESTONE       0.62211    0.68128   0.913   0.3614    
-countyPOLK            0.55070    0.59569   0.924   0.3555    
-countyPOPE            0.11346    0.70170   0.162   0.8716    
-countyRAMSEY          0.22371    0.32661   0.685   0.4936    
-countyREDWOOD         0.77780    0.61264   1.270   0.2046    
-countyRENVILLE        0.46219    0.67340   0.686   0.4927    
-countyRICE            0.69839    0.48941   1.427   0.1539    
-countyROCK            0.06403    0.79121   0.081   0.9355    
-countyROSEAU          0.64452    0.36422   1.770   0.0772 .  
-countySCOTT           0.69805    0.43373   1.609   0.1079    
-countySHERBURNE       0.23607    0.44368   0.532   0.5948    
-countySIBLEY          0.09532    0.58419   0.163   0.8704    
-countySTLOUIS        -0.03183    0.31470  -0.101   0.9195    
-countySTEARNS         0.37671    0.43019   0.876   0.3815    
-countySTEELE          0.41415    0.52551   0.788   0.4309    
-countySTEVENS         0.55571    0.76882   0.723   0.4700    
-countySWIFT          -0.17768    0.61369  -0.290   0.7722    
-countyTODD            0.64926    0.54370   1.194   0.2328    
-countyTRAVERSE        0.75854    0.68962   1.100   0.2717    
-countyWABASHA         0.69051    0.50095   1.378   0.1684    
-countyWADENA          0.42853    0.48318   0.887   0.3754    
-countyWASECA         -0.46558    0.57561  -0.809   0.4188    
-countyWASHINGTON      0.30524    0.33621   0.908   0.3642    
-countyWATONWAN        1.53760    0.60466   2.543   0.0112 *  
-countyWILKIN          1.06154    0.85830   1.237   0.2165    
-countyWINONA          0.40541    0.60303   0.672   0.5016    
-countyWRIGHT          0.59019    0.38915   1.517   0.1297    
-countyYELLOWMEDICINE       NA         NA      NA       NA    
+<pre><code>lm(formula = log_radon ~ basement + log_uranium + county, data = radon)
+                     coef.est coef.se
+(Intercept)           0.42     0.37  
+basement              0.69     0.07  
+log_uranium           0.32     0.60  
+countyANOKA           0.09     0.44  
+countyBECKER          0.48     0.53  
+countyBELTRAMI        0.67     0.43  
+countyBENTON          0.39     0.48  
+countyBIGSTONE        0.31     0.68  
+countyBLUEEARTH       0.83     0.51  
+countyBROWN           0.80     0.60  
+countyCARLTON         0.05     0.38  
+countyCARVER          0.43     0.50  
+countyCASS            0.52     0.47  
+countyCHIPPEWA        0.56     0.60  
+countyCHISAGO         0.21     0.48  
+countyCLAY            0.79     0.54  
+countyCLEARWATER      0.28     0.50  
+countyCOOK           -0.23     0.60  
+countyCOTTONWOOD      0.06     0.63  
+countyCROWWING        0.26     0.40  
+countyDAKOTA          0.27     0.36  
+countyDODGE           0.63     0.63  
+countyDOUGLAS         0.60     0.49  
+countyFARIBAULT      -0.42     0.57  
+countyFILLMORE        0.18     0.75  
+countyFREEBORN        0.94     0.51  
+countyGOODHUE         0.80     0.48  
+countyHENNEPIN        0.32     0.34  
+countyHOUSTON         0.52     0.66  
+countyHUBBARD         0.30     0.44  
+countyISANTI          0.22     0.57  
+countyITASCA          0.07     0.42  
+countyJACKSON         0.83     0.59  
+countyKANABEC         0.18     0.50  
+countyKANDIYOHI       0.94     0.54  
+countyKITTSON         0.51     0.55  
+countyKOOCHICHING     0.04     0.52  
+countyLACQUIPARLE     1.75     0.71  
+countyLAKE           -0.40     0.44  
+countyLAKEOFTHEWOODS  0.99     0.51  
+countyLESUEUR         0.60     0.55  
+countyLINCOLN         1.08     0.67  
+countyLYON            0.75     0.59  
+countyMAHNOMEN        0.23     0.84  
+countyMARSHALL        0.53     0.44  
+countyMARTIN         -0.05     0.51  
+countyMCLEOD          0.17     0.46  
+countyMEEKER          0.13     0.49  
+countyMILLELACS      -0.07     0.60  
+countyMORRISON        0.11     0.41  
+countyMOWER           0.54     0.51  
+countyMURRAY          1.27     0.90  
+countyNICOLLET        0.99     0.59  
+countyNOBLES          0.71     0.68  
+countyNORMAN          0.10     0.63  
+countyOLMSTED         0.16     0.48  
+countyOTTERTAIL       0.60     0.40  
+countyPENNINGTON      0.11     0.54  
+countyPINE           -0.24     0.43  
+countyPIPESTONE       0.62     0.68  
+countyPOLK            0.55     0.60  
+countyPOPE            0.11     0.70  
+countyRAMSEY          0.22     0.33  
+countyREDWOOD         0.78     0.61  
+countyRENVILLE        0.46     0.67  
+countyRICE            0.70     0.49  
+countyROCK            0.06     0.79  
+countyROSEAU          0.64     0.36  
+countySCOTT           0.70     0.43  
+countySHERBURNE       0.24     0.44  
+countySIBLEY          0.10     0.58  
+countySTLOUIS        -0.03     0.31  
+countySTEARNS         0.38     0.43  
+countySTEELE          0.41     0.53  
+countySTEVENS         0.56     0.77  
+countySWIFT          -0.18     0.61  
+countyTODD            0.65     0.54  
+countyTRAVERSE        0.76     0.69  
+countyWABASHA         0.69     0.50  
+countyWADENA          0.43     0.48  
+countyWASECA         -0.47     0.58  
+countyWASHINGTON      0.31     0.34  
+countyWATONWAN        1.54     0.60  
+countyWILKIN          1.06     0.86  
+countyWINONA          0.41     0.60  
+countyWRIGHT          0.59     0.39  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.7265 on 833 degrees of freedom
-Multiple R-squared:  0.2865,    Adjusted R-squared:  0.2137 
-F-statistic: 3.936 on 85 and 833 DF,  p-value: &lt; 2.2e-16</code></pre>
+n = 919, k = 86
+residual sd = 0.73, R-Squared = 0.29</code></pre>
 </div>
 </div>
 </section>

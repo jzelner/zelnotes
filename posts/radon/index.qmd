@@ -37,6 +37,7 @@ To be able to run the code below locally, please do the following:
 library(ggplot2)
 library(tidyr)
 library(dplyr)
+library(arm)
 library(bayesplot)
 library(rstanarm)
 library(purrr)
@@ -108,7 +109,7 @@ We can call the `summary` function to get a description of the key coefficients 
 
 ```{r}
 #| echo: false
-summary(m1)
+display(m1)
 ```
 
 ## 🚪 Door 2: No pooling
@@ -129,7 +130,7 @@ no_pool_m <- lm(log_radon ~ basement + log_uranium + county, data = radon)
 
 ```{r}
 #| echo: false
-summary(no_pool_m)
+display(no_pool_m)
 ```
 
 

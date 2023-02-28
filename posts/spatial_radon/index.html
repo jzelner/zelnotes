@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Zelner">
-<meta name="dcterms.date" content="2022-02-23">
+<meta name="dcterms.date" content="2023-02-28">
 
-<title>Taking a spatial perspective on the radon data</title>
+<title>Zelnotes - Taking a spatial perspective on the radon data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,9 +128,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Taking a spatial perspective on the radon data">
+<meta property="og:title" content="Zelnotes - Taking a spatial perspective on the radon data">
 <meta property="og:description" content="This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.">
+<meta property="og:image" content="https://zelnotes.io/posts/spatial_radon/minnesota_uranium.png">
 <meta property="og:site-name" content="Zelnotes">
+<meta property="og:image:height" content="732">
+<meta property="og:image:width" content="718">
 </head>
 
 <body class="nav-sidebar docked">
@@ -139,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Zelnotes</h1>
+      <h1 class="quarto-secondary-nav-title">Taking a spatial perspective on the <code>radon</code> data</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -199,15 +202,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#taking-a-more-spatial-perspective-on-the-radon-data" id="toc-taking-a-more-spatial-perspective-on-the-radon-data" class="nav-link active" data-scroll-target="#taking-a-more-spatial-perspective-on-the-radon-data">Taking a more-spatial perspective on the <code>radon</code> data</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning Goals</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
   <ul class="collapse">
   <li><a href="#download-a-shapefile-for-minnesota" id="toc-download-a-shapefile-for-minnesota" class="nav-link" data-scroll-target="#download-a-shapefile-for-minnesota">Download a shapefile for Minnesota</a></li>
   <li><a href="#merge-the-spatial-data-with-the-radon-data" id="toc-merge-the-spatial-data-with-the-radon-data" class="nav-link" data-scroll-target="#merge-the-spatial-data-with-the-radon-data">Merge the spatial data with the radon data</a></li>
   <li><a href="#preparing-the-radon-dataset" id="toc-preparing-the-radon-dataset" class="nav-link" data-scroll-target="#preparing-the-radon-dataset">Preparing the <code>radon</code> dataset</a></li>
+  </ul></li>
+  <li><a href="#measuring-spatial-correlation" id="toc-measuring-spatial-correlation" class="nav-link" data-scroll-target="#measuring-spatial-correlation">Measuring Spatial Correlation</a>
+  <ul class="collapse">
   <li><a href="#testing-testing" id="toc-testing-testing" class="nav-link" data-scroll-target="#testing-testing">Testing, testing</a></li>
-  <li><a href="#modeling-the-radon-data" id="toc-modeling-the-radon-data" class="nav-link" data-scroll-target="#modeling-the-radon-data">Modeling the radon data</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -216,17 +222,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Taking a spatial perspective on the <code>radon</code> data</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/jzelner/zelnotes/blob/main/posts/spatial_radon/index.qmd"><i class="bi"></i> Code</button></div></div>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jon Zelner </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 28, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <div class="cell">
 
 </div>
-<section id="taking-a-more-spatial-perspective-on-the-radon-data" class="level1">
-<h1>Taking a more-spatial perspective on the <code>radon</code> data</h1>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
 <p>In order to work with these data, we’ll first need to merge the original radon measurements into a shapefile for the state of Minnesota so that we can visualize and analyze spatial patterning of our key exposure of interest (soil uranium) as well as the outcome of interest, i.e.&nbsp;household-level radon, as well as indicators of goodness-of-fit including the model residuals.</p>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning Goals</h3>
+<p>The primary goals of this tutorial are to introduce you to:</p>
+<ol type="1">
+<li>Merging of non-spatial health exposure or outcome data with spatial metadata.</li>
+<li>Calculation of important spatial summary statistics, e.g.&nbsp;Moran’s I, from such data.</li>
+<li>Spatial analysis of residuals from aspatial regression models of spatially-referenced data.</li>
+</ol>
+</section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>Before diving into the analysis steps, there are several key things we need to do to be able to easily work with these data:</p>
 <section id="download-a-shapefile-for-minnesota" class="level3">
 <h3 class="anchored" data-anchor-id="download-a-shapefile-for-minnesota">Download a shapefile for Minnesota</h3>
 <p>First, we need to get a shapefile for the state of Minnesota in which each polygon represents an individual county. Thankfully, in R, this is made easy using the excellent <code>tidycensus</code> package:</p>
@@ -256,7 +299,7 @@ This warning is displayed once per session.</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota[<span class="st">"estimate"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="spatial_radon_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -325,9 +368,13 @@ This warning is displayed once per session.</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota_radon[<span class="st">"log_uranium"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="spatial_radon_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+</section>
+<section id="measuring-spatial-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-spatial-correlation">Measuring Spatial Correlation</h2>
 <p>To validate our hunch that soil uranium is spatially concentrated in Minnesota, we can calculate the value of Moran’s I for these data using some functions from the <code>spdep</code> package. First, we use the <code>poly2nb</code> function to obtain the neighbors for each polygon, which will be used to calculate Moran’s I.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(minnesota_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -386,7 +433,7 @@ lagged values</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota_radon[<span class="st">"median_radon"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="spatial_radon_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Using our function for computing Moran’s I, we can easily go ahead and determine how clustered these data are:</p>
@@ -397,8 +444,20 @@ lagged values</code></pre>
 lagged values</code></pre>
 </div>
 </div>
-<p>Which comes out to 0.25, which is smaller than the value we got for uranium, but still indicates meaningful clustering. Pause here and take a moment to try to figure out what might account for the difference in this intensity of clustering?</p>
-</section>
+<p>Which comes out to 0.25, which is smaller than the value we got for uranium, but still indicates meaningful clustering.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+What’s going on?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pause here and take a moment to try to figure out what might account for the difference in this intensity of clustering?</p>
+</div>
+</div>
 <section id="testing-testing" class="level3">
 <h3 class="anchored" data-anchor-id="testing-testing">Testing, testing</h3>
 <p>One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a <em>counterfactual scenario</em> in which the distribution of radon concentrations is known to be uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran’s I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:</p>
@@ -414,10 +473,10 @@ lagged values</code></pre>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the new randomized data</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(random_minnesota[<span class="st">"median_radon"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="spatial_radon_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>This yields something that looks pretty randomly distributed, and when we calculate Moran’s I, we get a value of -0.08, which is closer to the null value of 0. But this still doesn’t tell us anything. What we can do, though, is to generate a bunch of random minnesotas and calculate moran’s I for each of those and see how our observed data stack up.</p>
+<p>This yields something that looks pretty randomly distributed, and when we calculate Moran’s I, we get a value of 0, which is closer to the null value of 0. But this still doesn’t tell us anything. What we can do, though, is to generate a bunch of random minnesotas and calculate moran’s I for each of those and see how our observed data stack up.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>csrMorans <span class="ot">&lt;-</span> <span class="cf">function</span>(x, sfdf, <span class="at">trials =</span> <span class="dv">1000</span>, <span class="at">style=</span><span class="st">"B"</span>) {</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(sfdf)</span>
@@ -439,7 +498,7 @@ lagged values</code></pre>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>moran_dist <span class="ot">&lt;-</span> <span class="fu">ecdf</span>(csr_dist)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(moran_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="spatial_radon_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And we can directly estimate this probability as follows:</p>
@@ -462,26 +521,25 @@ What could go wrong?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Before you move on, take a minute to think about what some of the potential flaws in our CSR-nased approach to assessing the meaningfulness or signficance of this result might be.</p>
+<p>Before you move on, take a minute to think about what some of the potential flaws in our CSR-based approach to assessing the meaningfulness or signficance of this result might be.</p>
 </div>
 </div>
-</section>
-<section id="modeling-the-radon-data" class="level3">
-<h3 class="anchored" data-anchor-id="modeling-the-radon-data">Modeling the radon data</h3>
 
 
 </section>
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
   author = {Jon Zelner},
-  date = {2022-02-23},
-  url = {https://zelnotes.io/posts/radon/spatial_radon.html},
+  title = {Taking a Spatial Perspective on the `Radon` Data},
+  date = {2023-02-28},
+  url = {https://zelnotes.io/posts/spatial_radon},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Zelner. 2022. February 23, 2022. <a href="https://zelnotes.io/posts/radon/spatial_radon.html">https://zelnotes.io/posts/radon/spatial_radon.html</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Jon Zelner. 2023. <span>“Taking a Spatial Perspective on the `Radon`
+Data.”</span> February 28, 2023. <a href="https://zelnotes.io/posts/spatial_radon">https://zelnotes.io/posts/spatial_radon</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
