@@ -2,9 +2,39 @@
 tbl-colwidths: [20,80]
 --- 
 
-# Zoom Sessions
+# Key Concepts in Spatial Analysis (EPID 594)
+
+Welcome to the companion site to EPID 594, "Key Concepts in Spatial Analysis", at the University of Michigan School of Public Health. This is an online course that includes four synchronous zoom sessions and a project that will allow you to develop your skills and knowledge in an area of spatial epidemiology that is of intellectual or professional interest to you. 
+
+## Zoom Sessions
 
 |Date | Topic|
 |-----|:-----|
 | 2/14| [Smoothing!](session_1_smoothing.qmd) | 
-| 2/21| [Hierarchical models](session_2_multilevel.qmd) | 
+| 2/21| [Hierarchical models](session_2_multilevel.qmd) |
+| 2/28 | [Segregation and the spatial epidemiology of infectious disease](session_3_segregation.qmd) | 
+| 3/7 | TBD | 
+
+## Course Project
+
+The goal of the project for this course is to advance either or both your skill in spatial analysis and/or your knowledge of a particular topic area in spatial epidemiology. Given that we have a short period of time in which to complete this, I would encourage you to build on something you already are working on or an existing interest. The project consists of three components:
+
+1. **Project Proposal**: A short (2-3 page) proposal for what you would like to do, which includes some background on the topic of your project, its relevance to the field of spatial epidemiology, and some information about the goals of your project. Specifically, I am asking you to articulate:
+
+    a. *What is the problem you are tackling?*: What is the problem you are proposing to focus on? Are you interested in a particular health outcome, a system of exposure (i.e. an environmental exposure or a social system such as racism/economic inequality?), or something else? Provide some evidence to show why developing a better understanding of how this system works and/or how to intervene in it is an important public health priority.
+
+    a. *Project Learning Goal*: What would you like to learn through completing your project? It could be a statistical analysis approach, mapping skill, experience with a particular tool or framework (i.e. Shiny for R), or to learn more about the spatial dimensions of a public health topic of interest. Identify your key goal and briefly explain why it is important to you from an intellectual/academic and professional perspective. 
+
+    b. *Proposed project format*: What do you anticipate producing for your project? It could be a research paper, a detailed data visualization, a map, an interactive app, or something eld`se entirely. Think about an output format that aligns with your identified learning goals. What could you produce that would be helpful for you in your professional or academic career, either for showcasing skills or pushing a project forward?
+
+2. **Project Update**: A brief (1-2 page) update on where you are in your project work and an opportunity to ask for feedback and/or have specific questions answered. Specifically, answer the following questions:
+
+    a. What have you found most interesting or surprising so far in your investigations?
+
+    b. What is confusing or something you need help thinking through?
+
+    c. What modifications are you making to your project goals/outputs in response to what you have learned through your research so far?
+
+3. **Final Product**: At the end of Week 4, I am asking you to submit your final product in whatever format and stage of completeness it is at. 
+
+    a. *Self-assessment:* Along with your final product, please provide a short (~1 page) assessment of your progress towards the goals you set at the beginning of the project. A successful project doesn't have to have hit the entire goal, but instead can be one that has either a) made progress towards it or b) highlighted that another goal is more worthy/important. Based on your self-assessment, please also suggest a letter grade (incl -/+, i.e. B+, A-, A) for the course. Unless your self-assessment is far out of line with my own, I will defer to your self-assessed grade. 

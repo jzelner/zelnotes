@@ -1,0 +1,108 @@
+---
+pagetitle: "Characterizing the spatial consequences of social processes"
+---
+
+{{< include _titleslide.qmd >}}
+
+## Today's <span class="alert">Theme</span> {.imgslide} 
+
+## Agenda
+
+- Brief projects check-in (~10m)
+
+- Segregation measures hands-on (~25m)
+
+- Reflection in pairs on the week's readings (~15m)
+
+- Segregation and infectious disease transmission hands-on (~25m)
+
+- Wrap-up
+
+# Infectious Fear
+
+
+## Why is the book called <span class="alert">Infectious Fear</span>?
+
+:::{.fragment}
+> This book is primarily concerned with two overlapping and mutually informative periods in U.S. urban history: the <span class="alert">era of infectious fear all but vanquished by the discovery of antimicrobial therapies</span>, and a period, before the Second World War, when health policy and social policy were, comparatively speaking, overwhelmingly dominated by politics derived from <span class="alert">local rather than federal mandates</span>. [@roberts2009, p.20]
+:::
+
+## How has this statement aged into the COVID era?
+
+> No naive nostalgia for the germ is presumed in imagining, for example, that many of the health problems of post-war inner cities, many of which are not infectious but are nonetheless tied to geography, might have appeared more urgent—as public health problems as opposed to simply social or moral problems—had there still existed a disease that <span class="alert">plainly...illustrated the geographical links among class, geography, and health</span>. [@roberts2009, p.40]
+
+## <span class="alert">Important:</span> Problem of segregation is not unique to the U.S. or to entirely racialized distinctions
+
+![Residential segregation of Muslims and Hindus in Delhi, India (from [@susewind2017])](/images/20220930143032.png)  
+
+
+
+## Measuring Segregation
+
+- *Infectious Fear* provides an imporant qualitative sense of relationships between social and economic oppression and the spatial patterning of infectious disease outcomes.
+
+- Why might we want to use *quantitative* measures of segregation? 
+
+- If we are working within a *multi-level modeling* framework, at what level would you place your segregation model?
+
+## What are the <span class="alert">dimensions</span> of residential segregation? {.smaller .scrollable}
+
+Some canonical definitions from [@massey1988]:
+
+:::{.columns}
+:::{.column width=50%}
+Evenness
+: "Minority members may be distributed so that they are overrepresented in some areas and underrepresented in others, varying on the characteristic of <span class="alert">evenness</span>."
+
+Exposure
+: "[Minority group members] may be distributed so that their exposure to majority members is limited by virtue of rarely <span class="alert">sharing a neighborhood</span> with them."
+
+
+Concentration
+: "They may be spatially concentrated <span class="alert">within a very small area</span>, occupying less physical space than majority members."
+
+:::
+:::{.column width=50%}
+Centralization
+
+: "They may be spatially centralized, <span class="alert">congregating around the urban core</span>, and occupying a more central location than the majority."
+
+Clustering
+
+: "[A]reas of minority settlement may be tightly clustered to form <span class="alert">one large contiguous enclave</span>, or be scattered widely around the urban area."
+
+:::{.fragment}
+<span class="alert">Do any of these describe the patterns of segregation described in Infectious Fear?</span>
+:::
+:::
+:::
+
+## Comparing Segregation and Clustering Metrics
+
+![What time is it? It's hands-on time!](clustering.png)  
+
+[https://sph-umich.shinyapps.io/spatial_segregation/](https://sph-umich.shinyapps.io/spatial_segregation)
+
+## Connecting residential segregation to spatial inequity in disease outcomes
+
+- What did you find most striking or interesting in the chapters from *Infectious Fear*?
+
+- How did reading these chapters change how you think about residential segregation as a social and spatial *process*? 
+
+- How did these chapters impact your thinking about the way residential segregation shapes infectious disease *transmission*?
+
+- To what extent are the lessons here relevant in the present?
+
+## Connecting quantiative measures of segregation to transmission risk
+
+![Connecting the dots between spatial exploitation and inequity](segregation_transmission.png)  
+
+[https://sph-umich.shinyapps.io/segregation-transmission/](https://sph-umich.shinyapps.io/segregation-transmission/)
+
+## Next Time
+
+- What's next?
+
+- Finishing projects.
+
+## References

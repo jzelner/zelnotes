@@ -1,0 +1,16 @@
+# Measuring residential segregation and its consequences for health
+
+In this session, we will focus on the quantitative complement to the more-qualitative analysis of residential segregation and infectious disease presented in [@roberts2009].
+
+Speficially, during class we will briefly discuss the readings as well as some of the key measures used to characterize residential segregation. We will complete the following two hands-on exercises (time-permitting):
+
+1. [Comparing measures of spatial segregation and clustering.](https://sph-umich.shinyapps.io/spatial_segregation)
+2. [Examining the mechanistic implications of residential segregation for infection inequity.](https://sph-umich.shinyapps.io/segregation-transmission/) (If time ⏳)
+
+## Additional Resources
+
+- [Slides](slides/session_3_segregation.qmd)
+
+- Zoom recording
+
+## References
