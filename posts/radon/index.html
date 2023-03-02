@@ -231,7 +231,7 @@ div.csl-indent {
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
   <li><a href="#door-1-full-pooling" id="toc-door-1-full-pooling" class="nav-link" data-scroll-target="#door-1-full-pooling">🚪 Door 1: Full pooling!</a></li>
   <li><a href="#door-2-no-pooling" id="toc-door-2-no-pooling" class="nav-link" data-scroll-target="#door-2-no-pooling">🚪 Door 2: No pooling</a></li>
-  <li><a href="#door-3-partial-pooling" id="toc-door-3-partial-pooling" class="nav-link" data-scroll-target="#door-3-partial-pooling">🚪 Door 3: Partial Pooling</a></li>
+  <li><a href="#sec-partial" id="toc-sec-partial" class="nav-link" data-scroll-target="#sec-partial">🚪 Door 3: Partial Pooling</a></li>
   </ul></li>
   <li><a href="#making-the-figures" id="toc-making-the-figures" class="nav-link" data-scroll-target="#making-the-figures">Making the Figures</a>
   <ul class="collapse">
@@ -488,8 +488,8 @@ residual sd = 0.73, R-Squared = 0.29</code></pre>
 </div>
 </div>
 </section>
-<section id="door-3-partial-pooling" class="level2">
-<h2 class="anchored" data-anchor-id="door-3-partial-pooling">🚪 Door 3: Partial Pooling</h2>
+<section id="sec-partial" class="level2">
+<h2 class="anchored" data-anchor-id="sec-partial">🚪 Door 3: Partial Pooling</h2>
 <p>Finally, we get to the partial pooling, hierarchical model in which we introduce a <em>hierarchical prior</em> to the model to allow our model to shrink observations from places with few observations towards the population mean. This allows us to avoid the pitfalls of overfitting associated with the no-pooling approach while not making the homogeneity assumptions associated with the full-pooling approach.</p>
 <p>This works out to a <em>multi-level</em> model that allows random variation in household-level radon measurements as well as variation at the county level in radon levels above or below the amount predicted by the county-level soil uranium measure. Much like the no-pooling model, we can write outcomes for <em>individuals</em> as:</p>
 <p><span class="math display">\[

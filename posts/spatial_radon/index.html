@@ -236,8 +236,14 @@ div.csl-indent {
   </ul></li>
   <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models!</a>
   <ul class="collapse">
-  <li><a href="#full-pooling" id="toc-full-pooling" class="nav-link" data-scroll-target="#full-pooling">Full Pooling</a></li>
+  <li><a href="#full-pooling-model" id="toc-full-pooling-model" class="nav-link" data-scroll-target="#full-pooling-model">Full-pooling model</a></li>
   <li><a href="#no-pooling" id="toc-no-pooling" class="nav-link" data-scroll-target="#no-pooling">No Pooling</a></li>
+  <li><a href="#partial-pooling-model" id="toc-partial-pooling-model" class="nav-link" data-scroll-target="#partial-pooling-model">Partial pooling model</a></li>
+  </ul></li>
+  <li><a href="#residual-analysis" id="toc-residual-analysis" class="nav-link" data-scroll-target="#residual-analysis">Residual Analysis</a>
+  <ul class="collapse">
+  <li><a href="#full-pooling-residuals" id="toc-full-pooling-residuals" class="nav-link" data-scroll-target="#full-pooling-residuals">Full Pooling Residuals</a></li>
+  <li><a href="#no-pooling-1" id="toc-no-pooling-1" class="nav-link" data-scroll-target="#no-pooling-1">No Pooling</a></li>
   <li><a href="#partial-pooling" id="toc-partial-pooling" class="nav-link" data-scroll-target="#partial-pooling">Partial Pooling</a></li>
   </ul></li>
   </ul></li>
@@ -364,15 +370,17 @@ div.csl-indent {
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>county_uranium <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">median_radon =</span> <span class="fu">median</span>(log_radon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">median_radon =</span> <span class="fu">mean</span>(log_radon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because the sf dataset returned by tidycensus is a dataframe, we can then easily merge the county-level soil uranium concentrations we derived above into the shapefile. We use the <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>left_join</code></a> function from <code>dplyr</code> to ensure that all of the counties in the original shapefile are represented in the final dataset, even if a soil uranium measure is unavailable for them in the original data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>minnesota_radon <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, county_uranium)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We can then plot the log-uranium measures on the map and see that, in fact, they are quite spatially correlated. We can also see that there appear to be two counties which are missing soil uranium data in the <code>radon</code> dataset:</p>
+<p>We can then plot the log-uranium measures on the map and see that, in fact, they are quite spatially correlated. We can also see that there appear to be two counties which are missing soil uranium data in the <code>radon</code> dataset. To have a bit more control over our plots, we’ll switch here to using the <code>geom_sf</code> function of <code>ggplot2</code>, which makes plotting geographies from sf objects easy:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota_radon[<span class="st">"log_uranium"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(minnesota_radon) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> log_uranium)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Soil uranium by MN county"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -433,16 +441,15 @@ div.csl-indent {
 </div>
 <p>Of course, our key quantity of interest isn’t soil uranium but the concentration of radon at the household level. When we constructed the <code>county_uranium</code> dataset above, we also calculated the median radon concentration in the data for each county. When we plot it, we see something similar to the soil uranium, but perhaps a bit less clear:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota_radon[<span class="st">"median_radon"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(minnesota_radon) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> median_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Median household radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        minnesota_radon), <span class="dv">2</span>), <span class="st">")"</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Using our function for computing Moran’s I, we can easily go ahead and determine how clustered these data are:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>radon_mi <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Which comes out to 0.25, which is smaller than the value we got for uranium, but still indicates meaningful clustering.</p>
+<p>As you can see in the figure, the value of Moran’s I is smaller than we got for log-uranium but still substantial.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -453,58 +460,63 @@ What’s going on?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Pause here and take a moment to try to figure out what might account for the difference in this intensity of clustering?</p>
+<p>Pause here and take a moment to try to figure out what might account for the difference in this intensity of clustering in radon vs.&nbsp;soil uranium measurements.</p>
 </div>
 </div>
 <section id="testing-testing" class="level3">
 <h3 class="anchored" data-anchor-id="testing-testing">Testing, testing</h3>
 <p>One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a <em>counterfactual scenario</em> in which the distribution of radon concentrations is known to be uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran’s I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make a new dataset representing 'random minnesota'</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>random_minnesota <span class="ot">&lt;-</span> minnesota_radon</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the sample function to resample median radon values without replacement,</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="do">## which yields a vector in which the values of median radon are simply</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="do">## shuffled by county</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>random_minnesota<span class="sc">$</span>median_radon <span class="ot">&lt;-</span> <span class="fu">sample</span>(minnesota_radon<span class="sc">$</span>median_radon, <span class="fu">nrow</span>(minnesota_radon),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the new randomized data</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(random_minnesota[<span class="st">"median_radon"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make a new dataset representing 'random minnesota'</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>random_minnesota <span class="ot">&lt;-</span> minnesota_radon</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the sample function to resample median radon values without replacement,</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="do">## which yields a vector in which the values of median radon are simply</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="do">## shuffled by county</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>random_minnesota<span class="sc">$</span>median_radon <span class="ot">&lt;-</span> <span class="fu">sample</span>(minnesota_radon<span class="sc">$</span>median_radon, <span class="fu">nrow</span>(minnesota_radon),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the new randomized data</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(random_minnesota) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> median_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Spatially randomized median radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(random_minnesota<span class="sc">$</span>median_radon,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        random_minnesota), <span class="dv">2</span>), <span class="st">")"</span>))</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>This yields something that looks pretty randomly distributed, and when we calculate Moran’s I, we get a value of 0.01, which is closer to the null value of 0. But this still doesn’t tell us anything. What we can do, though, is to generate a bunch of random minnesotas and calculate moran’s I for each of those and see how our observed data stack up.</p>
+<p>This yields something that looks pretty randomly distributed, which is reflected in a Moran’s I estimate closer to the null value of 0. This doesn’t necessarily tell us whether this result is meaningful rather than an artifact of random chance. What we can do, though, is to generate a bunch of random Minnesotas in which there is no relationship between geographic location and median radon, calculate Moran’s I for each of those, and see how our observed data stack up.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>csrMorans <span class="ot">&lt;-</span> <span class="cf">function</span>(x, sfdf, <span class="at">trials =</span> <span class="dv">1000</span>, <span class="at">style =</span> <span class="st">"B"</span>) {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(sfdf)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    lw <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> style, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    moran_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, trials)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>trials) {</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        random_x <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, <span class="fu">length</span>(x), <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        moran_vals[i] <span class="ot">&lt;-</span> <span class="fu">moran</span>(random_x, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(moran_vals)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>csr_dist <span class="ot">&lt;-</span> <span class="fu">csrMorans</span>(minnesota_radon<span class="sc">$</span>log_uranium, minnesota_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>csrMorans <span class="ot">&lt;-</span> <span class="cf">function</span>(x, sfdf, <span class="at">trials =</span> <span class="dv">1000</span>, <span class="at">style =</span> <span class="st">"B"</span>) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(sfdf)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    lw <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> style, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    mv <span class="ot">&lt;-</span> <span class="fu">moran</span>(x, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    moran_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, trials)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>trials) {</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        random_x <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, <span class="fu">length</span>(x), <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        moran_vals[i] <span class="ot">&lt;-</span> <span class="fu">moran</span>(random_x, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">midist =</span> moran_vals, <span class="at">mi =</span> mv))</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>csr_dist <span class="ot">&lt;-</span> <span class="fu">csrMorans</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This yields a distribution with a median of 0, and the empirical cdf function shows us the approximate probability of obtaining a value of Moran’s greater than or equal to our observed value by random chance alone:</p>
+<p>We can use the distribution of Moran’s I values taken from the randomized datasets to benchmark how likely our observed value is to occur by purely random chance. The figure below shows that this is quite unlikely:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>moran_dist <span class="ot">&lt;-</span> <span class="fu">ecdf</span>(csr_dist)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(moran_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> csr_dist<span class="sc">$</span>midist)) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Moran's I value"</span>) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> csr_dist<span class="sc">$</span>mi, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Randomized values of Moran's I vs. observed for median household radon"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And we can directly estimate this probability as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>real_moran <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist <span class="sc">&gt;=</span> real_moran)<span class="sc">/</span><span class="fu">length</span>(moran_dist)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>real_moran <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist<span class="sc">$</span>midist <span class="sc">&gt;=</span> csr_dist<span class="sc">$</span>mi)<span class="sc">/</span><span class="fu">length</span>(csr_dist<span class="sc">$</span>midist)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
@@ -527,70 +539,119 @@ What could go wrong?
 </section>
 <section id="models" class="level2">
 <h2 class="anchored" data-anchor-id="models">Models!</h2>
-<p>We are going to fit the full-pooling, no-pooling and partial pooling models from the original <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span> paper. We won’t go into detail on these, but note that we are storing the residuals and predictions for each as a column inside the <code>radon</code> dataframe. For more detail on the implementation on interpretation of these models, please check out the <a href="../../posts/radon/index.html">original tutorial</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>full_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement, <span class="at">data =</span> radon)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(full_pooling_model)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(full_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span> paper. We won’t go into detail on these as they have been discussed in depth in the original paper and the previous post.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>no_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> county, <span class="at">data =</span> radon)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(no_pooling_model)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(no_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-caption-container flex-fill">
+Note
 </div>
-<div class="cell" data-hash="index_cache/html/partial-pool-model_78656a3dcafec5b6a525e3a05f954e08">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>partial_pool_model <span class="ot">&lt;-</span> <span class="fu">stan_lmer</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> county),</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> radon)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(partial_pool_model)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(partial_pool_model) <span class="sc">%&gt;%</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">apply</span>(<span class="dv">2</span>, median)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">p_basement =</span> <span class="fu">sum</span>(basement)<span class="sc">/</span><span class="fu">n</span>(), <span class="at">full_pooling_resid =</span> <span class="fu">mean</span>(full_pooling_resid),</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">no_pooling_resid =</span> <span class="fu">mean</span>(no_pooling_resid), <span class="at">full_pooling_pred =</span> <span class="fu">mean</span>(full_pooling_pred),</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">no_pooling_pred =</span> <span class="fu">mean</span>(no_pooling_pred), <span class="at">partial_pooling_pred =</span> <span class="fu">mean</span>(partial_pooling_pred),</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">partial_pooling_resid =</span> <span class="fu">mean</span>(partial_pooling_resid))</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, results_by_county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-body-container callout-body">
+<p>Note that we are storing the residuals and predictions for each as a column inside the <code>radon</code> dataframe.</p>
 </div>
-<section id="full-pooling" class="level3">
-<h3 class="anchored" data-anchor-id="full-pooling">Full Pooling</h3>
-<p>This results in residuals that still look pretty spatially clustered:</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For ore detail on the implementation on interpretation of these models, please check out the <a href="../../posts/radon/index.html">original tutorial</a>.</p>
+</div>
+</div>
+<section id="full-pooling-model" class="level3">
+<h3 class="anchored" data-anchor-id="full-pooling-model">Full-pooling model</h3>
+<p>The full-pooling model has the following form, in which the variable <span class="math inline">\(x_{ij}\)</span> indicates whether house <span class="math inline">\(i\)</span> in county <span class="math inline">\(j\)</span> has a basement (1) or not (0).</p>
+<p><span class="math display">\[
+y_{ij} = \alpha + \beta x_{ij} + \epsilon_{i}
+\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_resid, results_by_county),</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> full_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling residuals with I="</span>, mi))</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>full_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement, <span class="at">data =</span> radon)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(full_pooling_model)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(full_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="no-pooling" class="level3">
+<h3 class="anchored" data-anchor-id="no-pooling">No Pooling</h3>
+<p>The no-pooling model assumes essentially that each county is indepenedent, and includes a categorical variable for the county that the observed household is in:</p>
+<p><span class="math display">\[
+y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>no_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> county, <span class="at">data =</span> radon)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(no_pooling_model)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(no_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="partial-pooling-model" class="level3">
+<h3 class="anchored" data-anchor-id="partial-pooling-model">Partial pooling model</h3>
+<p>The partial-pooling model is the multi-level analogue to the no-pooling model. For more detail, please see the <a href="../../posts/radon/index.html#sec-partial">partial pooling section</a> of the original tutorial.</p>
+<div class="cell" data-hash="index_cache/html/partial-pool-model_3722f31c378bf97c0e3aa8a72c366b10">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>partial_pool_model <span class="ot">&lt;-</span> <span class="fu">stan_lmer</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> county),</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> radon)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(partial_pool_model)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(partial_pool_model) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">apply</span>(<span class="dv">2</span>, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="residual-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="residual-analysis">Residual Analysis</h2>
+<p>One thing that is important to note is that none of the regression models we are looking at directly account for spatial clustering. In other words, the spatial arrangement of the counties is not an input to the model. This doesn’t mean that they cannot adequately account for spatial correlation through the inclusion of key covariates, however.</p>
+<p>One way to assess how well a model is accounting for observed and unobserved spatial hererogeneity is to examine the model <em>residuals</em> for evidence of spatial clustering, which is what we will do in this section.</p>
+<p>Since the residuals for each model are generated at the level of individual households, we will go back to working with county-level summaries of both the prediction error (residuals) and predicted household radon values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">p_basement =</span> <span class="fu">sum</span>(basement)<span class="sc">/</span><span class="fu">n</span>(), <span class="at">full_pooling_resid =</span> <span class="fu">mean</span>(full_pooling_resid),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">no_pooling_resid =</span> <span class="fu">mean</span>(no_pooling_resid), <span class="at">full_pooling_pred =</span> <span class="fu">mean</span>(full_pooling_pred),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">no_pooling_pred =</span> <span class="fu">mean</span>(no_pooling_pred), <span class="at">partial_pooling_pred =</span> <span class="fu">mean</span>(partial_pooling_pred),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">partial_pooling_resid =</span> <span class="fu">mean</span>(partial_pooling_resid))</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, results_by_county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="full-pooling-residuals" class="level3">
+<h3 class="anchored" data-anchor-id="full-pooling-residuals">Full Pooling Residuals</h3>
+<p>When we look at the results of the full-pooling model, the residuals that still look pretty spatially clustered, and this is reflected in the value of Moran’s I &gt; 0:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_resid, results_by_county),</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> full_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling residuals with I="</span>, mi))</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/residual-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>This is unsurprising, since we didn’t include any information that varies at the county level. So, if we look at the predictions of the model, should we should expect to find that they are spatially un-clustered?</p>
-<p>This results in residuals that still look pretty spatially clustered:</p>
+<p>This is probably intuitive: the full pooling modeldidn’t include any county-level information, so it might not account for all of the sptial variation. So, on the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_pred, results_by_county),</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> full_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling predictions with I="</span>, mi))</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_pred, results_by_county),</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> full_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling predictions with I="</span>, mi))</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/pred-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Wait - what? It looks like our model is predicting lower values in the northwest corner of the state relative to the rest of the state. How is this possible, if our model doesn’t include contextual information?</p>
-<p>Lets just check and see if our one predictor - the presence or absence of a basement - exhibits any spatial variability?</p>
+<p>Wait - what? The predictions are also quite clustered, although the pattern looks a bit like a photographic negative of the residual map. It looks like our model is predicting lower values in the northwest corner of the state relative to the rest of the state. How is this possible, if our model doesn’t include contextual information?</p>
+<p>This might be explained by differences in <em>composition</em> at the county level: maybe houses in some counties are more likely to have basements than in others? If this is the case, then those high-basement counties may have higher avg. levels of radon. So, lets just check and see if our one predictor - the presence or absence of a basement - exhibits any spatial variability?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>p_basement, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p_basement)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Proportion of surveyed households with a basement, I="</span>, mi))</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>p_basement, results_by_county), <span class="dv">2</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p_basement)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Proportion of surveyed households with a basement, I="</span>, mi))</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/basement-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Whoops…that looks familiar!</p>
+<p>Whoops…that looks familiar! It seems like the pattern of spatial variation in the presence/absence of basements may be driving the clustering in our predictions and - by consequence - our residuals!</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -606,46 +667,72 @@ Spatially correlated predictors → Spatially correlated predictions
 </div>
 <p>So it looks like we are over-predicting risk in some areas where more surveyed households have basements and under-predicting it in other places where fewer households have basements.</p>
 </section>
-<section id="no-pooling" class="level3">
-<h3 class="anchored" data-anchor-id="no-pooling">No Pooling</h3>
-<p>Ok, so lets try this again with our no-pooling model which at least includes some info on the counties:</p>
+<section id="no-pooling-1" class="level3">
+<h3 class="anchored" data-anchor-id="no-pooling-1">No Pooling</h3>
+<p>Ok, so lets try this again with our no-pooling model which at least includes the counties as categorical covariates. Unless something weird is going on, this model should do a good job of explaining spatial variation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> no_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"No pooling residuals with I="</span>, mi))</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> no_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"No pooling residuals with I="</span>, mi))</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/no-pool-residual-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Well, that’s a bit better, although it does such a good job at explaining away the overall variability in our measurments, we might be concerned that it is overfitting the model through the inclusion of the county level random effects. This is evidenced in the tiny size of the residuals and their minimal variation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results_by_county<span class="sc">$</span>no_pooling_resid, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results_by_county<span class="sc">$</span>no_pooling_resid, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/no-pool-resid-hist-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Unsurprisingly, this model does an excellent job of predicting the spatial patterns in the original data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_pred, results_by_county), <span class="dv">2</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> no_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"No pooling predictions with I="</span>, mi))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/no-pool-predictions-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I love this model! It’s perfect! It captures almost the exact same clustering and spatial patterning of risk as the original data.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Danger!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is problematic about this model? What limits its usefulness for both interpretation and prediction?</p>
 </div>
 </div>
 </section>
 <section id="partial-pooling" class="level3">
 <h3 class="anchored" data-anchor-id="partial-pooling">Partial Pooling</h3>
+<p>When we look at the predictions of the partial pooling model, they are notably smoother and more clustered than those of the full- and no-pooling models:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_resid, results_by_county),</span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_pred, results_by_county),</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling residuals with I="</span>, mi))</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling predictions with I="</span>, mi))</span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/partial-pool-residual-figure-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/partial-pool-pred-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>When we look at the residuals, they are still quite un-clustered - similar to the no pooling model, but their magnitude is larger, suggesting that the multi-level model is less suceptible to overfitting:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_pred, results_by_county),</span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_resid, results_by_county),</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling predictions with I="</span>, mi))</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling residuals with I="</span>, mi))</span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/partial-pool-pred-figure-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/partial-pool-residual-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 

@@ -134,7 +134,7 @@ display(no_pool_m)
 ```
 
 
-## 🚪 Door 3: Partial Pooling
+## 🚪 Door 3: Partial Pooling {#sec-partial}
 
 Finally, we get to the partial pooling, hierarchical model in which we introduce a *hierarchical prior* to the model to allow our model to shrink observations from places with few observations towards the population mean. This allows us to avoid the pitfalls of overfitting associated with the no-pooling approach while not making the homogeneity assumptions associated with the full-pooling approach.
 
