@@ -148,7 +148,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Zelnotes - Taking a spatial perspective on the radon data">
-<meta property="og:description" content="This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.">
+<meta property="og:description" content="Before diving into the analysis steps, there are several key things we need to do to be able to easily work with these data.">
 <meta property="og:image" content="https://zelnotes.io/posts/spatial_radon/minnesota_uranium.png">
 <meta property="og:site-name" content="Zelnotes">
 <meta property="og:image:height" content="732">
@@ -223,6 +223,7 @@ div.csl-indent {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning Goals</a></li>
   </ul></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
@@ -286,10 +287,15 @@ div.csl-indent {
 
 </header>
 
+<div class="cell">
+
+</div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
-<p>In order to work with these data, we’ll first need to merge the original radon measurements into a shapefile for the state of Minnesota so that we can visualize and analyze spatial patterning of our key exposure of interest (soil uranium) as well as the outcome of interest, i.e.&nbsp;household-level radon, as well as indicators of goodness-of-fit including the model residuals.</p>
+<p>To try this tutorial on your own, download and unzip this <a href="spatial_radon.zip">zipfile</a> and open up your R or RStudio session in the resulting directory.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -303,6 +309,7 @@ div.csl-indent {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">tidy=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
 <p>The primary goals of this tutorial are to introduce you to:</p>
@@ -315,10 +322,10 @@ div.csl-indent {
 </section>
 <section id="data-preparation" class="level1">
 <h1>Data Preparation</h1>
-<p>Before diving into the analysis steps, there are several key things we need to do to be able to easily work with these data:</p>
+<p>Before diving into the analysis steps, there are several key things we need to do to be able to easily work with these data.</p>
 <section id="download-a-shapefile-for-minnesota" class="level2">
 <h2 class="anchored" data-anchor-id="download-a-shapefile-for-minnesota">Download a shapefile for Minnesota</h2>
-<p>First, we need to get a shapefile for the state of Minnesota in which each polygon represents an individual county. Thankfully, in R, this is made easy using the excellent <a href="https://walker-data.com/tidycensus/"><code>tidycensus</code></a> package:</p>
+<p>First, we need to download a shapefile for the state of Minnesota in which each polygon represents an individual county. Thankfully, in R, this is made easy using the excellent <a href="https://walker-data.com/tidycensus/"><code>tidycensus</code></a> package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -329,7 +336,7 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota[<span class="st">"estimate"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <section id="merge-the-spatial-data-with-the-radon-data" class="level3">
@@ -397,7 +404,7 @@ div.csl-indent {
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Soil uranium by MN county"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -465,7 +472,7 @@ div.csl-indent {
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        minnesota_radon), <span class="dv">2</span>), <span class="st">")"</span>))</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>As you can see in the figure, the value of Moran’s I is smaller than we got for log-uranium but still substantial.</p>
@@ -501,7 +508,7 @@ What’s going on?
 <span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        random_minnesota), <span class="dv">2</span>), <span class="st">")"</span>))</span>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This yields something that looks pretty randomly distributed, which is reflected in a Moran’s I estimate closer to the null value of 0. This doesn’t necessarily tell us whether this result is meaningful rather than an artifact of random chance.</p>
@@ -532,7 +539,7 @@ What’s going on?
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And we can directly estimate this probability as follows:</p>
@@ -541,7 +548,7 @@ What’s going on?
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist<span class="sc">$</span>midist <span class="sc">&gt;=</span> csr_dist<span class="sc">$</span>mi)<span class="sc">/</span><span class="fu">length</span>(csr_dist<span class="sc">$</span>midist)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 0.001</code></pre>
 </div>
 </div>
 <p>From 1000 samples, it appears that none of our random datasets yielded a value of Moran’s I <span class="math inline">\(\ge\)</span> to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability.</p>
@@ -770,7 +777,7 @@ Danger!
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>When we look at the residuals, they are still quite un-clustered - similar to the no pooling model, but their magnitude is larger, suggesting that the multi-level model is less suceptible to overfitting:</p>
