@@ -1,0 +1,23 @@
+# Segregation and the Spatial Clustering of Socio-Environmental Exposure
+
+## Before Class
+
+### Reading
+
+Before class, please read:
+
+Woo H, Brigham EP, Allbright K, et al. Racial Segregation and Respiratory Outcomes among Urban Black Residents with and at Risk of Chronic Obstructive Pulmonary Disease. Am J Respir Crit Care Med. 2021;204(5):536-545. doi:10.1164/rccm.202009-3721OC [📄](https://www.dropbox.com/s/lh1tbqc6qx4ewtz/woo_et_al_2021_racial_segregation_and_respiratory_outcomes_among_urban_black_residents_with.pdf?dl=0)
+
+Biello KB, Kershaw T, Nelson R, Hogben M, Ickovics J, Niccolai L. Racial Residential Segregation and Rates of Gonorrhea in the United States, 2003–2007. Am J Public Health. 2012;102(7):1370-1377. doi:10.2105/AJPH.2011.300516 [📄](https://www.dropbox.com/s/d7dd1tp5f8crzms/biello_et_al_2012_racial_residential_segregation_and_rates_of_gonorrhea_in_the_united_states%2C.pdf?dl=0)
+
+#### Supplemental Reading
+
+These are useful references on the segregation measures employed in the assigned papers:
+
+Massey DS, Denton NA. The Dimensions of Residential Segregation. Social Forces. 1988;67(2):281-315. doi:10.2307/2579183
+
+[U.S. Census Bureau reference on segregation measures](https://www.census.gov/topics/housing/housing-patterns/guidance/appendix-b.html)
+
+## During Class
+
+We will discuss the assigned readings and complete a [hands-on activity](https://sph-umich.shinyapps.io/spatial_segregation/) focused on better understanding the similarities and differences between different measures of spatial segregation/clustering.

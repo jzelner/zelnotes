@@ -1,0 +1,11 @@
+# Measuring residential segregation and its consequences for health
+
+In this session, we will focus on understanding what is around the bend in spatial epidemiology and how to make it most relevant to real-world practice and applied research.
+
+We will also complete a second hands-on activity taking a more spatial perspective on the [radon data](/posts/spatial_radon/index.html) from @gelman2006.
+
+## Additional Resources
+
+- [Slides](slides/session_4_whats_next.qmd)
+
+## References

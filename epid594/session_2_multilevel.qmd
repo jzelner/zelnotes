@@ -38,3 +38,7 @@ If you run into problems with any of these, please let me know!
 - [Slide](slides/session_2_multilevel) 
 
 - You can find the tutorial we are going to work through [here](/posts/radon/index.qmd)
+
+## Additional Resources
+
+- [Zoom recording](https://umich.zoom.us/rec/share/6gH1aHW5O3cqnRVVKu-gt4jJ0cfF6_k3DfYCiFazFig7_1Jm3H3BDvJxBCALO4W9.irqxQcDhJEkDgDIx?startTime=1677024348000)

@@ -1,0 +1,56 @@
+---
+pagetitle: "Accounting for spatial clustering with models"
+---
+
+{{< include _titleslide.qmd >}}
+
+## Today's <span class="alert">Theme</span> {.imgslide} 
+
+<img src="/images/minnesota_uranium.png">
+
+Radon...in space!
+ 
+## Agenda
+
+- 'Postcards' logistics
+
+- Air pollution exposure and mortality in Los Angeles
+
+- Radon ☢️ lab 🧪: Pt 2
+
+## In groups of 2-3:
+
+1. What is the major takeaway from this paper?
+
+2. How many sources of data were employed? What were they?
+
+3. How was spatial information included in the statistical modeling?
+
+4. What concerns/critiques or questions do you have about this analysis?
+
+```{r}
+library(countdown)
+countdown(minutes = 8, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Spatially interpolated PM<sub>2.5</sub> exposure surface
+
+![Interpolated $PM_{2.5}$ from @jerrett2005](../images/20230307103452.png)
+
+## Relative PM<sub>2.5</sub> is consistent across locations over time
+
+![1980 to 2000 PM<sub>2.5</sub> from @jerrett2005](../images/20230307103813.png)
+
+## Analyzing spatial autocorrelation in the deaths data 
+
+![](../images/20230307104515.png)
+
+## Return of Radon!
+
+![](/images/radon_entry.png)
+
+[Radon hands-on activity](/posts/spatial_radon/index.qmd)
+
+## Next Time
+
+## References

@@ -3,7 +3,7 @@ format:
     code-tools:
       source: repo
     citation: true
-
+    code-overflow: wrap
 page-layout: article
 title-block-style: default
 title-block-banner: false

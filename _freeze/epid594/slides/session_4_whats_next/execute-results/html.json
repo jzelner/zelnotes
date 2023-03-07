@@ -1,0 +1,20 @@
+{
+  "hash": "bdc9b11cdefaca7cf3b26c635eb16a86",
+  "result": {
+    "markdown": "---\npagetitle: \"What's next in spatial epidemiology?\"\n---\n## {{< meta pagetitle >}}\n\n<div class=\"paddeddiv\">\n  <p style=\"font-size:0.5em; text-align: left;\">\n      EPID 594  \n      Spatial Epidemiology  \n      University of Michigan School of Public Health\n      <br><br>\n      Jon Zelner  \n      `jzelner@umich.edu`  \n      [`epibayes.io`](https://epibayes.io) \n    </p>\n</div>\n\n![](/images/epid_logo.png){.absolute bottom=0 right=50 width=\"400\" height=\"100\"}\n\n\n\n## Agenda\n\n- Check in about projects/timeline\n\n- What does it mean to *do* spatial epidemiology in the real world?\n\n- Hands-on activity: Mapping and analyzing spatial clustering in the radon data\n\n- Wrapping up! 🥲\n\n## Final Products \n\n- Due 3/14 *or* 3/21?\n\n- Please remember to include your self-assessment and grade.\n\n- Happy to check in at any point prior to handing it in.\n\n## How do we make spatial analysis useful in the real world?\n\n![Spatial cluster of Legoinellosis cases identified by automated system (from @greene2016)](legionella.png)\n\n## Small-group discussion\n\nIn groups of 3-4:\n\n- How has your understanding of what spatial epidemiology is changed since the beginning of 592?\n\n- What are you most interested in going forward?\n\n- What concepts or ideas are still confusing or bugging you?\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(countdown)\ncountdown(minutes = 8, warn_when = 60, seconds = 0, play_sound=FALSE)\n```\n\n::: {.cell-output-display}\n```{=html}\n<div class=\"countdown\" id=\"timer_91cbfb6a\" data-warn-when=\"60\" data-update-every=\"1\" tabindex=\"0\" style=\"right:0;bottom:0;\">\n<div class=\"countdown-controls\"><button class=\"countdown-bump-down\">&minus;</button><button class=\"countdown-bump-up\">&plus;</button></div>\n<code class=\"countdown-time\"><span class=\"countdown-digits minutes\">08</span><span class=\"countdown-digits colon\">:</span><span class=\"countdown-digits seconds\">00</span></code>\n</div>\n```\n:::\n:::\n\n\n## Radon...in space! 🪐\n\n![](/images/minnesota_uranium.png)\n\n[Hands-on activity](/posts/spatial_radon/index.html)\n\n# Wrap-up\n\n## Sometimes spatial epidemiology is a perspective more than a specific result\n\n![Aggregating across spatial scales obscures clustering of non-vaccination that leads to VPD outbreak risk (from @masters2020)](vaccine_waivers.png)\n\n## Picking the wrong scale of surveillance can lead to predictions that are way off\n\n![Predictions of outbreak size get worse as spatial aggregation becomes more extreme (from @masters2020)](scale.png)\n\n## Spatial epidemiology's strength comes from its <span class=\"alert\">integrative</span> nature\n\n![Pipeline from data and theory to epidemiological models (from @zelner2022b)](epimodels.png)\n\n## Effective spatial epidemiology is focused on understanding how community context and ecology impact risk\n\n![Characterizing the social and ecological determinants of spatial mobility (from @buckee2021)](mobility.png)\n\n## Thanks!\n\nStay in touch - don't hesitate to reach out (jzelner@umich.edu)!\n\n## References",
+    "supporting": [
+      "session_4_whats_next_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/countdown-0.4.0/countdown.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/countdown-0.4.0/countdown.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

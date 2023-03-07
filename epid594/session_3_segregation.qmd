@@ -11,6 +11,6 @@ Speficially, during class we will briefly discuss the readings as well as some o
 
 - [Slides](slides/session_3_segregation.qmd)
 
-- Zoom recording
+- [Zoom recording](https://umich.zoom.us/rec/share/9fIYI9lI8CJEkROsH4MtNhNUcscWubBMUCb1fHRUAXMLcQSM5ZcUGZnCc3Qn-9_7.2O7BW6WVeS_dw0VX)
 
 ## References

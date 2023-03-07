@@ -1,0 +1,72 @@
+---
+pagetitle: "What's next in spatial epidemiology?"
+---
+
+{{< include _titleslide.qmd >}}
+
+## Agenda
+
+- Check in about projects/timeline
+
+- What does it mean to *do* spatial epidemiology in the real world?
+
+- Hands-on activity: Mapping and analyzing spatial clustering in the radon data
+
+- Wrapping up! 🥲
+
+## Final Products 
+
+- Due 3/14 *or* 3/21?
+
+- Please remember to include your self-assessment and grade.
+
+- Happy to check in at any point prior to handing it in.
+
+## How do we make spatial analysis useful in the real world?
+
+![Spatial cluster of Legoinellosis cases identified by automated system (from @greene2016)](legionella.png)
+
+## Small-group discussion
+
+In groups of 3-4:
+
+- How has your understanding of what spatial epidemiology is changed since the beginning of 592?
+
+- What are you most interested in going forward?
+
+- What concepts or ideas are still confusing or bugging you?
+
+```{r}
+library(countdown)
+countdown(minutes = 8, warn_when = 60, seconds = 0, play_sound=FALSE)
+```
+
+## Radon...in space! 🪐
+
+![](/images/minnesota_uranium.png)
+
+[Hands-on activity](/posts/spatial_radon/index.html)
+
+# Wrap-up
+
+## Sometimes spatial epidemiology is a perspective more than a specific result
+
+![Aggregating across spatial scales obscures clustering of non-vaccination that leads to VPD outbreak risk (from @masters2020)](vaccine_waivers.png)
+
+## Picking the wrong scale of surveillance can lead to predictions that are way off
+
+![Predictions of outbreak size get worse as spatial aggregation becomes more extreme (from @masters2020)](scale.png)
+
+## Spatial epidemiology's strength comes from its <span class="alert">integrative</span> nature
+
+![Pipeline from data and theory to epidemiological models (from @zelner2022b)](epimodels.png)
+
+## Effective spatial epidemiology is focused on understanding how community context and ecology impact risk
+
+![Characterizing the social and ecological determinants of spatial mobility (from @buckee2021)](mobility.png)
+
+## Thanks!
+
+Stay in touch - don't hesitate to reach out (jzelner@umich.edu)!
+
+## References
