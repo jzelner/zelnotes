@@ -53,4 +53,6 @@ countdown(minutes = 8, warn_when = 60, seconds = 0, play_sound=FALSE)
 
 ## Next Time
 
+![Thinking through the linkages between residential segregation and disease risk](/images/chicago_segregation_map.png)
+
 ## References
