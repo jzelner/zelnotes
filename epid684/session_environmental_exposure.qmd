@@ -1,0 +1,17 @@
+# Accounting for Spatially Clustered Environmental Exposures
+
+## Before Class
+
+### Reading
+
+Before class, please read:
+
+Jerrett M, Burnett RT, Ma R, et al. Spatial Analysis of Air Pollution and Mortality in Los Angeles Epidemiology. 2005;16(6):727-736. doi:10.1097/01.ede.0000181630.15826.7d [📄](https://www.dropbox.com/s/q8tv4pp7snn7uot/jerrett_et_al_2005_spatial_analysis_of_air_pollution_and_mortality_in_los_angeles.pdf?dl=0)
+
+## During Class
+
+In class, we will discuss the Jerrett paper and continue exploring the Minnesota radon data from a more explicitly spatial perspective. You can find the tutorial we will work through in detail [here](/posts/spatial_radon/index.html).
+
+## Additional Resources
+
+[Slides](slides/session_14_spatial_radon.qmd)
