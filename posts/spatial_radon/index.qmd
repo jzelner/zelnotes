@@ -308,11 +308,12 @@ Before you move on, take a minute to think about what some of the potential flaw
 Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. 
 Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original @gelman2006 paper. We won't go into detail on these as they have been discussed in depth in the original paper and the previous post.  
 
-:::{.callout-caution}
-Note that we are storing the residuals and predictions for each as a column inside the `radon` dataframe. 
-:::
+
 
 :::{.callout-note}
+
+## Confused? 
+
 For more detail on the implementation on interpretation of these models, please check out the [original tutorial](/posts/radon/index.html).
 :::
 
@@ -329,6 +330,13 @@ full_pooling_model <- lm(log_radon ~ basement, data = radon)
 radon$full_pooling_resid <- resid(full_pooling_model)
 radon$full_pooling_pred <- predict(full_pooling_model)
 ```
+
+:::{.callout-note}
+
+## Storing Model Predictions
+
+Note that we are storing the residuals and predictions for this model (and the ones below) as a column inside the `radon` dataframe. 
+:::
 
 ## No Pooling
 

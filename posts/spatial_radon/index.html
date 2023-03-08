@@ -590,7 +590,7 @@ What is the same? What is different?
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist<span class="sc">$</span>midist <span class="sc">&gt;=</span> csr_dist<span class="sc">$</span>mi)<span class="sc">/</span><span class="fu">length</span>(csr_dist<span class="sc">$</span>midist)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.001</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 </div>
 <p>From 1000 samples, it appears that none of our random datasets yielded a value of Moran’s I <span class="math inline">\(\ge\)</span> to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability.</p>
@@ -612,26 +612,13 @@ What could go wrong?
 <section id="models" class="level1">
 <h1>Models!</h1>
 <p>Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span> paper. We won’t go into detail on these as they have been discussed in depth in the original paper and the previous post.</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Danger
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that we are storing the residuals and predictions for each as a column inside the <code>radon</code> dataframe.</p>
-</div>
-</div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Confused?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -648,6 +635,19 @@ y_{ij} = \alpha + \beta x_{ij} + \epsilon_{i}
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>full_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement, <span class="at">data =</span> radon)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(full_pooling_model)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(full_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Storing Model Predictions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that we are storing the residuals and predictions for this model (and the ones below) as a column inside the <code>radon</code> dataframe.</p>
+</div>
 </div>
 </section>
 <section id="no-pooling" class="level2">
