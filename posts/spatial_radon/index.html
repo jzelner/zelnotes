@@ -226,6 +226,7 @@ div.csl-indent {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning Goals</a></li>
   </ul></li>
+  <li><a href="#setting-up-the-environment" id="toc-setting-up-the-environment" class="nav-link" data-scroll-target="#setting-up-the-environment">Setting up the environment</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
   <ul class="collapse">
   <li><a href="#download-a-shapefile-for-minnesota" id="toc-download-a-shapefile-for-minnesota" class="nav-link" data-scroll-target="#download-a-shapefile-for-minnesota">Download a shapefile for Minnesota</a>
@@ -309,6 +310,19 @@ Look out 👀 for stretch exercises!
 <p>If you see a box with a 💡 like this, it’s in an invitation to go a bit further. This could be a conceptual question or a chance to write a bit of code to explore the data or outputs of the analysis a bit more.</p>
 </div>
 </div>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
+<p>The primary goals of this tutorial are to introduce you to:</p>
+<ol type="1">
+<li>Merging of non-spatial health exposure or outcome data with spatial metadata.</li>
+<li>Calculation of important spatial summary statistics, e.g.&nbsp;Moran’s I, from such data.</li>
+<li>Spatial analysis of residuals from aspatial regression models of spatially-referenced data.</li>
+</ol>
+</section>
+</section>
+<section id="setting-up-the-environment" class="level1">
+<h1>Setting up the environment</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -322,16 +336,6 @@ Look out 👀 for stretch exercises!
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">tidy=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="learning-goals" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
-<p>The primary goals of this tutorial are to introduce you to:</p>
-<ol type="1">
-<li>Merging of non-spatial health exposure or outcome data with spatial metadata.</li>
-<li>Calculation of important spatial summary statistics, e.g.&nbsp;Moran’s I, from such data.</li>
-<li>Spatial analysis of residuals from aspatial regression models of spatially-referenced data.</li>
-</ol>
-</section>
 </section>
 <section id="data-preparation" class="level1">
 <h1>Data Preparation</h1>

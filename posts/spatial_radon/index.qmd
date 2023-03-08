@@ -31,6 +31,16 @@ If you see a box with a 💡 like this, it's in an invitation to go a bit furthe
 
 :::
 
+## Learning Goals
+
+The primary goals of this tutorial are to introduce you to:
+
+1. Merging of non-spatial health exposure or outcome data with spatial metadata.
+2. Calculation of important spatial summary statistics, e.g. Moran's I, from such data.
+3. Spatial analysis of residuals from aspatial regression models of spatially-referenced data.
+
+# Setting up the environment
+
 ```{r setup}
 #| warning: false
 #| code-fold: true
@@ -44,13 +54,6 @@ library(spdep)
 knitr::opts_chunk$set(message = FALSE, warning=FALSE, tidy=TRUE)
 ```
 
-## Learning Goals
-
-The primary goals of this tutorial are to introduce you to:
-
-1. Merging of non-spatial health exposure or outcome data with spatial metadata.
-2. Calculation of important spatial summary statistics, e.g. Moran's I, from such data.
-3. Spatial analysis of residuals from aspatial regression models of spatially-referenced data.
 
 # Data Preparation
 

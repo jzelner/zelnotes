@@ -403,7 +403,7 @@
     "href": "posts/spatial_radon/index.html#getting-started",
     "title": "Taking a spatial perspective on the radon data",
     "section": "Getting Started",
-    "text": "Getting Started\nThis tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.\nTo try this tutorial on your own, download and unzip this zipfile and open up your R or RStudio session in the resulting directory.\n\n\n\n\n\n\nLook out 👀 for stretch exercises!\n\n\n\nIf you see a box with a 💡 like this, it’s in an invitation to go a bit further. This could be a conceptual question or a chance to write a bit of code to explore the data or outputs of the analysis a bit more.\n\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(arm)\nlibrary(tidycensus)\nlibrary(dplyr)\nlibrary(rstanarm)\nlibrary(stringr)\nlibrary(spdep)\nknitr::opts_chunk$set(message = FALSE, warning=FALSE, tidy=TRUE)"
+    "text": "Getting Started\nThis tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.\nTo try this tutorial on your own, download and unzip this zipfile and open up your R or RStudio session in the resulting directory.\n\n\n\n\n\n\nLook out 👀 for stretch exercises!\n\n\n\nIf you see a box with a 💡 like this, it’s in an invitation to go a bit further. This could be a conceptual question or a chance to write a bit of code to explore the data or outputs of the analysis a bit more."
   },
   {
     "objectID": "posts/spatial_radon/index.html#learning-goals",
