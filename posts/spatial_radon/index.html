@@ -296,6 +296,19 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
 <p>To try this tutorial on your own, download and unzip this <a href="spatial_radon.zip">zipfile</a> and open up your R or RStudio session in the resulting directory.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Look out 👀 for stretch exercises!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you see a box with a 💡 like this, it’s in an invitation to go a bit further. This could be a conceptual question or a chance to write a bit of code to explore the data or outputs of the analysis a bit more.</p>
+</div>
+</div>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -392,7 +405,7 @@ div.csl-indent {
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>county_uranium <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">median_radon =</span> <span class="fu">mean</span>(log_radon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">mean_radon =</span> <span class="fu">mean</span>(log_radon))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because the sf dataset returned by tidycensus is a dataframe, we can then easily merge the county-level soil uranium concentrations we derived above into the shapefile. We use the <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html"><code>left_join</code></a> function from <code>dplyr</code> to ensure that all of the counties in the original shapefile are represented in the final dataset, even if a soil uranium measure is unavailable for them in the original data:</p>
 <div class="cell">
@@ -467,8 +480,8 @@ div.csl-indent {
 </div>
 <p>Of course, our key quantity of interest isn’t soil uranium but the concentration of radon at the household level. When we constructed the <code>county_uranium</code> dataset above, we also calculated the median radon concentration in the data for each county. When we plot it, we see something similar to the soil uranium, but perhaps a bit less clear:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(minnesota_radon) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> median_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Median household radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon,</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(minnesota_radon) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> mean_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Median household radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>mean_radon,</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        minnesota_radon), <span class="dv">2</span>), <span class="st">")"</span>))</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -491,60 +504,89 @@ What’s going on?
 </div>
 <section id="testing-testing" class="level3">
 <h3 class="anchored" data-anchor-id="testing-testing">Testing, testing</h3>
-<p>One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a <em>counterfactual scenario</em> in which the distribution of radon concentrations is known to be uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran’s I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:</p>
+<p>One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a <em>counterfactual scenario</em> in which the distribution of radon concentrations is uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran’s I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make a new dataset representing 'random minnesota'</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>random_minnesota <span class="ot">&lt;-</span> minnesota_radon</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the sample function to resample median radon values without replacement,</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="do">## which yields a vector in which the values of median radon are simply</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="do">## shuffled by county</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>random_minnesota<span class="sc">$</span>median_radon <span class="ot">&lt;-</span> <span class="fu">sample</span>(minnesota_radon<span class="sc">$</span>median_radon, <span class="fu">nrow</span>(minnesota_radon),</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the new randomized data</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(random_minnesota) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> median_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Spatially randomized median radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(random_minnesota<span class="sc">$</span>median_radon,</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        random_minnesota), <span class="dv">2</span>), <span class="st">")"</span>))</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make a new dataset representing 'random minnesota': Use the sample function</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="do">## to resample household radon values without replacement, we then recalculate</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="do">## county values based on these suffled values</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>county_uranium_random <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">log_radon =</span> <span class="fu">sample</span>(log_radon, <span class="fu">nrow</span>(.), <span class="at">replace =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">mean_radon =</span> <span class="fu">mean</span>(log_radon))</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>random_minnesota <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, county_uranium_random)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the new randomized data</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(random_minnesota) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> mean_radon)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Spatially randomized median radon by MN county (I="</span>, <span class="fu">round</span>(<span class="fu">moranFromSF</span>(random_minnesota<span class="sc">$</span>mean_radon,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        random_minnesota), <span class="dv">2</span>), <span class="st">")"</span>))</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This yields something that looks pretty randomly distributed, which is reflected in a Moran’s I estimate closer to the null value of 0. This doesn’t necessarily tell us whether this result is meaningful rather than an artifact of random chance.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+What is the same? What is different?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Take a minute to explore the distribution of different quantities between some random minnesotas and the observed one. For example, look at distributions of the number of observations per county, the proportion of households in each county that have basements, etc. Which are similar and which are different?</p>
+</div>
+</div>
 </section>
 <section id="complete-spatial-randomness" class="level2">
 <h2 class="anchored" data-anchor-id="complete-spatial-randomness">Complete Spatial Randomness</h2>
 <p>What we can do, though, is to generate a bunch of random Minnesotas in which there is no relationship between geographic location and median radon, calculate Moran’s I for each of those, and see how our observed data stack up.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>csrMorans <span class="ot">&lt;-</span> <span class="cf">function</span>(x, sfdf, <span class="at">trials =</span> <span class="dv">1000</span>, <span class="at">style =</span> <span class="st">"B"</span>) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(sfdf)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    lw <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> style, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    mv <span class="ot">&lt;-</span> <span class="fu">moran</span>(x, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    moran_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, trials)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>trials) {</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        random_x <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, <span class="fu">length</span>(x), <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        moran_vals[i] <span class="ot">&lt;-</span> <span class="fu">moran</span>(random_x, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>csrMorans <span class="ot">&lt;-</span> <span class="cf">function</span>(radon, minnesota, <span class="at">trials =</span> <span class="dv">1000</span>, <span class="at">style =</span> <span class="st">"B"</span>) {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    county_uranium <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">mean_radon =</span> <span class="fu">mean</span>(log_radon)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">left_join</span>(minnesota, .)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(minnesota)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    lw <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> style, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    mv <span class="ot">&lt;-</span> <span class="fu">moran</span>(county_uranium<span class="sc">$</span>mean_radon, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">midist =</span> moran_vals, <span class="at">mi =</span> mv))</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    moran_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, trials)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>trials) {</span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>csr_dist <span class="ot">&lt;-</span> <span class="fu">csrMorans</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        county_uranium_random <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">log_radon =</span> <span class="fu">sample</span>(log_radon, <span class="fu">nrow</span>(.), <span class="at">replace =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>            <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>            <span class="fu">summarize</span>(<span class="at">log_uranium =</span> <span class="fu">first</span>(log_uranium), <span class="at">mean_radon =</span> <span class="fu">mean</span>(log_radon))</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        random_minnesota <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, county_uranium_random)</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        moran_vals[i] <span class="ot">&lt;-</span> <span class="fu">moran</span>(random_minnesota<span class="sc">$</span>mean_radon, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw),</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">midist =</span> moran_vals, <span class="at">mi =</span> mv))</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>csr_dist <span class="ot">&lt;-</span> <span class="fu">csrMorans</span>(radon, minnesota)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use the distribution of Moran’s I values taken from the randomized datasets to benchmark how likely our observed value is to occur by purely random chance. The figure below shows that this is quite unlikely:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> csr_dist<span class="sc">$</span>midist)) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Moran's I value"</span>) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> csr_dist<span class="sc">$</span>mi, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Randomized values of Moran's I vs. observed for median household radon"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> csr_dist<span class="sc">$</span>midist), <span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Moran's I value"</span>) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> csr_dist<span class="sc">$</span>mi, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(csr_dist<span class="sc">$</span>midist),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"green"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Randomized values of Moran's I vs. observed for median household radon"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And we can directly estimate this probability as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>real_moran <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>median_radon, minnesota_radon)</span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>real_moran <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>mean_radon, minnesota_radon)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist<span class="sc">$</span>midist <span class="sc">&gt;=</span> csr_dist<span class="sc">$</span>mi)<span class="sc">/</span><span class="fu">length</span>(csr_dist<span class="sc">$</span>midist)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -552,7 +594,7 @@ What’s going on?
 </div>
 </div>
 <p>From 1000 samples, it appears that none of our random datasets yielded a value of Moran’s I <span class="math inline">\(\ge\)</span> to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -570,6 +612,19 @@ What could go wrong?
 <section id="models" class="level1">
 <h1>Models!</h1>
 <p>Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span> paper. We won’t go into detail on these as they have been discussed in depth in the original paper and the previous post.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Danger
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that we are storing the residuals and predictions for each as a column inside the <code>radon</code> dataframe.</p>
+</div>
+</div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -580,20 +635,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note that we are storing the residuals and predictions for each as a column inside the <code>radon</code> dataframe.</p>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For ore detail on the implementation on interpretation of these models, please check out the <a href="../../posts/radon/index.html">original tutorial</a>.</p>
+<p>For more detail on the implementation on interpretation of these models, please check out the <a href="../../posts/radon/index.html">original tutorial</a>.</p>
 </div>
 </div>
 <section id="full-pooling-model" class="level2">
@@ -623,7 +665,7 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <section id="partial-pooling-model" class="level2">
 <h2 class="anchored" data-anchor-id="partial-pooling-model">Partial pooling model</h2>
 <p>The partial-pooling model is the multi-level analogue to the no-pooling model. For more detail, please see the <a href="../../posts/radon/index.html#sec-partial">partial pooling section</a> of the original tutorial.</p>
-<div class="cell" data-hash="index_cache/html/partial-pool-model_3722f31c378bf97c0e3aa8a72c366b10">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>partial_pool_model <span class="ot">&lt;-</span> <span class="fu">stan_lmer</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> county),</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> radon)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(partial_pool_model)</span>
@@ -659,7 +701,7 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <p><img src="index_files/figure-html/residual-figure-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>This is probably intuitive: the full pooling modeldidn’t include any county-level information, so it might not account for all of the sptial variation. So, on the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?</p>
+<p>This is probably intuitive: the full pooling model didn’t include any county-level information, so it might not account for all of the sptial variation. On the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_pred, results_by_county),</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
@@ -682,7 +724,7 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 </div>
 </div>
 <p>Whoops…that looks familiar! It seems like the pattern of spatial variation in the presence/absence of basements may be driving the clustering in our predictions and - by consequence - our residuals!</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
