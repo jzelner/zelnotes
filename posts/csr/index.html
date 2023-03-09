@@ -9,7 +9,7 @@
 <meta name="author" content="Jon Zelner">
 <meta name="dcterms.date" content="2023-03-09">
 
-<title>Zelnotes - Coming to grips wih complete spatial randomness</title>
+<title>Zelnotes - Coming to grips with complete spatial randomness</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Zelnotes - Coming to grips wih complete spatial randomness">
+<meta property="og:title" content="Zelnotes - Coming to grips with complete spatial randomness">
 <meta property="og:description" content="The point of this tutorial is to introduce you to two key, but related, concepts in spatial analysis:">
 <meta property="og:image" content="https://zelnotes.io/posts/csr/clustered_figure.png">
 <meta property="og:site-name" content="Zelnotes">
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Coming to grips wih complete spatial randomness</h1>
+      <h1 class="quarto-secondary-nav-title">Coming to grips with complete spatial randomness</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -212,11 +212,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#calculating-morans-i" id="toc-calculating-morans-i" class="nav-link" data-scroll-target="#calculating-morans-i">Calculating Moran’s I</a></li>
   <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
   </ul></li>
-  <li><a href="#permutation-testing" id="toc-permutation-testing" class="nav-link" data-scroll-target="#permutation-testing">Permutation testing</a>
+  <li><a href="#assessing-how-structured-the-data-are" id="toc-assessing-how-structured-the-data-are" class="nav-link" data-scroll-target="#assessing-how-structured-the-data-are">Assessing how structured the data are</a>
   <ul class="collapse">
   <li><a href="#permuting-the-data" id="toc-permuting-the-data" class="nav-link" data-scroll-target="#permuting-the-data">Permuting the data</a></li>
-  </ul></li>
+  <li><a href="#generate-some-data-1" id="toc-generate-some-data-1" class="nav-link" data-scroll-target="#generate-some-data-1">Generate Some Data</a></li>
   <li><a href="#comparing-randomized-data-to-observed-data" id="toc-comparing-randomized-data-to-observed-data" class="nav-link" data-scroll-target="#comparing-randomized-data-to-observed-data">Comparing randomized data to observed data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -225,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Coming to grips wih complete spatial randomness</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/jzelner/zelnotes/blob/main/posts/csr/index.qmd"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Coming to grips with complete spatial randomness</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/jzelner/zelnotes/blob/main/posts/csr/index.qmd"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -288,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>When the values of both of these parameters are high, the probability of having a positive case should be greatest in the top-right corner of the square. Lets take a look and see if this is the case:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.01</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.05</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> z)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>z)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -306,7 +307,7 @@ Try making some patterns!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Play with the values of <code>base_p</code>, <code>or_x</code> and <code>or_y</code> above to get a feel for how these parameters impact the spatial patterning of the outcome.</p>
+<p>Play with the values of <code>base_p</code>, <code>or_x</code> and <code>or_y</code> above to get a feel for how these parameters impact the spatial patterning of the outcome. Also try 0 &lt; OR &lt; 1 for the x and y values and see how that impacts the pattern.</p>
 </div>
 </div>
 </section>
@@ -367,8 +368,8 @@ Change the number of cells
 </div>
 </section>
 </section>
-<section id="permutation-testing" class="level1">
-<h1>Permutation testing</h1>
+<section id="assessing-how-structured-the-data-are" class="level1">
+<h1>Assessing how structured the data are</h1>
 <p>This function just takes the input data and shuffles the values of the case/control outcome so that they no longer have a spatial pattern:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>randomizeOutcome <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
@@ -400,34 +401,60 @@ Change the number of cells
 <section id="permuting-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="permuting-the-data">Permuting the data</h2>
 <p>Here’s where the rubber meets the road 🛣. We will repeat the randomization above a large number of times (careful, as the number of trials increases, so does the runtime), save the value of Moran’s I for each randomized dataset, and then compare the randomized values to the ‘true’ one.</p>
+</section>
+<section id="generate-some-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="generate-some-data-1">Generate Some Data</h2>
+<p>First, we’ll generate and visualize the input data again:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">500</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>mi_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n_trials)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    random_df <span class="ot">&lt;-</span> <span class="fu">randomizeOutcome</span>(df)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    pg <span class="ot">&lt;-</span> <span class="fu">pointToGrid</span>(random_df)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    mi_vals[i] <span class="ot">&lt;-</span> <span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">pointToGrid</span>(df)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>data_mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg), <span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pg) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Moran's I="</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    data_mi))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now we’ll generate a large number of datasets which have the same number of cases and controls and where the points are all in the same locations, but the geographic distribution of case and control statuses is randomly distributed:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n_trials <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mi_vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n_trials)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(df, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">st_make_grid</span>(g, <span class="at">what =</span> <span class="st">"polygons"</span>, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    st_sf</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>a<span class="sc">$</span>cell <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(a)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> <span class="fu">st_join</span>(g, a, st_intersects) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    as_tibble <span class="sc">%&gt;%</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(z, cell)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(a)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>lw <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(nb, <span class="at">style =</span> <span class="st">"B"</span>, <span class="at">zero.policy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_trials) {</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    random_df <span class="ot">&lt;-</span> <span class="fu">randomizeOutcome</span>(pp) <span class="sc">%&gt;%</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(cell) <span class="sc">%&gt;%</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">p =</span> <span class="fu">sum</span>(z)<span class="sc">/</span><span class="fu">n</span>())</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    tmp_pg <span class="ot">&lt;-</span> <span class="fu">left_join</span>(a, random_df)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    mi_vals[i] <span class="ot">&lt;-</span> <span class="fu">moran</span>(tmp_pg<span class="sc">$</span>p, lw, <span class="fu">length</span>(nb), <span class="fu">Szero</span>(lw), <span class="at">NAOK =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>I</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
-<section id="comparing-randomized-data-to-observed-data" class="level1">
-<h1>Comparing randomized data to observed data</h1>
+<section id="comparing-randomized-data-to-observed-data" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-randomized-data-to-observed-data">Comparing randomized data to observed data</h2>
 <p>Let’s re-generate the clustered data from before and then compare it to some randomized values:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.01</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">pointToGrid</span>(df)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>data_mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg), <span class="dv">2</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">sum</span>(mi_vals <span class="sc">&gt;=</span> data_mi)<span class="sc">/</span><span class="fu">length</span>(mi_vals)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> mi_vals), <span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Moran's I value"</span>) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> data_mi, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(mi_vals),</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"green"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Randomized values of Moran's I vs. observed (pr &lt;="</span>,</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    p, <span class="st">")"</span>))</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data_mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg), <span class="dv">2</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">sum</span>(mi_vals <span class="sc">&gt;=</span> data_mi)<span class="sc">/</span><span class="fu">length</span>(mi_vals)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> mi_vals), <span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Moran's I value"</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> data_mi, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(mi_vals),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"green"</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Randomized values of Moran's I vs. observed (pr &lt;="</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    p, <span class="st">")"</span>))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -446,16 +473,17 @@ Try patterns with weak or noisy clustering
 
 
 </section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
   author = {Jon Zelner},
-  title = {Coming to Grips Wih Complete Spatial Randomness},
+  title = {Coming to Grips with Complete Spatial Randomness},
   date = {2023-03-09},
   url = {https://zelnotes.io/posts/csr},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Zelner. 2023. <span>“Coming to Grips Wih Complete Spatial
+Jon Zelner. 2023. <span>“Coming to Grips with Complete Spatial
 Randomness.”</span> March 9, 2023. <a href="https://zelnotes.io/posts/csr">https://zelnotes.io/posts/csr</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

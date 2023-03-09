@@ -282,30 +282,44 @@
   {
     "objectID": "posts/csr/index.html#set-up-the-environment",
     "href": "posts/csr/index.html#set-up-the-environment",
-    "title": "Coming to grips wih complete spatial randomness",
+    "title": "Coming to grips with complete spatial randomness",
     "section": "Set up the environment",
     "text": "Set up the environment\n\nknitr::opts_chunk$set(message = FALSE, warning=FALSE, tidy=TRUE)\nlibrary(ggplot2)\nlibrary(sf)\nlibrary(dplyr)\nlibrary(spdep)"
   },
   {
     "objectID": "posts/csr/index.html#calculating-morans-i",
     "href": "posts/csr/index.html#calculating-morans-i",
-    "title": "Coming to grips wih complete spatial randomness",
+    "title": "Coming to grips with complete spatial randomness",
     "section": "Calculating Moran’s I",
     "text": "Calculating Moran’s I\nThe function below will calculate Moran’s I for a given grid. For more information on this function, please see this tutorial where it is described in more detail:\n\nmoranFromSF <- function(x, sfdf, style = \"B\") {\n    nb <- poly2nb(sfdf)\n    lw <- nb2listw(nb, style = style, zero.policy = TRUE)\n    mi <- moran(x, lw, length(nb), Szero(lw), NAOK = TRUE)$I\n    return(mi)\n}"
   },
   {
     "objectID": "posts/csr/index.html#plotting",
     "href": "posts/csr/index.html#plotting",
-    "title": "Coming to grips wih complete spatial randomness",
+    "title": "Coming to grips with complete spatial randomness",
     "section": "Plotting",
     "text": "Plotting\nThe code below uses the function we just defined to aggregate the data we generated above to a 5 x 5 grid, plot the proportion cases vs. controls in each grid cell, and label the plot with the estimated value of Moran’s I:\n\npg <- pointToGrid(df, n = 5)\ndata_mi <- round(moranFromSF(pg$p, pg), 2)\ng <- ggplot(pg) + geom_sf(aes(fill = p)) + scale_fill_viridis_c() + ggtitle(paste0(\"Moran's I=\",\n    data_mi))\nplot(g)\n\n\n\n\n\n\n\n\n\n\nChange the number of cells\n\n\n\nThe parameter n in the function above controls the number of cells in each direction, so n=5 will result in \\(n^2 = 25\\) cells, n=10 will result in 100 cells, etc. Try different values of n and see how they impact the visual pattern of the grid as well as the value of Moran’s I. Note that grayed out cells are those with NA values, i.e. ones where there are no points (cases or controls) present."
   },
   {
     "objectID": "posts/csr/index.html#permuting-the-data",
     "href": "posts/csr/index.html#permuting-the-data",
-    "title": "Coming to grips wih complete spatial randomness",
+    "title": "Coming to grips with complete spatial randomness",
     "section": "Permuting the data",
-    "text": "Permuting the data\nHere’s where the rubber meets the road 🛣. We will repeat the randomization above a large number of times (careful, as the number of trials increases, so does the runtime), save the value of Moran’s I for each randomized dataset, and then compare the randomized values to the ‘true’ one.\n\nn_trials <- 500\nmi_vals <- rep(0, n_trials)\nfor (i in 1:n_trials) {\n    random_df <- randomizeOutcome(df)\n    pg <- pointToGrid(random_df)\n    mi_vals[i] <- moranFromSF(pg$p, pg)\n}"
+    "text": "Permuting the data\nHere’s where the rubber meets the road 🛣. We will repeat the randomization above a large number of times (careful, as the number of trials increases, so does the runtime), save the value of Moran’s I for each randomized dataset, and then compare the randomized values to the ‘true’ one."
+  },
+  {
+    "objectID": "posts/csr/index.html#generate-some-data-1",
+    "href": "posts/csr/index.html#generate-some-data-1",
+    "title": "Coming to grips with complete spatial randomness",
+    "section": "Generate Some Data",
+    "text": "Generate Some Data\nFirst, we’ll generate and visualize the input data again:\n\ndf <- clusteredOutcomeData(0.1, 5, 5, 1000)\npg <- pointToGrid(df)\ndata_mi <- round(moranFromSF(pg$p, pg), 2)\ng <- ggplot(pg) + geom_sf(aes(fill = p)) + scale_fill_viridis_c() + ggtitle(paste0(\"Moran's I=\",\n    data_mi))\nplot(g)\n\n\n\n\nNow we’ll generate a large number of datasets which have the same number of cases and controls and where the points are all in the same locations, but the geographic distribution of case and control statuses is randomly distributed:\n\nn_trials <- 1000\nmi_vals <- rep(0, n_trials)\ng <- st_as_sf(df, coords = c(\"x\", \"y\"))\na <- st_make_grid(g, what = \"polygons\", n = 5) %>%\n    st_sf\na$cell <- 1:nrow(a)\npp <- st_join(g, a, st_intersects) %>%\n    as_tibble %>%\n    select(z, cell)\n\nnb <- poly2nb(a)\nlw <- nb2listw(nb, style = \"B\", zero.policy = TRUE)\n\nfor (i in 1:n_trials) {\n    random_df <- randomizeOutcome(pp) %>%\n        group_by(cell) %>%\n        summarize(p = sum(z)/n())\n    tmp_pg <- left_join(a, random_df)\n    mi_vals[i] <- moran(tmp_pg$p, lw, length(nb), Szero(lw), NAOK = TRUE)$I\n}"
+  },
+  {
+    "objectID": "posts/csr/index.html#comparing-randomized-data-to-observed-data",
+    "href": "posts/csr/index.html#comparing-randomized-data-to-observed-data",
+    "title": "Coming to grips with complete spatial randomness",
+    "section": "Comparing randomized data to observed data",
+    "text": "Comparing randomized data to observed data\nLet’s re-generate the clustered data from before and then compare it to some randomized values:\n\ndata_mi <- round(moranFromSF(pg$p, pg), 2)\n\np <- sum(mi_vals >= data_mi)/length(mi_vals)\ng <- ggplot() + geom_histogram(aes(x = mi_vals), bins = 50) + xlab(\"Moran's I value\") +\n    geom_vline(xintercept = data_mi, colour = \"red\") + geom_vline(xintercept = median(mi_vals),\n    colour = \"green\") + ggtitle(paste0(\"Randomized values of Moran's I vs. observed (pr <=\",\n    p, \")\"))\n\nplot(g)\n\n\n\n\n\n\n\n\n\n\nTry patterns with weak or noisy clustering\n\n\n\nModify the values of or_x and or_y to make the clustering in the simulated data weaker (i.e. make these paramters smaller). You can also reduce the total number of points (n) to see how easy it is to distinguish between ‘true’ clustering and random noise using a smaller dataset."
   },
   {
     "objectID": "posts/d3-sir/index.html",
@@ -319,7 +333,7 @@
     "href": "posts/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Coming to grips wih complete spatial randomness\n\n\n\n\n\n\n\n\n\n\n\n\nMar 9, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nTaking a spatial perspective on the radon data\n\n\n\n\n\n\n\n\n\n\n\n\nMar 2, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nRe-creating the radon teaching example with rstanarm and tidybayes\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nMaking sense of spatial density estimation\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\nspatial\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nBuilding a simple SIR model with javascript and d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nVoronoi intensity mapping with d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nCodifying Tobler’s First Law using Locally Weighted Regression\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nWhat I learned from teaching online.\n\n\nOr: How I learned to stop worrying and just plan my teaching and writing.\n\n\n\n\n\n\n\n\n\nJan 6, 2022\n\n\nJon Zelner\n\n\n\n\n\n\nNo matching items"
+    "text": "Coming to grips with complete spatial randomness\n\n\n\n\n\n\n\n\n\n\n\n\nMar 9, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nTaking a spatial perspective on the radon data\n\n\n\n\n\n\n\n\n\n\n\n\nMar 2, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nRe-creating the radon teaching example with rstanarm and tidybayes\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nMaking sense of spatial density estimation\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\nspatial\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nBuilding a simple SIR model with javascript and d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nVoronoi intensity mapping with d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nCodifying Tobler’s First Law using Locally Weighted Regression\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nWhat I learned from teaching online.\n\n\nOr: How I learned to stop worrying and just plan my teaching and writing.\n\n\n\n\n\n\n\n\n\nJan 6, 2022\n\n\nJon Zelner\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/radon/index.html#preparing-to-run-the-examples",
