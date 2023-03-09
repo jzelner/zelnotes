@@ -2,6 +2,7 @@
 title: "Taking a spatial perspective on the `radon` data"
 author: "Jon Zelner"
 date: "3/2/2023"
+updated: last-modified
 image: "minnesota_uranium.png"
 execute:
   cache: false
@@ -17,9 +18,9 @@ zip("spatial_radon.zip", files = c("index.qmd", "minnesota_uranium.png"))
 
 # Introduction
 
-## Getting Started 
-
 This tutorial is a follow-up to a prior exercise using these data. So if you haven't already, please go back and take a look at the original multi-level modeling radon example [here](/posts/radon/index.html).
+
+## Getting Started 
 
 To try this tutorial on your own, download and unzip this [zipfile](spatial_radon.zip) and open up your R or RStudio session in the resulting directory.
 

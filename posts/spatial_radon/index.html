@@ -148,7 +148,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Zelnotes - Taking a spatial perspective on the radon data">
-<meta property="og:description" content="Before diving into the analysis steps, there are several key things we need to do to be able to easily work with these data.">
+<meta property="og:description" content="This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.">
 <meta property="og:image" content="https://zelnotes.io/posts/spatial_radon/minnesota_uranium.png">
 <meta property="og:site-name" content="Zelnotes">
 <meta property="og:image:height" content="732">
@@ -293,9 +293,9 @@ div.csl-indent {
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
 <p>To try this tutorial on your own, download and unzip this <a href="spatial_radon.zip">zipfile</a> and open up your R or RStudio session in the resulting directory.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -594,7 +594,7 @@ What is the same? What is different?
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>p_moran <span class="ot">&lt;-</span> <span class="fu">sum</span>(csr_dist<span class="sc">$</span>midist <span class="sc">&gt;=</span> csr_dist<span class="sc">$</span>mi)<span class="sc">/</span><span class="fu">length</span>(csr_dist<span class="sc">$</span>midist)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_moran)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 0.001</code></pre>
 </div>
 </div>
 <p>From 1000 samples, it appears that none of our random datasets yielded a value of Moran’s I <span class="math inline">\(\ge\)</span> to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability.</p>
