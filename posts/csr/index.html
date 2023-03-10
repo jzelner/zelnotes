@@ -221,9 +221,10 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
   <li><a href="#calculating-morans-i" id="toc-calculating-morans-i" class="nav-link" data-scroll-target="#calculating-morans-i">Calculating Moran’s I</a></li>
   <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
   </ul></li>
-  <li><a href="#assessing-how-structured-the-data-are" id="toc-assessing-how-structured-the-data-are" class="nav-link" data-scroll-target="#assessing-how-structured-the-data-are">Assessing how structured the data are</a>
+  <li><a href="#assessing-how-structured-the-data-are-using-permutation-testing" id="toc-assessing-how-structured-the-data-are-using-permutation-testing" class="nav-link" data-scroll-target="#assessing-how-structured-the-data-are-using-permutation-testing">Assessing how structured the data are using permutation testing</a>
   <ul class="collapse">
   <li><a href="#permuting-the-data" id="toc-permuting-the-data" class="nav-link" data-scroll-target="#permuting-the-data">Permuting the data</a></li>
+  <li><a href="#approximating-the-sampling-distribution-of-spatially-random-data" id="toc-approximating-the-sampling-distribution-of-spatially-random-data" class="nav-link" data-scroll-target="#approximating-the-sampling-distribution-of-spatially-random-data">Approximating the sampling distribution of spatially random data</a></li>
   <li><a href="#generate-some-data-1" id="toc-generate-some-data-1" class="nav-link" data-scroll-target="#generate-some-data-1">Generate Some Data</a></li>
   <li><a href="#comparing-randomized-data-to-observed-data" id="toc-comparing-randomized-data-to-observed-data" class="nav-link" data-scroll-target="#comparing-randomized-data-to-observed-data">Comparing randomized data to observed data</a></li>
   </ul></li>
@@ -286,7 +287,11 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 </section>
 <section id="generate-some-data" class="level1">
 <h1>Generate some data</h1>
-<p>This function will generate <code>n</code> points which are scattered uniformly at random around a unit square (i.e.&nbsp;a square with an area of one). The parameter <code>base_p</code> controls the baseline probability of the outcome of interest - e.g.&nbsp;the presence of a disease - occurring at the bottom left corner of the square,i.e.&nbsp;where x = 0, and y = 0. The parameters <code>or_x</code> and <code>or_y</code> are odds ratios representing the increase in the probability of having the outcome <code>z=1</code> as you move rightwards (from x = 0 to x = 1) and upwards (from y = 0 to y = 1) respectively.</p>
+<p>This function will generate <code>n</code> points which are scattered uniformly at random around a unit square (i.e.&nbsp;a square with an area of one). The parameter <code>base_p</code> controls the baseline probability of the outcome of interest - e.g.&nbsp;the presence of a disease - occurring at the bottom left corner of the square,i.e.&nbsp;where x = 0, and y = 0. The parameters <code>or_x</code> and <code>or_y</code> are odds ratios representing the increase in the probability of having the outcome <code>z=1</code> as you move rightwards (from x = 0 to x = 1) and upwards (from y = 0 to y = 1) respectively. In other words, the probability of an individual being a case or a control can be written as:</p>
+<p><span id="eq-clustered-outcome"><span class="math display">\[
+Pr(z_i = 1 | x_i, y_i) = logit^{-1}(\alpha + \beta_x x_i + \beta_y y_i)
+\tag{1}\]</span></span></p>
+<p>Where <span class="math inline">\(logit^{-1}\)</span> represents the <a href="https://en.wikipedia.org/wiki/Logit">inverse logit function</a>, <span class="math inline">\(\beta_{x}\)</span> is the log-odds ratio associated with a 1-unit change in the x coordinate of individual <em>i</em>, <span class="math inline">\(\beta_{y}\)</span> is the log odds-ratio associated with a 1-unit change in the y coordinate for individual <span class="math inline">\(i\)</span>, and <span class="math inline">\(\alpha\)</span> is the log-odds of being a control (<span class="math inline">\(z=1\)</span>) when <span class="math inline">\(x=0\)</span> and <span class="math inline">\(y=0\)</span>. We can wrap this all up in the function below where <code>or_x</code> = <span class="math inline">\(exp(\beta_x)\)</span>, <code>or_y</code> = <span class="math inline">\(exp(\beta_y)\)</span>, and <code>base_p</code> = <span class="math inline">\(logit^{-1}(\alpha)\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clusteredOutcomeData <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">base_p =</span> <span class="fl">0.1</span>, <span class="at">or_x =</span> <span class="dv">10</span>, <span class="at">or_y =</span> <span class="dv">10</span>, <span class="at">n =</span> <span class="dv">1000</span>) {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">runif</span>(n), <span class="at">y =</span> <span class="fu">runif</span>(n))</span>
@@ -299,10 +304,13 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 <p>When the values of both of these parameters are high, the probability of having a positive case should be greatest in the top-right corner of the square. Lets take a look and see if this is the case:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.05</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> z)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>z)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> z)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>z) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Pr(z=1)="</span>, <span class="fu">round</span>(<span class="fu">sum</span>(df<span class="sc">$</span>z)<span class="sc">/</span><span class="fu">nrow</span>(df), <span class="dv">2</span>)))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>In this setup the risk of being a case is clearly higher in the top-right vs.&nbsp;the left. In the next section, we’ll work on aggregating these data up to a grid cell and calculating a descriptive spatial statistic, in this case Moran’s I.</p>
@@ -359,7 +367,7 @@ Try making some patterns!
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    data_mi))</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -377,9 +385,17 @@ Change the number of cells
 </div>
 </section>
 </section>
-<section id="assessing-how-structured-the-data-are" class="level1">
-<h1>Assessing how structured the data are</h1>
-<p>This function just takes the input data and shuffles the values of the case/control outcome so that they no longer have a spatial pattern:</p>
+<section id="assessing-how-structured-the-data-are-using-permutation-testing" class="level1">
+<h1>Assessing how structured the data are using permutation testing</h1>
+<p>Our goal in this section is to introuce the idea of random permutation testing as a way of analyzing how likely the <em>observed</em> data are to have been generated by a scenario in which there is no spatial structure. Remember that we used a logistic regression model (see <a href="#eq-clustered-outcome">Equation&nbsp;1</a>) in which the probability of being a case (<span class="math inline">\(z_i = 1\)</span>) is a function of an individual’s x and y coordinates to generate the input data.</p>
+<p>Of course, with real-world data, we don’t know how the data were generated: the whole point of statistical modeling and testing is to try to figure that out! One way to do this is to ask if the data are consistent with a world in which there is no spatial structure at all. In this case, that would mean that the probability of being a case or a control is unaffected by spatial location, i.e.&nbsp;generated from a model like this:</p>
+<p><span id="eq-no-structure"><span class="math display">\[
+Pr(z_i = 1 | x_i, y_i) = \alpha
+\tag{2}\]</span></span></p>
+<p>Where <span class="math inline">\(logit^{-1}(\alpha)\)</span> is the population-level probability that an individual is a case. To assess this, we want to set up a situation where we have the exact same number of cases as in our observed data, the locations of all individuals remain the same, and the geometry of our map stays the same, but only the relationship between spatial location and case vs.&nbsp;control status is broken. To do this, we can randomly permute the case/control <em>labels</em> on our individuals, generating a large number of <em>counterfactual</em> datasets in which the data are consistent with the model in <a href="#eq-no-structure">Equation&nbsp;2</a>. If they are, we can reject our (rather weak) null hypothesis that our data come from a world with no spatial structure.</p>
+<section id="permuting-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="permuting-the-data">Permuting the data</h2>
+<p>The function below does just that - it takes the input data and shuffles the values of the case/control outcome so that they no longer have a spatial pattern:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>randomizeOutcome <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    new_df <span class="ot">&lt;-</span> df</span>
@@ -387,13 +403,15 @@ Change the number of cells
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(new_df)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>When we plot the randomized data, we can see now that the strong clustering pattern at the beginning has been disrupted:</p>
+<p>When we plot the randomized data, we can see now that the strong clustering pattern at the beginning has been disrupted but that the proportion of individuals that are cases remains the same:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>random_df <span class="ot">&lt;-</span> <span class="fu">randomizeOutcome</span>(df)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(random_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> z)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>z)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(random_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> z)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>z) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Pr(z=1)="</span>, <span class="fu">round</span>(<span class="fu">sum</span>(random_df<span class="sc">$</span>z)<span class="sc">/</span><span class="fu">nrow</span>(random_df), <span class="dv">2</span>)))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And we can use the functions we defined earlier to aggregate up from the randomized data to grid cells, calculate Moran’s I, and plot:</p>
@@ -401,28 +419,29 @@ Change the number of cells
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">pointToGrid</span>(random_df)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg), <span class="dv">2</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pg) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Moran's I="</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    mi))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    data_mi, <span class="st">", Pr(z=1)="</span>, <span class="fu">round</span>(<span class="fu">sum</span>(random_df<span class="sc">$</span>z)<span class="sc">/</span><span class="fu">nrow</span>(random_df), <span class="dv">2</span>)))</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="permuting-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="permuting-the-data">Permuting the data</h2>
+</section>
+<section id="approximating-the-sampling-distribution-of-spatially-random-data" class="level2">
+<h2 class="anchored" data-anchor-id="approximating-the-sampling-distribution-of-spatially-random-data">Approximating the sampling distribution of spatially random data</h2>
 <p>Here’s where the rubber meets the road 🛣. We will repeat the randomization above a large number of times (careful, as the number of trials increases, so does the runtime), save the value of Moran’s I for each randomized dataset, and then compare the randomized values to the ‘true’ one.</p>
 </section>
 <section id="generate-some-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="generate-some-data-1">Generate Some Data</h2>
-<p>First, we’ll generate and visualize the input data again:</p>
+<p>First, we’ll generate and visualize the structured data again:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">clusteredOutcomeData</span>(<span class="fl">0.05</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">pointToGrid</span>(df)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>data_mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(pg<span class="sc">$</span>p, pg), <span class="dv">2</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pg) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Moran's I="</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    data_mi))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    data_mi, <span class="st">", Pr(z=1)="</span>, <span class="fu">round</span>(<span class="fu">sum</span>(df<span class="sc">$</span>z)<span class="sc">/</span><span class="fu">nrow</span>(df), <span class="dv">2</span>)))</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Now we’ll generate a large number of datasets which have the same number of cases and controls and where the points are all in the same locations, but the geographic distribution of case and control statuses is randomly distributed:</p>
@@ -463,7 +482,7 @@ Change the number of cells
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
