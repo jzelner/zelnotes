@@ -343,29 +343,29 @@
     "text": "Postdoctoral or research staff position modeling social inequity in infectious disease dynamics at the University of Michigan\n\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nComing to grips with complete spatial randomness\n\n\n\n\n\n\n\n\n\n\n\n\nMar 9, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nTaking a spatial perspective on the radon data\n\n\n\n\n\n\n\n\n\n\n\n\nMar 2, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nRe-creating the radon teaching example with rstanarm and tidybayes\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nMaking sense of spatial density estimation\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\nspatial\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nBuilding a simple SIR model with javascript and d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nVoronoi intensity mapping with d3\n\n\n\n\n\n\n\ntutorial\n\n\nmapping\n\n\nd3\n\n\njavascript\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nCodifying Tobler’s First Law using Locally Weighted Regression\n\n\n\n\n\n\n\ncode\n\n\ntutorial\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nJon Zelner\n\n\n\n\n\n\n  \n\n\n\n\nWhat I learned from teaching online.\n\n\nOr: How I learned to stop worrying and just plan my teaching and writing.\n\n\n\n\n\n\n\n\n\nJan 6, 2022\n\n\nJon Zelner\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/infection-inequity-postdoc.qmd/index.html",
-    "href": "posts/infection-inequity-postdoc.qmd/index.html",
+    "objectID": "posts/infection-inequity-postdoc/index.html",
+    "href": "posts/infection-inequity-postdoc/index.html",
     "title": "Postdoctoral or research staff position modeling social inequity in infectious disease dynamics at the University of Michigan",
     "section": "",
     "text": "The EpiBayes research group, led by Dr. Jon Zelner in the Dept. of Epidemiology and Center for Social Epidemiology and Population Health (CSEPH) at the University of Michigan School of Public Health, seeks a postdoctoral fellow or research staff member to work with us on a new, interdisciplinary, NIH-funded project focused on developing new ways of modeling infectious disease dynamics which account for the joint social and biological drivers of infection inequality.\nPlease contact Jon Zelner (jzelner@umich.edu) with any inquiries related to this position. If you ae interested in applying, please include a brief CV and a short description of your research interests and experiences."
   },
   {
-    "objectID": "posts/infection-inequity-postdoc.qmd/index.html#topic-areas",
-    "href": "posts/infection-inequity-postdoc.qmd/index.html#topic-areas",
+    "objectID": "posts/infection-inequity-postdoc/index.html#topic-areas",
+    "href": "posts/infection-inequity-postdoc/index.html#topic-areas",
     "title": "Postdoctoral or research staff position modeling social inequity in infectious disease dynamics at the University of Michigan",
     "section": "Topic Areas",
     "text": "Topic Areas\nPotential projects include (but are not limited to):\n\nDevelopment of theoretical models of the social dynamics of infectious disease transmission.\nSpatial statistical models fit to complex spatiotemporal datasets, and other opportunities.\nProjects will have a primary focus on respiratory infections including SARS-CoV-2 and seasonal and pandemic influenza, but other infectious disease systems characterized by significant socioeconomic inequality are also potential foci."
   },
   {
-    "objectID": "posts/infection-inequity-postdoc.qmd/index.html#research-and-mentorship-team",
-    "href": "posts/infection-inequity-postdoc.qmd/index.html#research-and-mentorship-team",
+    "objectID": "posts/infection-inequity-postdoc/index.html#research-and-mentorship-team",
+    "href": "posts/infection-inequity-postdoc/index.html#research-and-mentorship-team",
     "title": "Postdoctoral or research staff position modeling social inequity in infectious disease dynamics at the University of Michigan",
     "section": "Research and Mentorship Team",
     "text": "Research and Mentorship Team\nThe individual who fills this position will work directly with Dr. Zelner as well as key collaborators on the project at the University of Michigan School of Public Health including Dr. Marisa Eisenberg, Dr. Emily Martin, and Dr. Abram Wagner. This individual will also work with project partners Dr. Nigel Paneth at Michigan State University, Dr. Sanyu Mojola at Princeton University and Dr. Merlin Chowkwanyun at Columbia University’s Mailman School of Public Health.\nPlease contact Jon Zelner (jzelner@umich.edu) with any inquiries related to this position."
   },
   {
-    "objectID": "posts/infection-inequity-postdoc.qmd/index.html#responsibilities",
-    "href": "posts/infection-inequity-postdoc.qmd/index.html#responsibilities",
+    "objectID": "posts/infection-inequity-postdoc/index.html#responsibilities",
+    "href": "posts/infection-inequity-postdoc/index.html#responsibilities",
     "title": "Postdoctoral or research staff position modeling social inequity in infectious disease dynamics at the University of Michigan",
     "section": "Responsibilities",
     "text": "Responsibilities\n\nConduct collaborative research on the social determinants of inequity in infectious disease risks.\nDevelop novel quantitative models of infectious disease transmission that account for structural drivers of infection inequity.\nPublication of peer-reviewed manuscripts.\nEngagement with government and community stakeholders and partners.\nPresentation of research at local, national and international conferences and meetings."
