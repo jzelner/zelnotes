@@ -70,8 +70,8 @@
     "text": "Read:\nThe Ghost Map, (Preface, Chs 1 & 2, pp. vx-55) (Johnson 2007)\n\n\n\nWe will begin discussing one of the foundational stories of modern infectious disease epidemiology: The 1854 London Cholera Outbreak. We will focus first on understanding what this outbreak looked like: What happens when you get Cholera, how it is spread, who is most vulnerable, etc.\nWe will also begin making some connections between the historical example laid out in the book and the very real challenges that remain in combating Cholera today, and in communicating new scientific ideas to a not-always-receptive audience.\n\n\n\n\nLecture Slides\nZoom recording"
   },
   {
-    "objectID": "epid684/class_8_miasmas_mental_models copy.html",
-    "href": "epid684/class_8_miasmas_mental_models copy.html",
+    "objectID": "epid684/class_8_miasmas_mental_models.html",
+    "href": "epid684/class_8_miasmas_mental_models.html",
     "title": "Zelnotes",
     "section": "",
     "text": "Today’s class is focused on taking the ideas from The Ghost Map into the present.\n\n\n\n\nWe will read one paper that gets into direct lessons from the Broad Street Outbreak (Greenhalgh 2021), and a short opinion piece discussing the relationship between social disparities and spatial analysis (Chowkwanyun and Reed 2020). (Both are open-access and should be downloadable directly from the journal site.)\n\n\n\n\nWe will finish our exploration of the concept of smoothing with a hands-on tutorial of hotspot detection using kernel density estimation in two dimensions.\n\n\n\n\nSlides\nZoom recording"
@@ -112,11 +112,11 @@
     "text": "Destination Project Progress\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n02/14 (Tue)\nDestination presentations\n\n\n02/16 (Thu)\nIn-class project workshop"
   },
   {
-    "objectID": "epid684/index.html#deep-dive-understanding-the-impact-of-residential-segregation-on-disease-outcomes",
-    "href": "epid684/index.html#deep-dive-understanding-the-impact-of-residential-segregation-on-disease-outcomes",
+    "objectID": "epid684/index.html#clustering",
+    "href": "epid684/index.html#clustering",
     "title": "Zelnotes",
-    "section": "Deep Dive: Understanding the impact of residential segregation on disease outcomes",
-    "text": "Deep Dive: Understanding the impact of residential segregation on disease outcomes\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n02/21 (Tue)\nA step-by-step work-through of the radon example\n\n\n02/23 (Thu)\nCancelled due to 🥶 Ice Storm 🥶\n\n\n\nSpring break - no class! 02/28 (Tue) & 03/02 (Thu)\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/07 (Tue)\nMaking sense of clustered environmental exposures\n\n\n03/09 (Thu)\nConnecting residential segregation to inequitable disease outcomes"
+    "section": "Clustering!",
+    "text": "Clustering!\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n02/21 (Tue)\nA step-by-step work-through of the radon example\n\n\n02/23 (Thu)\nCancelled due to 🥶 Ice Storm 🥶\n\n\n\nSpring break - no class! 02/28 (Tue) & 03/02 (Thu)\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/07 (Tue)\nMaking sense of clustered environmental exposures\n\n\n03/09 (Thu)\nClustered environmental exposures cont’d"
   },
   {
     "objectID": "epid684/index.html#postcards-from-the-road",
@@ -126,18 +126,32 @@
     "text": "Postcards from the Road\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/14 (Tue)\nPostcards from the Road I\n\n\n03/16 (Thu)\nPostcards from the Road II\n\n\n03/21 (Tue)\nPostcards from the Road III\n\n\n03/23 (Thu)\nPostcards from the Road IV"
   },
   {
-    "objectID": "epid684/index.html#fallacies-how-to-get-things-wrong-with-spatial-data.",
-    "href": "epid684/index.html#fallacies-how-to-get-things-wrong-with-spatial-data.",
+    "objectID": "epid684/index.html#connecting-measures-of-risk-clustering-to-spatial-variation-in-health-outcomes",
+    "href": "epid684/index.html#connecting-measures-of-risk-clustering-to-spatial-variation-in-health-outcomes",
     "title": "Zelnotes",
-    "section": "Fallacies! How to get things wrong with spatial data.",
-    "text": "Fallacies! How to get things wrong with spatial data.\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/28 (Tue)\nEcological Fallacies\n\n\n03/30 (Thu)\nFrom continuous space to discrete places: The modifiable areal unit problem\n\n\n04/04 (Tue)\nFinal Product Workshop\n\n\n04/06 (Thu)\nTBD"
+    "section": "Connecting measures of risk clustering to spatial variation in health outcomes",
+    "text": "Connecting measures of risk clustering to spatial variation in health outcomes\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/28 (Tue)\nConnecting residential segregation to inequitable disease outcomes\n\n\n03/30 (Thu)\nLocal variation in segregation exposure and its impact on individual health outcomes\n\n\n04/04 (Tue)\nThinking theoretically about segregation and infectious disease inequity\n\n\n04/06 (Thu)\nConnecting local variation in vaccination behavior to population-level outbreak risks"
   },
   {
     "objectID": "epid684/index.html#coming-around-the-bend-the-present-and-future-of-spatial-epidemiology",
     "href": "epid684/index.html#coming-around-the-bend-the-present-and-future-of-spatial-epidemiology",
     "title": "Zelnotes",
     "section": "Coming around the bend: The present and future of spatial epidemiology",
-    "text": "Coming around the bend: The present and future of spatial epidemiology\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n04/11 (Tue)\nTBD\n\n\n04/13 (Thu)\nCharacterizing the impact of individual and collective mobility on disease risks\n\n\n04/18 (Tue)\nLast Day! Wrap-Up\n\n\n04/26 (Wed)\nFinal Product Submission"
+    "text": "Coming around the bend: The present and future of spatial epidemiology\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n04/11 (Tue)\nFinal Product Workshop\n\n\n04/13 (Thu)\nLooking forward to what’s next in spatial epidemiology\n\n\n04/18 (Tue)\nLast Day! Wrap-Up\n\n\n04/26 (Wed)\nFinal Product Submission"
+  },
+  {
+    "objectID": "epid684/local_clustering_vpd_risk.html",
+    "href": "epid684/local_clustering_vpd_risk.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "Please read (Masters et al. 2021), which an analysis of the impact of a change in vaccine exemption rules on the local spatial clustering of non-medical exemptions to vaccination in Michigan.\n\n\n\n\nThe reading for today’s class utlizes the local Moran’s I statistic, sometimes also referred to as a LISA statistic. During class, in addition to discussing the reading, we will complete this interactive tutorial about the calculation and interpretation of LISA statistics and local Moran’s I in particular."
+  },
+  {
+    "objectID": "epid684/local_segregation_disease_risk.html",
+    "href": "epid684/local_segregation_disease_risk.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "Please read (Kershaw et al. 2017), which is an analysis of longitudinal data looking specifically at the impact of changes in exposure to residential segregation on the cardiovascular health of Black Americans in several U.S. cities.\n\n\n\n\nTBD"
   },
   {
     "objectID": "epid684/meetings.html",
@@ -158,7 +172,7 @@
     "href": "epid684/postcards_presentations.html",
     "title": "Zelnotes",
     "section": "",
-    "text": "JZ Slides\n\n\nLaybohr Kamara I, Wang L, Guo Y, et al. Spatial–temporal heterogeneity and determinants of HIV prevalence in the Mano River Union countries. Infectious Diseases of Poverty. 2022;11(1):116. doi:10.1186/s40249-022-01036-1\n\n\n\nClarke P, George LK. The Role of the Built Environment in the Disablement Process. Am J Public Health. 2005;95(11):1933-1939. doi:10.2105/AJPH.2004.054494\n\n\n\n\n\n\nStopka, T. J., Amaravadi, H., Kaplan, A. R., Hoh, R., Bernson, D., Chui, K. K. H., Land, T., Walley, A. Y., LaRochelle, M. R., & Rose, A. J. (2019). Opioid overdose deaths and potentially inappropriate opioid prescribing practices (PIP): A Spatial Epidemiological Study. International Journal of Drug Policy, 68, 37–45. https://doi.org/10.1016/j.drugpo.2019.03.024\n\n\n\nFinlay J, Esposito M, Langa KM, Judd S, Clarke P. Cognability: An Ecological Theory of neighborhoods and cognitive aging. Social Science & Medicine. 2022;309:115220. doi:10.1016/j.socscimed.2022.115220\n\n\n\n\n\n\nFralick M, Nott C, Moggridge J, et al. Detection of Covid-19 Outbreaks Using Built Environment Testing for SARS-CoV-2. NEJM Evidence. Published online February 17, 2023. doi:10.1056/EVIDoa2200203\n\n\n\nKaufman, E. J., Morrison, C. N., Branas, C. C., & Wiebe, D. J. (2018). State firearm laws and interstate firearm deaths from homicide and suicide in the United States: a cross-sectional analysis of data by county. JAMA Internal Medicine, 178(5), 692-700. doi:10.1001/jamainternmed.2018.0190\n\n\n\n\n\n\nBharti N, Tatem AJ, Ferrari MJ, Grais RF, Djibo A, Grenfell BT. Explaining Seasonal Fluctuations of Measles in Niger Using Nighttime Lights Imagery. Science. 2011;334(6061):1424-1427. doi:10.1126/science.1210554\n\n\n\nTBD"
+    "text": "JZ Slides\n\n\nLaybohr Kamara I, Wang L, Guo Y, et al. Spatial–temporal heterogeneity and determinants of HIV prevalence in the Mano River Union countries. Infectious Diseases of Poverty. 2022;11(1):116. doi:10.1186/s40249-022-01036-1\n\n\n\nClarke P, George LK. The Role of the Built Environment in the Disablement Process. Am J Public Health. 2005;95(11):1933-1939. doi:10.2105/AJPH.2004.054494\n\n\n\n\n\n\nStopka, T. J., Amaravadi, H., Kaplan, A. R., Hoh, R., Bernson, D., Chui, K. K. H., Land, T., Walley, A. Y., LaRochelle, M. R., & Rose, A. J. (2019). Opioid overdose deaths and potentially inappropriate opioid prescribing practices (PIP): A Spatial Epidemiological Study. International Journal of Drug Policy, 68, 37–45. https://doi.org/10.1016/j.drugpo.2019.03.024\n\n\n\nFinlay J, Esposito M, Langa KM, Judd S, Clarke P. Cognability: An Ecological Theory of neighborhoods and cognitive aging. Social Science & Medicine. 2022;309:115220. doi:10.1016/j.socscimed.2022.115220\n\n\n\n\n\n\nFralick M, Nott C, Moggridge J, et al. Detection of Covid-19 Outbreaks Using Built Environment Testing for SARS-CoV-2. NEJM Evidence. Published online February 17, 2023. doi:10.1056/EVIDoa2200203\nSlides\n\n\n\nKaufman, E. J., Morrison, C. N., Branas, C. C., & Wiebe, D. J. (2018). State firearm laws and interstate firearm deaths from homicide and suicide in the United States: a cross-sectional analysis of data by county. JAMA Internal Medicine, 178(5), 692-700. doi:10.1001/jamainternmed.2018.0190\n\n\n\n\n\n\nBharti N, Tatem AJ, Ferrari MJ, Grais RF, Djibo A, Grenfell BT. Explaining Seasonal Fluctuations of Measles in Niger Using Nighttime Lights Imagery. Science. 2011;334(6061):1424-1427. doi:10.1126/science.1210554\n\n\n\nBrooks MM, Siegel SD, Curriero FC. Characterizing the spatial relationship between smoking status and tobacco retail exposure: Implications for policy development and evaluation. Health & Place. 2021;68:102530. doi:10.1016/j.healthplace.2021.102530"
   },
   {
     "objectID": "epid684/roadmap-project/assignment-destination.html",
@@ -200,7 +214,7 @@
     "href": "epid684/segregation_social_clustering.html",
     "title": "Zelnotes",
     "section": "",
-    "text": "Before class, please read:\nWoo H, Brigham EP, Allbright K, et al. Racial Segregation and Respiratory Outcomes among Urban Black Residents with and at Risk of Chronic Obstructive Pulmonary Disease. Am J Respir Crit Care Med. 2021;204(5):536-545. doi:10.1164/rccm.202009-3721OC 📄\nBiello KB, Kershaw T, Nelson R, Hogben M, Ickovics J, Niccolai L. Racial Residential Segregation and Rates of Gonorrhea in the United States, 2003–2007. Am J Public Health. 2012;102(7):1370-1377. doi:10.2105/AJPH.2011.300516 📄\n\n\nThese are useful references on the segregation measures employed in the assigned papers:\nMassey DS, Denton NA. The Dimensions of Residential Segregation. Social Forces. 1988;67(2):281-315. doi:10.2307/2579183\nU.S. Census Bureau reference on segregation measures\n\n\n\n\n\nWe will discuss the assigned readings and complete a hands-on activity focused on better understanding the similarities and differences between different measures of spatial segregation/clustering."
+    "text": "Before class, please read:\nWoo H, Brigham EP, Allbright K, et al. Racial Segregation and Respiratory Outcomes among Urban Black Residents with and at Risk of Chronic Obstructive Pulmonary Disease. Am J Respir Crit Care Med. 2021;204(5):536-545. doi:10.1164/rccm.202009-3721OC 📄\nBiello KB, Kershaw T, Nelson R, Hogben M, Ickovics J, Niccolai L. Racial Residential Segregation and Rates of Gonorrhea in the United States, 2003–2007. Am J Public Health. 2012;102(7):1370-1377. doi:10.2105/AJPH.2011.300516 📄\n\n\nThese are useful references on the segregation measures employed in the assigned papers:\nMassey DS, Denton NA. The Dimensions of Residential Segregation. Social Forces. 1988;67(2):281-315. doi:10.2307/2579183\nU.S. Census Bureau reference on segregation measures\n\n\n\n\n\nWe will discuss the assigned readings and complete a hands-on activity focused on better understanding the similarities and differences between different population-level measures of spatial segregation & clustering."
   },
   {
     "objectID": "epid684/session_10_hierarchical_models.html",
