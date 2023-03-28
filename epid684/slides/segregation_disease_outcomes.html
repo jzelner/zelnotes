@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
-  <title>What is spatial epidemiology?</title>
+  <title>Relating residential segregation to communicable and non-communicable disease outcomes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -348,7 +348,7 @@
   </style>
   <link href="../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
   <script src="../../site_libs/countdown-0.4.0/countdown.js"></script>
-<meta property="og:title" content="What is spatial epidemiology?">
+<meta property="og:title" content="Relating residential segregation to communicable and non-communicable disease outcomes">
 <meta property="og:site-name" content="Zelnotes">
 </head>
 <body class="quarto-light">
@@ -357,7 +357,7 @@
 
 
 <section id="meta-pagetitle" class="slide level2">
-<h2>What is spatial epidemiology?</h2>
+<h2>Relating residential segregation to communicable and non-communicable disease outcomes</h2>
 <div class="paddeddiv">
 <p style="font-size:0.5em; text-align: left;">
 EPID 684<br>
@@ -369,106 +369,182 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </div>
 <p><img data-src="../../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 400px; height: 100px; "></p>
 </section>
+<section id="theme-for-this-week" class="slide level2 imgslide">
+<h2>Theme for <span class="alert">this week</span></h2>
+
+<img src="../../images/chicago_area_segregation.jpeg" width="100%" class="r-stretch"><p>How do segregation <span class="alert">measures</span> map onto the <span class="alert">mechanisms</span> that drive health?</p>
+</section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li class="fragment"><p>What is this a class about?</p></li>
-<li class="fragment"><p>Introductions</p></li>
-<li class="fragment"><p>Review structure of the course and key assignments</p></li>
-<li class="fragment"><p>Discuss expectations/evaluation</p></li>
-<li class="fragment"><p>Questions</p></li>
+<li class="fragment"><p>Coming to grips with the measurement of segregation and its impact on the spatial and social distribution of health outcomes</p></li>
+<li class="fragment"><p>Segregation and COPD risk</p></li>
+<li class="fragment"><p>Segregation and STI risk</p></li>
 </ul>
 </section>
-<section id="who-am-i" class="slide level2">
-<h2>Who am I?</h2>
+<section id="segregation-and-gonhorrhea-risk-in-the-u.s." class="slide level2 imgslide">
+<h2>Segregation and Gonhorrhea Risk in the U.S.</h2>
+
+<img src="../../images/biello_segregation_measures.png" width="100%" class="r-stretch"><p>The many measures of segregation employed by Biello et al.</p>
+</section>
+<section id="what-is-the-isolation-index" class="slide level2">
+<h2>What is the <em>isolation</em> index?</h2>
+<p>Often defined as the proportion of contacts an individual in a <em>minority</em> group in a population has with members of that same group.</p>
+</section>
+<section id="sometimes-paired-with-the-interaction-index" class="slide level2">
+<h2>Sometimes paired with the <span class="alert">interaction</span> index</h2>
+<p>Interaction quantifies the proportion of <em>minority</em> group member’s contacts that occur with the <em>majority</em> group.</p>
+</section>
+<section id="how-do-you-measure-isolation" class="slide level2">
+<h2>How do you measure isolation?</h2>
+<p><span class="math display">\[
+Z = \sum_{i} \frac{a_{i}}{A} \frac{a_{i}}{n_i}
+\]</span></p>
+<p>Where:</p>
 <ul>
-<li class="fragment"><p>Associate Professor of Epidemiology at UM</p></li>
-<li class="fragment"><p>Core faculty member in the <em>Center for Social Epidemiology and Population Health</em> (CSEPH)</p></li>
-<li class="fragment"><p>Research group focused on social and spatial epidemiology of infectious disease (<a href="https://epibayes.io">epibayes.io</a>)</p></li>
-<li class="fragment"><p>PhD in Sociology and Public Policy from UM (2011)</p></li>
-<li class="fragment"><p>Also teach undergrad courses on the social history of infectious disease (PUBHLTH 405) and online spatial epid. courses (EPID 592/594)</p></li>
+<li class="fragment"><span class="math inline">\(a_i\)</span>: Number of minority members in area <span class="math inline">\(i\)</span></li>
+<li class="fragment"><span class="math inline">\(b_i\)</span>: Number of majority group members in area <span class="math inline">\(i\)</span></li>
+<li class="fragment"><span class="math inline">\(A\)</span> total number of minority group members</li>
+<li class="fragment"><span class="math inline">\(B\)</span> total number of majority group members, where <span class="math inline">\(A &lt; B\)</span>.</li>
+<li class="fragment"><span class="math inline">\(n_i\)</span> number individuals in area <span class="math inline">\(i\)</span>, i.e.&nbsp;<span class="math inline">\(a_i + b_i\)</span></li>
 </ul>
 </section>
-<section id="my-goals-for-this-course" class="slide level2">
-<h2>My goals for this course</h2>
-<p>By the end of this term you will:</p>
-<ol type="1">
-<li class="fragment"><p>Become effective in the application of spatial ideas to real-world problems in epidemiology.</p></li>
-<li class="fragment"><p>Be able to apply a spatial systems approach to public health.</p></li>
-<li class="fragment"><p>Learn how to select appropriate quantitative tools for addressing spatial public health problems.</p></li>
-<li class="fragment"><p>Understand how to use spatial analysis as a tool for advancing <span class="alert">health justice</span> and <span class="alert">equity</span>.</p></li>
-</ol>
-</section>
-<section id="the-final-epidemiological-frontier" class="slide level2">
-<h2>👨‍🚀: The final (epidemiological) frontier?</h2>
-
-<img data-src="../../images/uss_enterprise.jpg" class="r-stretch quarto-figure-center"><p class="caption">What makes spatial thinking and analysis different from non-spatial approaches?</p></section>
-<section id="maps-are-an-entrypoint-to-spatial-analysis" class="slide level2">
-<h2>Maps are an <span class="alert">entrypoint</span> to spatial analysis</h2>
-
-<img data-src="../../images/snow_cholera_map.jpg" class="r-stretch quarto-figure-center"><p class="caption">John Snow’s famous 1854 map of Cholera deaths around the Broad Street Pump in London</p></section>
-<section id="spatial-epidemiology-snuck-up-on-me" class="slide level2">
-<h2>Spatial epidemiology snuck up on me…</h2>
-
-<img data-src="../../images/lima_tb_incidence.png" class="r-stretch"></section>
-<section id="what-makes-an-epidemiological-problem-meaningfully-spatial" class="slide level2">
-<h2>What makes an epidemiological problem <span class="alert">meaningfully</span> spatial?</h2>
-<p><span class="alert">Spend a few minutes answering the questions in this <a href="https://docs.google.com/document/d/1X3EmUPFAsaaq0_DMhFrV0FDKM-RxKQjks8pMEZ0tpu4/edit?usp=sharing">google doc</a>:</span></p>
+<section id="what-is-unevvenness-or-dissimilarity" class="slide level2">
+<h2>What is <em>unevvenness</em> or <em>dissimilarity</em>?</h2>
 <ul>
-<li class="fragment"><p>What do you think the <span class="alert">value</span> of spatial analysis is for you in your academic or professional role (e.g.&nbsp;epidemiologist)?</p></li>
-<li class="fragment"><p>What topics or methods are you most interested in learning about?</p></li>
-<li class="fragment"><p>Any 🔥 burning questions 🔥 about the topic or class that I can answer?</p></li>
+<li>The proportion of members of a group that would have to move to a new location to end up with a <span class="alert">random distribution</span> of those individuals in space.</li>
+</ul>
+<ul>
+<li>Goes from 0 to 1.</li>
+</ul>
+</section>
+<section id="how-is-dissimilarity-measured" class="slide level2">
+<h2>How is <em>dissimilarity</em> measured?</h2>
+<p><span class="math display">\[
+D = \frac{1}{2} \sum_{i=1} \mid \frac{a_i}{A} - \frac{b_i}{B} \mid
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(a_i\)</span>: Number of minority members in area <span class="math inline">\(i\)</span></li>
+<li class="fragment"><span class="math inline">\(b_i\)</span>: Number of majority group members in area <span class="math inline">\(i\)</span></li>
+<li class="fragment"><span class="math inline">\(A\)</span> total number of minority group members</li>
+<li class="fragment"><span class="math inline">\(B\)</span> total number of majority group members, where <span class="math inline">\(A &lt; B\)</span>.</li>
+</ul>
+</section>
+<section id="what-are-some-other-dimensions-of-residential-segregation" class="slide level2 smaller scrollable">
+<h2>What are some <span class="alert">other dimensions</span> of residential segregation?</h2>
+<p>Some canonical definitions from <span class="citation" data-cites="massey1988">(<a href="#/references" role="doc-biblioref" onclick="">Massey and Denton 1988</a>)</span>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt class="fragment">Evenness</dt>
+<dd class="fragment">
+“Minority members may be distributed so that they are overrepresented in some areas and underrepresented in others, varying on the characteristic of <span class="alert">evenness</span>.”
+</dd>
+<dt class="fragment">Isolation/Exposure</dt>
+<dd class="fragment">
+“[Minority group members] may be distributed so that their exposure to majority members is limited by virtue of rarely <span class="alert">sharing a neighborhood</span> with them.”
+</dd>
+<dt class="fragment">Concentration</dt>
+<dd class="fragment">
+“They may be spatially concentrated <span class="alert">within a very small area</span>, occupying less physical space than majority members.”
+</dd>
+</dl>
+</div><div class="column" style="width:50%;">
+<dl>
+<dt class="fragment">Centralization</dt>
+<dd class="fragment">
+<p>“They may be spatially centralized, <span class="alert">congregating around the urban core</span>, and occupying a more central location than the majority.”</p>
+</dd>
+<dt class="fragment">Clustering</dt>
+<dd class="fragment">
+<p>“[A]reas of minority settlement may be tightly clustered to form <span class="alert">one large contiguous enclave</span>, or be scattered widely around the urban area.”</p>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="grappling-with-the-complexity-of-social-spatial-relationships" class="slide level2">
+<h2>Grappling with the complexity of social-spatial relationships</h2>
+<ul>
+<li class="fragment"><p>The spatial expression of social inequality is complex.</p></li>
+<li class="fragment"><p>Our measures are necessarily <span class="alert">reductive</span>, and that’s OK…</p></li>
+<li class="fragment"><p><span class="alert">IF and only IF</span> (⟺) we use these measures carefully without losing sight of the mechanisms and outcomes we care about.</p></li>
+<li class="fragment"><p>In pairs: In <a href="https://docs.google.com/document/d/1Dyt-NGkGny9bgiRxGzEZdP_vzhqSsDIplD-C5Axjsyk/edit?usp=sharing">this google doc</a>, brainstorm 🧠 ⛈️ some ideas about what dimensions of inequity these different measures capture.</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_eca607a6" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_92afe9bb" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="my-take-relationships-are-at-the-heart-of-spatial-analysis" class="slide level2">
-<h2>My take: <span class="alert">Relationships</span> are at the heart of spatial analysis</h2>
+<section id="comparing-segregation-and-clustering-metrics" class="slide level2">
+<h2>Comparing Segregation and Clustering Metrics</h2>
+
+<img data-src="../../images/vaxclustering.png" class="r-stretch quarto-figure-center"><p class="caption">What time is it? It’s hands-on time!</p><p><a href="https://sph-umich.shinyapps.io/spatial_segregation">https://sph-umich.shinyapps.io/spatial_segregation/</a></p>
+</section>
+<section id="thoughts-on-the-readings" class="slide level2">
+<h2>Thoughts on the readings?</h2>
 <ul>
-<li class="fragment"><p><span class="alert">Distance</span> is a stand-in for all the things that often make near things more similar and far things less similar.</p></li>
-<li class="fragment"><p>For example: environmental exposures, social and political factors, patterns of movement, built environment.</p></li>
-<li class="fragment"><p>Shares a lot of ideas with longitudinal and network analysis.</p></li>
-<li class="fragment"><p>Necessarily highly <span class="alert">interdisciplinary</span> and open to a wide range of approaches.</p></li>
+<li class="fragment"><p>Take 2m on your own to take a look back at the readings.</p></li>
+<li class="fragment"><p>What struck you as interesting/confusing/frustrating?</p></li>
+<li class="fragment"><p>What gaps do you see in the relationship between the segregation measures and disease outcomes assessed?</p></li>
 </ul>
 </section>
-<section id="spatial-relationships-are-often-physical-reflections-of-social-ones" class="slide level2">
-<h2>Spatial relationships are often physical reflections of social ones</h2>
-
-<img data-src="../../images/rich_vaccination_segregation_philly.png" class="r-stretch quarto-figure-center"><p class="caption">Relationships between education, racial privilege and consistently low COVID-19 vaccination rates in Philadelphia neighborhoods. From <span class="citation" data-cites="rich2022">Rich et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
-<section id="our-key-focus-in-this-class-is-on-how-spatialized-processes-generate-spatial-patterns" class="slide level2">
-<h2>Our key focus in this class is on how spatialized <span class="alert">processes</span> generate spatial patterns</h2>
-
-<img data-src="../../images/vulnerability_racism_flow.png" class="r-stretch quarto-figure-center"><p class="caption">Flow diagram of relationship between residential segregation and infection from <span class="citation" data-cites="zelner2022">Zelner et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
-<section id="thats-great-but-what-are-we-actually-going-to-do-this-term" class="slide level2">
-<h2>That’s great, but what are we actually going to <em>do</em> this term?</h2>
+<section id="what-might-not-sit-right-about-this-statement" class="slide level2">
+<h2>What might not sit right about this statement?</h2>
+<blockquote>
+<p>“Isolation may increase the risk for gonorrhea through its effect on social factors as well. Social norms — which also can be transmitted — have been shown to be associated with sexual risk among adolescents and among Black women. In isolated communities, within group norms for risky sexual behavior might be strengthened.” <span class="citation" data-cites="biello2012">(<a href="#/references" role="doc-biblioref" onclick="">Biello et al. 2012</a>)</span></p>
+</blockquote>
+</section>
+<section id="what-are-the-characteristics-of-copd" class="slide level2">
+<h2>What are the characteristics of <span class="alert">COPD</span>?</h2>
 <ul>
-<li class="fragment"><a href="https://zelnotes.io/teaching/EPID684/Winter+2023+Syllabus">Syllabus</a></li>
+<li class="fragment">Chronic inflammation of airways and alveoli.</li>
+<li class="fragment">Characterized by chronic cough and sputum production.</li>
+<li class="fragment">Severity of cough and sputum associated with worse COPD outcomes.</li>
+<li class="fragment">Increased risk of respiratory infection.</li>
+</ul>
+</section>
+<section id="how-does-segregation-impact-copd-disparities" class="slide level2 imgslide">
+<h2>How does segregation impact <span class="alert">COPD</span> disparities?</h2>
+
+<img data-src="../../images/woo_copd_dag.png" class="r-stretch quarto-figure-center"><p class="caption">Relationships between segregation and COPD from <span class="citation" data-cites="woo2021">Woo et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p></section>
+<section id="why-is-mediation-analysis-useful-for-understanding-impact-of-segregation-on-health" class="slide level2">
+<h2>Why is <span class="alert">mediation</span> analysis useful for understanding impact of segregation on health?</h2>
+
+<img src="../../images/mediation_diagram.png" class="r-stretch"><p><span class="fragment">Segregation is a construct reflecting a complex mix of social and environmental factors.</span></p>
+</section>
+<section id="what-does-a-mediation-model-measure" class="slide level2">
+<h2>What does a mediation model <span class="alert">measure</span>?</h2>
+<ul>
+<li class="fragment"><p><span class="alert">Total effect:</span> Relationship between <em>distal</em> factor and outcome including <span class="alert">direct</span> and <span class="alert">indirect</span> effects.</p></li>
+<li class="fragment"><p><span class="alert">Direct effect:</span> Relationship between <em>distal</em> factor and outcome adjusted for <span class="alert">mediator</span>.</p></li>
+<li class="fragment"><p><span class="alert">Indirect effect:</span> Impact of distal factor <span class="alert">via</span> a more <em>proximal</em> one.</p></li>
+<li class="fragment"><p>In an <span class="alert">additive</span> model: indirect = total - direct</p></li>
 </ul>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next Time</h2>
-<ul>
-<li class="fragment">Digging into some of the <a href="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+1/Sessions/2.+Maps+and+More">key ideas and tools of spatial epidemiology</a> in more detail.</li>
-</ul>
 </section>
-<section id="references" class="title-slide slide level1 smaller scrollable">
-<h1>References</h1>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 <div class="footer footer-default">
 
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-rich2022" class="csl-entry" role="doc-biblioentry">
-Rich, John A., Edward J. Miech, Usama Bilal, and Theodore J. Corbin. 2022. <span>“How Education and Racial Segregation Intersect in Neighborhoods with Persistently Low <span>COVID-19</span> Vaccination Rates in <span>Philadelphia</span>.”</span> <em>BMC Public Health</em> 22 (1): 1–10. <a href="https://doi.org/10.1186/s12889-022-13414-3">https://doi.org/10.1186/s12889-022-13414-3</a>.
+<div id="ref-biello2012" class="csl-entry" role="doc-biblioentry">
+Biello, Katie B, Trace Kershaw, Robert Nelson, Matthew Hogben, Jeannette Ickovics, and Linda Niccolai. 2012. <span>“Racial <span>Residential Segregation</span> and <span>Rates</span> of <span>Gonorrhea</span> in the <span>United States</span>, 2003.”</span> <em>American Journal of Public Health</em> 102 (7): 1370–77. <a href="https://doi.org/10.2105/AJPH.2011.300516">https://doi.org/10.2105/AJPH.2011.300516</a>.
 </div>
-<div id="ref-zelner2022" class="csl-entry" role="doc-biblioentry">
-Zelner, Jon, Nina B. Masters, Ramya Naraharisetti, Sanyu A. Mojola, Merlin Chowkwanyun, and Ryan Malosh. 2022. <span>“There Are No Equal Opportunity Infectors: <span>Epidemiological</span> Modelers Must Rethink Our Approach to Inequality in Infection Risk.”</span> <em>PLOS Computational Biology</em> 18 (2): e1009795. <a href="https://doi.org/10.1371/journal.pcbi.1009795">https://doi.org/10.1371/journal.pcbi.1009795</a>.
+<div id="ref-massey1988" class="csl-entry" role="doc-biblioentry">
+Massey, Douglas S., and Nancy A. Denton. 1988. <span>“The <span>Dimensions</span> of <span>Residential Segregation</span>.”</span> <em>Social Forces</em> 67 (2): 281–315. <a href="https://doi.org/10.2307/2579183">https://doi.org/10.2307/2579183</a>.
+</div>
+<div id="ref-woo2021" class="csl-entry" role="doc-biblioentry">
+Woo, Han, Emily P. Brigham, Kassandra Allbright, Chinedu Ejike, Panagis Galiatsatos, Miranda R. Jones, Gabriela R. Oates, et al. 2021. <span>“Racial <span>Segregation</span> and <span>Respiratory Outcomes</span> Among <span>Urban Black Residents</span> with and at <span>Risk</span> of <span>Chronic Obstructive Pulmonary Disease</span>.”</span> <em>American Journal of Respiratory and Critical Care Medicine</em> 204 (5): 536–45. <a href="https://doi.org/10.1164/rccm.202009-3721OC">https://doi.org/10.1164/rccm.202009-3721OC</a>.
 </div>
 </div>
 </section>
