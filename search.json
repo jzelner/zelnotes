@@ -130,14 +130,14 @@
     "href": "epid684/index.html#connecting-measures-of-risk-clustering-to-spatial-variation-in-health-outcomes",
     "title": "Zelnotes",
     "section": "Connecting measures of risk clustering to spatial variation in health outcomes",
-    "text": "Connecting measures of risk clustering to spatial variation in health outcomes\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/28 (Tue)\nConnecting residential segregation to inequitable disease outcomes\n\n\n03/30 (Thu)\nLocal variation in segregation exposure and its impact on individual health outcomes\n\n\n04/04 (Tue)\nThinking theoretically about segregation and infectious disease inequity\n\n\n04/06 (Thu)\nConnecting local variation in vaccination behavior to population-level outbreak risks"
+    "text": "Connecting measures of risk clustering to spatial variation in health outcomes\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n03/28 (Tue)\nConnecting residential segregation to inequitable disease outcomes\n\n\n03/30 (Thu)\nProject Workshop\n\n\n04/04 (Tue)\nLocal variation in segregation exposure and its impact on individual health outcomes\n\n\n04/06 (Thu)\nSegregation, structural racism, and infection"
   },
   {
     "objectID": "epid684/index.html#coming-around-the-bend-the-present-and-future-of-spatial-epidemiology",
     "href": "epid684/index.html#coming-around-the-bend-the-present-and-future-of-spatial-epidemiology",
     "title": "Zelnotes",
     "section": "Coming around the bend: The present and future of spatial epidemiology",
-    "text": "Coming around the bend: The present and future of spatial epidemiology\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n04/11 (Tue)\nFinal Product Workshop\n\n\n04/13 (Thu)\nLooking forward to what’s next in spatial epidemiology\n\n\n04/18 (Tue)\nLast Day! Wrap-Up\n\n\n04/26 (Wed)\nFinal Product Submission"
+    "text": "Coming around the bend: The present and future of spatial epidemiology\n\n\n\n\n\n\n\nDate\nTopic\n\n\n\n\n04/11 (Tue)\nFinal Product Workshop\n\n\n04/13 (Thu)\nConnecting local variation in vaccination behavior to population-level outbreak risks\n\n\n04/18 (Tue)\nLast Day! Wrap-Up\n\n\n04/26 (Wed)\nFinal Product Submission"
   },
   {
     "objectID": "epid684/local_clustering_vpd_risk.html",
@@ -151,7 +151,7 @@
     "href": "epid684/local_segregation_disease_risk.html",
     "title": "Zelnotes",
     "section": "",
-    "text": "Please read (Kershaw et al. 2017), which is an analysis of longitudinal data looking specifically at the impact of changes in exposure to residential segregation on the cardiovascular health of Black Americans in several U.S. cities.\n\n\n\n\nTBD"
+    "text": "Please read (Kershaw et al. 2017), which is an analysis of longitudinal data looking specifically at the impact of changes in exposure to residential segregation on the cardiovascular health of Black Americans in several U.S. cities.\n\n\n\n\nWe will discuss the reading by Kershaw et al. (2017) as well as revisiting Biello et al. (2012) and Woo et al. (2021) from a few class sessions ago.\n\n\n\nSlides"
   },
   {
     "objectID": "epid684/meetings.html",
@@ -208,6 +208,13 @@
     "title": "Zelnotes",
     "section": "",
     "text": "Roadmap Project\nThroughout the term, you will complete a project in which you identify a problem of interest to you in spatial epidemiology and plot a path towards solving it. You will build and receive feedback on this project from me and your peers over the course of the term. In keeping with the spatial theme of the course, we will call this the Roadmap project because you will be asked to chart your own path from a spatial problem to a solution to the problem you have identified.\nThe nature of the problem and solution are up to you, but we will all approach it with the objective of being able to apply all of the following skills by the time you complete the project.\nAlthough a lot of the work on this project will be done outside of our course meetings, we will devote several class sessions to working on and presenting materials developed through completing the steps of this project. The stages of this project will address all of the course goals, with a particular focus on the fourth one - focused on integrating different sources of information on a spatial problem in epidemiology - via the final product of this semester-long project.\n\nProject Stages\nYou will build towards the final project in stages over the course of the term through the following four sub-assignments:\n\nWhat is the origin?\nWhat is the destination?\nPostcard from the road\nFinal Product\n\n\n\nAssessment and Grading\nYou will be evaluating your own progress and the match between what you were able to accomplish and your goals at the outset. The point of having this be self-assessed is to make sure you pick something that is of interest and use to you, not what you imagine what I want from you. Please spend some time thinking about how this project could best address your short- and long-term academic and career goals.\nThis could be anything from learning a new analytical skill, deepening your knowledge about a particular epidemiological topic or set of policy/practice tools.\nI encourage you to think about other uses for the final product of this semester-long project: How could you use it to lay the foundation for a fellowship application, create a portfolio to showcase your work to potential employers, or do anything else that is important to you?\nFor example, your final product could include any of the following:\n\nA podcast episode introducing your topic and some of your ideas/research on it.\nA spatial data visualization with accompanying explanation; can be presented in the form of a set of social media posts, a blog entry, or as a printed document.\nA policy white paper meant to inform public and political debate around issues related to your problem of choice.\nA pamphlet or some other type of public health communication meant to be shared in practice setting, e.g. in a clinic, during outreach, etc.\n\nIt could also very well be something not on this list - you just need to justify why you are taking the approach you choose."
+  },
+  {
+    "objectID": "epid684/segregation_infection.html",
+    "href": "epid684/segregation_infection.html",
+    "title": "Zelnotes",
+    "section": "",
+    "text": "Adkins-Jackson PB, Chantarat T, Bailey ZD, Ponce NA. Measuring Structural Racism: A Guide for Epidemiologists and Other Health Researchers. American Journal of Epidemiology. Published online September 25, 2021:kwab239. doi:10.1093/aje/kwab239\nAcevedo-Garcia D. Residential segregation and the epidemiology of infectious diseases. Social Science & Medicine. 2000;51(8):1143-1161. doi:10.1016/S0277-9536(00)00016-2\n\n\n\n\nIn addition to discussing the readings, we will work through a hands-on activity where we can explore the ideas in Acevedo-Garcia (2000) using an infectious disease transmission model."
   },
   {
     "objectID": "epid684/segregation_social_clustering.html",
