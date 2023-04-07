@@ -107,25 +107,25 @@ div.csl-indent {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<script src="../../css/quarto-nav/quarto-nav.js"></script>
+<script src="../../css/quarto-nav/headroom.min.js"></script>
+<script src="../../css/clipboard/clipboard.min.js"></script>
+<script src="../../css/quarto-search/autocomplete.umd.js"></script>
+<script src="../../css/quarto-search/fuse.min.js"></script>
+<script src="../../css/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../assets/epibayeslogo_cropped.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../css/quarto-html/quarto.js"></script>
+<script src="../../css/quarto-html/popper.min.js"></script>
+<script src="../../css/quarto-html/tippy.umd.min.js"></script>
+<script src="../../css/quarto-html/anchor.min.js"></script>
+<link href="../../css/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../css/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../css/bootstrap/bootstrap.min.js"></script>
+<link href="../../css/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../css/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1057,12 +1057,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction </span></span>
 <span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>In this tutorial, we are going to replicate the analysis of household-level variation in radon exposure originally presented in @gelman2006 (which is actually a tutorial version of @price1996). Our goal is to run the models described in the paper using regression models from base <span class="in">`R`</span> as well as a Bayesian hierarchical model from the <span class="in">`rstanarm`</span> package. Finally, we will reproduce Figures 1 &amp; 2 from the original paper using <span class="in">`ggplot2`</span>:</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Original Fig 1 from [@gelman2006]</span><span class="co">](fig1.png)</span></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Original Fig 2 from [@gelman2006]</span><span class="co">](fig2.png)</span>{width=50%}  </span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>In this tutorial, we are going to replicate the analysis of household-level variation in radon exposure originally presented in @gelman2006 (which is actually a tutorial version of @price1996). Our goal is to run the models described in the paper using regression models from base <span class="in">`R`</span> as well as a Bayesian hierarchical model from the <span class="in">`rstanarm`</span> package. Finally, we will reproduce Figures 1 &amp; 2 from the original paper using <span class="in">`ggplot2`</span>:</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Original Fig 1 from [@gelman2006]</span><span class="co">](fig1.png)</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Original Fig 2 from [@gelman2006]</span><span class="co">](fig2.png)</span>{width=50%}  </span>
 <span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preparing to run the examples</span></span>
 <span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a></span>

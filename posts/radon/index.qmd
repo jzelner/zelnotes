@@ -16,12 +16,12 @@ zip("radon.zip", files = c("index.qmd", "fig1.png", "fig2.png", "refs.bib", "rad
 
 # Introduction 
 
+
 In this tutorial, we are going to replicate the analysis of household-level variation in radon exposure originally presented in @gelman2006 (which is actually a tutorial version of @price1996). Our goal is to run the models described in the paper using regression models from base `R` as well as a Bayesian hierarchical model from the `rstanarm` package. Finally, we will reproduce Figures 1 & 2 from the original paper using `ggplot2`:
 
 ![Original Fig 1 from [@gelman2006]](fig1.png)
 
 ![Original Fig 2 from [@gelman2006]](fig2.png){width=50%}  
-
 
 ## Preparing to run the examples
 
