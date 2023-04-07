@@ -296,7 +296,7 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 <li><p><span class="citation" data-cites="zelner2022">(<a href="#ref-zelner2022" role="doc-biblioref">Zelner et al. 2022</a>)</span> and <span class="citation" data-cites="abuelezam2023">(<a href="#ref-abuelezam2023" role="doc-biblioref">Abuelezam et al. 2023</a>)</span> attempt to articulate frameworks for doing a better job of using epidemic models to capture the dynamics of inequity in infection and disease outcomes.</p></li>
 <li><p><span class="citation" data-cites="ma2021">(<a href="#ref-ma2021" role="doc-biblioref">Ma et al. 2021</a>)</span> is an excellent data-driven exercise in modeling the linkages between race/ethnicity, essential work and inequity in disease outcomes.</p></li>
 <li><p><span class="citation" data-cites="nande2021">(<a href="#ref-nande2021" role="doc-biblioref">Nande et al. 2021</a>)</span> is a data-informed simulation model of the potential impact of ending the CDC eviction moratorium on population-wide infection risks and group-specific disparities.</p></li>
-<li><p>This is a <a href="https://sph-umich.shinyapps.io/segregation-transmission/">hands-on example</a> we put together that translates the framework in <span class="citation" data-cites="acevedo-garcia2000">(<a href="#ref-acevedo-garcia2000" role="doc-biblioref"><strong>acevedo-garcia2000?</strong></a>)</span> into a simple dynamic model of the relationship between residential segregation and infection.</p></li>
+<li><p>This is a <a href="https://sph-umich.shinyapps.io/segregation-transmission/">hands-on example</a> we put together that translates the framework in <span class="citation" data-cites="acevedo-garcia2000">(<a href="#ref-acevedo-garcia2000" role="doc-biblioref">Acevedo-Garcia 2000</a>)</span> into a simple dynamic model of the relationship between residential segregation and infection.</p></li>
 </ul>
 </section>
 <section id="methodological-challenges" class="level3">
@@ -306,6 +306,7 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 <li><p><span class="citation" data-cites="trangucci2022">(<a href="#ref-trangucci2022" role="doc-biblioref">Trangucci, Chen, and Zelner 2022</a>)</span> presents a computationally efficient Bayesian method for accounting for non-random missingness of race-ethnicity data without making restrictive assumptions and/or using surname coding.</p></li>
 <li><p>This is a <a href="https://sph-umich.shinyapps.io/spatial_segregation/">hands-on comparison</a> of different metrics of spatial segregation applied to the same simulated dataset.</p></li>
 </ul>
+<p>(If you’d like a bibtex file w/these resources, you can find it <a href="refs.bib">here</a>.)</p>
 </section>
 </section>
 <section id="references" class="level2">
@@ -320,6 +321,9 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-abuelezam2023" class="csl-entry" role="doc-biblioentry">
 Abuelezam, Nadia N., Isaacson Michel, Brandon DL Marshall, and Sandro Galea. 2023. <span>“Accounting for Historical Injustices in Mathematical Models of Infectious Disease Transmission: <span>An</span> Analytic Overview.”</span> <em>Epidemics</em>, March, 100679. <a href="https://doi.org/10.1016/j.epidem.2023.100679">https://doi.org/10.1016/j.epidem.2023.100679</a>.
+</div>
+<div id="ref-acevedo-garcia2000" class="csl-entry" role="doc-biblioentry">
+Acevedo-Garcia, Dolores. 2000. <span>“Residential Segregation and the Epidemiology of Infectious Diseases.”</span> <em>Social Science &amp; Medicine</em> 51 (8): 1143–61. <a href="https://doi.org/10.1016/S0277-9536(00)00016-2">https://doi.org/10.1016/S0277-9536(00)00016-2</a>.
 </div>
 <div id="ref-adkins-jackson2021" class="csl-entry" role="doc-biblioentry">
 Adkins-Jackson, Paris B, Tongtan Chantarat, Zinzi D Bailey, and Ninez A Ponce. 2021. <span>“Measuring <span>Structural Racism</span>: <span>A Guide</span> for <span>Epidemiologists</span> and <span>Other Health Researchers</span>.”</span> <em>American Journal of Epidemiology</em>, September, kwab239. <a href="https://doi.org/10.1093/aje/kwab239">https://doi.org/10.1093/aje/kwab239</a>.
@@ -678,33 +682,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## A brief (and incomplete!) annotated bibliography of resources on modeling acute infection inequities</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Structural Racism and Infection</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@adkins-jackson2021</span><span class="co">]</span> provides a very useful guide for thinking about how epidemiological models and modelers should account for the impacts of racism on disease outcomes. This piece has specific recommendations for analysts around model construction and accounting for multiple, intersecting identities.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@noppert2022</span><span class="co">]</span> articulate a framework based on fundamental cause theory for accounting for and addressing inequities in infection risk. <span class="co">[</span><span class="ot">@zelner2023</span><span class="co">]</span> is an invited commentary that builds on some of the ideas in the original piece.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@chowkwanyun2020</span><span class="co">]</span> is an excellent piece from early in the COVID-19 pandemic which highlights many of the challenges and pitfalls associated with a focus on racial health disparities without adequate attention to their material causes.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modeling for Equity</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2022</span><span class="co">]</span> and <span class="co">[</span><span class="ot">@abuelezam2023</span><span class="co">]</span> attempt to articulate frameworks for doing a better job of using epidemic models to capture the dynamics of inequity in infection and disease outcomes.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@ma2021</span><span class="co">]</span> is an excellent data-driven exercise in modeling the linkages between race/ethnicity, essential work and inequity in disease outcomes.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@nande2021</span><span class="co">]</span> is a data-informed simulation model of the potential impact of ending the CDC eviction moratorium on population-wide infection risks and group-specific disparities. </span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on example</span><span class="co">](https://sph-umich.shinyapps.io/segregation-transmission/)</span> we put together that translates the framework in <span class="co">[</span><span class="ot">@acevedo-garcia2000</span><span class="co">]</span> into a simple dynamic model of the relationship between residential segregation and infection.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Methodological challenges</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2020</span><span class="co">]</span> is an analysis examining the relative impacts of case-fatality vs. incidence of infection in inequities in COVID-19 mortality in Michigan. </span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@trangucci2022</span><span class="co">]</span> presents a computationally efficient Bayesian method for accounting for non-random missingness of race-ethnicity data without making restrictive assumptions and/or using surname coding.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on comparison</span><span class="co">](https://sph-umich.shinyapps.io/spatial_segregation/)</span> of different metrics of spatial segregation applied to the same simulated dataset.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Structural Racism and Infection</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@adkins-jackson2021</span><span class="co">]</span> provides a very useful guide for thinking about how epidemiological models and modelers should account for the impacts of racism on disease outcomes. This piece has specific recommendations for analysts around model construction and accounting for multiple, intersecting identities.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@noppert2022</span><span class="co">]</span> articulate a framework based on fundamental cause theory for accounting for and addressing inequities in infection risk. <span class="co">[</span><span class="ot">@zelner2023</span><span class="co">]</span> is an invited commentary that builds on some of the ideas in the original piece.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@chowkwanyun2020</span><span class="co">]</span> is an excellent piece from early in the COVID-19 pandemic which highlights many of the challenges and pitfalls associated with a focus on racial health disparities without adequate attention to their material causes.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modeling for Equity</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2022</span><span class="co">]</span> and <span class="co">[</span><span class="ot">@abuelezam2023</span><span class="co">]</span> attempt to articulate frameworks for doing a better job of using epidemic models to capture the dynamics of inequity in infection and disease outcomes.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@ma2021</span><span class="co">]</span> is an excellent data-driven exercise in modeling the linkages between race/ethnicity, essential work and inequity in disease outcomes.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@nande2021</span><span class="co">]</span> is a data-informed simulation model of the potential impact of ending the CDC eviction moratorium on population-wide infection risks and group-specific disparities. </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on example</span><span class="co">](https://sph-umich.shinyapps.io/segregation-transmission/)</span> we put together that translates the framework in <span class="co">[</span><span class="ot">@acevedo-garcia2000</span><span class="co">]</span> into a simple dynamic model of the relationship between residential segregation and infection.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Methodological challenges</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2020</span><span class="co">]</span> is an analysis examining the relative impacts of case-fatality vs. incidence of infection in inequities in COVID-19 mortality in Michigan. </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@trangucci2022</span><span class="co">]</span> presents a computationally efficient Bayesian method for accounting for non-random missingness of race-ethnicity data without making restrictive assumptions and/or using surname coding.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on comparison</span><span class="co">](https://sph-umich.shinyapps.io/spatial_segregation/)</span> of different metrics of spatial segregation applied to the same simulated dataset.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>(If you'd like a bibtex file w/these resources, you can find it <span class="co">[</span><span class="ot">here</span><span class="co">](refs.bib)</span>.)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
