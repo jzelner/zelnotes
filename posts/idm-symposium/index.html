@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jon Zelner">
+<meta name="dcterms.date" content="2023-05-22">
+
+<title>Zelnotes - A crash course on modeling infection inequities</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../css/quarto-nav/quarto-nav.js"></script>
+<script src="../../css/quarto-nav/headroom.min.js"></script>
+<script src="../../css/clipboard/clipboard.min.js"></script>
+<script src="../../css/quarto-search/autocomplete.umd.js"></script>
+<script src="../../css/quarto-search/fuse.min.js"></script>
+<script src="../../css/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/epibayeslogo_cropped.png" rel="icon" type="image/png">
+<script src="../../css/quarto-html/quarto.js"></script>
+<script src="../../css/quarto-html/popper.min.js"></script>
+<script src="../../css/quarto-html/tippy.umd.min.js"></script>
+<script src="../../css/quarto-html/anchor.min.js"></script>
+<link href="../../css/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../css/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../css/bootstrap/bootstrap.min.js"></script>
+<link href="../../css/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../css/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4J38PX7FF5"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Zelnotes - A crash course on modeling infection inequities">
+<meta property="og:description" content="This talk is an effort to distill some of the challenges associated with making infectious disease models more useful for accounting for infection inequity.">
+<meta property="og:site-name" content="Zelnotes">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">A crash course on modeling infection inequities</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../assets/epibayeslogo_cropped.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Zelnotes</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Courses</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../epid594/index.html" class="sidebar-item-text sidebar-link">Key Concepts in Spatial Analysis (EPID 594)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../epid684/index.html" class="sidebar-item-text sidebar-link">Spatial and Contextual Epidemiology (EPID 684)</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/index.html" class="sidebar-item-text sidebar-link">Blog</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-brief-and-incomplete-annotated-bibliography-of-resources-on-modeling-acute-infection-inequities" id="toc-a-brief-and-incomplete-annotated-bibliography-of-resources-on-modeling-acute-infection-inequities" class="nav-link active" data-scroll-target="#a-brief-and-incomplete-annotated-bibliography-of-resources-on-modeling-acute-infection-inequities">A brief (and incomplete!) annotated bibliography of resources on modeling acute infection inequities</a>
+  <ul class="collapse">
+  <li><a href="#structural-racism-and-infection" id="toc-structural-racism-and-infection" class="nav-link" data-scroll-target="#structural-racism-and-infection">Structural Racism and Infection</a></li>
+  <li><a href="#modeling-for-equity" id="toc-modeling-for-equity" class="nav-link" data-scroll-target="#modeling-for-equity">Modeling for Equity</a></li>
+  <li><a href="#methodological-challenges" id="toc-methodological-challenges" class="nav-link" data-scroll-target="#methodological-challenges">Methodological challenges</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">A crash course on modeling infection inequities</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">talk</div>
+    <div class="quarto-category">inequity</div>
+    <div class="quarto-category">COVID-19</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jon Zelner </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 22, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This talk is an effort to distill some of the challenges associated with making infectious disease models more useful for accounting for infection inequity. The goal is to briefly highlight why I think we didn’t quite get it right during the COVID-19 pandemic, discuss important progress towards these goals in the wake of the pandemic, and highlight remaining challenges.</p>
+<p><a href="../../epid684/slides/no_equal_opportunity_infectors.html">Slides</a></p>
+<section id="a-brief-and-incomplete-annotated-bibliography-of-resources-on-modeling-acute-infection-inequities" class="level2">
+<h2 class="anchored" data-anchor-id="a-brief-and-incomplete-annotated-bibliography-of-resources-on-modeling-acute-infection-inequities">A brief (and incomplete!) annotated bibliography of resources on modeling acute infection inequities</h2>
+<section id="structural-racism-and-infection" class="level3">
+<h3 class="anchored" data-anchor-id="structural-racism-and-infection">Structural Racism and Infection</h3>
+<ul>
+<li><p><span class="citation" data-cites="adkins-jackson2021">(<a href="#ref-adkins-jackson2021" role="doc-biblioref">Adkins-Jackson et al. 2021</a>)</span> provides a very useful guide for thinking about how epidemiological models and modelers should account for the impacts of racism on disease outcomes. This piece has specific recommendations for analysts around model construction and accounting for multiple, intersecting identities.</p></li>
+<li><p><span class="citation" data-cites="noppert2022">(<a href="#ref-noppert2022" role="doc-biblioref">Noppert, Hegde, and Kubale 2022</a>)</span> articulate a framework based on fundamental cause theory for accounting for and addressing inequities in infection risk. <span class="citation" data-cites="zelner2023">(<a href="#ref-zelner2023" role="doc-biblioref">Zelner, Naraharisetti, and Zelner 2023</a>)</span> is an invited commentary that builds on some of the ideas in the original piece.</p></li>
+<li><p><span class="citation" data-cites="chowkwanyun2020">(<a href="#ref-chowkwanyun2020" role="doc-biblioref">Chowkwanyun and Reed 2020</a>)</span> is an excellent piece from early in the COVID-19 pandemic which highlights many of the challenges and pitfalls associated with a focus on racial health disparities without adequate attention to their material causes.</p></li>
+</ul>
+</section>
+<section id="modeling-for-equity" class="level3">
+<h3 class="anchored" data-anchor-id="modeling-for-equity">Modeling for Equity</h3>
+<ul>
+<li><p><span class="citation" data-cites="zelner2022">(<a href="#ref-zelner2022" role="doc-biblioref">Zelner et al. 2022</a>)</span> and <span class="citation" data-cites="abuelezam2023">(<a href="#ref-abuelezam2023" role="doc-biblioref">Abuelezam et al. 2023</a>)</span> attempt to articulate frameworks for doing a better job of using epidemic models to capture the dynamics of inequity in infection and disease outcomes.</p></li>
+<li><p><span class="citation" data-cites="ma2021">(<a href="#ref-ma2021" role="doc-biblioref">Ma et al. 2021</a>)</span> is an excellent data-driven exercise in modeling the linkages between race/ethnicity, essential work and inequity in disease outcomes.</p></li>
+<li><p><span class="citation" data-cites="nande2021">(<a href="#ref-nande2021" role="doc-biblioref">Nande et al. 2021</a>)</span> is a data-informed simulation model of the potential impact of ending the CDC eviction moratorium on population-wide infection risks and group-specific disparities.</p></li>
+<li><p>This is a <a href="https://sph-umich.shinyapps.io/segregation-transmission/">hands-on example</a> we put together that translates the framework in <span class="citation" data-cites="acevedo-garcia2000">(<a href="#ref-acevedo-garcia2000" role="doc-biblioref">Acevedo-Garcia 2000</a>)</span> into a simple dynamic model of the relationship between residential segregation and infection.</p></li>
+</ul>
+</section>
+<section id="methodological-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="methodological-challenges">Methodological challenges</h3>
+<ul>
+<li><p><span class="citation" data-cites="zelner2020">(<a href="#ref-zelner2020" role="doc-biblioref">Zelner et al. 2020</a>)</span> is an analysis examining the relative impacts of case-fatality vs.&nbsp;incidence of infection in inequities in COVID-19 mortality in Michigan.</p></li>
+<li><p><span class="citation" data-cites="trangucci2022">(<a href="#ref-trangucci2022" role="doc-biblioref">Trangucci, Chen, and Zelner 2022</a>)</span> presents a computationally efficient Bayesian method for accounting for non-random missingness of race-ethnicity data without making restrictive assumptions and/or using surname coding.</p></li>
+<li><p>This is a <a href="https://sph-umich.shinyapps.io/spatial_segregation/">hands-on comparison</a> of different metrics of spatial segregation applied to the same simulated dataset.</p></li>
+</ul>
+<p>(If you’d like a bibtex file w/these resources, you can find it <a href="refs.bib">here</a>)</p>
+</section>
+</section>
+<section id="references" class="level2">
+
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-abuelezam2023" class="csl-entry" role="doc-biblioentry">
+Abuelezam, Nadia N., Isaacson Michel, Brandon DL Marshall, and Sandro Galea. 2023. <span>“Accounting for Historical Injustices in Mathematical Models of Infectious Disease Transmission: <span>An</span> Analytic Overview.”</span> <em>Epidemics</em>, March, 100679. <a href="https://doi.org/10.1016/j.epidem.2023.100679">https://doi.org/10.1016/j.epidem.2023.100679</a>.
+</div>
+<div id="ref-acevedo-garcia2000" class="csl-entry" role="doc-biblioentry">
+Acevedo-Garcia, Dolores. 2000. <span>“Residential Segregation and the Epidemiology of Infectious Diseases.”</span> <em>Social Science &amp; Medicine</em> 51 (8): 1143–61. <a href="https://doi.org/10.1016/S0277-9536(00)00016-2">https://doi.org/10.1016/S0277-9536(00)00016-2</a>.
+</div>
+<div id="ref-adkins-jackson2021" class="csl-entry" role="doc-biblioentry">
+Adkins-Jackson, Paris B, Tongtan Chantarat, Zinzi D Bailey, and Ninez A Ponce. 2021. <span>“Measuring <span>Structural Racism</span>: <span>A Guide</span> for <span>Epidemiologists</span> and <span>Other Health Researchers</span>.”</span> <em>American Journal of Epidemiology</em>, September, kwab239. <a href="https://doi.org/10.1093/aje/kwab239">https://doi.org/10.1093/aje/kwab239</a>.
+</div>
+<div id="ref-chowkwanyun2020" class="csl-entry" role="doc-biblioentry">
+Chowkwanyun, Merlin, and Adolph L. Reed. 2020. <span>“Racial <span>Health Disparities</span> and <span>Covid-19</span> — <span>Caution</span> and <span>Context</span>.”</span> <em>New England Journal of Medicine</em> 383 (3): 201–3. <a href="https://doi.org/10.1056/NEJMp2012910">https://doi.org/10.1056/NEJMp2012910</a>.
+</div>
+<div id="ref-ma2021" class="csl-entry" role="doc-biblioentry">
+Ma, Kevin C, Tigist F Menkir, Stephen M Kissler, Yonatan H Grad, and Marc Lipsitch. 2021. <span>“Modeling the Impact of Racial and Ethnic Disparities on <span>COVID-19</span> Epidemic Dynamics.”</span> Edited by Joshua T Schiffer. <em>eLife</em> 10 (May): e66601. <a href="https://doi.org/10.7554/eLife.66601">https://doi.org/10.7554/eLife.66601</a>.
+</div>
+<div id="ref-nande2021" class="csl-entry" role="doc-biblioentry">
+Nande, Anjalika, Justin Sheen, Emma L. Walters, Brennan Klein, Matteo Chinazzi, Andrei H. Gheorghe, Ben Adlam, et al. 2021. <span>“The Effect of Eviction Moratoria on the Transmission of <span>SARS-CoV-2</span>.”</span> <em>Nature Communications</em> 12 (1, 1): 2274. <a href="https://doi.org/10.1038/s41467-021-22521-5">https://doi.org/10.1038/s41467-021-22521-5</a>.
+</div>
+<div id="ref-noppert2022" class="csl-entry" role="doc-biblioentry">
+Noppert, Grace A, Sonia T Hegde, and John T Kubale. 2022. <span>“Exposure, <span>Susceptibility</span>, and <span>Recovery</span>: <span>A Framework</span> for <span>Examining</span> the <span>Intersection</span> of the <span>Social</span> and <span>Physical Environment</span> and <span>Infectious Disease Risk</span>.”</span> <em>American Journal of Epidemiology</em>, October, kwac186. <a href="https://doi.org/10.1093/aje/kwac186">https://doi.org/10.1093/aje/kwac186</a>.
+</div>
+<div id="ref-trangucci2022" class="csl-entry" role="doc-biblioentry">
+Trangucci, Rob, Yang Chen, and Jon Zelner. 2022. <span>“Modeling Racial/Ethnic Differences in <span>COVID-19</span> Incidence with Covariates Subject to Non-Random Missingness.”</span> August 16, 2022. <a href="https://doi.org/10.48550/arXiv.2206.08161">https://doi.org/10.48550/arXiv.2206.08161</a>.
+</div>
+<div id="ref-zelner2022" class="csl-entry" role="doc-biblioentry">
+Zelner, Jon, Nina B. Masters, Ramya Naraharisetti, Sanyu A. Mojola, Merlin Chowkwanyun, and Ryan Malosh. 2022. <span>“There Are No Equal Opportunity Infectors: <span>Epidemiological</span> Modelers Must Rethink Our Approach to Inequality in Infection Risk.”</span> <em>PLOS Computational Biology</em> 18 (2): e1009795. <a href="https://doi.org/10.1371/journal.pcbi.1009795">https://doi.org/10.1371/journal.pcbi.1009795</a>.
+</div>
+<div id="ref-zelner2023" class="csl-entry" role="doc-biblioentry">
+Zelner, Jon, Ramya Naraharisetti, and Sarah Zelner. 2023. <span>“To Make Long-Term Gains Against Infection Inequity, Infectious Disease Epidemiology Needs to Develop a More Sociological Imagination.”</span> <em>American Journal of Epidemiology</em>, February, kwad044. <a href="https://doi.org/10.1093/aje/kwad044">https://doi.org/10.1093/aje/kwad044</a>.
+</div>
+<div id="ref-zelner2020" class="csl-entry" role="doc-biblioentry">
+Zelner, Jon, Rob Trangucci, Ramya Naraharisetti, Alex Cao, Ryan Malosh, Kelly Broen, Nina Masters, and Paul Delamater. 2020. <span>“Racial Disparities in <span>COVID-19</span> Mortality Are Driven by Unequal Infection Risks.”</span> <em>Clinical Infectious Diseases</em> 72 (5). <a href="https://doi.org/10.1093/cid/ciaa1723">https://doi.org/10.1093/cid/ciaa1723</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
+  author = {Jon Zelner},
+  title = {A Crash Course on Modeling Infection Inequities},
+  date = {2023-05-22},
+  url = {https://zelnotes.io/posts/idm-symposium},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Jon Zelner. 2023. <span>“A Crash Course on Modeling Infection
+Inequities.”</span> May 22, 2023. <a href="https://zelnotes.io/posts/idm-symposium">https://zelnotes.io/posts/idm-symposium</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A crash course on modeling infection inequities"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: false </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "5/22/2023"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jon Zelner"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> refs.bib</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - talk</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - inequity</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - COVID-19</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This talk is an effort to distill some of the challenges associated with making infectious disease models more useful for accounting for infection inequity. The goal is to briefly highlight why I think we didn't quite get it right during the COVID-19 pandemic, discuss important progress towards these goals in the wake of the pandemic, and highlight remaining challenges.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Slides</span><span class="co">](/epid684/slides/no_equal_opportunity_infectors.html)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## A brief (and incomplete!) annotated bibliography of resources on modeling acute infection inequities</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Structural Racism and Infection</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@adkins-jackson2021</span><span class="co">]</span> provides a very useful guide for thinking about how epidemiological models and modelers should account for the impacts of racism on disease outcomes. This piece has specific recommendations for analysts around model construction and accounting for multiple, intersecting identities.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@noppert2022</span><span class="co">]</span> articulate a framework based on fundamental cause theory for accounting for and addressing inequities in infection risk. <span class="co">[</span><span class="ot">@zelner2023</span><span class="co">]</span> is an invited commentary that builds on some of the ideas in the original piece.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@chowkwanyun2020</span><span class="co">]</span> is an excellent piece from early in the COVID-19 pandemic which highlights many of the challenges and pitfalls associated with a focus on racial health disparities without adequate attention to their material causes.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modeling for Equity</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2022</span><span class="co">]</span> and <span class="co">[</span><span class="ot">@abuelezam2023</span><span class="co">]</span> attempt to articulate frameworks for doing a better job of using epidemic models to capture the dynamics of inequity in infection and disease outcomes.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@ma2021</span><span class="co">]</span> is an excellent data-driven exercise in modeling the linkages between race/ethnicity, essential work and inequity in disease outcomes.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@nande2021</span><span class="co">]</span> is a data-informed simulation model of the potential impact of ending the CDC eviction moratorium on population-wide infection risks and group-specific disparities. </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on example</span><span class="co">](https://sph-umich.shinyapps.io/segregation-transmission/)</span> we put together that translates the framework in <span class="co">[</span><span class="ot">@acevedo-garcia2000</span><span class="co">]</span> into a simple dynamic model of the relationship between residential segregation and infection.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Methodological challenges</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@zelner2020</span><span class="co">]</span> is an analysis examining the relative impacts of case-fatality vs. incidence of infection in inequities in COVID-19 mortality in Michigan. </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">@trangucci2022</span><span class="co">]</span> presents a computationally efficient Bayesian method for accounting for non-random missingness of race-ethnicity data without making restrictive assumptions and/or using surname coding.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a <span class="co">[</span><span class="ot">hands-on comparison</span><span class="co">](https://sph-umich.shinyapps.io/spatial_segregation/)</span> of different metrics of spatial segregation applied to the same simulated dataset.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>(If you'd like a bibtex file w/these resources, you can find it <span class="co">[</span><span class="ot">here</span><span class="co">](refs.bib)</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>
