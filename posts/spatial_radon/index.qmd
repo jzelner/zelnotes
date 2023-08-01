@@ -2,7 +2,10 @@
 title: "Taking a spatial perspective on the `radon` data"
 author: "Jon Zelner"
 date: "3/2/2023"
+updated: last-modified
 image: "minnesota_uranium.png"
+execute:
+  cache: false
 draft: false 
 ---
 
@@ -15,13 +18,29 @@ zip("spatial_radon.zip", files = c("index.qmd", "minnesota_uranium.png"))
 
 # Introduction
 
-## Getting Started 
-
 This tutorial is a follow-up to a prior exercise using these data. So if you haven't already, please go back and take a look at the original multi-level modeling radon example [here](/posts/radon/index.html).
+
+## Getting Started 
 
 To try this tutorial on your own, download and unzip this [zipfile](spatial_radon.zip) and open up your R or RStudio session in the resulting directory.
 
+:::{.callout-tip}
 
+## Look out 👀 for stretch exercises!
+
+If you see a box with a 💡 like this, it's in an invitation to go a bit further. This could be a conceptual question or a chance to write a bit of code to explore the data or outputs of the analysis a bit more. 
+
+:::
+
+## Learning Goals
+
+The primary goals of this tutorial are to introduce you to:
+
+1. Merging of non-spatial health exposure or outcome data with spatial metadata.
+2. Calculation of important spatial summary statistics, e.g. Moran's I, from such data.
+3. Spatial analysis of residuals from aspatial regression models of spatially-referenced data.
+
+# Setting up the environment
 
 ```{r setup}
 #| warning: false
@@ -36,13 +55,6 @@ library(spdep)
 knitr::opts_chunk$set(message = FALSE, warning=FALSE, tidy=TRUE)
 ```
 
-## Learning Goals
-
-The primary goals of this tutorial are to introduce you to:
-
-1. Merging of non-spatial health exposure or outcome data with spatial metadata.
-2. Calculation of important spatial summary statistics, e.g. Moran's I, from such data.
-3. Spatial analysis of residuals from aspatial regression models of spatially-referenced data.
 
 # Data Preparation
 
@@ -117,7 +129,7 @@ radon <- radon %>% mutate(basement = 1 - floor)
 county_uranium <- radon %>%
   group_by(county) %>%
   summarize(log_uranium = first(log_uranium), 
-            median_radon = mean(log_radon))
+            mean_radon = mean(log_radon))
 ```
 
 Because the sf dataset returned by tidycensus is a dataframe, we can then easily merge the county-level soil uranium concentrations we derived above into the shapefile. We use the [`left_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html) function from `dplyr` to ensure that all of the counties in the original shapefile are represented in the final dataset, even if a soil uranium measure is unavailable for them in the original data:
@@ -181,9 +193,9 @@ Of course, our key quantity of interest isn't soil uranium but the concentration
 
 ```{r}
 g <- ggplot(minnesota_radon) + 
-  geom_sf(aes(fill = median_radon )) + 
+  geom_sf(aes(fill = mean_radon )) + 
   scale_fill_viridis_c() +
-  ggtitle(paste0("Median household radon by MN county (I=", round(moranFromSF(minnesota_radon$median_radon, minnesota_radon),2), ")"))
+  ggtitle(paste0("Median household radon by MN county (I=", round(moranFromSF(minnesota_radon$mean_radon, minnesota_radon),2), ")"))
 plot(g)
 ```
 
@@ -196,26 +208,38 @@ Pause here and take a moment to try to figure out what might account for the dif
 
 ### Testing, testing
 
-One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a *counterfactual scenario* in which the distribution of radon concentrations is known to be uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran's I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:
+One way to determine whether the spatial aggregation of the radon measurements is meaningful is to compare it to a *counterfactual scenario* in which the distribution of radon concentrations is uncorrelated with space. This assumption, known as complete spatial randomness (or CSR), allows us to provide a benchmark against which we determine whether the value of Moran's I we determined is highly likely to occur by chance alone. Thankfully, it is easy to generate a dataset in which the median radon values are distributed randomly across the map:
 
 ```{r}
 
-## Make a new dataset representing 'random minnesota'
-random_minnesota <- minnesota_radon
+## Make a new dataset representing 'random minnesota':
+## Use the sample function to resample household radon values without replacement,
+## we then recalculate county values based on these suffled values
+county_uranium_random <- radon %>%
+  mutate(log_radon = sample(log_radon, nrow(.), replace=FALSE)) %>%
+  group_by(county) %>%
+  summarize(log_uranium = first(log_uranium), 
+            mean_radon = mean(log_radon))
 
-## Use the sample function to resample median radon values without replacement,
-## which yields a vector in which the values of median radon are simply shuffled
-## by county
-random_minnesota$median_radon <- sample(minnesota_radon$median_radon, nrow(minnesota_radon), replace = FALSE)
+random_minnesota <- left_join(minnesota, county_uranium_random)
+
 
 ## Plot the new randomized data
 g <- ggplot(random_minnesota) + 
-  geom_sf(aes(fill = median_radon )) + 
+  geom_sf(aes(fill = mean_radon )) + 
   scale_fill_viridis_c() +
-  ggtitle(paste0("Spatially randomized median radon by MN county (I=", round(moranFromSF(random_minnesota$median_radon, random_minnesota),2), ")"))
+  ggtitle(paste0("Spatially randomized median radon by MN county (I=", round(moranFromSF(random_minnesota$mean_radon, random_minnesota),2), ")"))
 plot(g)
 ```
 This yields something that looks pretty randomly distributed, which is reflected in a Moran's I estimate closer to the null value of 0. This doesn't necessarily tell us whether this result is meaningful rather than an artifact of random chance.
+
+:::{.callout-tip}
+
+## What is the same? What is different?
+
+Take a minute to explore the distribution of different quantities between some random minnesotas and the observed one. For example, look at distributions of the number of observations per county, the proportion of households in each county that have basements, etc. Which are similar and which are different?
+
+:::
 
 ## Complete Spatial Randomness
 
@@ -223,30 +247,46 @@ What we can do, though, is to generate a bunch of random Minnesotas in which the
 
 ```{r}
 #| warning: false
-csrMorans <- function(x, sfdf, trials = 1000, style="B") {
-  nb <- poly2nb(sfdf)
+csrMorans <- function(radon, minnesota, trials = 1000, style="B") {
+   county_uranium <- radon %>%
+    group_by(county) %>%
+    summarize(log_uranium = first(log_uranium), 
+            mean_radon = mean(log_radon)) %>%
+     left_join(minnesota, .)
+   
+  nb <- poly2nb(minnesota)
   lw <- nb2listw(nb, style=style, zero.policy=TRUE)
-  mv <- moran(x, lw, length(nb), Szero(lw),NAOK=TRUE)$I
+  mv <- moran(county_uranium$mean_radon, lw, length(nb), Szero(lw),NAOK=TRUE)$I
+  
+
   moran_vals <- rep(0, trials)
   for (i in 1:trials) {
-    random_x <- sample(x, length(x), replace=FALSE)
-    moran_vals[i] <- moran(random_x, lw, length(nb), Szero(lw),NAOK=TRUE)$I
+
+    county_uranium_random <- radon %>%
+    mutate(log_radon = sample(log_radon, nrow(.), replace=FALSE)) %>%
+    group_by(county) %>%
+    summarize(log_uranium = first(log_uranium), 
+            mean_radon = mean(log_radon))
+
+    random_minnesota <- left_join(minnesota, county_uranium_random)
+    moran_vals[i] <- moran(random_minnesota$mean_radon, lw, length(nb), Szero(lw),NAOK=TRUE)$I
   }
   
   return(list(midist = moran_vals, 
               mi = mv))
 }  
 
-csr_dist <- csrMorans(minnesota_radon$median_radon, minnesota_radon)
+csr_dist <- csrMorans(radon, minnesota)
 ```
 
 We can use the distribution of Moran's I values taken from the randomized datasets to benchmark how likely our observed value is to occur by purely random chance. The figure below shows that this is quite unlikely:
 
 ```{r}
 g <- ggplot() + 
-  geom_histogram(aes(x=csr_dist$midist)) + 
+  geom_histogram(aes(x=csr_dist$midist),bins=50) + 
   xlab("Moran's I value") + 
   geom_vline(xintercept=csr_dist$mi, colour = "red") + 
+  geom_vline(xintercept = median(csr_dist$midist), colour = "green") + 
   ggtitle("Randomized values of Moran's I vs. observed for median household radon")
 
 plot(g)
@@ -255,14 +295,14 @@ plot(g)
 And we can directly estimate this probability as follows:
 ```{r}
 #| warning: false
-real_moran <- moranFromSF(minnesota_radon$median_radon, minnesota_radon)
+real_moran <- moranFromSF(minnesota_radon$mean_radon, minnesota_radon)
 p_moran <- sum(csr_dist$midist >= csr_dist$mi)/length(csr_dist$midist)
 print(p_moran)
 ```
 
 From 1000 samples, it appears that none of our random datasets yielded a value of Moran's I $\ge$ to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability. 
 
-::: {.callout-warning}
+::: {.callout-tip}
 ### What could go wrong? 
 
 Before you move on, take a minute to think about what some of the potential flaws in our CSR-based approach to assessing the meaningfulness or signficance of this result might be.
@@ -272,12 +312,13 @@ Before you move on, take a minute to think about what some of the potential flaw
 Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. 
 Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original @gelman2006 paper. We won't go into detail on these as they have been discussed in depth in the original paper and the previous post.  
 
-:::{.callout-note}
-Note that we are storing the residuals and predictions for each as a column inside the `radon` dataframe. 
-:::
 
-:::{.callout-tip}
-For ore detail on the implementation on interpretation of these models, please check out the [original tutorial](/posts/radon/index.html).
+
+:::{.callout-note}
+
+## Confused? 
+
+For more detail on the implementation on interpretation of these models, please check out the [original tutorial](/posts/radon/index.html).
 :::
 
 ## Full-pooling model
@@ -293,6 +334,13 @@ full_pooling_model <- lm(log_radon ~ basement, data = radon)
 radon$full_pooling_resid <- resid(full_pooling_model)
 radon$full_pooling_pred <- predict(full_pooling_model)
 ```
+
+:::{.callout-note}
+
+## Storing Model Predictions
+
+Note that we are storing the residuals and predictions for this model (and the ones below) as a column inside the `radon` dataframe. 
+:::
 
 ## No Pooling
 
@@ -352,7 +400,7 @@ g <- ggplot(results_by_county) +
 plot(g)
 ```
 
-This is probably intuitive: the full pooling modeldidn't include any county-level information, so it might not account for all of the sptial variation. So, on the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?
+This is probably intuitive: the full pooling model didn't include any county-level information, so it might not account for all of the sptial variation. On the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?
 
 
 ```{r pred-figure}
@@ -379,7 +427,7 @@ plot(g)
 
 Whoops...that looks familiar! It seems like the pattern of spatial variation in the presence/absence of basements may be driving the clustering in our predictions and - by consequence - our residuals!
 
-:::{.callout-tip}
+:::{.callout-note}
 ## Spatially correlated predictors → Spatially correlated predictions
 
 Sometimes, it is easy to forget that the input data may be as or more correlated than the outcome data. In this example, the presence or absence of a basement in a house seems to have a spatial pattern and this impacts the spatial patterning of our predictions and model residuals!

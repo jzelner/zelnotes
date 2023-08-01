@@ -1,5 +1,7 @@
 # Segregation and the Spatial Clustering of Socio-Environmental Exposure
 
+Today's class [will be held on Zoom](https://umich.zoom.us/j/99504833290) due to illness.
+
 ## Before Class
 
 ### Reading
@@ -20,4 +22,8 @@ Massey DS, Denton NA. The Dimensions of Residential Segregation. Social Forces. 
 
 ## During Class
 
-We will discuss the assigned readings and complete a [hands-on activity](https://sph-umich.shinyapps.io/spatial_segregation/) focused on better understanding the similarities and differences between different measures of spatial segregation/clustering.
+We will discuss the assigned readings and complete a [hands-on activity](https://sph-umich.shinyapps.io/spatial_segregation/) focused on better understanding the similarities and differences between different population-level measures of spatial segregation & clustering.
+
+## Additional Resources
+
+[Slides](slides/segregation_disease_outcomes.qmd)

@@ -1,6 +1,7 @@
 project:
   title: "Zelnotes"
   type: website
+  lib-dir: css
   #output-dir: docs
   render: 
       - "*.qmd"
@@ -26,10 +27,13 @@ website:
       logo: "assets/epibayeslogo_cropped.png"
       title: "Zelnotes"
   repo-url: https://github.com/jzelner/zelnotes 
+  google-analytics: "G-4J38PX7FF5"
 
 format:
   html:
-    theme: "cerulean" 
+    theme: 
+      light: cerulean 
+      dark: [cerulean, theme-dark.scss]
     css: styles.css
     toc: true
     bibliography: 

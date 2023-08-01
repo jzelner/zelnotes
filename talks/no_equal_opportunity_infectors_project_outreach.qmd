@@ -23,7 +23,7 @@ format:
     </p>
 </div>
 
-![](../images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
+![](/images/epid_logo.png){.absolute bottom=0 right=50 width="400" height="100"}
 
 
 ## Who am I & what do I do?
@@ -42,7 +42,7 @@ format:
 
 :::
 :::{.column width=60%}
-![Me: Basically interested in how infectious diseases get from one person or place to another.](../images/zelner_headshot.jpg)
+![Me: Basically interested in how infectious diseases get from one person or place to another.](/images/zelner_headshot.jpg)
 :::
 :::
 
@@ -58,7 +58,7 @@ format:
 
 <h1 style="font-size:1.5em"><span class="alert">Models and modelers</span> have been key to COVID-19 response</h1>  
 
-<img src="../images/life_or_death_covid.png" width="400" style="width: 50%;">
+<img src="/images/life_or_death_covid.png" width="400" style="width: 50%;">
 
 From Enserink and Kupferschmidt, *Science* 2020
 
@@ -74,7 +74,7 @@ From Enserink and Kupferschmidt, *Science* 2020
 
 ## Causal loop diagrams often used to <span class="alert">represent</span> systems
 
-![Diagram showing relationships between COVID-19 transmission and public and policy response.](../images/lancet_systems_diagram_covid.jpg)
+![Diagram showing relationships between COVID-19 transmission and public and policy response.](/images/lancet_systems_diagram_covid.jpg)
 
 :::{.fragment}
 But what does this actually show us? What is the point of using <span class="alert">these tools</span>?
@@ -93,7 +93,7 @@ Open up this [Google doc](https://docs.google.com/document/d/1q9XWl285JQMNMPLfJU
 
 ## This talk reflects lessons learned from the experience of mapping COVID-19 in Michigan {.imgslide}
 
-<img src="../images/covidmapping_april_2022.png">
+<img src="/images/covidmapping_april_2022.png">
 
 Cumulative incidence of COVID-19 in Michigan 3/2020-3/2022 (from [covidmapping.org](https://www.covidmapping.org))
 
@@ -141,21 +141,21 @@ Models can let us:
 ## Economic and racial inequity is a central story of the COVID-19 pandemic {.imgslide}
 
 <div class="r-stack">
-  <img class="fragment" src="../images/blacks_covid_death_brookings.png" width="600">
-  <img class="fragment" src="../images/harvard_inequality_on_top_of_inequality.png" width="400">
-  <img class="fragment" src="../images/mistrust_communities_of_color.png">
-  <img class="fragment" src="../images/minorities_covid_uk.png">
-  <img class="fragment" src="../images/omicron_black_chicago.png" width="400"></div>
+  <img class="fragment" src="/images/blacks_covid_death_brookings.png" width="600">
+  <img class="fragment" src="/images/harvard_inequality_on_top_of_inequality.png" width="400">
+  <img class="fragment" src="/images/mistrust_communities_of_color.png">
+  <img class="fragment" src="/images/minorities_covid_uk.png">
+  <img class="fragment" src="/images/omicron_black_chicago.png" width="400"></div>
 
 So why were we not <span class="alert">prepared</span> for these easy-to-foresee inequities?
 
 ## The myth of the <span class="alert">equal opportunity infector</span> may have obscured inequality
 
 <div class="r-stack">
-  <img class="fragment" src="../images/equal_opportunity_virus.png">
-  <img class="fragment" src="../images/equal_opportunity_herald.png">
-  <img class="fragment" src="../images/equal_opportunity_rural.png">
-  <img class="fragment" src="../images/equal_opportunity_delta.png">
+  <img class="fragment" src="/images/equal_opportunity_virus.png">
+  <img class="fragment" src="/images/equal_opportunity_herald.png">
+  <img class="fragment" src="/images/equal_opportunity_rural.png">
+  <img class="fragment" src="/images/equal_opportunity_delta.png">
   </div>
 
 
@@ -229,13 +229,13 @@ Key Questions:
 
 ## Historical analyses have repeatedly demonstrated inequity in prior pandemics {.imgslide}
 
-<img style="width: 70%" src="../images/grantz_disparities_1918.png" width="800">
+<img style="width: 70%" src="/images/grantz_disparities_1918.png" width="800">
 
 [Grantz et al., *PNAS* 2016](https://pubmed.ncbi.nlm.nih.gov/27872284/)
 
 ## The mechanisms of inequity were quickly identified, but our models weren't ready for them {.imgslide}
 
-<img style="width: 70%;" src="../images/racial_capitalism_mcclure.png">
+<img style="width: 70%;" src="/images/racial_capitalism_mcclure.png">
 
 ## COVID-19 provides an opportunity to reflect on the goals of  modeling and analysis in public health {.quote}
 
@@ -258,7 +258,7 @@ Key Questions:
     </ul>
   </div>
 
-  <div style="flex:50%"><img src="../images/vulnerability_racism_flow.png">
+  <div style="flex:50%"><img src="/images/vulnerability_racism_flow.png">
     <p style="font-size: 0.5em">Zelner et al. (2022), [*There are no equal opportunity infectors.*](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795)
     PLOS Computational Biology 
    </p></div>
@@ -267,12 +267,12 @@ Key Questions:
 ## This shift is already well underway
 
 <a href="https://elifesciences.org/articles/66601"></a>
-<img src="../images/ma_race_ethnic_disparities.png">
+<img src="/images/ma_race_ethnic_disparities.png">
 </a>
 
 ## These <span class="alert">equity-oriented</span> models let us ask crucial questions about the causes of disparity {.imgslide}
 
-<img style="width: 70%" src="../images/nande_evictions_covid_transmission.png">
+<img style="width: 70%" src="/images/nande_evictions_covid_transmission.png">
 
 From Nande et al. ["The effect of eviction moratoria on the transmission of SARS-CoV-2"](https://doi.org/10.1038/s41467-021-22521-5
 ), Nature Communications, 2021
@@ -294,7 +294,7 @@ If you're interested in learning more about our work, check our lab site at [epi
 
 <figure>
 <a href="https://epibayes.io">
-<img src="../images/epibayeslogo.png">
+<img src="/images/epibayeslogo.png">
 </a>
 </figure>
 
@@ -303,47 +303,47 @@ If you're interested in learning more about our work, check our lab site at [epi
 <div class="teamPicsDiv">
  <!-- Jon -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/jon.jpg">
+  <img class="teamPic" src="/images/labmembers/jon.jpg">
   <a class="teamName" href="https://epibayes.io/author/jon-zelner/" target="_blank">Jon Zelner</a>
  </div>
  <!-- Hannah -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/hannah.png">
+  <img class="teamPic" src="/images/labmembers/hannah.png">
   <a class="teamName" ref="https://epibayes.io/author/hannah-steinberg/" arget="_blank">Hannah Steinberg</a>
  </div>
  <!-- Joey -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/joey.png">
+  <img class="teamPic" src="/images/labmembers/joey.png">
  <a class="teamName" href="https://epibayes.io/author/joey-dickens/" target="_blank">Joey Dickens</a>
  </div>
  <!-- Kelly -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/kelly.png">
+  <img class="teamPic" src="/images/labmembers/kelly.png">
   <a class="teamName" href="https://epibayes.io/author/kelly-broen/" target="_blank">Kelly Broen</a>
  </div>
  <!-- Krzysztof -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/krzysztof.jpg">
+  <img class="teamPic" src="/images/labmembers/krzysztof.jpg">
   <a class="teamName" href="https://epibayes.io/author/krzysztof-sakrejda/" target="_blank">Krzysztof Sakrejda</a>
  </div>
  <!-- Paul -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/paul.jpg">
+  <img class="teamPic" src="/images/labmembers/paul.jpg">
   <a class="teamName" href="https://epibayes.io/author/paul-delamater/" target="_blank">Paul Delamater</a>
  </div>
  <!-- Ramya -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/ramya.png">
+  <img class="teamPic" src="/images/labmembers/ramya.png">
   <a class="teamName" href="https://epibayes.io/author/ramya-naraharisetti/"  target="_blank">Ramya Naraharisetti</a>
  </div>
  <!-- Rob -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/robert.jpg">
+  <img class="teamPic" src="/images/labmembers/robert.jpg">
   <a class="teamName" href="https://epibayes.io/author/rob-trangucci/" target="_blank">Rob Trangucci</a>
  </div>
  <!-- Stephanie -->
  <div class="teamMember">
-  <img class="teamPic" src="../images/labmembers/stephanie.png">
+  <img class="teamPic" src="/images/labmembers/stephanie.png">
   <a class="teamName" href="https://epibayes.io/author/stephanie-choi/" target="_blank">Stephanie Choi</a>
  </div>
 </div>

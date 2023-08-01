@@ -1,7 +1,7 @@
 format:
   html: 
     code-tools:
-      source: repo
+      source: true
     citation: true
     code-overflow: wrap
 page-layout: article

@@ -1,0 +1,118 @@
+---
+pagetitle: "Ideas → Action"
+format: 
+    revealjs:
+        show-notes: false
+        theme: [solarized, styles.scss]
+        incremental: true
+        bibliography: /Users/jzelner/repos/bibtex-library/jz_library.bib
+        scrollable: false 
+---
+
+## From Ideas to Action on Modeling for Equity
+
+<p style="font-size:0.7em; text-align: left;">
+Making equity a first-class concern of epidemiological model(er)s.
+</p>
+
+<div class="paddeddiv">
+  <p style="font-size:0.5em; text-align: left;">
+  CDC U01 Site Visit
+  <br><br>
+      Jon Zelner  
+      `jzelner@umich.edu`  
+      <br><br>
+      Dept. of Epidemiology  
+      Center for Social Epidemiology and Population Health   
+      University of Michigan School of Public Health 
+      <br><br>
+      EpiBayes Research Group    
+      [`epibayes.io`](https://epibayes.io)
+    </p>
+</div>
+
+![](/assets/epid_logo.png){.absolute bottom=0 right=5 width="300"}
+
+![](/assets/epibayeslogo.png){.absolute bottom=90 right=5 width="250"}
+
+## Agenda
+
+- Introductions
+
+- What does it mean to model for equity?
+
+- Lunch 🥪
+
+- Short talks/discussion on respiratory infection equity work 
+
+## We have made good progress on conceptualizing and analyzing infection (in)equity
+
+- ["Racial disparities in COVID-19 mortality are driven by unequal infection risks."](https://academic.oup.com/cid/article/72/5/e88/5998295) (CID, 2021)
+
+- "[There are no equal opportunity infectors"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795) (PLOS Comp. Bio, 2022)
+
+- ["To make long-term gains against infection inequity, infectious disease epidemiology needs to develop a more sociological imagination."](https://academic.oup.com/aje/article-abstract/192/7/1047/7056289?redirectedFrom=fulltext) (AJE, 2023)
+
+- ["Modeling rates of disease with missing categorical data."](https://arxiv.org/abs/2206.08161) (Annals of Applied Statistics, Forthcoming)
+
+## <span class="alert">Modeling for equity</span>: A three-legged stool 
+
+1. Ask questions that foreground macro-structural mechanisms and <span class="alert">power</span> differentials.
+
+2. Collect <span class="alert">data</span> that are up to the task of answering these question.
+
+3. Construct models that examine potential impacts of <span class="alert">socio-structural change</span> on disease even if these changes don't correspond to a formal policy or intervention.
+
+## Equity-oriented models take <span class="alert">social mechanisms</span> as seriously as biological ones. {.quote}
+
+<blockquote>
+  COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and
+  systems that create health disparities in good times and inflate them in a crisis. <span class="alert">The US must develop a new kind of
+  “herd immunity,” whereby resistance to the spread of poor health in the population occurs when a sufficiently high
+  proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to
+  negative social determinants.</span>
+</blockquote>
+ From Williams & Cooper, ["COVID-19 and Health Equity—A New Kind of “Herd Immunity”](https://jamanetwork.com/journals/jama/fullarticle/2766096), JAMA, 6/23/2020
+
+## Equity-oriented models require an informed understanding of the <span class="alert">connections between</span> high-level, intermediary, and proximal causes of infection.
+
+![Flow diagram of connections between high-level, structural causes, intervening mechanisms, and downstream exposure risks, from @noppert2022](/images/noppert_exposure_diagram.png)
+
+## Equity-oriented models cannot treat race and other social categorizations as <span class="alert">causal variables</span>.
+
+![Theoretical diagram from @phelan2015 showing the complex relationship between racism, socioeconomic inequity and racial inequity in disease outcomes.](/images/phelan_link_residential.png)
+
+## Equity-oriented models must use comparisons that reflect the impact of <span class="alert">structural changes</span> on disease risk.
+
+![Proportion of SARS-CoV-2 deaths potentially averted in 2020 if all Michiganders experienced the same pacing of SARS-CoV-2 infection as Whites (From Naraharisetti et al., Under Review)](/images/naraharisetti_deaths_averted.png)
+
+## Next step is to translate these ideas into useful models
+
+Some goal-setting questions can be found in [this google doc](https://docs.google.com/document/d/1mFxWDkwONLuJ0a8Jom8rQ2aPTOOSjpVSX_FR1keuwCU/edit?usp=sharing). Specifically:
+
+1. What do you see as key *conceptual* challenges in going from theory to useful models of infection inequity?
+
+2. What are the data gaps that need to be closed? How close-able are they?
+   
+3. What are some of the *organizational* or *institutional* impediments to making necessary change?
+
+
+## There be dragons 🐉
+
+- Models that encode biased assumptions may be worse than those that ignore equity altogether.
+
+- Nonexistent data on individual socioeconomic status in most public health surveillance data.
+
+- Datasets are plagued by missingness of key socio-demographic covariates. [@trangucci2022]
+
+- Career/funding incentives have not been well-aligned.
+
+- Modelers from marginalized backgrounds remain underrepresented.
+
+## Next 
+
+- 1-2ish: Lunch
+- 2-4: Covid excess mortality and vaccination patterns (Krzysztof, Kelly & Reiden)
+- 4-5: Decedent Viral Testing (Andrew Brouwer)
+
+## References

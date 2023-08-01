@@ -2,6 +2,8 @@
 
 ## Session 1 (3/14){#session-1}
 
+[JZ Slides](slides/postcards_session_1.qmd)
+
 ### Brooke 
 
 Laybohr Kamara I, Wang L, Guo Y, et al. Spatial–temporal heterogeneity and determinants of HIV prevalence in the Mano River Union countries. Infectious Diseases of Poverty. 2022;11(1):116. doi:10.1186/s40249-022-01036-1
@@ -26,6 +28,8 @@ Finlay J, Esposito M, Langa KM, Judd S, Clarke P. Cognability: An Ecological The
 
 Fralick M, Nott C, Moggridge J, et al. Detection of Covid-19 Outbreaks Using Built Environment Testing for SARS-CoV-2. NEJM Evidence. Published online February 17, 2023. [doi:10.1056/EVIDoa2200203](https://doi.org/10.1056/EVIDoa2200203)
 
+[Slides](https://www.dropbox.com/s/kp3uavydq0zwvl9/chloe_postcards_presentation.pptx?dl=0)
+
 ### Mackenzie
 
 Kaufman, E. J., Morrison, C. N., Branas, C. C., & Wiebe, D. J. (2018). State firearm laws and interstate firearm deaths from homicide and suicide in the United States: a cross-sectional analysis of data by county. JAMA Internal Medicine, 178(5), 692-700. doi:10.1001/jamainternmed.2018.0190
@@ -38,4 +42,4 @@ Bharti N, Tatem AJ, Ferrari MJ, Grais RF, Djibo A, Grenfell BT. Explaining Seaso
 
 ### Sasha
 
-TBD
+Brooks MM, Siegel SD, Curriero FC. Characterizing the spatial relationship between smoking status and tobacco retail exposure: Implications for policy development and evaluation. Health & Place. 2021;68:102530. doi:10.1016/j.healthplace.2021.102530

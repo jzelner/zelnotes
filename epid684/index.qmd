@@ -97,7 +97,7 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |`r next_date()`| [In-class project workshop](session_destination_workshop.qmd) |
 
 
-## Deep Dive: Understanding the impact of residential segregation on disease outcomes
+## Clustering!
 
 |Date|Topic|
 |---------|:----------|
@@ -109,7 +109,7 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |Date|Topic|
 |---------|:----------|
 |`r next_date()`| [Making sense of clustered environmental exposures](session_environmental_exposure.qmd) |   
-|`r next_date()`| [Connecting residential segregation to inequitable disease outcomes](segregation_social_clustering.qmd) |
+|`r next_date()`| Clustered environmental exposures cont'd |
 
 ## Postcards from the Road
 
@@ -121,21 +121,21 @@ During this module, we will use Snow's challenges in convincing a skeptical publ
 |`r next_date()`| [Postcards from the Road IV](postcards_presentations.qmd#session-4) |
 
 
-## Fallacies! How to get things wrong with spatial data.
+## Connecting measures of risk clustering to spatial variation in health outcomes
 
 |Date|Topic|
 |----|:----|
-|`r next_date()`| Ecological Fallacies  |
-|`r next_date()`| From continuous space to discrete places: The modifiable areal unit problem |
-|`r next_date()`| Final Product Workshop |
-|`r next_date()`| TBD | 
+|`r next_date()`| [Connecting residential segregation to inequitable disease outcomes](segregation_social_clustering.qmd)  |
+|`r next_date()`| Project Workshop  |
+|`r next_date()`| [Local variation in segregation exposure and its impact on individual health outcomes](local_segregation_disease_risk.qmd) |
+|`r next_date()`| [Segregation, structural racism, and infection](segregation_infection.qmd) | 
 
 
 ## Coming around the bend: The present and future of spatial epidemiology 
 
 |Date|Topic|
 |----|:---|
-|`r next_date()`| TBD |
-| `r next_date()`|  Characterizing the impact of individual and collective mobility on disease risks |
-| `r next_date()` | Last Day! Wrap-Up  | 
-| `r date_formatter(as.Date("2023-04-26"))` | Final Product Submission |
+|`r next_date()`| Final Product Workshop |
+| `r next_date()`|  [What is the social vulnerability index?](social_vulnerability.qmd) |
+| `r next_date()` | [Last Day! Wrap-Up](slides/session_26_wrap_up.qmd)  | 
+| **`r date_formatter(as.Date("2023-04-26"))`** | **Final Product Submission** |
