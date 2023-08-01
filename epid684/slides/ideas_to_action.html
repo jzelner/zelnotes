@@ -346,6 +346,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../../css/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../css/countdown-0.4.0/countdown.js"></script>
 <meta property="og:title" content="Ideas → Action">
 <meta property="og:site-name" content="Zelnotes">
 </head>
@@ -424,7 +426,16 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 <li class="fragment"><p>What do you see as key <em>conceptual</em> challenges in going from theory to useful models of infection inequity?</p></li>
 <li class="fragment"><p>What are the data gaps that need to be closed? How close-able are they?</p></li>
 <li class="fragment"><p>What are some of the <em>organizational</em> or <em>institutional</em> impediments to making necessary change?</p></li>
+<li class="fragment"><p>Anything else?</p></li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_1fb00223" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </section>
 <section id="there-be-dragons" class="slide level2">
 <h2>There be dragons 🐉</h2>
@@ -673,6 +684,44 @@ Trangucci, Rob, Yang Chen, and Jon Zelner. 2022. <span>“Modeling Racial/Ethnic
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
