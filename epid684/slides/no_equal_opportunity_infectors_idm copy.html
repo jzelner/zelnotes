@@ -10,8 +10,7 @@
 <link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
-  <meta name="author" content="Jon Zelner">
-  <title>Applied hierarchical modeling</title>
+  <title>Modeling fundamental causes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -347,7 +346,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Applied hierarchical modeling">
+<meta property="og:title" content="Modeling fundamental causes">
 <meta property="og:site-name" content="Zelnotes">
 </head>
 <body class="quarto-light">
@@ -355,50 +354,59 @@
     <div class="slides">
 
 
-<section id="understanding-the-promise-and-perils-of-hierarchical-modeling" class="slide level2">
-<h2>Understanding the promise and perils of hierarchical modeling</h2>
+<section id="modeling-the-fundamental-causes-of-infection-inequity" class="slide level2">
+<h2>Modeling the fundamental causes of infection inequity</h2>
 <div class="paddeddiv">
 <p style="font-size:0.5em; text-align: left;">
-EPID 684<br>
-Spatial Epidemiology<br>
-4/5/2022<br>
-<br><br> Jon Zelner<br>
+CDC COVID/Influenza Modeling Network Meeting <br><br> Jon Zelner<br>
 <code>jzelner@umich.edu</code><br>
+<br><br> Dept. of Epidemiology<br>
+Center for Social Epidemiology and Population Health<br>
+University of Michigan School of Public Health <br><br> EpiBayes Research Group<br>
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<p><img data-src="../../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 440px; height: 100px; "></p>
+<p><img data-src="../../assets/epid_logo.png" class="absolute" style="bottom: 0px; right: 5px; width: 300px; "></p>
+<p><img data-src="../../assets/epibayeslogo.png" class="absolute" style="bottom: 90px; right: 5px; width: 250px; "></p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li class="fragment"><p>Discussing Subramanian et al.&nbsp;paper <span class="citation" data-cites="subramanian2005a">(<a href="#/references" role="doc-biblioref" onclick="">1</a>)</span></p></li>
-<li class="fragment"><p>Hands-on with some multi-level models.</p></li>
+<li class="fragment"><p>What does it mean to model for equity?</p></li>
+<li class="fragment"><p>What challenges remain?</p></li>
 </ul>
 </section>
-<section id="discussion-questions" class="slide level2">
-<h2>Discussion Questions</h2>
-<ol type="1">
-<li class="fragment"><p>What is the <span class="alert">goal</span> of the hierarchical modeling exercise in Subramanian et al.<span class="citation" data-cites="subramanian2005a">(<a href="#/references" role="doc-biblioref" onclick="">1</a>)</span></p></li>
-<li class="fragment"><p>What is learned from the inclusion of multiple levels of <span class="alert">scale</span> (i.e.&nbsp;block group, census tract) in this analysis?</p></li>
-<li class="fragment"><p>What do you think 1-2 important <span class="alert">takeaways</span> are from reading this analysis?</p></li>
-</ol>
-<p>Use <a href="https://docs.google.com/document/d/1y8GsRLdW13IhckMF_3K4PHdHPy-eY46bzemKiaJOO6Y/edit?usp=sharing">this document</a> to share your conclusions</p>
+<section id="doing-better-work-on-structural-racism-requires-creativity" class="slide level2">
+<h2>Doing better work on structural racism requires <span class="alert">creativity</span></h2>
+<blockquote>
+<p>We must think beyond our training, statistical tests, and practices that dismiss methodologies that we may be unfamiliar with. There is scholarship being overlooked that proposes new approaches we could explore…, <span class="alert">but we cannot move forward with capturing variables like structural racism if we do not explore our creativity</span>. <span class="citation" data-cites="adkins-jackson2021">(<a href="#/references" role="doc-biblioref" onclick="">Adkins-Jackson et al. 2021</a>)</span></p>
+</blockquote>
 </section>
-<section id="area-level-covariates-explained-more-spatial-variation-in-mortality-for-black-vs.-white-residents" class="slide level2 imgslide">
-<h2>Area-level covariates explained more spatial variation in <span class="alert">mortality</span> for Black vs.&nbsp;White residents</h2>
-
-<img data-src="../../images/subramanian_table_4.png" class="r-stretch"><p>Table 4 from <span class="citation" data-cites="subramanian2005a">(<a href="#/references" role="doc-biblioref" onclick="">1</a>)</span></p>
+<section id="equity-oriented-models-take-social-mechanisms-as-seriously-as-biological-ones." class="slide level2 quote">
+<h2>Equity-oriented models take <span class="alert">social mechanisms</span> as seriously as biological ones.</h2>
+<blockquote>
+COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and systems that create health disparities in good times and inflate them in a crisis. <span class="alert">The US must develop a new kind of “herd immunity,” whereby resistance to the spread of poor health in the population occurs when a sufficiently high proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to negative social determinants.</span>
+</blockquote>
+<p>From Williams &amp; Cooper, <a href="https://jamanetwork.com/journals/jama/fullarticle/2766096">“COVID-19 and Health Equity—A New Kind of “Herd Immunity”</a>, JAMA, 6/23/2020</p>
 </section>
-<section id="capturing-systematic-and-random-variation-with-multi-level-models" class="slide level2 imgslide">
-<h2>Capturing <span class="alert">systematic</span> and <span class="alert">random</span> variation with multi-level models</h2>
+<section id="equity-oriented-models-require-an-informed-understanding-of-the-connections-between-high-level-intermediary-and-proximal-causes-of-infection." class="slide level2">
+<h2>Equity-oriented models require an informed understanding of the <span class="alert">connections between</span> high-level, intermediary, and proximal causes of infection.</h2>
 
-<img data-src="../../images/hierarchical_hands_on.png" class="r-stretch"><p>Time to <a href="https://sph-umich.shinyapps.io/hierarchical_models">generate some data</a></p>
-</section>
-<section id="next-time" class="slide level2 imgslide">
-<h2>Next Time</h2>
+<img data-src="../../images/noppert_exposure_diagram.png" class="r-stretch quarto-figure-center"><p class="caption">Flow diagram of connections between high-level, structural causes, intervening mechanisms, and downstream exposure risks, from <span class="citation" data-cites="noppert2022">Noppert, Hegde, and Kubale (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
+<section id="equity-oriented-models-cannot-treat-race-and-other-social-categorizations-as-causal-variables." class="slide level2">
+<h2>Equity-oriented models cannot treat race and other social categorizations as <span class="alert">causal variables</span>.</h2>
 
-<img data-src="../../images/creature_from_the_black_lagoon_franchise_retrospective.jpg" class="r-stretch"><p>The <a href="https://publish.obsidian.md/epibayes/Courses/EPID684/modules/Module+5/What+do+you+measure+when+you+measure+place+effects%3F+Confronting+the+modifiable+areal+unit+problem.html">Modifiable Areal Unit Problem!</a></p>
+<img data-src="../../images/phelan_link_residential.png" class="r-stretch quarto-figure-center"><p class="caption">Theoretical diagram from <span class="citation" data-cites="phelan2015">Phelan and Link (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span> showing the complex relationship between racism, socioeconomic inequity and racial inequity in disease outcomes.</p></section>
+<section id="equity-oriented-models-must-use-comparisons-that-reflect-the-impact-of-structural-changes-on-disease-risk." class="slide level2">
+<h2>Equity-oriented models must use comparisons that reflect the impact of <span class="alert">structural changes</span> on disease risk.</h2>
+
+<img data-src="../../images/naraharisetti_deaths_averted.png" class="r-stretch quarto-figure-center"><p class="caption">Proportion of SARS-CoV-2 deaths potentially averted in 2020 if all Michiganders experienced the same pacing of SARS-CoV-2 infection as Whites (From Naraharisetti et al., Under Review)</p></section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li class="fragment"><p>Please get in touch with any questions/thoughts/concerns at <code>jzelner@umich.edu</code>.</p></li>
+<li class="fragment"><p>Check out our work at <code>epibayes.io</code>.</p></li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -406,9 +414,15 @@ Spatial Epidemiology<br>
 <div class="footer footer-default">
 
 </div>
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-subramanian2005a" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Subramanian Sv, Chen JT, Rehkopf DH, et al. Racial <span>Disparities</span> in <span>Context</span>: <span>A Multilevel Analysis</span> of <span>Neighborhood Variations</span> in <span>Poverty</span> and <span>Excess Mortality Among Black Populations</span> in <span>Massachusetts</span>. <em>American Journal of Public Health</em> [electronic article]. 2005;95(2):260–265. (<a href="http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2003.034132">http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2003.034132</a>). (Accessed January 31, 2021)</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-adkins-jackson2021" class="csl-entry" role="doc-biblioentry">
+Adkins-Jackson, Paris B, Tongtan Chantarat, Zinzi D Bailey, and Ninez A Ponce. 2021. <span>“Measuring <span>Structural Racism</span>: <span>A Guide</span> for <span>Epidemiologists</span> and <span>Other Health Researchers</span>.”</span> <em>American Journal of Epidemiology</em>, September, kwab239. <a href="https://doi.org/10.1093/aje/kwab239">https://doi.org/10.1093/aje/kwab239</a>.
+</div>
+<div id="ref-noppert2022" class="csl-entry" role="doc-biblioentry">
+Noppert, Grace A, Sonia T Hegde, and John T Kubale. 2022. <span>“Exposure, <span>Susceptibility</span>, and <span>Recovery</span>: <span>A Framework</span> for <span>Examining</span> the <span>Intersection</span> of the <span>Social</span> and <span>Physical Environment</span> and <span>Infectious Disease Risk</span>.”</span> <em>American Journal of Epidemiology</em>, October, kwac186. <a href="https://doi.org/10.1093/aje/kwac186">https://doi.org/10.1093/aje/kwac186</a>.
+</div>
+<div id="ref-phelan2015" class="csl-entry" role="doc-biblioentry">
+Phelan, Jo C., and Bruce G. Link. 2015. <span>“Is <span>Racism</span> a <span>Fundamental Cause</span> of <span>Inequalities</span> in <span>Health</span>?”</span> <em>Annual Review of Sociology</em> 41 (1): 311–30. <a href="https://doi.org/10.1146/annurev-soc-073014-112305">https://doi.org/10.1146/annurev-soc-073014-112305</a>.
 </div>
 </div>
 </section>
