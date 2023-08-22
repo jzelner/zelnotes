@@ -7,7 +7,8 @@
 <script src="../../css/quarto-html/tippy.umd.min.js"></script>
 <link href="../../css/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../css/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../css/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <title>Modeling fundamental causes</title>
@@ -358,7 +359,7 @@
 
 
 <section id="modeling-the-fundamental-causes-of-infection-inequity" class="slide level2">
-<h2>Modeling the fundamental causes of infection inequity</h2>
+<h2>Modeling the <span class="alert">fundamental causes</span> of infection inequity</h2>
 <div class="paddeddiv">
 <p style="font-size:0.5em; text-align: left;">
 CDC Influenza Modeling Network Meeting<br>
@@ -370,13 +371,20 @@ University of Michigan School of Public Health <br><br> EpiBayes Research Group<
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
+<div style="position:absolute;left:0;bottom:2">
+<div id="qrcode" class="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode", {"height":"175","width":"175","colorDark":"#0011bb","text":"https://zelnotes.io/epid684/slides/covid_flu_network_meeting_atl.html","colorLight":"#FDF6E3"});
+</script>
+    
+</div>
 <p><img data-src="../../assets/epid_logo.png" class="absolute" style="bottom: 0px; right: 5px; width: 300px; "></p>
 <p><img data-src="../../assets/epibayeslogo.png" class="absolute" style="bottom: 90px; right: 5px; width: 250px; "></p>
 </section>
 <section id="how-do-we-make-social-mechanisms-first-class-components-of-transmission-models" class="slide level2 quote">
 <h2>How do we make social mechanisms <span class="alert">first-class components</span> of transmission models?</h2>
 <blockquote>
-COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and systems that create health disparities in good times and inflate them in a crisis. <span class="alert">The US must develop a new kind of “herd immunity,” whereby resistance to the spread of poor health in the population occurs when a sufficiently high proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to negative social determinants.</span>
+COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and systems that create health disparities in good times and inflate them in a crisis. The US must develop <span class="alert">a new kind of “herd immunity,”</span> whereby resistance to the spread of poor health in the population occurs when a sufficiently high proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to negative social determinants.
 </blockquote>
 <p>From Williams &amp; Cooper (2020): <a href="https://jamanetwork.com/journals/jama/fullarticle/2766096">“COVID-19 and Health Equity—A New Kind of “Herd Immunity”</a> <span class="citation" data-cites="williams2020a">(<a href="#/references" role="doc-biblioref" onclick="">1</a>)</span></p>
 </section>
@@ -384,16 +392,51 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 <h2>Agenda</h2>
 <ul>
 <li class="fragment"><p>Overview of health equity efforts at CDC (Kelcie Landon)</p></li>
-<li class="fragment"><p>What does it mean to make equity a first-class concern of models &amp; modelers? (Jon Zelner, UM)</p></li>
-<li class="fragment"><p>Estimating and projecting COVID-19 disparities at the sub-city level (José Herrera, UT)</p></li>
+<li class="fragment"><p><span style="color:#00274C;">What does it mean to make equity a first-class concern of models &amp; modelers?</span> <span style="color:#00274C;">(</span><span style="color:#FFCB05;">Jon Zelner, UM</span><span style="color:#00274C;">)</span></p></li>
+<li class="fragment"><p><span style="color:#e85100;">Estimating and projecting COVID-19 disparities at the sub-city level.</span> (José Herrera, UT)</p></li>
 <li class="fragment"><p>~45m for discussion</p></li>
 </ul>
 </section>
 <section>
-<section id="rethinking-social-causes-effects-and-interventions-in-epidemiological-systems" class="title-slide slide level1 center">
-<h1>Rethinking social causes, effects, and interventions in epidemiological systems</h1>
+<section id="from-social-factors-to-social-causes" class="title-slide slide level1 center">
+<h1>From social <span class="alert">factors</span> to social <span class="alert">causes</span></h1>
 
 </section>
+<section id="tldr" class="slide level2">
+<h2>TLDR</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Why the <span class="alert">fundamental social cause</span> perspective is a powerful adjunct to mechanistic modeling.</p></li>
+<li class="fragment"><p>Thinking through the implicaitons of a social causation framework for <span class="alert">intervention</span> and <span class="alert">policy</span>.</p></li>
+<li class="fragment"><p>A very incomplete framework for <span class="alert">equity-forward</span> modeling.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../../images/no_equal_opportunity_flow.png"></p>
+<p></p><figcaption>Example socio-epidemiological framework for modeling infection inequity (From Zelner et al.&nbsp;2021 <span class="citation" data-cites="zelner2022">(<a href="#/references" role="doc-biblioref" onclick="">2</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="there-is-nothing-new-under-the-sun" class="slide level2">
+<h2>There is nothing new under the sun ☀️</h2>
+
+<img data-src="../images/20230822080741.png" class="r-stretch quarto-figure-center"><p class="caption">From Dubos (1955) <span class="citation" data-cites="dubos1955">(<a href="#/references" role="doc-biblioref" onclick="">3</a>)</span></p></section>
+<section id="during-the-covid-19-pandemic-social-causes-of-infection-inequity-were-quickly-identified" class="slide level2">
+<h2>During the COVID-19 pandemic, social causes of infection inequity were <span class="alert">quickly identified</span></h2>
+
+<img data-src="../../images/racial_capitalism_mcclure.png" class="r-stretch quarto-figure-center"><p class="caption">One of many examples of important insights that didn’t make it into early pandemic models. <span class="citation" data-cites="mcclure2020">(<a href="#/references" role="doc-biblioref" onclick="">4</a>)</span></p></section>
+<section id="historical-analyses-have-repeatedly-demonstrated-how-social-structures-drive-infection-inequities" class="slide level2">
+<h2>Historical analyses have repeatedly demonstrated how social structures drive infection inequities</h2>
+
+<img data-src="../images/20230822102408.png" class="r-stretch quarto-figure-center"><p class="caption">Example of spatial and racial inequities in 1918 influenza mortality from <span class="citation" data-cites="grantz2016">(<a href="#/references" role="doc-biblioref" onclick="">5</a>)</span></p></section>
+<section id="a-lack-theory-intuition-data-and-methods-for-anticipating-and-targeting-inequity-was-a-signal-failure-of-preparedness." class="slide level2">
+<h2>A lack theory, intuition, data, and methods for anticipating and targeting inequity was a signal failure of <span class="alert">preparedness</span>.</h2>
+
+<img data-src="../../images/zelner_eisenberg_stylized_facts.png" class="r-stretch quarto-figure-center"><p class="caption">Implications of COVID-19 modeling have been broad, shaping everything from intuition, to public policy and social discource (Figure from <span class="citation" data-cites="zelner2022b">(<a href="#/references" role="doc-biblioref" onclick="">6</a>)</span>)</p></section>
 <section id="a-very-unpleasant-thought-experiment" class="slide level2">
 <h2>A <span class="alert">very unpleasant</span> thought experiment</h2>
 <ul>
@@ -405,7 +448,7 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ce8e9b96" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_3e6788b2" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -432,30 +475,47 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 </div>
 </div>
 </section>
-<section id="how-much-progress-can-we-make-by-enumerating-and-attacking-the-mid-stream-drivers-of-infection-inequity" class="slide level2">
-<h2>How much progress can we make by enumerating and attacking the <span class="alert">mid-stream</span> drivers of infection inequity?</h2>
-
-<img data-src="../../images/noppert_exposure_diagram.png" class="r-stretch quarto-figure-center"><p class="caption">Flow diagram of connections between high-level, structural causes, intervening mechanisms, and downstream exposure risks, from <span class="citation" data-cites="noppert2022">(<a href="#/references" role="doc-biblioref" onclick="">2</a>)</span></p></section>
-<section id="fundamental-cause-theory-fct-gives-some-insight-into-why-this-may-often-lead-to-a-dead-end." class="slide level2">
-<h2><span class="alert">Fundamental cause theory</span> (FCT) gives some insight into why this may often lead to a <span class="alert">dead end</span>.</h2>
-
-<img data-src="../../images/phelan_link_residential.png" class="r-stretch quarto-figure-center"><p class="caption">Theoretical diagram from <span class="citation" data-cites="phelan2015">(<a href="#/references" role="doc-biblioref" onclick="">3</a>)</span> showing relationships between racism, socioeconomic inequity and racial inequity in disease outcomes.</p></section>
-<section id="fundamental-causes-are-characterized-by-their-pervasiveness-and-durability." class="slide level2">
-<h2>Fundamental causes are characterized by their <span class="alert">pervasiveness</span> and <span class="alert">durability</span>.</h2>
+<section id="fundamental-cause-theory-fct-gives-some-insight-into-what-makes-social-inequities-in-infection-so-persistent." class="slide level2">
+<h2><span class="alert">Fundamental cause theory</span> (FCT) gives some insight into what makes social inequities in infection so persistent.</h2>
 <ol type="1">
-<li class="fragment"><p>A fundamental cause is connected to inequity in outcomes through <span class="alert">numerous intermediary mechanisms</span> <span class="citation" data-cites="link1995">(<a href="#/references" role="doc-biblioref" onclick="">4</a>)</span>.</p></li>
+<li class="fragment"><p>A fundamental cause is connected to inequity in outcomes through <span class="alert">numerous intermediary mechanisms</span> <span class="citation" data-cites="link1995">(<a href="#/references" role="doc-biblioref" onclick="">7</a>)</span>.</p></li>
 <li class="fragment"><p>A fundamental cause drive inequity across multiple, diverse <span class="alert">health outcomes</span>.</p></li>
 <li class="fragment"><p>New technologies cause may inequities to <span class="alert">persist or grow</span> if they diffuse through the population along existing socioeconomic structures.</p></li>
 </ol>
 </section>
-<section id="a-helpful-example" class="slide level2">
-<h2>A helpful <span class="alert">example</span></h2>
+<section id="fundamental-causes-constrain-access-to-flexible-financial-social-and-material-resources" class="slide level2">
+<h2>Fundamental causes constrain access to <span class="alert">flexible</span> financial, social and material resources</h2>
+<p>Proposed fundamental causes include:</p>
+<ul>
+<li class="fragment">Socioeconomic inequity</li>
+<li class="fragment">Racism</li>
+<li class="fragment">Residential segregation</li>
+<li class="fragment">Social stigma</li>
+</ul>
+<div class="fragment">
+<p>Effects may be correlated or overlapping, but each represents <span class="alert">distinct mechanisms</span>.</p>
+</div>
+</section>
+<section id="fundamental-causes-such-as-racism-are-characterized-by-their-pervasiveness-and-durability." class="slide level2">
+<h2>Fundamental causes such as <span class="alert">racism</span> are characterized by their <span class="alert">pervasiveness</span> and <span class="alert">durability</span>.</h2>
+
+<img data-src="../../images/phelan_link_residential.png" class="r-stretch quarto-figure-center"><p class="caption">Theoretical diagram from <span class="citation" data-cites="phelan2015">(<a href="#/references" role="doc-biblioref" onclick="">8</a>)</span> showing relationships between racism, socioeconomic inequity and racial inequity in disease outcomes.</p></section>
+<section id="fct-suggests-there-are-diminishing-returns-to-enumerating-and-attacking-the-mid-stream-drivers-of-infection-inequity" class="slide level2">
+<h2>FCT suggests there are diminishing returns to enumerating and attacking the <span class="alert">mid-stream</span> drivers of infection inequity</h2>
+
+<img data-src="../../images/noppert_exposure_diagram.png" class="r-stretch quarto-figure-center"><p class="caption">Flow diagram of connections between high-level, structural causes, intervening mechanisms, and downstream exposure risks, from <span class="citation" data-cites="noppert2022">(<a href="#/references" role="doc-biblioref" onclick="">9</a>)</span></p></section>
+<section id="fct-shows-that-innovation-may-result-in-increased-inequity" class="slide level2">
+<h2>FCT shows that <span class="alert">innovation</span> may result in increased inequity</h2>
+
+<img data-src="../images/20230821143905.png" class="r-stretch quarto-figure-center"><p class="caption">Diffusion of a new medical innovation through a population (dashed line) along a gradient of socioeconomic inequity (solid line) (Figure from Zapata-Moya 2019 <span class="citation" data-cites="zapata-moya2019">(<a href="#/references" role="doc-biblioref" onclick="">10</a>)</span>; see also <span class="citation" data-cites="clouston2016">(<a href="#/references" role="doc-biblioref" onclick="">11</a>)</span>)</p></section>
+<section id="how-does-this-play-out-in-the-real-world" class="slide level2">
+<h2>How does this play out in the <span class="alert">real world</span>?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/20230816100752.png" style="width:80.0%"></p>
-<p></p><figcaption>SSRI introduction corresponded with a precipitous rate of decline in the rate of suicide in the US.</figcaption><p></p>
+<p></p><figcaption>SSRI introduction corresponded with a precipitous decline in the rate of suicide in the US.</figcaption><p></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -463,20 +523,33 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/20230816100924.png" style="width:75.0%"></p>
-<p></p><figcaption><span class="alert">But:</span> These gains were experienced almost exclusively by individuals living in high-SES counties (dashed line) <span class="citation" data-cites="clouston2014">(<a href="#/references" role="doc-biblioref" onclick="">5</a>)</span></figcaption><p></p>
+<p></p><figcaption><span class="alert">But:</span> These gains were experienced almost exclusively by individuals living in high-SES counties (dashed line) <span class="citation" data-cites="clouston2014">(<a href="#/references" role="doc-biblioref" onclick="">12</a>)</span></figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="epidemiologists-and-policymakers-are-used-to-thinking-about-well-defined-interventions." class="slide level2">
-<h2>Epidemiologists and policymakers are used to thinking about <span class="alert">well-defined interventions</span>.</h2>
-<p>‘Well-defined’ interventions follow SUTVA principles <span class="citation" data-cites="schwartz2016">(<a href="#/references" role="doc-biblioref" onclick="">6</a>)</span>:</p>
+<section id="work-from-home-and-other-npis-are-also-public-health-innovations-drive-inequity." class="slide level2">
+<h2>Work-from home and other NPIs are also public-health <span class="alert">innovations</span> drive inequity.</h2>
+
+<img data-src="../../images/naraharisetti_deaths_averted.png" class="r-stretch quarto-figure-center"><p class="caption">Proportion of SARS-CoV-2 deaths potentially averted in 2020 if all Michiganders experienced the same pacing of SARS-CoV-2 infection as Whites (From Naraharisetti et al., Under Review)</p></section>
+<section id="these-patterns-clearly-in-evidence-during-the-roll-out-of-sars-cov-2-vaccine" class="slide level2">
+<h2>These patterns clearly in evidence during the roll-out of SARS-CoV-2 vaccine</h2>
+
+<img data-src="../images/20230822100455.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="alert">High-SES</span> counties were vaccinated faster, earlier, and more completely than lower-SES counties (From Clouston et al.&nbsp;2023 <span class="citation" data-cites="clouston2023">(<a href="#/references" role="doc-biblioref" onclick="">13</a>)</span>)</p></section></section>
+<section>
+<section id="how-should-we-think-about-intervention-in-socio-epidemiological-systems" class="title-slide slide level1 center">
+<h1>How should we think about <span class="alert">intervention</span> in socio-epidemiological systems?</h1>
+
+</section>
+<section id="epidemiologists-and-policymakers-are-used-to-developing-and-evaluating-well-defined-interventions." class="slide level2">
+<h2>Epidemiologists and policymakers are used to developing and evaluating <span class="alert">well-defined interventions</span>.</h2>
+<p>‘Well-defined’ interventions follow SUTVA principles <span class="citation" data-cites="schwartz2016">(<a href="#/references" role="doc-biblioref" onclick="">14</a>)</span>:</p>
 <ol type="1">
 <li class="fragment"><p>Modalities of intervention are as <span class="alert">explicit</span> as possible.</p></li>
-<li class="fragment"><p><span class="alert">Direct</span> vs.&nbsp;indirect effects of treatment are clearly identified.</p></li>
-<li class="fragment"><p>Quantitative relationships between intervention and outcome are <span class="alert">replicable</span> across subjects and contexts.</p></li>
+<li class="fragment"><p><span class="alert">Direct</span> effects of treatment are clearly identified.</p></li>
+<li class="fragment"><p>Quantitative relationships between intervention and outcome are replicable <span class="alert"></span> across subjects and contexts.</p></li>
 </ol>
 </section>
 <section id="well-defined-interventions-are-essential-tools-of-effective-public-health-and-clinical-medicine." class="slide level2">
@@ -486,72 +559,96 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 <li class="fragment"><p>Measurement of the efficacy of antivirals and other therapeutics. 💊</p></li>
 <li class="fragment"><p>Assessing direct and indirect impacts of non-pharmaceutical interventions<sup>1</sup>. 😷</p></li>
 </ol>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>See <span class="citation" data-cites="greenhalgh2021">(<a href="#/references" role="doc-biblioref" onclick="">7</a>)</span> for some more in-depth discussion of challenges associated with RCT-like analysis of NPIs.</p></li></ol></aside></section>
-<section id="but-are-there-well-defined-interventions-that-can-address-the-fundamental-causes-of-infection-inequity" class="slide level2">
-<h2>But are there well-defined interventions that can address the <span class="alert">fundamental causes</span> of infection inequity?</h2>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>See <span class="citation" data-cites="greenhalgh2021">(<a href="#/references" role="doc-biblioref" onclick="">15</a>)</span> for some more in-depth discussion of challenges associated with RCT-like analysis of NPIs.</p></li></ol></aside></section>
+<section id="can-well-defined-interventions-remediate-fundamental-causes-of-infection-inequity" class="slide level2">
+<h2>Can well-defined interventions remediate <span class="alert">fundamental causes</span> of infection inequity?</h2>
 
-<img data-src="../images/20230814113753.png" class="r-stretch quarto-figure-center"><p class="caption">The only ‘well-defined intervention’ for racial disparities that can attack all of the pathways connecting structural racism to health inequity (as described by Richardson <span class="citation" data-cites="richardson2020a">(<a href="#/references" role="doc-biblioref" onclick="">8</a>)</span>, with a healthy dose of irony)</p></section>
-<section id="why-might-well-defined-interventions-be-limited-tools-for-attacking-the-structural-determinants-of-inequity" class="slide level2">
-<h2>Why might well-defined interventions be <span class="alert">limited tools</span> for attacking the structural determinants of inequity?</h2>
+<img data-src="../images/20230814113753.png" class="r-stretch quarto-figure-center"><p class="caption">The only ‘well-defined intervention’ for racial disparities that can attack all of the pathways connecting structural racism to health inequity (as described by Richardson <span class="citation" data-cites="richardson2020a">(<a href="#/references" role="doc-biblioref" onclick="">16</a>)</span>, with a healthy dose of irony)</p></section>
+<section id="why-are-classically-well-defined-interventions-limited-tools-for-attacking-the-structural-determinants-of-inequity" class="slide level2">
+<h2>Why are classically well-defined interventions <span class="alert">limited tools</span> for attacking the structural determinants of inequity?</h2>
 <ul>
-<li class="fragment"><p>Downstream factors addressed by well-defined interventions may be chasing a <span class="alert">moving target</span> <span class="citation" data-cites="schwartz2016 zelner2023">(<a href="#/references" role="doc-biblioref" onclick="">6</a>,<a href="#/references" role="doc-biblioref" onclick="">9</a>)</span>.</p></li>
-<li class="fragment"><p>Causal inference targeting the <span class="alert">‘closest possible world’</span> <span class="citation" data-cites="oakes2017">(<a href="#/references" role="doc-biblioref" onclick="">10</a>)</span> biases towards <span class="alert">conservative</span> interventions.</p></li>
-<li class="fragment"><p>An intervention framework assuming a tight connection between <span class="alert">policy(makers)</span> and <span class="alert">discrete interventions</span> may not be an appropriate frame for problems requiring collective action. <span class="citation" data-cites="schwartz2016 zelner2022">(<a href="#/references" role="doc-biblioref" onclick="">6</a>,<a href="#/references" role="doc-biblioref" onclick="">11</a>)</span></p></li>
+<li class="fragment"><p>Downstream factors addressed by well-defined interventions may be chasing a <span class="alert">moving target</span> <span class="citation" data-cites="schwartz2016 zelner2023">(<a href="#/references" role="doc-biblioref" onclick="">14</a>,<a href="#/references" role="doc-biblioref" onclick="">17</a>)</span>.</p></li>
+<li class="fragment"><p>Causal inference targeting the <span class="alert">‘closest possible world’</span> <span class="citation" data-cites="oakes2017">(<a href="#/references" role="doc-biblioref" onclick="">18</a>)</span> biases towards <span class="alert">conservative</span> interventions.</p></li>
+<li class="fragment"><p>An intervention framework assuming a tight connection between <span class="alert">policy(makers)</span> and <span class="alert">discrete interventions</span> may not be an appropriate frame for problems requiring collective action. <span class="citation" data-cites="schwartz2016 zelner2022">(<a href="#/references" role="doc-biblioref" onclick="">2</a>,<a href="#/references" role="doc-biblioref" onclick="">14</a>)</span></p></li>
 </ul>
+</section></section>
+<section>
+<section id="an-incomplete-framework-for-equity-forward-modeling" class="title-slide slide level1 center">
+<h1>An (<span class="alert">incomplete</span>) framework for equity-forward modeling</h1>
+
 </section>
-<section id="what-should-models-and-modelers-do-then" class="slide level2">
-<h2>What should models and modelers <span class="alert">do</span>, then?</h2>
-<ul>
-<li class="fragment"><p>Schwartz et al. <span class="citation" data-cites="schwartz2016">(<a href="#/references" role="doc-biblioref" onclick="">6</a>)</span> argue for examination of causal mediators to help understand an overarching theoretical explanation rather than to highlight individual mechanisms of intervention.</p></li>
-<li class="fragment"><p>Accept greater <span class="alert">uncertainty</span> about causal links between insights, discrete actions, and disease outcomes.</p></li>
-<li class="fragment"><p>This is inferior to a <span class="alert">proximal</span> approach <em>iff</em> more proximal approaches can actually make a meaningful dent in infection inequity.</p></li>
-<li class="fragment"><p>The evidence suggests…otherwise.</p></li>
-</ul>
-</section>
-<section id="does-this-mean-we-have-to-fix-every-social-problem-to-have-an-impact" class="slide level2">
-<h2>Does this mean we have to fix <span class="alert">every social problem</span> to have an impact?</h2>
-<ul>
-<li class="fragment"><p>FCT provides insight into what puts poeple “at risk of risk” and how these relationships may change over time.</p></li>
-<li class="fragment"><p>If our outcomes of interest are <span class="alert">overdetermined</span> by structural inequities, purely downstream efforts are doomed to fail and may be counterproductive.</p></li>
-<li class="fragment"><p>FCT forces us to <span class="alert">consider the implications</span> of the dynamic relationships between social systems and health outcomes.</p></li>
-</ul>
-</section>
-<section id="how-do-we-help-build-a-new-herd-immunity" class="slide level2">
-<h2>How do we help build a <span class="alert">new herd immunity</span>?</h2>
+<section id="being-ready-for-the-next-emergency-is-not-optional" class="slide level2">
+<h2>Being ready for the next emergency is not optional</h2>
+
+<img src="https://i.makeagif.com/media/2-02-2018/HCU0O8.gif" alt="Charlie Brown and Lucy - kicking the FOOTBALL" class="r-stretch"></section>
+<section id="so-what-role-can-modelers-play-in-redefining-population-immunity" class="slide level2">
+<h2><span class="alert">So:</span> What role can modelers play in redefining <span class="alert">population immunity</span>?</h2>
 <blockquote>
-COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and systems that create health disparities in good times and inflate them in a crisis. <span class="alert">The US must develop a new kind of “herd immunity,” whereby resistance to the spread of poor health in the population occurs when a sufficiently high proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to negative social determinants.</span>
+COVID-19 disparities are not the fault of those who are experiencing them, but rather reflect social policies and systems that create health disparities in good times and inflate them in a crisis. The US must develop <span class="alert">a new kind of “herd immunity,”</span> whereby resistance to the spread of poor health in the population occurs when a sufficiently high proportion of individuals, across all racial, ethnic, and social class groups, are protected from and thus “immune” to negative social determinants.
 </blockquote>
 <p>From Williams &amp; Cooper (2020): <a href="https://jamanetwork.com/journals/jama/fullarticle/2766096">“COVID-19 and Health Equity—A New Kind of “Herd Immunity”</a> <span class="citation" data-cites="williams2020a">(<a href="#/references" role="doc-biblioref" onclick="">1</a>)</span></p>
 </section>
-<section id="more-explicit-recognition-of-the-embeddedness-of-models-in-sociopolitical-systems" class="slide level2">
-<h2>More explicit recognition of the <span class="alert">embeddedness</span> of models in sociopolitical systems</h2>
+<section id="re-orienting-towards-equity-requires-reframing-our-goals" class="slide level2">
+<h2>Re-orienting towards equity requires <span class="alert">reframing</span> our goals</h2>
+<ul>
+<li class="fragment"><p>Highlight the role of structural factors in producing inequity without necessarily suggesting a specific <span class="alert">intervention</span>.</p></li>
+<li class="fragment"><p>Target a broader array of stakeholders than classical <span class="alert">policymakers</span> and <span class="alert">NGOs</span>.</p></li>
+<li class="fragment"><p>Accept greater statistical and epistemic uncertainty in linkages between discrete actions and outcomes, i.e.&nbsp;a stronger focus on <span class="alert">qualitative</span> insights.</p></li>
+</ul>
+</section>
+<section id="recognize-the-embeddedness-of-models-and-modelers-in-sociopolitical-systems" class="slide level2">
+<h2>Recognize the <span class="alert">embeddedness</span> of models and modelers in sociopolitical systems</h2>
 
-<img data-src="../images/20230818112437.png" class="r-stretch quarto-figure-center"><p class="caption">Example framework from Williams et al. <span class="citation" data-cites="williams2022">(<a href="#/references" role="doc-biblioref" onclick="">12</a>)</span> situating models and <span class="alert">modelers</span> within a system of social relationships and constraints.</p></section>
-<section id="equity-oriented-models-let-us-understand-the-distributional-implications-of-dynamics" class="slide level2">
-<h2>Equity-oriented models let us understand the <span class="alert">distributional</span> implications of dynamics</h2>
+<img data-src="../images/20230818112437.png" class="r-stretch quarto-figure-center"><p class="caption">Example framework from Williams et al. <span class="citation" data-cites="williams2022">(<a href="#/references" role="doc-biblioref" onclick="">19</a>)</span> situating models and <span class="alert">modelers</span> within a system of social relationships and constraints.</p></section>
+<section id="treat-social-and-economic-policies-as-first-line-epidemiological-interventions" class="slide level2">
+<h2>Treat social and economic policies as <span class="alert">first-line</span> epidemiological interventions</h2>
 
-<img data-src="../images/20230814133627.png" class="r-stretch quarto-figure-center"><p class="caption">Example from Ma et al. <span class="citation" data-cites="ma2021">(<a href="#/references" role="doc-biblioref" onclick="">13</a>)</span> showing cumulative burdens of infection by race/ethnicity at a modeled herd immunity threshold for SARS-CoV-2</p></section>
-<section id="equity-oriented-models-use-comparisons-that-reflect-the-impact-of-structural-changes-on-disease-risk." class="slide level2">
-<h2>Equity-oriented models use comparisons that reflect the impact of <span class="alert">structural changes</span> on disease risk.</h2>
+<img data-src="../../images/nande_evictions_covid_transmission.png" class="r-stretch quarto-figure-center"><p class="caption">Examining the impact of ending the CDC eviction moratorium on COVID-19 infection inequity requires accounting for multiple levels of transmission (Figure from <span class="citation" data-cites="nande2021">(<a href="#/references" role="doc-biblioref" onclick="">20</a>)</span>)</p></section>
+<section id="highlight-the-distributional-implications-of-existing-social-inequities" class="slide level2">
+<h2>Highlight the <span class="alert">distributional</span> implications of <span class="alert">existing social inequities</span></h2>
 
-<img data-src="../../images/naraharisetti_deaths_averted.png" class="r-stretch quarto-figure-center"><p class="caption">Proportion of SARS-CoV-2 deaths potentially averted in 2020 if all Michiganders experienced the same pacing of SARS-CoV-2 infection as Whites (From Naraharisetti et al., Under Review)</p></section>
-<section id="historical-inequities-are-already-in-every-model" class="slide level2">
-<h2>Historical inequities are <span class="alert">already</span> in every model</h2>
+<img data-src="../images/20230814133627.png" class="r-stretch quarto-figure-center"><p class="caption">Example from Ma et al. <span class="citation" data-cites="ma2021">(<a href="#/references" role="doc-biblioref" onclick="">21</a>)</span> showing cumulative burdens of infection by race/ethnicity at a modeled herd immunity threshold for SARS-CoV-2</p></section>
+<section id="pay-explicit-attention-to-the-historical-inequities-that-are-already-in-every-model" class="slide level2">
+<h2>Pay explicit attention to the historical inequities that are <span class="alert">already</span> in every model</h2>
 <blockquote>
-<p>When mathematical models are created to represent a particular time period in a defined population, history is incorporated through the initial conditions or the initial parameterization of the model[.]… <span class="alert">This way of handling history is highly dependent on the quality and quantity of data available in the context being modeled.</span> <span class="citation" data-cites="abuelezam2023a">(<a href="#/references" role="doc-biblioref" onclick="">14</a>)</span></p>
+<p>When mathematical models are created to represent a particular time period in a defined population, history is incorporated through the initial conditions or the initial parameterization of the model[.]… <span class="alert">This way of handling history is highly dependent on the quality and quantity of data available in the context being modeled.</span> <span class="citation" data-cites="abuelezam2023a">(<a href="#/references" role="doc-biblioref" onclick="">22</a>)</span></p>
 </blockquote>
 </section>
-<section id="doing-better-work-on-structural-racism-requires-creativity" class="slide level2">
-<h2>Doing better work on structural racism requires <span class="alert">creativity</span></h2>
+<section id="modeling-for-equity-requires-risk-taking-and-creativity" class="slide level2">
+<h2>Modeling for equity requires <span class="alert">risk-taking</span> and <span class="alert">creativity</span></h2>
 <blockquote>
-<p>We must think beyond our training, statistical tests, and practices that dismiss methodologies that we may be unfamiliar with. There is scholarship being overlooked that proposes new approaches we could explore…, <span class="alert">but we cannot move forward with capturing variables like structural racism if we do not explore our creativity</span>. (Adkins-Jackson et al.&nbsp;2021, <span class="citation" data-cites="adkins-jackson2021">(<a href="#/references" role="doc-biblioref" onclick="">15</a>)</span>)</p>
+<p>We must think beyond our training, statistical tests, and practices that dismiss methodologies that we may be unfamiliar with. There is scholarship being overlooked that proposes new approaches we could explore…, <span class="alert">but we cannot move forward with capturing variables like structural racism if we do not explore our creativity</span>. (Adkins-Jackson et al.&nbsp;2021, <span class="citation" data-cites="adkins-jackson2021">(<a href="#/references" role="doc-biblioref" onclick="">23</a>)</span>)</p>
 </blockquote>
+</section>
+<section id="this-requires-us-to-expand-into-new-territory-with-a-combination-of-curiosity-and-humility" class="slide level2">
+<h2>This requires us to expand into new territory with a combination of curiosity and humility</h2>
+<blockquote>
+<p>We also want to underscore that a sociological imagination is accessible to all working epidemiologists: While engagement with the literature in social science and social epidemiology is key, <span class="alert">the most essential thing is to adopt the “attitude of playfulness” that [pioneering social scientist C. Wright] Mills encouraged when connecting the dots from the structural to the personal</span>.(Zelner et al.&nbsp;2023, <span class="citation" data-cites="zelner2023">(<a href="#/references" role="doc-biblioref" onclick="">17</a>)</span>)</p>
+</blockquote>
+</section>
+<section id="while-paying-attention-to-the-balance-between-social-and-biological-mechanisms-as-drivers-of-infection-outcomes." class="slide level2">
+<h2>While paying attention to the <span class="alert">balance</span> between social and biological mechanisms as drivers of infection outcomes.</h2>
+
+<img data-src="../images/20230822081445.png" class="r-stretch quarto-figure-center"><p class="caption">Casanova <span class="citation" data-cites="casanova2023">(<a href="#/references" role="doc-biblioref" onclick="">24</a>)</span> points out ambiguities in Dubos’ ideas about ‘resistance’ and how modern immunology complicates simplistic ideas about the relationship between host and environment.</p></section></section>
+<section>
+<section id="estimating-and-projecting-covid-19-disparities-at-the-sub-city-level." class="title-slide slide level1 center">
+<h1><span style="color:#e85100;">Estimating and projecting COVID-19 disparities at the sub-city level.</span></h1>
+
+</section>
+<section id="discussion-questions" class="slide level2">
+<h2>Discussion Questions</h2>
+<ul>
+<li class="fragment"><p>What are the coonceptual gaps we need to fill to do a better job?</p></li>
+<li class="fragment"><p>What are the limitations of existing data sources? What data are needed?</p></li>
+<li class="fragment"><p>How do we do this without falling into a ‘model harder, not smarter’ trap?</p></li>
+</ul>
 </section>
 <section id="thanks" class="slide level2">
 <h2>Thanks!</h2>
 <ul>
 <li class="fragment"><p>Please get in touch with any questions/thoughts/concerns at <code>jzelner@umich.edu</code>.</p></li>
 <li class="fragment"><p>Check out our work at <code>epibayes.io</code>.</p></li>
+<li class="fragment"><p><a href="https://zelnotes.io/posts/idm-symposium/">More resources</a> on modeling infection inequity.</p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
@@ -564,47 +661,74 @@ COVID-19 disparities are not the fault of those who are experiencing them, but r
 <div id="ref-williams2020a" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Williams DR, Cooper LA. <span>COVID-19</span> and <span>Health Equity</span> of <span>“<span>Herd Immunity</span>.”</span> <em>JAMA</em> [electronic article]. 2020;323(24):2478–2480. (<a href="https://doi.org/10.1001/jama.2020.8051">https://doi.org/10.1001/jama.2020.8051</a>). (Accessed February 2, 2021)</div>
 </div>
-<div id="ref-noppert2022" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Noppert GA, Hegde ST, Kubale JT. Exposure, <span>Susceptibility</span>, and <span>Recovery</span>: <span>A Framework</span> for <span>Examining</span> the <span>Intersection</span> of the <span>Social</span> and <span>Physical Environment</span> and <span>Infectious Disease Risk</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2022;kwac186. (<a href="https://doi.org/10.1093/aje/kwac186">https://doi.org/10.1093/aje/kwac186</a>). (Accessed November 3, 2022)</div>
+<div id="ref-zelner2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Zelner J, Masters NB, Naraharisetti R, et al. There are no equal opportunity infectors: <span>Epidemiological</span> modelers must rethink our approach to inequality in infection risk. <em>PLOS Computational Biology</em> [electronic article]. 2022;18(2):e1009795. (<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795</a>). (Accessed February 16, 2022)</div>
 </div>
-<div id="ref-phelan2015" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Phelan JC, Link BG. Is <span>Racism</span> a <span>Fundamental Cause</span> of <span>Inequalities</span> in <span>Health</span>? <em>Annual Review of Sociology</em> [electronic article]. 2015;41(1):311–330. (<a href="http://www.annualreviews.org/doi/10.1146/annurev-soc-073014-112305">http://www.annualreviews.org/doi/10.1146/annurev-soc-073014-112305</a>). (Accessed December 15, 2019)</div>
+<div id="ref-dubos1955" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Dubos RJ. Second <span>Thoughts</span> on the <span>Germ Theory</span>. <em>Scientific American</em> [electronic article]. 1955;192(5):31–35. (<a href="http://www.jstor.org/stable/24944640">http://www.jstor.org/stable/24944640</a>). (Accessed September 4, 2020)</div>
+</div>
+<div id="ref-mcclure2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">McClure ES, Vasudevan P, Bailey Z, et al. Racial <span>Capitalism</span> within <span>Public Health</span>: <span>How Occupational Settings Drive COVID-19 Disparities</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2020;kwaa126. (<a href="https://academic.oup.com/aje/advance-article/doi/10.1093/aje/kwaa126/5866668">https://academic.oup.com/aje/advance-article/doi/10.1093/aje/kwaa126/5866668</a>). (Accessed July 15, 2020)</div>
+</div>
+<div id="ref-grantz2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Grantz KH, Rane MS, Salje H, et al. Disparities in influenza mortality and transmission related to sociodemographic factors within <span>Chicago</span> in the pandemic of 1918. <em>Proceedings of the National Academy of Sciences</em> [electronic article]. 2016;113(48):13839–13844. (<a href="http://www.pnas.org/lookup/doi/10.1073/pnas.1612838113">http://www.pnas.org/lookup/doi/10.1073/pnas.1612838113</a>). (Accessed December 15, 2019)</div>
+</div>
+<div id="ref-zelner2022b" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Zelner J, Eisenberg M. Rapid response modeling of <span>SARS-CoV-2</span> transmission. <em>Science</em> [electronic article]. 2022;376(6593):579–580. (<a href="http://www.science.org/doi/full/10.1126/science.abp9498">http://www.science.org/doi/full/10.1126/science.abp9498</a>). (Accessed May 11, 2022)</div>
 </div>
 <div id="ref-link1995" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Link BG, Phelan J. Social <span>Conditions As Fundamental Causes</span> of <span>Disease</span>. <em>Journal of Health and Social Behavior</em> [electronic article]. 1995;35:80. (<a href="http://www.jstor.org/stable/2626958?origin=crossref">http://www.jstor.org/stable/2626958?origin=crossref</a>). (Accessed December 15, 2019)</div>
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Link BG, Phelan J. Social <span>Conditions As Fundamental Causes</span> of <span>Disease</span>. <em>Journal of Health and Social Behavior</em> [electronic article]. 1995;35:80. (<a href="http://www.jstor.org/stable/2626958?origin=crossref">http://www.jstor.org/stable/2626958?origin=crossref</a>). (Accessed December 15, 2019)</div>
+</div>
+<div id="ref-phelan2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Phelan JC, Link BG. Is <span>Racism</span> a <span>Fundamental Cause</span> of <span>Inequalities</span> in <span>Health</span>? <em>Annual Review of Sociology</em> [electronic article]. 2015;41(1):311–330. (<a href="http://www.annualreviews.org/doi/10.1146/annurev-soc-073014-112305">http://www.annualreviews.org/doi/10.1146/annurev-soc-073014-112305</a>). (Accessed December 15, 2019)</div>
+</div>
+<div id="ref-noppert2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Noppert GA, Hegde ST, Kubale JT. Exposure, <span>Susceptibility</span>, and <span>Recovery</span>: <span>A Framework</span> for <span>Examining</span> the <span>Intersection</span> of the <span>Social</span> and <span>Physical Environment</span> and <span>Infectious Disease Risk</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2022;kwac186. (<a href="https://doi.org/10.1093/aje/kwac186">https://doi.org/10.1093/aje/kwac186</a>). (Accessed November 3, 2022)</div>
+</div>
+<div id="ref-zapata-moya2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Zapata-Moya ÁR, Willems B, Bracke P. The (re)production of health inequalities through the process of disseminating preventive innovations: The dynamic influence of socioeconomic status. <em>Health Sociology Review</em> [electronic article]. 2019;28(2):177–193. (<a href="https://doi.org/10.1080/14461242.2019.1601027">https://doi.org/10.1080/14461242.2019.1601027</a>). (Accessed September 20, 2022)</div>
+</div>
+<div id="ref-clouston2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Clouston SAP, Rubin MS, Phelan JC, et al. A <span>Social History</span> of <span>Disease</span>: <span>Contextualizing</span> the <span>Rise</span> and <span>Fall</span> of <span>Social Inequalities</span> in <span>Cause-Specific Mortality</span>. <em>Demography</em> [electronic article]. 2016;53(5):1631–1656. (<a href="http://link.springer.com/10.1007/s13524-016-0495-5">http://link.springer.com/10.1007/s13524-016-0495-5</a>). (Accessed December 15, 2019)</div>
 </div>
 <div id="ref-clouston2014" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Clouston SAP, Rubin MS, Colen CG, et al. Social <span>Inequalities</span> in <span>Suicide</span>: <span>The Role</span> of <span>Selective Serotonin Reuptake Inhibitors</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2014;180(7):696–704. (<a href="https://academic.oup.com/aje/article-lookup/doi/10.1093/aje/kwu191">https://academic.oup.com/aje/article-lookup/doi/10.1093/aje/kwu191</a>). (Accessed December 15, 2019)</div>
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Clouston SAP, Rubin MS, Colen CG, et al. Social <span>Inequalities</span> in <span>Suicide</span>: <span>The Role</span> of <span>Selective Serotonin Reuptake Inhibitors</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2014;180(7):696–704. (<a href="https://academic.oup.com/aje/article-lookup/doi/10.1093/aje/kwu191">https://academic.oup.com/aje/article-lookup/doi/10.1093/aje/kwu191</a>). (Accessed December 15, 2019)</div>
+</div>
+<div id="ref-clouston2023" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Clouston SAP, Hanes DW, Link BG. Social inequalities and the early provision and dispersal of <span>COVID-19</span> vaccinations in the <span>United States</span>: <span>A</span> population trends study. <em>Vaccine</em> [electronic article]. 2023;41(36):5322–5329. (<a href="https://www.sciencedirect.com/science/article/pii/S0264410X23008332">https://www.sciencedirect.com/science/article/pii/S0264410X23008332</a>). (Accessed August 7, 2023)</div>
 </div>
 <div id="ref-schwartz2016" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">Schwartz S, Prins SJ, Campbell UB, et al. Is the <span>“well-defined intervention assumption”</span> politically conservative? <em>Social Science &amp; Medicine</em> [electronic article]. 2016;166:254–257. (<a href="https://www.sciencedirect.com/science/article/pii/S0277953615301933">https://www.sciencedirect.com/science/article/pii/S0277953615301933</a>). (Accessed August 14, 2023)</div>
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Schwartz S, Prins SJ, Campbell UB, et al. Is the <span>“well-defined intervention assumption”</span> politically conservative? <em>Social Science &amp; Medicine</em> [electronic article]. 2016;166:254–257. (<a href="https://www.sciencedirect.com/science/article/pii/S0277953615301933">https://www.sciencedirect.com/science/article/pii/S0277953615301933</a>). (Accessed August 14, 2023)</div>
 </div>
 <div id="ref-greenhalgh2021" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline">Greenhalgh T. Miasmas, mental models and preventive public health: Some philosophical reflections on science in the <span>COVID-19</span> pandemic. <em>Interface Focus</em> [electronic article]. 2021;11(6):20210017. (<a href="https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017">https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017</a>). (Accessed January 11, 2022)</div>
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Greenhalgh T. Miasmas, mental models and preventive public health: Some philosophical reflections on science in the <span>COVID-19</span> pandemic. <em>Interface Focus</em> [electronic article]. 2021;11(6):20210017. (<a href="https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017">https://royalsocietypublishing.org/doi/10.1098/rsfs.2021.0017</a>). (Accessed January 11, 2022)</div>
 </div>
 <div id="ref-richardson2020a" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">Richardson ET. Epidemic <span>Illusions</span>: <span>On</span> the <span>Coloniality</span> of <span>Global Public Health</span>. <span>The MIT Press</span>; 2020 (Accessed August 14, 2023).(<a href="https://direct.mit.edu/books/book/5030/Epidemic-IllusionsOn-the-Coloniality-of-Global">https://direct.mit.edu/books/book/5030/Epidemic-IllusionsOn-the-Coloniality-of-Global</a>). (Accessed August 14, 2023)</div>
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Richardson ET. Epidemic <span>Illusions</span>: <span>On</span> the <span>Coloniality</span> of <span>Global Public Health</span>. <span>The MIT Press</span>; 2020 (Accessed August 14, 2023).(<a href="https://direct.mit.edu/books/book/5030/Epidemic-IllusionsOn-the-Coloniality-of-Global">https://direct.mit.edu/books/book/5030/Epidemic-IllusionsOn-the-Coloniality-of-Global</a>). (Accessed August 14, 2023)</div>
 </div>
 <div id="ref-zelner2023" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline">Zelner J, Naraharisetti R, Zelner S. To make long-term gains against infection inequity, infectious disease epidemiology needs to develop a more sociological imagination. <em>American Journal of Epidemiology</em> [electronic article]. 2023;kwad044. (<a href="https://doi.org/10.1093/aje/kwad044">https://doi.org/10.1093/aje/kwad044</a>). (Accessed February 27, 2023)</div>
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Zelner J, Naraharisetti R, Zelner S. To make long-term gains against infection inequity, infectious disease epidemiology needs to develop a more sociological imagination. <em>American Journal of Epidemiology</em> [electronic article]. 2023;kwad044. (<a href="https://doi.org/10.1093/aje/kwad044">https://doi.org/10.1093/aje/kwad044</a>). (Accessed February 27, 2023)</div>
 </div>
 <div id="ref-oakes2017" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline">Oakes JM, Kaufman JS, eds. Methods in social epidemiology. Second edition. <span>San Francisco, CA</span>: <span>Jossey-Bass, A Wiley Brand</span>; 2017.</div>
-</div>
-<div id="ref-zelner2022" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline">Zelner J, Masters NB, Naraharisetti R, et al. There are no equal opportunity infectors: <span>Epidemiological</span> modelers must rethink our approach to inequality in infection risk. <em>PLOS Computational Biology</em> [electronic article]. 2022;18(2):e1009795. (<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009795</a>). (Accessed February 16, 2022)</div>
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Oakes JM, Kaufman JS, eds. Methods in social epidemiology. Second edition. <span>San Francisco, CA</span>: <span>Jossey-Bass, A Wiley Brand</span>; 2017.</div>
 </div>
 <div id="ref-williams2022" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">12. </div><div class="csl-right-inline">Williams TG, Brown DG, Guikema SD, et al. Integrating <span>Equity Considerations</span> into <span>Agent-Based Modeling</span>: <span>A Conceptual Framework</span> and <span>Practical Guidance</span>. <em>Journal of Artificial Societies and Social Simulation</em> [electronic article]. 2022;25(3):1. (<a href="https://www.jasss.org/25/3/1.html">https://www.jasss.org/25/3/1.html</a>). (Accessed July 5, 2022)</div>
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Williams TG, Brown DG, Guikema SD, et al. Integrating <span>Equity Considerations</span> into <span>Agent-Based Modeling</span>: <span>A Conceptual Framework</span> and <span>Practical Guidance</span>. <em>Journal of Artificial Societies and Social Simulation</em> [electronic article]. 2022;25(3):1. (<a href="https://www.jasss.org/25/3/1.html">https://www.jasss.org/25/3/1.html</a>). (Accessed July 5, 2022)</div>
+</div>
+<div id="ref-nande2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Nande A, Sheen J, Walters EL, et al. The effect of eviction moratoria on the transmission of <span>SARS-CoV-2</span>. <em>Nature Communications</em> [electronic article]. 2021;12(1):2274. (<a href="https://www.nature.com/articles/s41467-021-22521-5">https://www.nature.com/articles/s41467-021-22521-5</a>). (Accessed December 27, 2021)</div>
 </div>
 <div id="ref-ma2021" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">13. </div><div class="csl-right-inline">Ma KC, Menkir TF, Kissler SM, et al. Modeling the impact of racial and ethnic disparities on <span>COVID-19</span> epidemic dynamics. <em>eLife</em> [electronic article]. 2021;10:e66601. (<a href="https://doi.org/10.7554/eLife.66601">https://doi.org/10.7554/eLife.66601</a>). (Accessed May 28, 2021)</div>
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Ma KC, Menkir TF, Kissler SM, et al. Modeling the impact of racial and ethnic disparities on <span>COVID-19</span> epidemic dynamics. <em>eLife</em> [electronic article]. 2021;10:e66601. (<a href="https://doi.org/10.7554/eLife.66601">https://doi.org/10.7554/eLife.66601</a>). (Accessed May 28, 2021)</div>
 </div>
 <div id="ref-abuelezam2023a" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">14. </div><div class="csl-right-inline">Abuelezam NN, Michel I, Marshall BD, et al. Accounting for historical injustices in mathematical models of infectious disease transmission: <span>An</span> analytic overview. <em>Epidemics</em> [electronic article]. 2023;43:100679. (<a href="https://www.sciencedirect.com/science/article/pii/S1755436523000154">https://www.sciencedirect.com/science/article/pii/S1755436523000154</a>). (Accessed March 29, 2023)</div>
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Abuelezam NN, Michel I, Marshall BD, et al. Accounting for historical injustices in mathematical models of infectious disease transmission: <span>An</span> analytic overview. <em>Epidemics</em> [electronic article]. 2023;43:100679. (<a href="https://www.sciencedirect.com/science/article/pii/S1755436523000154">https://www.sciencedirect.com/science/article/pii/S1755436523000154</a>). (Accessed March 29, 2023)</div>
 </div>
 <div id="ref-adkins-jackson2021" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">15. </div><div class="csl-right-inline">Adkins-Jackson PB, Chantarat T, Bailey ZD, et al. Measuring <span>Structural Racism</span>: <span>A Guide</span> for <span>Epidemiologists</span> and <span>Other Health Researchers</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2021;kwab239. (<a href="https://doi.org/10.1093/aje/kwab239">https://doi.org/10.1093/aje/kwab239</a>). (Accessed February 8, 2022)</div>
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Adkins-Jackson PB, Chantarat T, Bailey ZD, et al. Measuring <span>Structural Racism</span>: <span>A Guide</span> for <span>Epidemiologists</span> and <span>Other Health Researchers</span>. <em>American Journal of Epidemiology</em> [electronic article]. 2021;kwab239. (<a href="https://doi.org/10.1093/aje/kwab239">https://doi.org/10.1093/aje/kwab239</a>). (Accessed February 8, 2022)</div>
+</div>
+<div id="ref-casanova2023" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Casanova J-L. From second thoughts on the germ theory to a full-blown host theory. <em>Proceedings of the National Academy of Sciences</em> [electronic article]. 2023;120(26):e2301186120. (<a href="https://www.pnas.org/doi/full/10.1073/pnas.2301186120">https://www.pnas.org/doi/full/10.1073/pnas.2301186120</a>). (Accessed July 18, 2023)</div>
 </div>
 </div>
 </section></section>
