@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.5.20">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Zelner">
 <meta name="dcterms.date" content="2023-03-02">
 
-<title>Zelnotes - Taking a spatial perspective on the radon data</title>
+<title>Zelnotes – Taking a spatial perspective on the radon data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,48 +49,20 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -103,8 +76,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../css/quarto-nav/quarto-nav.js"></script>
@@ -132,7 +104,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -141,8 +119,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4J38PX7FF5"></script>
@@ -155,80 +135,51 @@ gtag('js', new Date());
 gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Zelnotes - Taking a spatial perspective on the radon data">
-<meta property="og:description" content="This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example here.">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://zelnotes.io/posts/spatial_radon/minnesota_uranium.png">
-<meta property="og:site-name" content="Zelnotes">
+<meta property="og:site_name" content="Zelnotes">
 <meta property="og:image:height" content="732">
 <meta property="og:image:width" content="718">
 </head>
 
-<body class="nav-sidebar docked">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Taking a spatial perspective on the <code>radon</code> data</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../assets/epibayeslogo_cropped.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Zelnotes</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Courses</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../epid594/index.html" class="sidebar-item-text sidebar-link">Key Concepts in Spatial Analysis (EPID 594)</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../epid684/index.html" class="sidebar-item-text sidebar-link">Spatial and Contextual Epidemiology (EPID 684)</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/index.html" class="sidebar-item-text sidebar-link">Blog</a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -275,7 +226,7 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Taking a spatial perspective on the <code>radon</code> data</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Taking a spatial perspective on the <code>radon</code> data</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -300,23 +251,22 @@ gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
 
-<div class="cell">
 
-</div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>This tutorial is a follow-up to a prior exercise using these data. So if you haven’t already, please go back and take a look at the original multi-level modeling radon example <a href="../../posts/radon/index.html">here</a>.</p>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>To try this tutorial on your own, download and unzip this <a href="spatial_radon.zip">zipfile</a> and open up your R or RStudio session in the resulting directory.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Look out 👀 for stretch exercises!
 </div>
 </div>
@@ -338,7 +288,7 @@ Look out 👀 for stretch exercises!
 <section id="setting-up-the-environment" class="level1">
 <h1>Setting up the environment</h1>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arm)</span>
@@ -367,7 +317,11 @@ Look out 👀 for stretch exercises!
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(minnesota[<span class="st">"estimate"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="merge-the-spatial-data-with-the-radon-data" class="level3">
@@ -435,7 +389,11 @@ Look out 👀 for stretch exercises!
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Soil uranium by MN county"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -448,7 +406,7 @@ Look out 👀 for stretch exercises!
 </div>
 <p>This function yields an R list in which each entry is a vector with the indices for the neighbors of the i-th county. For example, this prints the neighbors of the first three counties in the dataset:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nb[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -503,16 +461,20 @@ Look out 👀 for stretch exercises!
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        minnesota_radon), <span class="dv">2</span>), <span class="st">")"</span>))</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>As you can see in the figure, the value of Moran’s I is smaller than we got for log-uranium but still substantial.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 What’s going on?
 </div>
 </div>
@@ -541,16 +503,20 @@ What’s going on?
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        random_minnesota), <span class="dv">2</span>), <span class="st">")"</span>))</span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This yields something that looks pretty randomly distributed, which is reflected in a Moran’s I estimate closer to the null value of 0. This doesn’t necessarily tell us whether this result is meaningful rather than an artifact of random chance.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 What is the same? What is different?
 </div>
 </div>
@@ -599,7 +565,11 @@ What is the same? What is different?
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>And we can directly estimate this probability as follows:</p>
@@ -612,12 +582,12 @@ What is the same? What is different?
 </div>
 </div>
 <p>From 1000 samples, it appears that none of our random datasets yielded a value of Moran’s I <span class="math inline">\(\ge\)</span> to the observed value, suggesting that it is unlikely that we would observe this value as a simple function of sampling variability.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 What could go wrong?
 </div>
 </div>
@@ -630,12 +600,12 @@ What could go wrong?
 <section id="models" class="level1">
 <h1>Models!</h1>
 <p>Up to this point, we have relied on county-level summaries of the household-level radon data. For the final section of this tutorial, we are going to go back to using the full dataset and implement regression models that are able to characterize variation at the household and community level. Specifcially, we are going to first fit the full-pooling, no-pooling and partial pooling models from the original <span class="citation" data-cites="gelman2006">Gelman (<a href="#ref-gelman2006" role="doc-biblioref">2006</a>)</span> paper. We won’t go into detail on these as they have been discussed in depth in the original paper and the previous post.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Confused?
 </div>
 </div>
@@ -654,12 +624,12 @@ y_{ij} = \alpha + \beta x_{ij} + \epsilon_{i}
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(full_pooling_model)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(full_pooling_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Storing Model Predictions
 </div>
 </div>
@@ -716,7 +686,11 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling residuals with I="</span>, mi))</span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/residual-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/residual-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This is probably intuitive: the full pooling model didn’t include any county-level information, so it might not account for all of the sptial variation. On the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?</p>
@@ -727,7 +701,11 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling predictions with I="</span>, mi))</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/pred-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/pred-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Wait - what? The predictions are also quite clustered, although the pattern looks a bit like a photographic negative of the residual map. It looks like our model is predicting lower values in the northwest corner of the state relative to the rest of the state. How is this possible, if our model doesn’t include contextual information?</p>
@@ -738,16 +716,20 @@ y_{ij} = \alpha_j + \beta x_{ij} + \epsilon_{i}
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Proportion of surveyed households with a basement, I="</span>, mi))</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/basement-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basement-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Whoops…that looks familiar! It seems like the pattern of spatial variation in the presence/absence of basements may be driving the clustering in our predictions and - by consequence - our residuals!</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Spatially correlated predictors → Spatially correlated predictions
 </div>
 </div>
@@ -761,7 +743,7 @@ Spatially correlated predictors → Spatially correlated predictions
 <h2 class="anchored" data-anchor-id="no-pooling-1">No Pooling</h2>
 <p>Ok, so lets try this again with our no-pooling model which at least includes the counties as categorical covariates. Unless something weird is going on, this model should do a good job of explaining spatial variation:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> no_pooling_resid)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
@@ -769,23 +751,31 @@ Spatially correlated predictors → Spatially correlated predictions
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/no-pool-residual-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/no-pool-residual-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Well, that’s a bit better, although it does such a good job at explaining away the overall variability in our measurments, we might be concerned that it is overfitting the model through the inclusion of the county level random effects. This is evidenced in the tiny size of the residuals and their minimal variation:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> results_by_county<span class="sc">$</span>no_pooling_resid))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/no-pool-resid-hist-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/no-pool-resid-hist-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Unsurprisingly, this model does an excellent job of predicting the spatial patterns in the original data:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_pred, results_by_county), <span class="dv">2</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> no_pooling_pred)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
@@ -793,16 +783,20 @@ Spatially correlated predictors → Spatially correlated predictions
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/no-pool-predictions-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/no-pool-predictions-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>I love this model! It’s perfect! It captures almost the exact same clustering and spatial patterning of risk as the original data.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Danger!
 </div>
 </div>
@@ -815,7 +809,7 @@ Danger!
 <h2 class="anchored" data-anchor-id="partial-pooling">Partial Pooling</h2>
 <p>When we look at the predictions of the partial pooling model, they are notably smoother and more clustered than those of the full- and no-pooling models:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_pred, results_by_county),</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
@@ -824,12 +818,16 @@ Danger!
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/partial-pool-pred-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/partial-pool-pred-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>If we compare this pattern and intensity of clustering to the log-uranium data, it is clear that the smoothness in the model predictions reflects the relative smoothness and clustering of the soil uranium data:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(minnesota_radon<span class="sc">$</span>log_uranium, minnesota_radon), <span class="dv">2</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(minnesota_radon) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> log_uranium)) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
@@ -837,12 +835,16 @@ Danger!
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>When we look at the residuals, they are still quite un-clustered - similar to the no pooling model, but their magnitude is larger, suggesting that the multi-level model is less suceptible to overfitting:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_resid, results_by_county),</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>)</span>
@@ -851,18 +853,26 @@ Danger!
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/partial-pool-residual-figure-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/partial-pool-residual-figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>By contrast, the aggregated residuals at the county level are less indicative of overfitting than the no-pooling model, but are still a bit fat-tailed, suggesting that some counties may still be over- or under-fit.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> results_by_county<span class="sc">$</span>partial_pooling_resid))</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/partial-pool-resid-hist-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/partial-pool-resid-hist-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -877,19 +887,19 @@ Danger!
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-gelman2006" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gelman2006" class="csl-entry" role="listitem">
 Gelman, Andrew. 2006. <span>“Multilevel (<span>Hierarchical</span>) <span>Modeling</span>: <span>What It Can</span> and <span>Cannot Do</span>.”</span> <em>Technometrics</em> 48 (3): 432–35. <a href="https://doi.org/10.1198/004017005000000661">https://doi.org/10.1198/004017005000000661</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
-  author = {Jon Zelner},
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zelner2023,
+  author = {Zelner, Jon},
   title = {Taking a Spatial Perspective on the `Radon` Data},
   date = {2023-03-02},
   url = {https://zelnotes.io/posts/spatial_radon},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jon Zelner. 2023. <span>“Taking a Spatial Perspective on the `Radon`
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zelner2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Zelner, Jon. 2023. <span>“Taking a Spatial Perspective on the `Radon`
 Data.”</span> March 2, 2023. <a href="https://zelnotes.io/posts/spatial_radon">https://zelnotes.io/posts/spatial_radon</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -933,6 +943,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1001,13 +1038,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1034,9 +1073,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1123,10 +1176,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/zelnotes\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1136,8 +1206,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1149,9 +1228,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1236,16 +1551,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-45"><a href="#cb42-45" aria-hidden="true" tabindex="-1"></a><span class="fu"># Setting up the environment</span></span>
 <span id="cb42-46"><a href="#cb42-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-47"><a href="#cb42-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb42-48"><a href="#cb42-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb42-49"><a href="#cb42-49" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-50"><a href="#cb42-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb42-51"><a href="#cb42-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arm)</span>
-<span id="cb42-52"><a href="#cb42-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidycensus)</span>
-<span id="cb42-53"><a href="#cb42-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb42-54"><a href="#cb42-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
-<span id="cb42-55"><a href="#cb42-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb42-56"><a href="#cb42-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb42-57"><a href="#cb42-57" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">tidy=</span><span class="cn">TRUE</span>)</span>
+<span id="cb42-48"><a href="#cb42-48" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb42-49"><a href="#cb42-49" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-50"><a href="#cb42-50" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb42-51"><a href="#cb42-51" aria-hidden="true" tabindex="-1"></a><span class="in">library(arm)</span></span>
+<span id="cb42-52"><a href="#cb42-52" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidycensus)</span></span>
+<span id="cb42-53"><a href="#cb42-53" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
+<span id="cb42-54"><a href="#cb42-54" aria-hidden="true" tabindex="-1"></a><span class="in">library(rstanarm)</span></span>
+<span id="cb42-55"><a href="#cb42-55" aria-hidden="true" tabindex="-1"></a><span class="in">library(stringr)</span></span>
+<span id="cb42-56"><a href="#cb42-56" aria-hidden="true" tabindex="-1"></a><span class="in">library(spdep)</span></span>
+<span id="cb42-57"><a href="#cb42-57" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(message = FALSE, warning=FALSE, tidy=TRUE)</span></span>
 <span id="cb42-58"><a href="#cb42-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-59"><a href="#cb42-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-60"><a href="#cb42-60" aria-hidden="true" tabindex="-1"></a></span>
@@ -1522,9 +1837,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-369"><a href="#cb42-369" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb42-370"><a href="#cb42-370" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-371"><a href="#cb42-371" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fully-pooled}</span></span>
-<span id="cb42-372"><a href="#cb42-372" aria-hidden="true" tabindex="-1"></a>full_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement, <span class="at">data =</span> radon) </span>
-<span id="cb42-373"><a href="#cb42-373" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(full_pooling_model)</span>
-<span id="cb42-374"><a href="#cb42-374" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>full_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(full_pooling_model)</span>
+<span id="cb42-372"><a href="#cb42-372" aria-hidden="true" tabindex="-1"></a><span class="in">full_pooling_model &lt;- lm(log_radon ~ basement, data = radon) </span></span>
+<span id="cb42-373"><a href="#cb42-373" aria-hidden="true" tabindex="-1"></a><span class="in">radon$full_pooling_resid &lt;- resid(full_pooling_model)</span></span>
+<span id="cb42-374"><a href="#cb42-374" aria-hidden="true" tabindex="-1"></a><span class="in">radon$full_pooling_pred &lt;- predict(full_pooling_model)</span></span>
 <span id="cb42-375"><a href="#cb42-375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-376"><a href="#cb42-376" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-377"><a href="#cb42-377" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
@@ -1543,20 +1858,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-390"><a href="#cb42-390" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb42-391"><a href="#cb42-391" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-392"><a href="#cb42-392" aria-hidden="true" tabindex="-1"></a><span class="in">```{r no-pooling}</span></span>
-<span id="cb42-393"><a href="#cb42-393" aria-hidden="true" tabindex="-1"></a>no_pooling_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> county, <span class="at">data =</span> radon) </span>
-<span id="cb42-394"><a href="#cb42-394" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(no_pooling_model)</span>
-<span id="cb42-395"><a href="#cb42-395" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>no_pooling_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(no_pooling_model)</span>
+<span id="cb42-393"><a href="#cb42-393" aria-hidden="true" tabindex="-1"></a><span class="in">no_pooling_model &lt;- lm(log_radon ~ basement + county, data = radon) </span></span>
+<span id="cb42-394"><a href="#cb42-394" aria-hidden="true" tabindex="-1"></a><span class="in">radon$no_pooling_resid &lt;- resid(no_pooling_model)</span></span>
+<span id="cb42-395"><a href="#cb42-395" aria-hidden="true" tabindex="-1"></a><span class="in">radon$no_pooling_pred &lt;- predict(no_pooling_model)</span></span>
 <span id="cb42-396"><a href="#cb42-396" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-397"><a href="#cb42-397" aria-hidden="true" tabindex="-1"></a><span class="fu">## Partial pooling model</span></span>
 <span id="cb42-398"><a href="#cb42-398" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-399"><a href="#cb42-399" aria-hidden="true" tabindex="-1"></a>The partial-pooling model is the multi-level analogue to the no-pooling model. For more detail, please see the <span class="co">[</span><span class="ot">partial pooling section</span><span class="co">](/posts/radon/index.html#sec-partial)</span> of the original tutorial.</span>
 <span id="cb42-400"><a href="#cb42-400" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-401"><a href="#cb42-401" aria-hidden="true" tabindex="-1"></a><span class="in">```{r partial-pool-model}</span></span>
-<span id="cb42-402"><a href="#cb42-402" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
-<span id="cb42-403"><a href="#cb42-403" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
-<span id="cb42-404"><a href="#cb42-404" aria-hidden="true" tabindex="-1"></a>partial_pool_model <span class="ot">&lt;-</span> <span class="fu">stan_lmer</span>(log_radon <span class="sc">~</span> basement <span class="sc">+</span> log_uranium <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> county), <span class="at">data =</span> radon)</span>
-<span id="cb42-405"><a href="#cb42-405" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_resid <span class="ot">&lt;-</span> <span class="fu">resid</span>(partial_pool_model)</span>
-<span id="cb42-406"><a href="#cb42-406" aria-hidden="true" tabindex="-1"></a>radon<span class="sc">$</span>partial_pooling_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(partial_pool_model) <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>,mean) </span>
+<span id="cb42-402"><a href="#cb42-402" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb42-403"><a href="#cb42-403" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: false</span></span>
+<span id="cb42-404"><a href="#cb42-404" aria-hidden="true" tabindex="-1"></a><span class="in">partial_pool_model &lt;- stan_lmer(log_radon ~ basement + log_uranium + (1 | county), data = radon)</span></span>
+<span id="cb42-405"><a href="#cb42-405" aria-hidden="true" tabindex="-1"></a><span class="in">radon$partial_pooling_resid &lt;- resid(partial_pool_model)</span></span>
+<span id="cb42-406"><a href="#cb42-406" aria-hidden="true" tabindex="-1"></a><span class="in">radon$partial_pooling_pred &lt;- posterior_predict(partial_pool_model) %&gt;% apply(2,mean) </span></span>
 <span id="cb42-407"><a href="#cb42-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-408"><a href="#cb42-408" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-409"><a href="#cb42-409" aria-hidden="true" tabindex="-1"></a><span class="fu"># Residual Analysis</span></span>
@@ -1568,40 +1883,40 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-415"><a href="#cb42-415" aria-hidden="true" tabindex="-1"></a>Since the residuals for each model are generated at the level of individual households, we will go back to working with county-level summaries of both the prediction error (residuals) and predicted household radon values: </span>
 <span id="cb42-416"><a href="#cb42-416" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-417"><a href="#cb42-417" aria-hidden="true" tabindex="-1"></a><span class="in">```{r residual-summary}</span></span>
-<span id="cb42-418"><a href="#cb42-418" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> radon <span class="sc">%&gt;%</span> </span>
-<span id="cb42-419"><a href="#cb42-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(county) <span class="sc">%&gt;%</span></span>
-<span id="cb42-420"><a href="#cb42-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">p_basement =</span> <span class="fu">sum</span>(basement)<span class="sc">/</span><span class="fu">n</span>(),</span>
-<span id="cb42-421"><a href="#cb42-421" aria-hidden="true" tabindex="-1"></a>            <span class="at">full_pooling_resid =</span> <span class="fu">mean</span>(full_pooling_resid),</span>
-<span id="cb42-422"><a href="#cb42-422" aria-hidden="true" tabindex="-1"></a>            <span class="at">no_pooling_resid =</span> <span class="fu">mean</span>(no_pooling_resid),</span>
-<span id="cb42-423"><a href="#cb42-423" aria-hidden="true" tabindex="-1"></a>            <span class="at">full_pooling_pred =</span> <span class="fu">mean</span>(full_pooling_pred),</span>
-<span id="cb42-424"><a href="#cb42-424" aria-hidden="true" tabindex="-1"></a>            <span class="at">no_pooling_pred =</span> <span class="fu">mean</span>(no_pooling_pred),     </span>
-<span id="cb42-425"><a href="#cb42-425" aria-hidden="true" tabindex="-1"></a>            <span class="at">partial_pooling_pred =</span> <span class="fu">mean</span>(partial_pooling_pred),</span>
-<span id="cb42-426"><a href="#cb42-426" aria-hidden="true" tabindex="-1"></a>            <span class="at">partial_pooling_resid =</span> <span class="fu">mean</span>(partial_pooling_resid))</span>
-<span id="cb42-427"><a href="#cb42-427" aria-hidden="true" tabindex="-1"></a>results_by_county <span class="ot">&lt;-</span> <span class="fu">left_join</span>(minnesota, results_by_county)</span>
+<span id="cb42-418"><a href="#cb42-418" aria-hidden="true" tabindex="-1"></a><span class="in">results_by_county &lt;- radon %&gt;% </span></span>
+<span id="cb42-419"><a href="#cb42-419" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(county) %&gt;%</span></span>
+<span id="cb42-420"><a href="#cb42-420" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(p_basement = sum(basement)/n(),</span></span>
+<span id="cb42-421"><a href="#cb42-421" aria-hidden="true" tabindex="-1"></a><span class="in">            full_pooling_resid = mean(full_pooling_resid),</span></span>
+<span id="cb42-422"><a href="#cb42-422" aria-hidden="true" tabindex="-1"></a><span class="in">            no_pooling_resid = mean(no_pooling_resid),</span></span>
+<span id="cb42-423"><a href="#cb42-423" aria-hidden="true" tabindex="-1"></a><span class="in">            full_pooling_pred = mean(full_pooling_pred),</span></span>
+<span id="cb42-424"><a href="#cb42-424" aria-hidden="true" tabindex="-1"></a><span class="in">            no_pooling_pred = mean(no_pooling_pred),     </span></span>
+<span id="cb42-425"><a href="#cb42-425" aria-hidden="true" tabindex="-1"></a><span class="in">            partial_pooling_pred = mean(partial_pooling_pred),</span></span>
+<span id="cb42-426"><a href="#cb42-426" aria-hidden="true" tabindex="-1"></a><span class="in">            partial_pooling_resid = mean(partial_pooling_resid))</span></span>
+<span id="cb42-427"><a href="#cb42-427" aria-hidden="true" tabindex="-1"></a><span class="in">results_by_county &lt;- left_join(minnesota, results_by_county)</span></span>
 <span id="cb42-428"><a href="#cb42-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-429"><a href="#cb42-429" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-430"><a href="#cb42-430" aria-hidden="true" tabindex="-1"></a><span class="fu">## Full Pooling Residuals</span></span>
 <span id="cb42-431"><a href="#cb42-431" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-432"><a href="#cb42-432" aria-hidden="true" tabindex="-1"></a>When we look at the results of the full-pooling model, the residuals that still look pretty spatially clustered, and this is reflected in the value of Moran's I &gt; 0:</span>
 <span id="cb42-433"><a href="#cb42-433" aria-hidden="true" tabindex="-1"></a><span class="in">```{r residual-figure}</span></span>
-<span id="cb42-434"><a href="#cb42-434" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-435"><a href="#cb42-435" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-436"><a href="#cb42-436" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span>full_pooling_resid )) <span class="sc">+</span> </span>
-<span id="cb42-437"><a href="#cb42-437" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-438"><a href="#cb42-438" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling residuals with I="</span>, mi))</span>
-<span id="cb42-439"><a href="#cb42-439" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-434"><a href="#cb42-434" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$full_pooling_resid, results_by_county), 2)</span></span>
+<span id="cb42-435"><a href="#cb42-435" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-436"><a href="#cb42-436" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill =full_pooling_resid )) + </span></span>
+<span id="cb42-437"><a href="#cb42-437" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-438"><a href="#cb42-438" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("Full pooling residuals with I=", mi))</span></span>
+<span id="cb42-439"><a href="#cb42-439" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-440"><a href="#cb42-440" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-441"><a href="#cb42-441" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-442"><a href="#cb42-442" aria-hidden="true" tabindex="-1"></a>This is probably intuitive: the full pooling model didn't include any county-level information, so it might not account for all of the sptial variation. On the flipside, if we look at the predictions of the model - reflecting the expected household levels of radon in each county - should we should expect to find that they are spatially un-clustered or also clustered?</span>
 <span id="cb42-443"><a href="#cb42-443" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-444"><a href="#cb42-444" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-445"><a href="#cb42-445" aria-hidden="true" tabindex="-1"></a><span class="in">```{r pred-figure}</span></span>
-<span id="cb42-446"><a href="#cb42-446" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>full_pooling_pred, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-447"><a href="#cb42-447" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-448"><a href="#cb42-448" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> full_pooling_pred )) <span class="sc">+</span> </span>
-<span id="cb42-449"><a href="#cb42-449" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-450"><a href="#cb42-450" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Full pooling predictions with I="</span>, mi))</span>
-<span id="cb42-451"><a href="#cb42-451" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-446"><a href="#cb42-446" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$full_pooling_pred, results_by_county), 2)</span></span>
+<span id="cb42-447"><a href="#cb42-447" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-448"><a href="#cb42-448" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill = full_pooling_pred )) + </span></span>
+<span id="cb42-449"><a href="#cb42-449" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-450"><a href="#cb42-450" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("Full pooling predictions with I=", mi))</span></span>
+<span id="cb42-451"><a href="#cb42-451" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-452"><a href="#cb42-452" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-453"><a href="#cb42-453" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-454"><a href="#cb42-454" aria-hidden="true" tabindex="-1"></a>Wait - what? The predictions are also quite clustered, although the pattern looks a bit like a photographic negative of the residual map. It looks like our model is predicting lower values in the northwest corner of the state relative to the rest of the state. How is this possible, if our model doesn't include contextual information?</span>
@@ -1609,12 +1924,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-456"><a href="#cb42-456" aria-hidden="true" tabindex="-1"></a>This might be explained by differences in *composition* at the county level: maybe houses in some counties are more likely to have basements than in others? If this is the case, then those high-basement counties may have higher avg. levels of radon. So, lets just check and see if our one predictor - the presence or absence of a basement - exhibits any spatial variability?</span>
 <span id="cb42-457"><a href="#cb42-457" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-458"><a href="#cb42-458" aria-hidden="true" tabindex="-1"></a><span class="in">```{r basement-figure}</span></span>
-<span id="cb42-459"><a href="#cb42-459" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>p_basement, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-460"><a href="#cb42-460" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-461"><a href="#cb42-461" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> p_basement )) <span class="sc">+</span> </span>
-<span id="cb42-462"><a href="#cb42-462" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-463"><a href="#cb42-463" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Proportion of surveyed households with a basement, I="</span>, mi))</span>
-<span id="cb42-464"><a href="#cb42-464" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-459"><a href="#cb42-459" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$p_basement, results_by_county), 2)</span></span>
+<span id="cb42-460"><a href="#cb42-460" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-461"><a href="#cb42-461" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill = p_basement )) + </span></span>
+<span id="cb42-462"><a href="#cb42-462" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-463"><a href="#cb42-463" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("Proportion of surveyed households with a basement, I=", mi))</span></span>
+<span id="cb42-464"><a href="#cb42-464" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-465"><a href="#cb42-465" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-466"><a href="#cb42-466" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-467"><a href="#cb42-467" aria-hidden="true" tabindex="-1"></a>Whoops...that looks familiar! It seems like the pattern of spatial variation in the presence/absence of basements may be driving the clustering in our predictions and - by consequence - our residuals!</span>
@@ -1634,34 +1949,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-481"><a href="#cb42-481" aria-hidden="true" tabindex="-1"></a>Ok, so lets try this again with our no-pooling model which at least includes the counties as categorical covariates. Unless something weird is going on, this model should do a good job of explaining spatial variation: </span>
 <span id="cb42-482"><a href="#cb42-482" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-483"><a href="#cb42-483" aria-hidden="true" tabindex="-1"></a><span class="in">```{r no-pool-residual-figure}</span></span>
-<span id="cb42-484"><a href="#cb42-484" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-485"><a href="#cb42-485" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-486"><a href="#cb42-486" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-487"><a href="#cb42-487" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span>no_pooling_resid )) <span class="sc">+</span></span>
-<span id="cb42-488"><a href="#cb42-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-489"><a href="#cb42-489" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"No pooling residuals with I="</span>, mi))</span>
-<span id="cb42-490"><a href="#cb42-490" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-484"><a href="#cb42-484" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-485"><a href="#cb42-485" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$no_pooling_resid, results_by_county), 2)</span></span>
+<span id="cb42-486"><a href="#cb42-486" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-487"><a href="#cb42-487" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill =no_pooling_resid )) +</span></span>
+<span id="cb42-488"><a href="#cb42-488" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-489"><a href="#cb42-489" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("No pooling residuals with I=", mi))</span></span>
+<span id="cb42-490"><a href="#cb42-490" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-491"><a href="#cb42-491" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-492"><a href="#cb42-492" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-493"><a href="#cb42-493" aria-hidden="true" tabindex="-1"></a>Well, that's a bit better, although it does such a good job at explaining away the overall variability in our measurments, we might be concerned that it is overfitting the model through the inclusion of the county level random effects. This is evidenced in the tiny size of the residuals and their minimal variation:</span>
 <span id="cb42-494"><a href="#cb42-494" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-495"><a href="#cb42-495" aria-hidden="true" tabindex="-1"></a><span class="in">```{r no-pool-resid-hist}</span></span>
-<span id="cb42-496"><a href="#cb42-496" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-497"><a href="#cb42-497" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb42-498"><a href="#cb42-498" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>results_by_county<span class="sc">$</span>no_pooling_resid))</span>
-<span id="cb42-499"><a href="#cb42-499" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-496"><a href="#cb42-496" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-497"><a href="#cb42-497" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot() + </span></span>
+<span id="cb42-498"><a href="#cb42-498" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(aes(x=results_by_county$no_pooling_resid))</span></span>
+<span id="cb42-499"><a href="#cb42-499" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-500"><a href="#cb42-500" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-501"><a href="#cb42-501" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-502"><a href="#cb42-502" aria-hidden="true" tabindex="-1"></a>Unsurprisingly, this model does an excellent job of predicting the spatial patterns in the original data:</span>
 <span id="cb42-503"><a href="#cb42-503" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-504"><a href="#cb42-504" aria-hidden="true" tabindex="-1"></a><span class="in">```{r no-pool-predictions}</span></span>
-<span id="cb42-505"><a href="#cb42-505" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-506"><a href="#cb42-506" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>no_pooling_pred, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-507"><a href="#cb42-507" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-508"><a href="#cb42-508" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span>no_pooling_pred )) <span class="sc">+</span></span>
-<span id="cb42-509"><a href="#cb42-509" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-510"><a href="#cb42-510" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"No pooling predictions with I="</span>, mi))</span>
-<span id="cb42-511"><a href="#cb42-511" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-505"><a href="#cb42-505" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-506"><a href="#cb42-506" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$no_pooling_pred, results_by_county), 2)</span></span>
+<span id="cb42-507"><a href="#cb42-507" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-508"><a href="#cb42-508" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill =no_pooling_pred )) +</span></span>
+<span id="cb42-509"><a href="#cb42-509" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-510"><a href="#cb42-510" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("No pooling predictions with I=", mi))</span></span>
+<span id="cb42-511"><a href="#cb42-511" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-512"><a href="#cb42-512" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-513"><a href="#cb42-513" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-514"><a href="#cb42-514" aria-hidden="true" tabindex="-1"></a>I love this model! It's perfect! It captures almost the exact same clustering and spatial patterning of risk as the original data.</span>
@@ -1677,13 +1992,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-524"><a href="#cb42-524" aria-hidden="true" tabindex="-1"></a>When we look at the predictions of the partial pooling model, they are notably smoother and more clustered than those of the full- and no-pooling models:</span>
 <span id="cb42-525"><a href="#cb42-525" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-526"><a href="#cb42-526" aria-hidden="true" tabindex="-1"></a><span class="in">```{r partial-pool-pred-figure}</span></span>
-<span id="cb42-527"><a href="#cb42-527" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-528"><a href="#cb42-528" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_pred, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-529"><a href="#cb42-529" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-530"><a href="#cb42-530" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_pred )) <span class="sc">+</span> </span>
-<span id="cb42-531"><a href="#cb42-531" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-532"><a href="#cb42-532" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling predictions with I="</span>, mi))</span>
-<span id="cb42-533"><a href="#cb42-533" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-527"><a href="#cb42-527" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-528"><a href="#cb42-528" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$partial_pooling_pred, results_by_county), 2)</span></span>
+<span id="cb42-529"><a href="#cb42-529" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-530"><a href="#cb42-530" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill = partial_pooling_pred )) + </span></span>
+<span id="cb42-531"><a href="#cb42-531" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-532"><a href="#cb42-532" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("Partial pooling predictions with I=", mi))</span></span>
+<span id="cb42-533"><a href="#cb42-533" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-534"><a href="#cb42-534" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-535"><a href="#cb42-535" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-536"><a href="#cb42-536" aria-hidden="true" tabindex="-1"></a>If we compare this pattern and intensity of clustering to the log-uranium data, it is clear that the smoothness in the model predictions reflects the relative smoothness and clustering of the soil uranium data: </span>
@@ -1701,22 +2016,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb42-550"><a href="#cb42-550" aria-hidden="true" tabindex="-1"></a>When we look at the residuals, they are still quite un-clustered - similar to the no pooling model, but their magnitude is larger, suggesting that the multi-level model is less suceptible to overfitting:</span>
 <span id="cb42-551"><a href="#cb42-551" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-552"><a href="#cb42-552" aria-hidden="true" tabindex="-1"></a><span class="in">```{r partial-pool-residual-figure}</span></span>
-<span id="cb42-553"><a href="#cb42-553" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-554"><a href="#cb42-554" aria-hidden="true" tabindex="-1"></a>mi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">moranFromSF</span>(results_by_county<span class="sc">$</span>partial_pooling_resid, results_by_county), <span class="dv">2</span>)</span>
-<span id="cb42-555"><a href="#cb42-555" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results_by_county) <span class="sc">+</span> </span>
-<span id="cb42-556"><a href="#cb42-556" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> partial_pooling_resid )) <span class="sc">+</span> </span>
-<span id="cb42-557"><a href="#cb42-557" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span> </span>
-<span id="cb42-558"><a href="#cb42-558" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">"Partial pooling residuals with I="</span>, mi))</span>
-<span id="cb42-559"><a href="#cb42-559" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-553"><a href="#cb42-553" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-554"><a href="#cb42-554" aria-hidden="true" tabindex="-1"></a><span class="in">mi &lt;- round(moranFromSF(results_by_county$partial_pooling_resid, results_by_county), 2)</span></span>
+<span id="cb42-555"><a href="#cb42-555" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot(results_by_county) + </span></span>
+<span id="cb42-556"><a href="#cb42-556" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_sf(aes(fill = partial_pooling_resid )) + </span></span>
+<span id="cb42-557"><a href="#cb42-557" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_fill_viridis_c() + </span></span>
+<span id="cb42-558"><a href="#cb42-558" aria-hidden="true" tabindex="-1"></a><span class="in">  ggtitle(paste0("Partial pooling residuals with I=", mi))</span></span>
+<span id="cb42-559"><a href="#cb42-559" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-560"><a href="#cb42-560" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-561"><a href="#cb42-561" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-562"><a href="#cb42-562" aria-hidden="true" tabindex="-1"></a>By contrast, the aggregated residuals at the county level are less indicative of overfitting than the no-pooling model, but are still a bit fat-tailed, suggesting that some counties may still be over- or under-fit.</span>
 <span id="cb42-563"><a href="#cb42-563" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-564"><a href="#cb42-564" aria-hidden="true" tabindex="-1"></a><span class="in">```{r partial-pool-resid-hist}</span></span>
-<span id="cb42-565"><a href="#cb42-565" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb42-566"><a href="#cb42-566" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb42-567"><a href="#cb42-567" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>results_by_county<span class="sc">$</span>partial_pooling_resid))</span>
-<span id="cb42-568"><a href="#cb42-568" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span>
+<span id="cb42-565"><a href="#cb42-565" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb42-566"><a href="#cb42-566" aria-hidden="true" tabindex="-1"></a><span class="in">g &lt;- ggplot() + </span></span>
+<span id="cb42-567"><a href="#cb42-567" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(aes(x=results_by_county$partial_pooling_resid))</span></span>
+<span id="cb42-568"><a href="#cb42-568" aria-hidden="true" tabindex="-1"></a><span class="in">plot(g)</span></span>
 <span id="cb42-569"><a href="#cb42-569" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb42-570"><a href="#cb42-570" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-571"><a href="#cb42-571" aria-hidden="true" tabindex="-1"></a><span class="fu"># What's next?</span></span>
@@ -1725,6 +2040,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 

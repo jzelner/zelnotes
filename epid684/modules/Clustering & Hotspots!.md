@@ -1,3 +1,0 @@
-### Module Goals
-
-### Class Sessions

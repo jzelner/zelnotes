@@ -1,9 +1,0 @@
----
-title: "Blog"
-listing: 
-  categories: true
-  sort: "date desc"
-format:
-  html: 
-    citation: false
----
