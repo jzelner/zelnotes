@@ -1090,39 +1090,81 @@
     "text": "Explaining Epidemics\n\n\nPUBHLTH 405\nSocial Epidemiology of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
   },
   {
-    "objectID": "pubhlth405/session_4_explaining_epidemics.html#past-is-prologue",
-    "href": "pubhlth405/session_4_explaining_epidemics.html#past-is-prologue",
-    "title": "Zelnotes",
-    "section": "Past is Prologue",
-    "text": "Past is Prologue\n\n\n\n\n\nFrom this ca. 2020…\n\n\n\n\n\n\n\nTo this in 2022."
-  },
-  {
     "objectID": "pubhlth405/session_4_explaining_epidemics.html#agenda",
     "href": "pubhlth405/session_4_explaining_epidemics.html#agenda",
     "title": "Zelnotes",
     "section": "Agenda",
-    "text": "Agenda\n\nPathogen project groups and assignment updates (5m)\nOverview of the CDC’s different types of outbreaks/epidemics. (10m)\nConfiguration, contamination, and predisposition. (10m)\nHow can and should we use infection history as a guide for pandemic preparedness? (15m)\nBreak (5m)\nIntegrating ideas of configuration and contamination into CDC definitions and guidelines. (~30m)\nPreview of next time (5m)"
+    "text": "Agenda\n\nPathogen project groups and logistics (5m)\nConfiguration, contamination, and predisposition. (10m)\nHow can and should we use infection history as a guide for pandemic preparedness? (15m)\nIntegrating ideas of configuration and contamination into CDC definitions and guidelines. (~30m)\nPrep for weds workshop"
   },
   {
     "objectID": "pubhlth405/session_4_explaining_epidemics.html#pathogen-project-groups",
     "href": "pubhlth405/session_4_explaining_epidemics.html#pathogen-project-groups",
     "title": "Zelnotes",
     "section": "Pathogen Project Groups",
-    "text": "Pathogen Project Groups\nFinal slate of pathogens:\n\nBacterial STIs\nMalaria\nMonkeypox\nMRSA\nPediatric diarrheal illness\nPlague\nPolio\n\nYou can find group assignments here."
+    "text": "Pathogen Project Groups\nGroup Assignments"
   },
   {
-    "objectID": "pubhlth405/session_4_explaining_epidemics.html#contamination-assignment",
-    "href": "pubhlth405/session_4_explaining_epidemics.html#contamination-assignment",
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#contamination-configuration-assignments",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#contamination-configuration-assignments",
     "title": "Zelnotes",
-    "section": "Contamination assignment",
-    "text": "Contamination assignment\n\nContamination assignment now due before class on 9/26\nOn that day I will ask you to get into pathogen groups for the first time and start comparing notes from your contamination research."
+    "section": "Contamination & Configuration Assignments",
+    "text": "Contamination & Configuration Assignments\n\nContamination assignment workday this Weds 9/11\nContamination assignment due by Sun 9/22\nConfiguration in-class workday Weds 9/25\nConfiguration assignment due by Sun 10/13"
   },
   {
-    "objectID": "pubhlth405/session_4_explaining_epidemics.html#common-source-epidemics",
-    "href": "pubhlth405/session_4_explaining_epidemics.html#common-source-epidemics",
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#todays-theme-transmission-and-its-causes",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#todays-theme-transmission-and-its-causes",
     "title": "Zelnotes",
-    "section": "Common Source Epidemics",
-    "text": "Common Source Epidemics\nWhat are the different modes of common-source outbreaks and epidemics?\n\n\n\nPoint Source\nContinuous\nIntermittent\n\n\n\n\n\nA recent example of a non-infectious point-source"
+    "section": "Today’s Theme: Transmission and its causes",
+    "text": "Today’s Theme: Transmission and its causes"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#how-do-pathogens-get-from-one-host-to-another",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#how-do-pathogens-get-from-one-host-to-another",
+    "title": "Zelnotes",
+    "section": "How do pathogens get from one host to another?",
+    "text": "How do pathogens get from one host to another?"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#how-do-we-describe-the-mechanisms-of-transmission",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#how-do-we-describe-the-mechanisms-of-transmission",
+    "title": "Zelnotes",
+    "section": "How do we describe the mechanisms of transmission?",
+    "text": "How do we describe the mechanisms of transmission?"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#not-all-transmission-is-direct",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#not-all-transmission-is-direct",
+    "title": "Zelnotes",
+    "section": "Not all transmission is direct",
+    "text": "Not all transmission is direct"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#how-would-we-characterize-the-causes-of-environmentally-mediated-transmission",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#how-would-we-characterize-the-causes-of-environmentally-mediated-transmission",
+    "title": "Zelnotes",
+    "section": "How would we characterize the causes of environmentally-mediated transmission?",
+    "text": "How would we characterize the causes of environmentally-mediated transmission?"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#indirect-transmission-conditions-are-often-a-function-of-the-larger-ecosystem",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#indirect-transmission-conditions-are-often-a-function-of-the-larger-ecosystem",
+    "title": "Zelnotes",
+    "section": "Indirect transmission conditions are often a function of the larger ecosystem",
+    "text": "Indirect transmission conditions are often a function of the larger ecosystem\n\nRepresentation of the ways climate change impacts waterborne disease risks from (Semenza 2020)"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#our-understanding-of-transmission-is-always-socially-constructed",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#our-understanding-of-transmission-is-always-socially-constructed",
+    "title": "Zelnotes",
+    "section": "Our understanding of transmission is always socially constructed",
+    "text": "Our understanding of transmission is always socially constructed\n\nEarly causal diagram explaining AIDS risk as a function of gay male promiscuity and immune ‘overload’ from STIs (Sonnabend, Witkin, and Purtilo 1984)"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#cdc-epidemic-types",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#cdc-epidemic-types",
+    "title": "Zelnotes",
+    "section": "CDC Epidemic Types",
+    "text": "CDC Epidemic Types\nWhat are the different modes of common-source outbreaks and epidemics outlined by the CDC?\n\n\n\nPoint Source\nContinuous\nIntermittent\n\n\n\n\n\nA recent example of a non-infectious point-source event"
   },
   {
     "objectID": "pubhlth405/session_4_explaining_epidemics.html#what-characterizes-a-propagated-epidemic",
@@ -1136,7 +1178,14 @@
     "href": "pubhlth405/session_4_explaining_epidemics.html#rosenbergs-parts-of-an-epidemic-explanation",
     "title": "Zelnotes",
     "section": "Rosenberg’s parts of an epidemic explanation",
-    "text": "Rosenberg’s parts of an epidemic explanation\nIn broad strokes, what do the mechanisms that Rosenberg identifies in ‘Explaining Epidemics’ cover?\n\nContamination 🦠\nConfiguration 🧩\nPredisposition ❓"
+    "text": "Rosenberg’s parts of an epidemic explanation\nWhat do the mechanisms that Rosenberg identifies in ‘Explaining Epidemics’ cover?\n\nContamination 🦠\nConfiguration 🧩\nPredisposition ❓"
+  },
+  {
+    "objectID": "pubhlth405/session_4_explaining_epidemics.html#what-are-the-differences-between-these-modes-of-explanation",
+    "href": "pubhlth405/session_4_explaining_epidemics.html#what-are-the-differences-between-these-modes-of-explanation",
+    "title": "Zelnotes",
+    "section": "What are the differences between these modes of explanation?",
+    "text": "What are the differences between these modes of explanation?\nhttps://pollev.com/jonzelner"
   },
   {
     "objectID": "pubhlth405/session_4_explaining_epidemics.html#why-is-it-important-to-understand-the-explanations-that-are---and-have-historically---been-used",
@@ -1178,14 +1227,14 @@
     "href": "pubhlth405/session_4_explaining_epidemics.html#next-time",
     "title": "Zelnotes",
     "section": "Next Time",
-    "text": "Next Time\n\nWe’re going to spend the next two weeks in 1850s London"
+    "text": "Next Time\nContamination Assignment Workday"
   },
   {
     "objectID": "pubhlth405/session_4_explaining_epidemics.html#references",
     "href": "pubhlth405/session_4_explaining_epidemics.html#references",
     "title": "Zelnotes",
     "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nRosenberg, Charles E., ed. 1992. “Explaining Epidemics.” In Explaining Epidemics, 293–304. Cambridge: Cambridge University Press. https://doi.org/10.1017/CBO9780511666865.015."
+    "text": "References\n\n\n\n\n\n\n\n\nRosenberg, Charles E., ed. 1992. “Explaining Epidemics.” In Explaining Epidemics, 293–304. Cambridge: Cambridge University Press. https://doi.org/10.1017/CBO9780511666865.015.\n\n\nSemenza, Jan C. 2020. “Cascading Risks of Waterborne Diseases from Climate Change.” Nature Immunology 21 (5): 484–87. https://doi.org/10.1038/s41590-020-0631-7.\n\n\nSonnabend, J. A., S. S. Witkin, and D. T. Purtilo. 1984. “A Multifactorial Model for the Development of AIDS in Homosexual Men.” Annals of the New York Academy of Sciences 437: 177–83. https://doi.org/10.1111/j.1749-6632.1984.tb37134.x."
   },
   {
     "objectID": "pubhlth405/session_2_why_take_a_historical_perspective.html#why-bother-with-public-health-history",
