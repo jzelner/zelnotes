@@ -2086,7 +2086,7 @@
     "href": "pubhlth405/index.html",
     "title": "Social History of Infectious Disease (PUBHLTH 405)",
     "section": "",
-    "text": "Course Homepage\n\n\n\nFirst day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics",
+    "text": "Course Homepage\n\n\n\nFirst day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nIn-class workshop (no slides)\nWalking into Golden Square",
     "crumbs": [
       "Courses",
       "Social History of Infectious Disease (PUBHLTH 405)"
@@ -2097,7 +2097,7 @@
     "href": "pubhlth405/index.html#slides",
     "title": "Social History of Infectious Disease (PUBHLTH 405)",
     "section": "",
-    "text": "First day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics",
+    "text": "First day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nIn-class workshop (no slides)\nWalking into Golden Square",
     "crumbs": [
       "Courses",
       "Social History of Infectious Disease (PUBHLTH 405)"
@@ -2694,7 +2694,7 @@
     "href": "pubhlth405/session_5_ghost_map_intro.html#agenda",
     "title": "Zelnotes",
     "section": "Agenda",
-    "text": "Agenda\n\nA brief introduction to Cholera. (10m)\nDigesting the first chapters of The Ghost Map. (30m)\nFirst pathogen group meetings. (30m)\nWrapping up (5m)"
+    "text": "Agenda\n\nA brief introduction to Cholera. (10m)\nDigesting the first chapters of The Ghost Map. (30m)\nIdentifying the relevant levels of disease for your project pathogen (in groups) (30m)\nWrapping up (5m)"
   },
   {
     "objectID": "pubhlth405/session_5_ghost_map_intro.html#cholera-is-transmitted-via-the-fecal-oral-pathway",
@@ -2767,6 +2767,27 @@
     "text": "Stepping into Golden Square\n\nWhat social and environmental factors made 1850s London an ideal environment for Cholera transmission?\nWhat global 🌍 changes impacted London’s Cholera risk in the 19th century?\nHow did urbanization impact the evolution of V. Cholerae?\nWhat struck you most in these first couple of chapters?"
   },
   {
+    "objectID": "pubhlth405/session_5_ghost_map_intro.html#urbanization-closed-the-loop-of-the-to-cycle",
+    "href": "pubhlth405/session_5_ghost_map_intro.html#urbanization-closed-the-loop-of-the-to-cycle",
+    "title": "Zelnotes",
+    "section": "Urbanization closed the loop of the 💩 \\(\\to\\) 🚰 cycle",
+    "text": "Urbanization closed the loop of the 💩 \\(\\to\\) 🚰 cycle\n\n\n\n“What the Vibrio cholerae bacterium desires, more than anything, is an environment in which human beings have a regular habit of eating other people’s excrement.” (p.40)"
+  },
+  {
+    "objectID": "pubhlth405/session_5_ghost_map_intro.html#rapid-population-growth-pushed-the-infrastructure-of-london-past-its-limits",
+    "href": "pubhlth405/session_5_ghost_map_intro.html#rapid-population-growth-pushed-the-infrastructure-of-london-past-its-limits",
+    "title": "Zelnotes",
+    "section": "Rapid population growth pushed the infrastructure of London past its limits",
+    "text": "Rapid population growth pushed the infrastructure of London past its limits"
+  },
+  {
+    "objectID": "pubhlth405/session_5_ghost_map_intro.html#as-the-population-grew-so-did-the-connectivity-of-the-physical-environment",
+    "href": "pubhlth405/session_5_ghost_map_intro.html#as-the-population-grew-so-did-the-connectivity-of-the-physical-environment",
+    "title": "Zelnotes",
+    "section": "As the population grew, so did the connectivity of the physical environment",
+    "text": "As the population grew, so did the connectivity of the physical environment"
+  },
+  {
     "objectID": "pubhlth405/session_5_ghost_map_intro.html#human-waste-was-an-unavoidable-fact-of-life-in-victorian-london",
     "href": "pubhlth405/session_5_ghost_map_intro.html#human-waste-was-an-unavoidable-fact-of-life-in-victorian-london",
     "title": "Zelnotes",
@@ -2788,18 +2809,11 @@
     "text": "Our explanations for epidemics have huge consequences\n\n\n\nNo one died of stench in Victorian London. But tens of thousands died because the fear of stench blinded them to the true perils of the city, and drove them to implement a series of wrongheaded reforms that only made the crisis worse. (Johnson 2007, 12)\n\n\n\n\n\nCartoon rendering of the stink - or miasma - as death ☠️"
   },
   {
-    "objectID": "pubhlth405/session_5_ghost_map_intro.html#urbanization-closed-the-loop-of-the-to-cycle",
-    "href": "pubhlth405/session_5_ghost_map_intro.html#urbanization-closed-the-loop-of-the-to-cycle",
+    "objectID": "pubhlth405/session_5_ghost_map_intro.html#return-of-the-levels-of-disease",
+    "href": "pubhlth405/session_5_ghost_map_intro.html#return-of-the-levels-of-disease",
     "title": "Zelnotes",
-    "section": "Urbanization closed the loop of the 💩 \\(\\to\\) 🚰 cycle",
-    "text": "Urbanization closed the loop of the 💩 \\(\\to\\) 🚰 cycle\n\n\n\n“What the Vibrio cholerae bacterium desires, more than anything, is an environment in which human beings have a regular habit of eating other people’s excrement.” (p.40)"
-  },
-  {
-    "objectID": "pubhlth405/session_5_ghost_map_intro.html#pathogen-group-meetings",
-    "href": "pubhlth405/session_5_ghost_map_intro.html#pathogen-group-meetings",
-    "title": "Zelnotes",
-    "section": "Pathogen Group Meetings",
-    "text": "Pathogen Group Meetings\n\nFind your other group members!\nBriefly discuss your interest in your topic and what you’re hoping to get out of your project.\nWork on developing a shared knowledge-base/annotated bibliography for your contamination assignment.\nThis can build on the brief ones you put together during our second class meeting if you’d like."
+    "section": "Return of the Levels of Disease",
+    "text": "Return of the Levels of Disease\n\nGoing to spend some time identifying the relevant levels of disease for your project pathogens.\nSpecifically, I am asking you to identify concrete examples for each of the levels in the original CDC guidelines.\nThese include: cluster, outbreak, epidemic, endemic and pandemic.\nIf an example doesn’t exist, that is fine, just explicitly note it."
   },
   {
     "objectID": "pubhlth405/session_5_ghost_map_intro.html#next-time",
