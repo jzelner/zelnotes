@@ -1,20 +1,5 @@
 [
   {
-    "listing": "/epid684/meetings.html",
-    "items": [
-      "/epid684/class_1_where are we going.html",
-      "/epid684/class_2_maps_and_more.html",
-      "/epid684/class_3_relationships.html",
-      "/epid684/class_4_spatial_variation.html",
-      "/epid684/class_5_walking_into_a_cholera_epidemic.html",
-      "/epid684/roadmap-project/assignment-origin.html",
-      "/epid684/roadmap-project/assignment-destination.html",
-      "/epid684/roadmap-project/assignment-postcard.html",
-      "/epid684/roadmap-project/assignment-final.html",
-      "/epid684/class_8_miasmas_mental_models.html"
-    ]
-  },
-  {
     "listing": "/posts/index.html",
     "items": [
       "/posts/examples.html",
@@ -30,6 +15,21 @@
       "/posts/voronoi-mapping/index.html",
       "/posts/smoothing/index.html",
       "/posts/backwards-design/index.html"
+    ]
+  },
+  {
+    "listing": "/epid684/meetings.html",
+    "items": [
+      "/epid684/class_1_where are we going.html",
+      "/epid684/class_2_maps_and_more.html",
+      "/epid684/class_3_relationships.html",
+      "/epid684/class_4_spatial_variation.html",
+      "/epid684/class_5_walking_into_a_cholera_epidemic.html",
+      "/epid684/roadmap-project/assignment-origin.html",
+      "/epid684/roadmap-project/assignment-destination.html",
+      "/epid684/roadmap-project/assignment-postcard.html",
+      "/epid684/roadmap-project/assignment-final.html",
+      "/epid684/class_8_miasmas_mental_models.html"
     ]
   }
 ]
