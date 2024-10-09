@@ -140,144 +140,158 @@
     "text": "In this example, we are interested in visualizing and predicting the values of a function \\(f(x_i)\\) which outputs values \\(y_i\\), the expected value of the output function.\n\\[\ny_i = f(x_i)\n\\]\nLets start by getting the values of \\(f(x)\\) for every input value \\(x\\). For simplicity, we will assume that \\(f(x)\\) is a sine function and that the values of \\(x\\) go from -1 to +5, allowing us to observe one half cycle of the sine function:\n\nx &lt;- seq(-1, 5, by = 0.1)\ny &lt;- sin(x)\nplot(x,y)\n\n\n\n\n\n\n\n\nYou can see right away that this simple curve pretty neatly expresses Tobler’s first law: \\(f(x)\\) values of each point are in general more similar to each other for nearby values of \\(x\\). If we want to press this idea into real-world practice, we need a model that can translate TFL into quantitative estimates and qualitative visualizations. There are lots of ways to do this, but we’ll focus in on locally-weighted regression, also known LOWESS.\nThe basic idea of a LOWESS regression is to define a window of size \\(k\\) points around each value one wishes to estimate, and calculate a weighted average of the value of those points, which can then be used as the estimated value \\(\\hat{y_j} \\approx f(x_j)\\). We then run the values of these nearest neighbors through a weight function \\(w(x)\\).\nThese weight functions can take a lot of different forms, but we’ll start simple with a uniform one, i.e. just taking the average of the \\(k\\) nearest neighbors, so that \\(\\hat{y} = sum(z(x_i, k))/k\\), where \\(KNNz\\) is a function returning the \\(y\\) values of the k nearest observations to \\(x_i\\). The value of \\(k\\) is sometimes referred to as the bandwidth of the smoothing function: Larger bandwidths use more data to estimate values at each point, smaller ones use less.\n\n\nUsing the fnn package for R, we can find the indices of the \\(k\\) nearest neighbors of each point we want to make an estimate at:\n\nlibrary(FNN)\nk &lt;- 10\nz &lt;- knn.index(x, k=k)\n\nYou can read the output of this function, below, as indicating the indices (\\(i\\)) of the 10 nearest points to each of the values of \\(x\\).\n\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    2    3    4    5    6    7    8    9   10    11\n [2,]    1    3    4    5    6    7    8    9   10    11\n [3,]    2    4    1    5    6    7    8    9   10    11\n [4,]    5    3    6    2    1    7    8    9   10    11\n [5,]    6    4    7    3    8    2    1    9   10    11\n [6,]    5    7    4    8    3    9    2   10    1    11\n [7,]    8    6    9    5   10    4   11    3   12     2\n [8,]    7    9   10    6   11    5    4   12    3    13\n [9,]   10    8   11    7   12    6    5   13   14     4\n[10,]    9   11    8   12    7   13   14    6    5    15\n\n\nWe can visualize this by picking a point in the middle of the series and its 10 nearest neighbors and the estimated value of \\(\\hat{y_i}\\) obtained by just taking the average of the k nearest points:\n\nlibrary(ggplot2)\n\n## Plot the original data\ng &lt;- ggplot() + geom_point(aes(x=x, y = y)) + \n  xlab(\"x\") + ylab(\"f(x)\")\n\n## Now, get the index for x = 2\nx_index &lt;- which(x==2)\n\n## Show the range of k nearest neighbors of this point\nknn_low &lt;- min(x[z[x_index, ]])\nknn_high &lt;- max(x[z[x_index, ]])\ny_hat &lt;- mean(y[z[x_index,]], )\n\n## Add errorbars to the figure to show the 10 nearest values with the height of the point indicating the estimated value at y_i, denoted by the red dot\ng &lt;- g + geom_errorbarh(aes(xmin = knn_low, xmax = knn_high, y = y_hat)) + geom_point(aes(x=2,y_hat), colour = \"red\")\n\nplot(g)\n\n\n\n\n\n\n\n\nNotice that if the knn function is applied at the low end of the series, i.e. to the first value, it will use points to the right of that one instead of to either side:\n\nlibrary(ggplot2)\n\n## Plot the original data\ng &lt;- ggplot() + geom_point(aes(x=x, y = y)) + \n  xlab(\"x\") + ylab(\"f(x)\")\n\n## Use the index for the lowest value\nx_index &lt;- 1\n\n## Show the range of k nearest neighbors of this point\nknn_low &lt;- min(x[z[x_index, ]])\nknn_high &lt;- max(x[z[x_index, ]])\ny_hat &lt;- mean(y[z[x_index,]], )\n\n## Add errorbars to the figure to show the 10 nearest values with the height of the point indicating the estimated value at y_i\ng &lt;- g + geom_errorbarh(aes(xmin = knn_low, xmax = knn_high, y = y_hat)) + geom_point(aes(x=x[x_index],y_hat), colour = \"red\")\n\nplot(g)\n\n\n\n\n\n\n\n\nNow, lets see what happens if we run our smoother over the whole series and take the average of the 10 nearest points for each and compare them to the observed data:\n\ny_hat &lt;- rep(0, length(x))\nfor (i in 1:length(x) ) {\n  y_hat[i] &lt;- mean(y[z[i,]], )\n}\n\nNow plot the predicted vs. the observed values:\n\ng &lt;- ggplot() + geom_point(aes(x=x, y = y)) + \n  xlab(\"x\") + ylab(\"f(x)\") + geom_line(aes(x=x, y=y_hat), colour = \"red\")\nplot(g)\n\n\n\n\n\n\n\n\nYou can see this does a pretty good job all the way through, except at the edges. Lets try it again with a smaller window - or bandwidth - of 5 and see what happens. First, we’ll write a function that will give us the predicted value of y at each point given a window of size k and an input value:\n\nknn_est &lt;- function(x, y, k) {\n  z &lt;- knn.index(x, k=k)\n  y_hat &lt;- rep(0, length(x))\n  \nfor (i in 1:length(x) ) {\n  y_hat[i] &lt;- mean(y[z[i,]], )\n}\n\n  df &lt;- data.frame(x=x, y = y, yhat = y_hat)\n  return(df)\n}\n\n\npred_df &lt;- knn_est(x, y, 5)\ng &lt;- ggplot(pred_df) + geom_point(aes(x=x, y=y)) + geom_line(aes(x=x,y=yhat),colour=\"red\")\nplot(g)\n\n\n\n\n\n\n\n\nThis gets rid of a lot of the weird effects at the edges but introduces some noise into the function. What if we make the window bigger, say 20, to get rid of some of the noise?\n\n\n\n\n\n\n\n\n\nThis seems to make the edge effects worse, as well as the estimates of the function overall worse.\nWhat happens if we go in the opposite direction and shrink the window down to 2?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy does this appear to be more accurate for these data than \\(k=10\\) and \\(k=5\\)?\nWhat would happen if we added observation noise to the values of \\(y_i\\)? Which one of the smoothers do you think would work better then?\nIs the one best value of \\(k\\) for all datasets? How might you go about picking the best one?\nHow does our uniform weight function express Tobler’s first law? What kind of weight function \\(w(x)\\) might do a better job of capturing the notion of distance decay?"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#making-sense-of-the-landscape-of-health",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#making-sense-of-the-landscape-of-health",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#looking-out-at-the-landscape-of-health",
+    "href": "pubhlth405/infectious-fear-2/index.html#looking-out-at-the-landscape-of-health",
     "title": "Zelnotes",
-    "section": "Making sense of the Landscape of Health",
-    "text": "Making sense of the Landscape of Health\n\n\nPUBHLTH 405\nSocial Epidemiology of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
+    "section": "Looking out at the Landscape of Health",
+    "text": "Looking out at the Landscape of Health\n\n\nPUBHLTH 405\nSocial History of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#agenda",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#agenda",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#predisposition-is-the-handmaiden-of-scientific-racism-in-public-health",
+    "href": "pubhlth405/infectious-fear-2/index.html#predisposition-is-the-handmaiden-of-scientific-racism-in-public-health",
+    "title": "Zelnotes",
+    "section": "Predisposition is the handmaiden of scientific racism in public health",
+    "text": "Predisposition is the handmaiden of scientific racism in public health\n\n\n\n\n\nW.E.B. Du Bois\n\n\n\n\n“Particularly with regard to consumption it must be remembered that Negroes are not the first people who have been claimed as its peculiar victims; the Irish were once thought to be doomed by that disease-but that was when Irishmen were unpopular.” -W.E.B. Du Bois, The Philadelphia Negro, 1899"
+  },
+  {
+    "objectID": "pubhlth405/infectious-fear-2/index.html#agenda",
+    "href": "pubhlth405/infectious-fear-2/index.html#agenda",
     "title": "Zelnotes",
     "section": "Agenda",
-    "text": "Agenda\n\nDigesting Chapters 3 & 4 (35m)\nA little more detail about residential segregation.\nPreview of next time."
+    "text": "Agenda\n\nFinishing up discussion of initial chapters\nDigesting Chapters 3 & 4 (35m)\nA little more detail about residential segregation.\nPreview of next time."
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#snowball-discussion-about-chs-3-4",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#snowball-discussion-about-chs-3-4",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#snowball-discussion-about-chs-3-4",
+    "href": "pubhlth405/infectious-fear-2/index.html#snowball-discussion-about-chs-3-4",
     "title": "Zelnotes",
     "section": "Snowball ☃️ discussion about Chs 3 & 4",
     "text": "Snowball ☃️ discussion about Chs 3 & 4\n\nSpend a few minutes on your own, thinking about and adding a quick response to what struck you most about the readings.\nPair up and discuss the next question.\nJoin pairs into groups of 4 for the next discussion.\nGroups of 6-8 for final question."
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#on-your-own",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#on-your-own",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#on-your-own",
+    "href": "pubhlth405/infectious-fear-2/index.html#on-your-own",
     "title": "Zelnotes",
     "section": "⏲️ On your own",
-    "text": "⏲️ On your own\nSpend a few minutes going back over the text and put your answers to these questions in this google doc:\n\nWhat is Roberts referring to when he describes the landscape of health in Chapter 3?\nWhat were you most confused or surprised about in these chapters?\nWhat struck you as most important?\n\n\n\n\n−+\n05:00"
+    "text": "⏲️ On your own\nSpend a few minutes going back over the text and put your answers to these questions in this google doc:\n\nWhat is Roberts referring to when he describes the landscape of health in Chapter 3?\nWhat were you most confused or surprised about in these chapters?\nWhat struck you as most important?\n\n\nlibrary(countdown)\ncountdown(minutes = 5, warn_when = 60, seconds = 0)\n\n\n−+\n05:00"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#in-pairs",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#in-pairs",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#in-pairs",
+    "href": "pubhlth405/infectious-fear-2/index.html#in-pairs",
     "title": "Zelnotes",
     "section": "In pairs",
-    "text": "In pairs\n\n\n\nFocusing on Chapter 3, what does the discussion in this chapter add to our understanding of how segregation and racism act as fundamental causes of health inequality?\nWhat other diseases - infectious and non-communicable - were linked to racial residential segregation and living conditions during the late 19th and early 20th centuries?\nHow does this information support - or not - the role of racism and SES as fundamental causes in TB disparities?\n\n\n\n\n\nPneumonia deaths by race showed large disparities - what other infections had similar dynamics?\n\n\n\n\n\n\n\n−+\n08:00"
+    "text": "In pairs\n\n\n\nFocusing on Chapter 3, what does the discussion in this chapter add to our understanding of how segregation and racism act as fundamental causes of health inequality?\nWhat other diseases - infectious and non-communicable - were linked to racial residential segregation and living conditions during the late 19th and early 20th centuries?\nHow does this information support - or not - the role of racism and SES as fundamental causes in TB disparities?\n\n\n\n\n\nPneumonia deaths by race showed large disparities - what other infections had similar dynamics?\n\n\n\n\n\nlibrary(countdown)\ncountdown(minutes = 8, warn_when = 120, seconds = 0, top=0, play_sound=TRUE)\n\n\n−+\n08:00"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#in-groups-of-four",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#in-groups-of-four",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#in-groups-of-four",
+    "href": "pubhlth405/infectious-fear-2/index.html#in-groups-of-four",
     "title": "Zelnotes",
     "section": "In groups of four",
-    "text": "In groups of four\n\n\n\nWhat are the push and pull factors that Roberts invokes to exlpain the emergence of the Druid Hill Corridor as a Black ghetto characterized by intense segregation and high rates of TB and other infectious diseases?\nIn chapter 4, what similarities and differences did you see been infected house theory and the miasmatic theories discussed in The Ghost Map?\n\nWhat were some surprising implications of infected house theory for public health surveillance and intervention?\n\n\n\n\n\n\n\n\n\n−+\n10:00"
+    "text": "In groups of four\n\n\n\nWhat are the push and pull factors that Roberts invokes to exlpain the emergence of the Druid Hill Corridor as a Black ghetto characterized by intense segregation and high rates of TB and other infectious diseases?\nIn chapter 4, what similarities and differences did you see been infected house theory and the miasmatic theories discussed in The Ghost Map?\n\nWhat were some surprising implications of infected house theory for public health surveillance and intervention?\n\n\n\n\n\n\n\nlibrary(countdown)\ncountdown(minutes = 10, seconds = 0, warn_when = 120, top = 0, play_sound=TRUE)\n\n\n−+\n10:00"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#in-groups-of-6-8",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#in-groups-of-6-8",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#in-groups-of-6-8",
+    "href": "pubhlth405/infectious-fear-2/index.html#in-groups-of-6-8",
     "title": "Zelnotes",
     "section": "In groups of 6-8",
-    "text": "In groups of 6-8\n\nIdentify the most important built environment, biological and social mechanisms Roberts describes that link segregation in Baltimore to racial inequities in TB outcomes.\n\n\nGo back to your initial reflections:\n\nWhat do you remain confused or unsure about?\nWhat most surprised/struck you in these chapters?\nDrop a comment on any items you think have been resolved through your discussions.\n\n\n\n\n\n−+\n05:00"
+    "text": "In groups of 6-8\n\nIdentify the most important built environment, biological and social mechanisms Roberts describes that link segregation in Baltimore to racial inequities in TB outcomes.\n\n\nReturn to your initial reflections:\n\nWhat do you remain confused or unsure about?\nWhat most surprised/struck you in these chapters?\nDrop a comment on any items you think have been resolved through your discussions.\n\n\n\nlibrary(countdown)\ncountdown(minutes = 5, warn_when = 60, seconds = 0, play_sound=TRUE)\n\n\n−+\n05:00"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#how-would-you-define-residential-segregation",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#how-would-you-define-residential-segregation",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#how-would-you-define-residential-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#how-would-you-define-residential-segregation",
     "title": "Zelnotes",
     "section": "How would you define residential segregation?",
     "text": "How would you define residential segregation?\n\n\n“Racial residential (i.e., housing) segregation is one of the most pervasive patterns in American metropolitan areas and a powerful engine of racial stratification. Whites and blacks are separated into different residential neighborhoods with markedly different resources to support health and well-being over the life course.” (Acevedo-Garcia and Osypuk 2008)\n\n\n\n\nAt a general level, residential segregation is the degree to which two or more groups live separately from one another, in different parts of the urban environment. This general understanding masks considerable underlying complexity, however, for groups may live apart from one another and be “segregated” in a variety of ways. (Massey and Denton 1988)"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#residential-segregation-is-a-multi-scale-phenomenon",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#residential-segregation-is-a-multi-scale-phenomenon",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#alley-houses-in-baltimore-reflected-a-unique-mode-of-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#alley-houses-in-baltimore-reflected-a-unique-mode-of-segregation",
+    "title": "Zelnotes",
+    "section": "Alley houses in Baltimore reflected a unique mode of segregation",
+    "text": "Alley houses in Baltimore reflected a unique mode of segregation\n\n“In the lower-rent alleys between these two avenues could be found poorer blacks, who resided in one- or two-story houses whose front steps in many cases were separated from the opposite house by no more than six or eight feet of cobblestone or dirt.” (Roberts 2009)"
+  },
+  {
+    "objectID": "pubhlth405/infectious-fear-2/index.html#residential-segregation-is-a-multi-scale-phenomenon",
+    "href": "pubhlth405/infectious-fear-2/index.html#residential-segregation-is-a-multi-scale-phenomenon",
     "title": "Zelnotes",
     "section": "Residential segregation is a multi-scale phenomenon",
     "text": "Residential segregation is a multi-scale phenomenon\n\n\n\n\n\n\nNational patterns of race/ethnic residential segregation.\n\n\n\n\n\n\n\n\nSchematic of macro-segregation patterns characteristic of SE Michigan (Lichter, Parisi, and Taquino 2015)"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#what-are-the-dimensions-of-residential-segregation",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#what-are-the-dimensions-of-residential-segregation",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#what-are-the-dimensions-of-residential-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#what-are-the-dimensions-of-residential-segregation",
     "title": "Zelnotes",
     "section": "What are the dimensions of residential segregation?",
     "text": "What are the dimensions of residential segregation?\nSome canonical definitions from (Massey and Denton 1988):\n\n\n\nEvenness\n\n“Minority members may be distributed so that they are overrepresented in some areas and underrepresented in others, varying on the characteristic of evenness.”\n\nExposure\n\n“[Minority group members] may be distributed so that their exposure to majority members is limited by virtue of rarely sharing a neighborhood with them.”\n\nConcentration\n\n“They may be spatially concentrated within a very small area, occupying less physical space than majority members.”\n\n\n\n\nCentralization\n\n“They may be spatially centralized, congregating around the urban core, and occupying a more central location than the majority.”\n\nClustering\n\n“[A]reas of minority settlement may be tightly clustered to form one large contiguous enclave, or be scattered widely around the urban area.”\n\n\n\nDo any of these describe the patterns of segregation described in Infectious Fear?"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#alley-houses",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#alley-houses",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#segregating-processes-can-lead-to-different-spatial-patterns",
+    "href": "pubhlth405/infectious-fear-2/index.html#segregating-processes-can-lead-to-different-spatial-patterns",
     "title": "Zelnotes",
-    "section": "Alley houses",
-    "text": "Alley houses\n\n“In the lower-rent alleys between these two avenues could be found poorer blacks, who resided in one- or two-story houses whose front steps in many cases were separated from the opposite house by no more than six or eight feet of cobblestone or dirt.”"
+    "section": "Segregating processes can lead to different spatial patterns",
+    "text": "Segregating processes can lead to different spatial patterns\n(Grigoryeva and Ruef 2015) define three types of segregation:\n\nPrimary (P)\n\nSeparation of groups across administrative or political boundaries.\n\nSecondary (S)\n\nSeparation over large-scale physical space.\n\nTertiary (T)\n\nFunction of residential street layout that influence pedestrian paths."
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#a-typology-of-segregation",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#a-typology-of-segregation",
-    "title": "Zelnotes",
-    "section": "A Typology of Segregation",
-    "text": "A Typology of Segregation\nGrigoryeva and Ruef define three types of segregation:\n\nPrimary (P)\n\nSeparation of groups across administrative or political boundaries.\n\nSecondary (S)\n\nSeparation of groups in physical space\n\nTertiary (T)\n\nFunction of residential street layout that influence pedestrian paths."
-  },
-  {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#a-typology-of-segregation-1",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#a-typology-of-segregation-1",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#a-typology-of-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#a-typology-of-segregation",
     "title": "Zelnotes",
     "section": "A Typology of Segregation",
     "text": "A Typology of Segregation"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#clearly-defined-segregation",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#clearly-defined-segregation",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#clearly-defined-primary-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#clearly-defined-primary-segregation",
     "title": "Zelnotes",
-    "section": "Clearly-defined segregation",
-    "text": "Clearly-defined segregation"
+    "section": "Clearly-defined primary segregation",
+    "text": "Clearly-defined primary segregation"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#fine-scale-residential-segregation-in-washington-d.c.-1888",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#fine-scale-residential-segregation-in-washington-d.c.-1888",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#fine-scale-residential-segregation-in-washington-d.c.-1888",
+    "href": "pubhlth405/infectious-fear-2/index.html#fine-scale-residential-segregation-in-washington-d.c.-1888",
     "title": "Zelnotes",
     "section": "Fine-scale residential segregation in Washington, D.C. (1888)",
     "text": "Fine-scale residential segregation in Washington, D.C. (1888)\n\nSanborn Fire Insurance Company Map for Washington D.C. in 1888"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#pattern-was-pervasive-throughout-d.c.",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#pattern-was-pervasive-throughout-d.c.",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#pattern-was-pervasive-throughout-d.c.-and-baltimore",
+    "href": "pubhlth405/infectious-fear-2/index.html#pattern-was-pervasive-throughout-d.c.-and-baltimore",
     "title": "Zelnotes",
-    "section": "Pattern was pervasive throughout D.C.",
-    "text": "Pattern was pervasive throughout D.C.\n\nMap of a larger area of DC"
+    "section": "Pattern was pervasive throughout D.C. and Baltimore",
+    "text": "Pattern was pervasive throughout D.C. and Baltimore\n\nMap of a larger area of DC"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#so-how-do-we-measure-this-type-of-segregation",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#so-how-do-we-measure-this-type-of-segregation",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#what-are-potential-implications-of-these-different-modes-of-segregation-for-infection-risk",
+    "href": "pubhlth405/infectious-fear-2/index.html#what-are-potential-implications-of-these-different-modes-of-segregation-for-infection-risk",
+    "title": "Zelnotes",
+    "section": "What are potential implications of these different modes of segregation for infection risk?",
+    "text": "What are potential implications of these different modes of segregation for infection risk?"
+  },
+  {
+    "objectID": "pubhlth405/infectious-fear-2/index.html#so-how-do-we-measure-this-type-of-segregation",
+    "href": "pubhlth405/infectious-fear-2/index.html#so-how-do-we-measure-this-type-of-segregation",
     "title": "Zelnotes",
     "section": "So: How do we measure this type of segregation?",
     "text": "So: How do we measure this type of segregation?\n\n\n\nClassic approach, e.g. (Massey and Denton 1988), only captures primary segregation.\nGrigoryeva & Ruef noticed that information could be extracted from the order in which 19th century census takers visited houses. (Grigoryeva and Ruef 2015)\nData were recorded sequentially in their records as they went 🏠 to 🏠.\nCompared observed sequences of black and white households to a random distribution to measure the extent of tertiary segregation.\nCalled their measure the Sequential Index of Segregation (SIS)\n\n\n\n\n\nExample path of a census-taker through a segregated southern neighborhood in 1880."
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#different-measures-to-different-answers",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#different-measures-to-different-answers",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#different-measures-to-different-answers",
+    "href": "pubhlth405/infectious-fear-2/index.html#different-measures-to-different-answers",
     "title": "Zelnotes",
     "section": "Different measures \\(\\to\\) different answers",
     "text": "Different measures \\(\\to\\) different answers\n\nD = index of dissimilarity, a measure of evenness\nWhat do you think this implies for how we should approach the measurement/characterization of segregation?"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#next-time",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#next-time",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#next-time",
+    "href": "pubhlth405/infectious-fear-2/index.html#next-time",
     "title": "Zelnotes",
-    "section": "Next time",
-    "text": "Next time\n\n\n\nRead Ch. 5 of Infectious Fear\nChowkwanyun M, Reed AL. Racial Health Disparities and Covid-19 — Caution and Context. New England Journal of Medicine. 2020;383(3):201-203. doi:10.1056/NEJMp2012910\n\n\n\n\n\nUsing maps to conflate risk with race."
+    "section": "Next Time",
+    "text": "Next Time\nPutting ✨ finishing touches ✨ on your project whitepapers due 10/16.\n\n\n\n\n\n\nWarning\n\n\nThis will be time for finishing, rather than starting. In an ideal world, your paper will be good enough to hand in when you get to class, but really clean and polished by the end of class!"
   },
   {
-    "objectID": "pubhlth405/session_11_infectious_fear_2.html#references",
-    "href": "pubhlth405/session_11_infectious_fear_2.html#references",
+    "objectID": "pubhlth405/infectious-fear-2/index.html#references",
+    "href": "pubhlth405/infectious-fear-2/index.html#references",
     "title": "Zelnotes",
     "section": "References",
-    "text": "References\nhttps://twitter.com/allcurledup/status/1577914877544435712?s=20&t=hHlaxTVPGNhoozS-wgbmEQ\n\n\n\n\n\n\n\n\nAcevedo-Garcia, Dolores, and Theresa L. Osypuk. 2008. “Residential Segregation and Health—The Complexity of Modeling Separate Social Contexts.” American Journal of Epidemiology 168 (11): 1255–58. https://doi.org/10.1093/aje/kwn290.\n\n\nGrigoryeva, Angelina, and Martin Ruef. 2015. “The Historical Demography of Racial Segregation.” American Sociological Review 80 (4): 814–42. https://doi.org/10.1177/0003122415589170.\n\n\nLichter, Daniel T., Domenico Parisi, and Michael C. Taquino. 2015. “Toward a New Macro-Segregation? Decomposing Segregation Within and Between Metropolitan Cities and Suburbs.” American Sociological Review 80 (4): 843–73. https://doi.org/10.1177/0003122415588558.\n\n\nMassey, Douglas S., and Nancy A. Denton. 1988. “The Dimensions of Residential Segregation.” Social Forces 67 (2): 281–315. https://doi.org/10.2307/2579183."
+    "text": "References\n\n\n\n\n\n\n\n\n\nAcevedo-Garcia, Dolores, and Theresa L. Osypuk. 2008. “Residential Segregation and Health—The Complexity of Modeling Separate Social Contexts.” American Journal of Epidemiology 168 (11): 1255–58. https://doi.org/10.1093/aje/kwn290.\n\n\nGrigoryeva, Angelina, and Martin Ruef. 2015. “The Historical Demography of Racial Segregation.” American Sociological Review 80 (4): 814–42. https://doi.org/10.1177/0003122415589170.\n\n\nLichter, Daniel T., Domenico Parisi, and Michael C. Taquino. 2015. “Toward a New Macro-Segregation? Decomposing Segregation Within and Between Metropolitan Cities and Suburbs.” American Sociological Review 80 (4): 843–73. https://doi.org/10.1177/0003122415588558.\n\n\nMassey, Douglas S., and Nancy A. Denton. 1988. “The Dimensions of Residential Segregation.” Social Forces 67 (2): 281–315. https://doi.org/10.2307/2579183.\n\n\nRoberts, Samuel K. 2009. Infectious Fear: Politics, Disease, and the Health Effects of Segregation. University of North Carolina Press."
   },
   {
     "objectID": "epid594/session_2_multilevel.html",
@@ -2261,7 +2275,7 @@
     "href": "pubhlth405/index.html",
     "title": "Social History of Infectious Disease (PUBHLTH 405)",
     "section": "",
-    "text": "Course Homepage\n\n\n\nFirst day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nContamination Workshop (no slides)\nWalking into Golden Square\nMiasma vs. Germ Theory\nMiasma and the persistent power of bad ideas\nMaking the Case\nConfiguration Workshop (no slides)\nCauses, Fundamental\nInfectious Fear 1",
+    "text": "Course Homepage\n\n\n\nFirst day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nContamination Workshop (no slides)\nWalking into Golden Square\nMiasma vs. Germ Theory\nMiasma and the persistent power of bad ideas\nMaking the Case\nConfiguration Workshop (no slides)\nCauses, Fundamental\nInfectious Fear 1\nInfectious Fear 2",
     "crumbs": [
       "Courses",
       "Social History of Infectious Disease (PUBHLTH 405)"
@@ -2272,7 +2286,7 @@
     "href": "pubhlth405/index.html#slides",
     "title": "Social History of Infectious Disease (PUBHLTH 405)",
     "section": "",
-    "text": "First day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nContamination Workshop (no slides)\nWalking into Golden Square\nMiasma vs. Germ Theory\nMiasma and the persistent power of bad ideas\nMaking the Case\nConfiguration Workshop (no slides)\nCauses, Fundamental\nInfectious Fear 1",
+    "text": "First day: Introduction\nWhat can we learn from public health history?\nOutbreak, epidemic, pandemic\nExplaining Epidemics\nContamination Workshop (no slides)\nWalking into Golden Square\nMiasma vs. Germ Theory\nMiasma and the persistent power of bad ideas\nMaking the Case\nConfiguration Workshop (no slides)\nCauses, Fundamental\nInfectious Fear 1\nInfectious Fear 2",
     "crumbs": [
       "Courses",
       "Social History of Infectious Disease (PUBHLTH 405)"

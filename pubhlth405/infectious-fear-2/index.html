@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="../assets/epibayeslogo_cropped.png" rel="icon" type="image/png">
-<script src="../css/clipboard/clipboard.min.js"></script>
-<script src="../css/quarto-html/tabby.min.js"></script>
-<script src="../css/quarto-html/popper.min.js"></script>
-<script src="../css/quarto-html/tippy.umd.min.js"></script>
-<link href="../css/quarto-html/tippy.css" rel="stylesheet">
-<link href="../css/quarto-html/light-border.css" rel="stylesheet">
-<link href="../css/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../assets/epibayeslogo_cropped.png" rel="icon" type="image/png">
+<script src="../../css/clipboard/clipboard.min.js"></script>
+<script src="../../css/quarto-html/tabby.min.js"></script>
+<script src="../../css/quarto-html/popper.min.js"></script>
+<script src="../../css/quarto-html/tippy.umd.min.js"></script>
+<link href="../../css/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../css/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../css/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../css/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.20">
 
   <title>Zelnotes – Infectious Fear 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../css/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../css/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../css/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../css/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -50,7 +115,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../css/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../css/revealjs/dist/theme/quarto.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4J38PX7FF5"></script>
 
   <script type="text/javascript">
@@ -60,10 +125,10 @@
   gtag('js', new Date());
   gtag('config', 'G-4J38PX7FF5', { 'anonymize_ip': true});
   </script>
-  <link href="../css/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../css/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../css/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../css/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../css/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../css/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../css/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../css/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -350,8 +415,8 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../css/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../css/countdown-0.4.0/countdown.js"></script>
+  <link href="../../css/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../css/countdown-0.4.0/countdown.js"></script>
 <meta property="og:title" content="Infectious Fear 2">
 <meta property="og:site_name" content="Zelnotes">
 </head>
@@ -371,7 +436,24 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 <a href="https://epibayes.io"><code>epibayes.io</code></a>
 </p>
 </div>
-<p><img data-src="../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 400px; height: 100px; "></p>
+<p><img data-src="../../images/epid_logo.png" class="absolute" style="bottom: 0px; right: 50px; width: 400px; height: 100px; "></p>
+</section>
+<section id="predisposition-is-the-handmaiden-of-scientific-racism-in-public-health" class="slide level2 smaller">
+<h2>Predisposition is the handmaiden of <span class="alert">scientific racism</span> in public health</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="web-dubois.png"></p>
+<figcaption>W.E.B. Du Bois</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<blockquote>
+<p>“Particularly with regard to consumption it must be remembered that Negroes are not the first people who have been claimed as its peculiar victims; the Irish were once thought to be doomed by that disease-but that was when Irishmen were unpopular.” -<em>W.E.B. Du Bois, The Philadelphia Negro, 1899</em></p>
+</blockquote>
+</div>
+</div>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
@@ -405,15 +487,17 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 <li class="fragment"><p>What struck you as most important?</p></li>
 </ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(countdown)</span>
+<span id="cb1-2"><a></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">5</span>, <span class="at">warn_when =</span> <span class="dv">60</span>, <span class="at">seconds =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="countdown" id="timer_24acb14a" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_fec8c0ce" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="in-pairs" class="slide level2">
+<section id="in-pairs" class="slide level2 smaller">
 <h2>In <span class="alert">pairs</span></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -425,15 +509,17 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/20221004094933.png"></p>
+<p><img data-src="../../images/20221004094933.png"></p>
 <figcaption>Pneumonia deaths by race showed large disparities - what other infections had similar dynamics?</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(countdown)</span>
+<span id="cb2-2"><a></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">8</span>, <span class="at">warn_when =</span> <span class="dv">120</span>, <span class="at">seconds =</span> <span class="dv">0</span>, <span class="at">top=</span><span class="dv">0</span>, <span class="at">play_sound=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="countdown" id="timer_43d0945c" data-warn-when="120" data-update-every="1" data-play-sound="true" tabindex="0" style="top:0;right:0;">
+<div class="countdown" id="timer_28e322cb" data-warn-when="120" data-update-every="1" data-play-sound="true" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -452,12 +538,14 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="../images/20221004094629.png"></p>
+<p><img data-src="../../images/20221004094629.png"></p>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(countdown)</span>
+<span id="cb3-2"><a></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">10</span>, <span class="at">seconds =</span> <span class="dv">0</span>, <span class="at">warn_when =</span> <span class="dv">120</span>, <span class="at">top =</span> <span class="dv">0</span>, <span class="at">play_sound=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="countdown" id="timer_869d8a15" data-warn-when="120" data-update-every="1" data-play-sound="true" tabindex="0" style="top:0;right:0;">
+<div class="countdown" id="timer_65878358" data-warn-when="120" data-update-every="1" data-play-sound="true" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -470,7 +558,7 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 <li class="fragment">Identify the most important built environment, biological and social mechanisms Roberts describes that link <span class="alert">segregation</span> in Baltimore to racial inequities in TB outcomes.</li>
 </ul>
 <div class="fragment">
-<p>Go back to your initial reflections:</p>
+<p>Return to your initial reflections:</p>
 <ul>
 <li class="fragment"><p>What do you remain confused or unsure about?</p></li>
 <li class="fragment"><p>What most surprised/struck you in these chapters?</p></li>
@@ -478,8 +566,10 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </ul>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(countdown)</span>
+<span id="cb4-2"><a></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">5</span>, <span class="at">warn_when =</span> <span class="dv">60</span>, <span class="at">seconds =</span> <span class="dv">0</span>, <span class="at">play_sound=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="countdown" id="timer_489cfb4f" data-warn-when="60" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_a57c10d6" data-warn-when="60" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -504,6 +594,10 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </blockquote>
 </div>
 </section>
+<section id="alley-houses-in-baltimore-reflected-a-unique-mode-of-segregation" class="slide level2">
+<h2>Alley houses in Baltimore reflected a unique mode of <span class="alert">segregation</span></h2>
+
+<img data-src="alley-house-robers.png" class="r-stretch quarto-figure-center"><p class="caption">“In the lower-rent alleys between these two avenues could be found poorer blacks, who resided in one- or two-story houses whose front steps in many cases were separated from the opposite house by no more than six or eight feet of cobblestone or dirt.” <span class="citation" data-cites="roberts2009">(<a href="#/references" role="doc-biblioref" onclick="">Roberts 2009</a>)</span></p></section>
 <section id="residential-segregation-is-a-multi-scale-phenomenon" class="slide level2">
 <h2>Residential segregation is a <span class="alert">multi-scale</span> phenomenon</h2>
 <div class="columns">
@@ -511,7 +605,7 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 <div class="fragment" data-fragment-index="1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/racial_dot_map.png"></p>
+<p><img data-src="../../images/racial_dot_map.png"></p>
 <figcaption>National patterns of race/ethnic residential segregation.</figcaption>
 </figure>
 </div>
@@ -520,7 +614,7 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 <div class="fragment" data-fragment-index="2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/lichter_high_macro.png"></p>
+<p><img data-src="../../images/lichter_high_macro.png"></p>
 <figcaption>Schematic of macro-segregation patterns characteristic of SE Michigan <span class="citation" data-cites="lichter2015">(<a href="#/references" role="doc-biblioref" onclick="">Lichter, Parisi, and Taquino 2015</a>)</span></figcaption>
 </figure>
 </div>
@@ -564,46 +658,44 @@ University of Michigan School of Public Health <br><br> Jon Zelner<br>
 </div>
 </div>
 </section>
-<section id="alley-houses" class="slide level2">
-<h2>Alley houses</h2>
-<blockquote>
-<p>“In the lower-rent alleys between these two avenues could be found poorer blacks, who resided in one- or two-story houses whose front steps in many cases were separated from the opposite house by no more than six or eight feet of cobblestone or dirt.”</p>
-</blockquote>
-</section>
-<section id="a-typology-of-segregation" class="slide level2">
-<h2>A Typology of Segregation</h2>
-<p>Grigoryeva and Ruef define three types of segregation:</p>
+<section id="segregating-processes-can-lead-to-different-spatial-patterns" class="slide level2">
+<h2>Segregating <span class="alert">processes</span> can lead to different <span class="alert">spatial patterns</span></h2>
+<p><span class="citation" data-cites="grigoryeva2015">(<a href="#/references" role="doc-biblioref" onclick="">Grigoryeva and Ruef 2015</a>)</span> define three types of segregation:</p>
 <dl>
 <dt class="fragment">Primary (P)</dt>
 <dd class="fragment">
-Separation of groups across administrative or political boundaries.
+Separation of groups across <span class="alert">administrative</span> or <span class="alert">political</span> boundaries.
 </dd>
 <dt class="fragment">Secondary (S)</dt>
 <dd class="fragment">
-Separation of groups in <em>physical space</em>
+Separation over <span class="alert">large-scale physical space</span>.
 </dd>
 <dt class="fragment">Tertiary (T)</dt>
 <dd class="fragment">
-Function of residential street layout that influence <em>pedestrian paths</em>.
+Function of residential street layout that influence <span class="alert">pedestrian paths</span>.
 </dd>
 </dl>
 </section>
-<section id="a-typology-of-segregation-1" class="slide level2">
+<section id="a-typology-of-segregation" class="slide level2">
 <h2>A Typology of Segregation</h2>
 
-<img data-src="../images/grigoryeva_segregation.png" class="r-stretch"></section>
+<img data-src="../../images/grigoryeva_segregation.png" class="r-stretch"></section>
 <section id="clearly-defined-primary-segregation" class="slide level2">
 <h2>Clearly-defined <span class="alert">primary</span> segregation</h2>
 
-<img data-src="../images/chicago_segregation_map.png" class="r-stretch"></section>
+<img data-src="../../images/chicago_segregation_map.png" class="r-stretch"></section>
 <section id="fine-scale-residential-segregation-in-washington-d.c.-1888" class="slide level2">
 <h2>Fine-scale residential segregation in Washington, D.C. (1888)</h2>
 
-<img data-src="../images/logan_alley_segregation.png" class="r-stretch quarto-figure-center"><p class="caption">Sanborn Fire Insurance Company Map for Washington D.C. in 1888</p></section>
-<section id="pattern-was-pervasive-throughout-d.c." class="slide level2">
-<h2>Pattern was pervasive throughout D.C.</h2>
+<img data-src="../../images/logan_alley_segregation.png" class="r-stretch quarto-figure-center"><p class="caption">Sanborn Fire Insurance Company Map for Washington D.C. in 1888</p></section>
+<section id="pattern-was-pervasive-throughout-d.c.-and-baltimore" class="slide level2">
+<h2>Pattern was pervasive throughout D.C. and Baltimore</h2>
 
-<img data-src="../images/logan_more_dc_alley_segregation.png" class="r-stretch quarto-figure-center"><p class="caption">Map of a larger area of DC</p></section>
+<img data-src="../../images/logan_more_dc_alley_segregation.png" class="r-stretch quarto-figure-center"><p class="caption">Map of a larger area of DC</p></section>
+<section id="what-are-potential-implications-of-these-different-modes-of-segregation-for-infection-risk" class="slide level2">
+<h2>What are potential implications of these different modes of segregation for infection risk?</h2>
+
+<img data-src="../../images/grigoryeva_segregation.png" class="r-stretch"></section>
 <section id="so-how-do-we-measure-this-type-of-segregation" class="slide level2">
 <h2>So: How do we <span class="alert">measure</span> this type of segregation?</h2>
 <div class="columns">
@@ -618,7 +710,7 @@ Function of residential street layout that influence <em>pedestrian paths</em>.
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/grigoryeva_census_map.png"></p>
+<p><img data-src="../../images/grigoryeva_census_map.png"></p>
 <figcaption>Example path of a census-taker through a segregated southern neighborhood in 1880.</figcaption>
 </figure>
 </div>
@@ -628,7 +720,7 @@ Function of residential street layout that influence <em>pedestrian paths</em>.
 <section id="different-measures-to-different-answers" class="slide level2">
 <h2>Different <span class="alert">measures</span> <span class="math inline">\(\to\)</span> different <span class="alert">answers</span></h2>
 
-<img data-src="../images/grigoryeva_segregation_table_1.png" class="r-stretch quarto-figure-center"><p class="caption">D = index of dissimilarity, a measure of <span class="alert">evenness</span></p><div class="fragment">
+<img data-src="../../images/grigoryeva_segregation_table_1.png" class="r-stretch quarto-figure-center"><p class="caption">D = index of dissimilarity, a measure of <span class="alert">evenness</span></p><div class="fragment">
 <p>What do you think this implies for how we should <span class="alert">approach</span> the measurement/characterization of segregation?</p>
 </div>
 </section>
@@ -657,13 +749,13 @@ Function of residential street layout that influence <em>pedestrian paths</em>.
 - [Chowkwanyun M, Reed AL. Racial Health Disparities and Covid-19 — Caution and Context. _New England Journal of Medicine_. 2020;383(3):201-203.](https://www.dropbox.com/sh/gpzxgon1zw1pimv/AAAHPPfugABb75F_vQ-fHeOFa?dl=0) doi:[10.1056/NEJMp2012910](https://doi.org/10.1056/NEJMp2012910)
 :::
 :::{.column width=50%}
-   ![[Using maps to conflate risk with race.](https://zelnotes.io/teaching/PUBHLTH405/modules/Residential+Segregation+and+Tuberculosis+Infection/4.+Infectious+Fear+3+-+Conflating+risk+and+race+in+public+health+surveillance)](../images/20221005093842.png)  
+   ![[Using maps to conflate risk with race.](https://zelnotes.io/teaching/PUBHLTH405/modules/Residential+Segregation+and+Tuberculosis+Infection/4.+Infectious+Fear+3+-+Conflating+risk+and+race+in+public+health+surveillance)](/images/20221005093842.png)  
 :::
 ::: -->
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<p>https://twitter.com/allcurledup/status/1577914877544435712?s=20&amp;t=hHlaxTVPGNhoozS-wgbmEQ</p>
+<!-- https://twitter.com/allcurledup/status/1577914877544435712?s=20&t=hHlaxTVPGNhoozS-wgbmEQ -->
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -683,25 +775,28 @@ Lichter, Daniel T., Domenico Parisi, and Michael C. Taquino. 2015. <span>“Towa
 <div id="ref-massey1988" class="csl-entry" role="listitem">
 Massey, Douglas S., and Nancy A. Denton. 1988. <span>“The <span>Dimensions</span> of <span>Residential Segregation</span>.”</span> <em>Social Forces</em> 67 (2): 281–315. <a href="https://doi.org/10.2307/2579183">https://doi.org/10.2307/2579183</a>.
 </div>
+<div id="ref-roberts2009" class="csl-entry" role="listitem">
+Roberts, Samuel K. 2009. <em>Infectious <span>Fear</span>: <span>Politics</span>, <span>Disease</span>, and the <span>Health Effects</span> of <span>Segregation</span></em>. University of North Carolina Press.
+</div>
 </div>
 </section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../css/revealjs/dist/reveal.js"></script>
+  <script src="../../css/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../css/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../css/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../css/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../css/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../css/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../css/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../css/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../css/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../css/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../css/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../css/revealjs/plugin/notes/notes.js"></script>
-  <script src="../css/revealjs/plugin/search/search.js"></script>
-  <script src="../css/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../css/revealjs/plugin/math/math.js"></script>
+  <script src="../../css/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../css/revealjs/plugin/search/search.js"></script>
+  <script src="../../css/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../css/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -895,44 +990,6 @@ Massey, Douglas S., and Nancy A. Denton. 1988. <span>“The <span>Dimensions</sp
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
