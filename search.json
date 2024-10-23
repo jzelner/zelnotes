@@ -532,32 +532,109 @@
     "text": "References"
   },
   {
-    "objectID": "posts/invitation-to-spatial-epidemiology/index.html",
-    "href": "posts/invitation-to-spatial-epidemiology/index.html",
-    "title": "An invitation to spatial epidemiology",
-    "section": "",
-    "text": "One theme that comes up consistently when I’m teaching and talking to students and others about spatial epidemiology is that it is an aura of inaccessibility. This makes a certain kind of sense: Making maps and measuring and modeling spatial relationships might seem like it is outside of the classic analytic toolkit of working epidemiologists, not to mention other fields in public health, medicine, and the social sciences. In fact, this was my take on it as well, until I realized space has always been at the heart of my research, even when I didn’t realize it!\nThe diagram in Figure 1 reflects my interpretation of the way someone coming to this area of research and practice for the first time might see it:\n\n\n\n\n\n\nflowchart \n  A(Decide to do spatial epidemiology) --&gt; G(Collect spatial data)\n  G --&gt; D(Measure clustering and other spatial descriptives)\n  G --&gt; F(Make descriptive maps)\n  D --&gt; C\n  F --&gt; C(Formulate spatial hypotheses)\n  C --&gt; H(Construct hierarchical models)\n  H --&gt; J(Design and target intervention)\n  J --&gt; K(Evaluate)\n  K --&gt; G\n\n\n\n\nFigure 1: A textbook version of the spatial epidemiology workflow, without all the twists and turns that characterize actual research.\n\n\n\n\n\nIn this view, spatial epidemiology or analysis is taken to be a set of relatively fixed and well-described ideas and procedures connected to a highly technical set of methods. When we come from this perspective, starting a spatial project requires us to embark with a backpack that is already filled with specialized spatial tools.\n\n\nMy goal in this short essay is to chip away a bit at the idea of spatial epidemiology as something separate and apart from mainstream epidemiology and health. Instead, I argue that it is better understood as an emergent phenomenon that acts as a loose wrapper around a core set of ideas and tools that are part of the working arsenal of most professionals, students, and researchers in public health.\nTo explain what I mean, and why I think it’s important, I’m going to subject you to a bit of autobiography about my own intellectual and professional trajectory."
+    "objectID": "pubhlth405/session_16_gay_plague.html#grappling-with-an-emerging-pandemic",
+    "href": "pubhlth405/session_16_gay_plague.html#grappling-with-an-emerging-pandemic",
+    "title": "Zelnotes",
+    "section": "Grappling with an emerging pandemic",
+    "text": "Grappling with an emerging pandemic\n\n\nPUBHLTH 405\nSocial History of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
   },
   {
-    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#you-are-almost-certainly-a-spatial-analyst-already",
-    "href": "posts/invitation-to-spatial-epidemiology/index.html#you-are-almost-certainly-a-spatial-analyst-already",
-    "title": "An invitation to spatial epidemiology",
-    "section": "",
-    "text": "My goal in this short essay is to chip away a bit at the idea of spatial epidemiology as something separate and apart from mainstream epidemiology and health. Instead, I argue that it is better understood as an emergent phenomenon that acts as a loose wrapper around a core set of ideas and tools that are part of the working arsenal of most professionals, students, and researchers in public health.\nTo explain what I mean, and why I think it’s important, I’m going to subject you to a bit of autobiography about my own intellectual and professional trajectory."
+    "objectID": "pubhlth405/session_16_gay_plague.html#agenda",
+    "href": "pubhlth405/session_16_gay_plague.html#agenda",
+    "title": "Zelnotes",
+    "section": "Agenda",
+    "text": "Agenda\n\nReflecting on Fiasco Episode 1\nWhy is stigma a fundamental cause of health inequity? (~30m)\nIf time: looking at feedback from project presentations"
   },
   {
-    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#a-process-of-progressive-revelation",
-    "href": "posts/invitation-to-spatial-epidemiology/index.html#a-process-of-progressive-revelation",
-    "title": "An invitation to spatial epidemiology",
-    "section": "A process of progressive revelation",
-    "text": "A process of progressive revelation\nAs a postdoc, working with Ted Cohen, I began analyzing data from a large study of household-level tuberculosis transmission in Lima, Peru. Figure 3 illustrates the model we developed to characterize household-level differences in transmission rates as a function of exposure type:\n\n\n\n\n\n\nFigure 3: Characterizing household-level variation in risks of infection from community vs. household exposures (Figure from Zelner et al. (2014))\n\n\n\nAt the time, I knew that these households were distributed across neighborhoods of Lima, but I didn’t give it much thought. I was more interested in risks experienced by an average household. And to be honest, I didn’t know that spatial metadata were available on each of the households, since I wasn’t involved with the data collection!\nIn the interim, I got the chance to work on some collaborative projects with an explicitly spatial focus. In one, we reconstructed an outbreak of morbillivirus (think: measles) among a herd of migratory dolphins (Figure 4).\n\n\n\n\n\n\nFigure 4: Locations of dolphin strandings during a morbillivirus outbreak in the North Atlantic (dot size indicates a greater number of strandings; Figure from Morris et al. (2015))\n\n\n\nIn another, we looked at the relationship between environmental risks, such as neighborhood-level flooding, on the rate of pediatric diarrheal disease in Ho Chi Minh City in Vietnam (Figure 5).\n\n\n\n\n\n\nFigure 5: Incidence of pediatric diarrhea across neighborhoods of Ho Chi Minh City, Vietnam (Figure from Thompson et al. (2015))\n\n\n\nThese were the first experiences I had explicitly looking at these outcomes as a function of geographic space. While I had previously thought that mapping and spatial analysis and health geography were big scary things I couldn’t do, I started to realize something important: These projects were not substantively very distinct from ones I had done before. The difference was that we were explicitly talking about spatial relationships and making maps (or simple one-dimensional diagrams as in Figure 4), instead of implicitly as in Figure 2 or Figure 3.\nAfter completing these other projects, I dove back in to the Lima TB data to look at the drivers of multi-drug resistant TB (MDR-TB) risk. This was when I finally found out (some 2 years after I had started working with these data!) that spatial information on each household was available. So, with great trepidation, for the first time I made a map to explore spatial variability in MDR-TB outcomes.\nAnd when I did this, we instantly saw that there were seemingly meaningful differences in the rate of TB overall, and MDR-TB in particular, across different health center catchment areas:\n\n\n\n\n\n\nFigure 6: The first map(s) I ever made, from Zelner et al. (2016), nearly 10 years after I started my research career.\n\n\n\nThis was the moment, some 10 years after I dipped my toes into the world of infectious disease epidemiology, where I realized I had been doing spatial work all along.\n\nSo what?\nWhy am I bothering you with this tedious and indulgent bit of personal history? It’s because it took me way too long to recognize that spatial epidemiology was a wrapper around a set of skills and ideas I had been working with for many years before I recognized what I was doing. I was intimidated by anything preceded by ‘spatial-’: it sounded like a bunch of skills I didn’t have and couldn’t acquire.\nBut my belated realization about the emergent quality of spatial epidemiology has been really important and helpful for me. It made me realize that when I push into new areas - in life as much as research - that I probably have more of the tools I need than I realized in advance.\nThis means that you don’t need to identify as a spatial analyst to be one. And if you want to think of yourself as one, you should, because ultimately it is the intention to engage with spatial relationships and geographic variation in a meaningful way that makes you a health geographer or spatial epidemiologist. This is likely true for many if not most scientific subfields1, but this one is mine and I’m glad I finally realized it!"
+    "objectID": "pubhlth405/session_16_gay_plague.html#past-is-always-prologue",
+    "href": "pubhlth405/session_16_gay_plague.html#past-is-always-prologue",
+    "title": "Zelnotes",
+    "section": "Past is always prologue…",
+    "text": "Past is always prologue…\n\n\n\n\n\nThe Washington Post, 1981\n\n\n\n\n\n\n\nInfection Control Today, 2012\n\n\n\n\n\n\n\nNPR, 2017\n\n\n\n\n\n\n\nKaiser Health News, 2020"
   },
   {
-    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#footnotes",
-    "href": "posts/invitation-to-spatial-epidemiology/index.html#footnotes",
-    "title": "An invitation to spatial epidemiology",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThough you probably need to be working near-ish to a field for it to happen by chance: there is little chance of me taking on the characteristics a particle physicist or chemical engineer by chance, but I wouldn’t rule out lepidopterist or archaeologist entirely!↩︎"
+    "objectID": "pubhlth405/session_16_gay_plague.html#reflecting-on-what-you-listened-to",
+    "href": "pubhlth405/session_16_gay_plague.html#reflecting-on-what-you-listened-to",
+    "title": "Zelnotes",
+    "section": "Reflecting on what you listened to",
+    "text": "Reflecting on what you listened to\nIn this google doc, answer the following questions on your own:\n\nWhat did you find most interesting or surprising in this episode?\nWhat concepts/readings from earlier in the term did your listening to this episode bring to mind?\nWhat would you like to know more about the making of this episode and about this podcast more generally?\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#opening-chapters-of-the-aids-pandemic-are-straight-out-of-charles-rosenbergs-playbook",
+    "href": "pubhlth405/session_16_gay_plague.html#opening-chapters-of-the-aids-pandemic-are-straight-out-of-charles-rosenbergs-playbook",
+    "title": "Zelnotes",
+    "section": "Opening chapters of the AIDS pandemic are straight out of Charles Rosenberg’s playbook",
+    "text": "Opening chapters of the AIDS pandemic are straight out of Charles Rosenberg’s playbook\n\n\n\n“A true epidemic is an event, not a trend.” (Rosenberg 2020)\n\n\n\n\n\n1918 Influenza pandemic: An event\n\n\n\n\n\n\nHIV Crisis: An ongoing event"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#epidemic-as-a-play-in-three-acts",
+    "href": "pubhlth405/session_16_gay_plague.html#epidemic-as-a-play-in-three-acts",
+    "title": "Zelnotes",
+    "section": "Epidemic as a play in three acts:",
+    "text": "Epidemic as a play in three acts:\n\nProgressive Revelation\nManaging Randomness\nNegotiating Public Response"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#progressive-revelation",
+    "href": "pubhlth405/session_16_gay_plague.html#progressive-revelation",
+    "title": "Zelnotes",
+    "section": "Progressive Revelation",
+    "text": "Progressive Revelation\n\n\n\nOnly when the presence of an epidemic becomes unavoidable is there public admission of its existence. Bodies must accumulate and the sick must suffer in increasing numbers before officials acknowledge what can no longer be ignored. (Rosenberg 2020, 566)\n\n\nFirst NBC News Story on HIV/AIDS"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#managing-randomness",
+    "href": "pubhlth405/session_16_gay_plague.html#managing-randomness",
+    "title": "Zelnotes",
+    "section": "Managing Randomness",
+    "text": "Managing Randomness\n\nAccepting the existence of an epidemic implies — in some sense demands — the creation of a framework within which its dismaying arbitrariness may be managed. Collective agreement on that explanatory framework may be seen as the inevitable second stage in any epidemic. (Rosenberg 2020, 567)"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#public-response",
+    "href": "pubhlth405/session_16_gay_plague.html#public-response",
+    "title": "Zelnotes",
+    "section": "Public Response",
+    "text": "Public Response\n\n\n\nIn the stress of an epidemic…, failure to take action constitutes action. An epidemic might in this sense be likened to a trial, with policy choices constituting the possible verdicts. (Rosenberg 2020, 569)\n\n\n\n\nUK Don’t Inject AIDS PSA"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#what-is-stigma-and-why-does-it-drive-inequity-in-health-outcomes",
+    "href": "pubhlth405/session_16_gay_plague.html#what-is-stigma-and-why-does-it-drive-inequity-in-health-outcomes",
+    "title": "Zelnotes",
+    "section": "What is stigma and why does it drive inequity in health outcomes?",
+    "text": "What is stigma and why does it drive inequity in health outcomes?\nBased on (Hatzenbuehler, Phelan, and Link 2013):\n\nHow would you define the concept of stigma?\nWhat is the relationship between stigma and other fundamental causes like racism and SES?\nWhat avenues for prevention or intervention does an understanding of the role of stigma as a fundamental cause open up?"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#what-is-problematic-about-analyzing-or-addressing-one-stigmatized-status-at-a-time",
+    "href": "pubhlth405/session_16_gay_plague.html#what-is-problematic-about-analyzing-or-addressing-one-stigmatized-status-at-a-time",
+    "title": "Zelnotes",
+    "section": "What is problematic about analyzing or addressing one stigmatized status at a time?",
+    "text": "What is problematic about analyzing or addressing one stigmatized status at a time?\n\nTable 1 from (Hatzenbuehler, Phelan, and Link 2013)"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#how-are-the-health-effects-of-stigma-maintained-over-time",
+    "href": "pubhlth405/session_16_gay_plague.html#how-are-the-health-effects-of-stigma-maintained-over-time",
+    "title": "Zelnotes",
+    "section": "How are the health effects of stigma maintained over time?",
+    "text": "How are the health effects of stigma maintained over time?\n\nWhat is going on in this figure?"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#stigma-serves-to-create-and-maintain-power-imbalances",
+    "href": "pubhlth405/session_16_gay_plague.html#stigma-serves-to-create-and-maintain-power-imbalances",
+    "title": "Zelnotes",
+    "section": "Stigma serves to create and maintain power imbalances",
+    "text": "Stigma serves to create and maintain power imbalances\n\nIn pathogen groups: Can you come up with some examples - relevant to your pathogen if possible - in which disease-related stigma serves to:\n1. Keep people down via social and economic exploitation.\n\nKeep people in via the enforcement of restrictive social norms.\nKeep people away as a means of avoiding contact with individuals perceived to be diseased."
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#next-time",
+    "href": "pubhlth405/session_16_gay_plague.html#next-time",
+    "title": "Zelnotes",
+    "section": "Next Time",
+    "text": "Next Time\n\nEpisodes 2 & 3"
+  },
+  {
+    "objectID": "pubhlth405/session_16_gay_plague.html#references",
+    "href": "pubhlth405/session_16_gay_plague.html#references",
+    "title": "Zelnotes",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nHatzenbuehler, Mark L., Jo C. Phelan, and Bruce G. Link. 2013. “Stigma as a Fundamental Cause of Population Health Inequalities.” American Journal of Public Health 103 (5): 813–21. https://doi.org/10.2105/AJPH.2012.301069.\n\n\nRosenberg, Charles E. 2020. “What Is an Epidemic? AIDS in Historical Perspective.” Bulletin of the History of Medicine 94 (4): 563–77. https://doi.org/10.1353/bhm.2020.0082."
   },
   {
     "objectID": "pubhlth405/infectious-fear-1/session_10_infectious_fear_1.html#tuberculosis-as-a-reflection-of-inequality",
@@ -1566,18 +1643,18 @@
     "text": "Finding the Lung Block 🫁: Then and Now\n\n\nPUBHLTH 405\nSocial Epidemiology of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
   },
   {
-    "objectID": "pubhlth405/infectious-fear-lung-block/index.html#what-explains-the-persistence-of-residential-segregation",
-    "href": "pubhlth405/infectious-fear-lung-block/index.html#what-explains-the-persistence-of-residential-segregation",
-    "title": "Zelnotes",
-    "section": "What explains the persistence of residential segregation?",
-    "text": "What explains the persistence of residential segregation?\n\n\nThe more you know!! 🌈 pic.twitter.com/0SxLabM0XO\n\n— Elle Jones ((allcurledup?)) October 6, 2022"
-  },
-  {
     "objectID": "pubhlth405/infectious-fear-lung-block/index.html#agenda",
     "href": "pubhlth405/infectious-fear-lung-block/index.html#agenda",
     "title": "Zelnotes",
     "section": "Agenda",
-    "text": "Agenda\n\nFinding the Lung Block in Baltimore.\nTerritorial stigmatization and other traps 🕳️ to avoid when characterizing health disparities.\nTime to work on proposal presentations 📽️"
+    "text": "Agenda\n\nMid-term feedback\nFinding the Lung Block in Baltimore.\nTerritorial stigmatization and other traps 🕳️ to avoid when characterizing health disparities.\n~20-30m to work on proposal presentations 📽️"
+  },
+  {
+    "objectID": "pubhlth405/infectious-fear-lung-block/index.html#some-changes-in-response-to-feedback",
+    "href": "pubhlth405/infectious-fear-lung-block/index.html#some-changes-in-response-to-feedback",
+    "title": "Zelnotes",
+    "section": "Some changes in response to feedback 🔁",
+    "text": "Some changes in response to feedback 🔁\n\nMake an effort to place heavier prep on Monday classes rather than Weds.\nProvide a bit more preparation and guidance for readings and other course materials.\nMove away from/retool whole-group discussions.\nNext Year: Provide an option to work individually or in smaller groups for students who prefer this."
   },
   {
     "objectID": "pubhlth405/infectious-fear-lung-block/index.html#finding-the-lung-blockwith-some-help-from-rosenberg",
@@ -1594,11 +1671,18 @@
     "text": "Conflating race and space\n\nAdelaide Dutcher’s take on TB risk in Baltimore (Dutcher 1900)"
   },
   {
-    "objectID": "pubhlth405/infectious-fear-lung-block/index.html#infectious-fear-discussion-format-for-today",
-    "href": "pubhlth405/infectious-fear-lung-block/index.html#infectious-fear-discussion-format-for-today",
+    "objectID": "pubhlth405/infectious-fear-lung-block/index.html#snowball-discussion-about-chapter-5",
+    "href": "pubhlth405/infectious-fear-lung-block/index.html#snowball-discussion-about-chapter-5",
     "title": "Zelnotes",
-    "section": "Infectious Fear Discussion Format for Today",
-    "text": "Infectious Fear Discussion Format for Today\nStart in small groups, each answering one discussion question, and report back to big group for discussion:\n\nWhat was the idea of the lung block and where did it originate? How is this related to house infection theory?\nWhat was problematic about using residential location to map out TB risk in Baltimore?\nHow were social science concepts and racial ideologies mixed to create housing policies?\nHow did Black physicians and community leaders push back against the ideas of Janet Kemp and other White ‘reformers’?"
+    "section": "Snowball discussion about Chapter 5",
+    "text": "Snowball discussion about Chapter 5\n\nStart alone and write your answer to the first question on a sticky note.\nPair up and compare your answers.\nWork together to write up a note or notes on the next question.\nRepeat in groups of ~4 and again in groups of ~8"
+  },
+  {
+    "objectID": "pubhlth405/infectious-fear-lung-block/index.html#questions",
+    "href": "pubhlth405/infectious-fear-lung-block/index.html#questions",
+    "title": "Zelnotes",
+    "section": "Questions",
+    "text": "Questions\n\nWhat was the idea of the lung block and where did it originate? How is this related to house infection theory?\nWhat was problematic about using residential location to map out TB risk in Baltimore?\nHow were social science concepts and racial ideologies mixed to create housing policies?\nHow did Black physicians and community leaders push back against the ideas of Janet Kemp and other White ‘reformers’?"
   },
   {
     "objectID": "pubhlth405/infectious-fear-lung-block/index.html#does-this-critique-have-contemporary-relevance",
@@ -1619,7 +1703,7 @@
     "href": "pubhlth405/infectious-fear-lung-block/index.html#what-is-missing-from-the-spot-map-that-was-present-in-john-snows-ghost-map",
     "title": "Zelnotes",
     "section": "What is missing from the spot map that was present in John Snow’s Ghost Map?",
-    "text": "What is missing from the spot map that was present in John Snow’s Ghost Map?\n\n\n\n\n\nSnow’s map also showed the household locations of deaths.\n\n\n\n\n\n\n\nYes, but I used spatial relationships to the cause of the outbreak - the pump - rather than individual attributes!"
+    "text": "What is missing from the spot map that was present in John Snow’s Ghost Map?\n\n\n\n\n\nSnow’s map also showed the household locations of deaths.\n\n\n\n\n\n\n\nYes, but I used spatial relationships to the cause of the outbreak - the pump - rather than social attributes!"
   },
   {
     "objectID": "pubhlth405/infectious-fear-lung-block/index.html#selective-attention-to-biased-results",
@@ -1654,7 +1738,7 @@
     "href": "pubhlth405/infectious-fear-lung-block/index.html#balancing-the-corners-of-the-rhetorical-triangle",
     "title": "Zelnotes",
     "section": "Balancing the corners of the rhetorical triangle",
-    "text": "Balancing the corners of the rhetorical triangle\n\nEffective communication reflects balanced attention to each element.More info on the rhetorical triangle idea"
+    "text": "Balancing the corners of the rhetorical triangle\n\nEffective communication reflects balanced attention to each element."
   },
   {
     "objectID": "pubhlth405/infectious-fear-lung-block/index.html#challenge-of-the-final-assignment-comes-from-metabolizing-information-and-purposively-communicating-it-to-a-new-audience.",
@@ -3418,116 +3502,32 @@
     "text": "Next Time\n\nProposal presentation workshop!\nCome ready to work on your presentations.\nWill do an exercise at the beginning to help plan out the rest of your project.\nKelly and I will check in with groups during class and help troubleshoot."
   },
   {
-    "objectID": "pubhlth405/session_16_gay_plague.html#grappling-with-an-emerging-pandemic",
-    "href": "pubhlth405/session_16_gay_plague.html#grappling-with-an-emerging-pandemic",
-    "title": "Zelnotes",
-    "section": "Grappling with an emerging pandemic",
-    "text": "Grappling with an emerging pandemic\n\n\nPUBHLTH 405\nSocial History of Infectious Disease\nUniversity of Michigan School of Public Health  Jon Zelner\njzelner@umich.edu\nepibayes.io"
+    "objectID": "posts/invitation-to-spatial-epidemiology/index.html",
+    "href": "posts/invitation-to-spatial-epidemiology/index.html",
+    "title": "An invitation to spatial epidemiology",
+    "section": "",
+    "text": "One theme that comes up consistently when I’m teaching and talking to students and others about spatial epidemiology is that it is an aura of inaccessibility. This makes a certain kind of sense: Making maps and measuring and modeling spatial relationships might seem like it is outside of the classic analytic toolkit of working epidemiologists, not to mention other fields in public health, medicine, and the social sciences. In fact, this was my take on it as well, until I realized space has always been at the heart of my research, even when I didn’t realize it!\nThe diagram in Figure 1 reflects my interpretation of the way someone coming to this area of research and practice for the first time might see it:\n\n\n\n\n\n\nflowchart \n  A(Decide to do spatial epidemiology) --&gt; G(Collect spatial data)\n  G --&gt; D(Measure clustering and other spatial descriptives)\n  G --&gt; F(Make descriptive maps)\n  D --&gt; C\n  F --&gt; C(Formulate spatial hypotheses)\n  C --&gt; H(Construct hierarchical models)\n  H --&gt; J(Design and target intervention)\n  J --&gt; K(Evaluate)\n  K --&gt; G\n\n\n\n\nFigure 1: A textbook version of the spatial epidemiology workflow, without all the twists and turns that characterize actual research.\n\n\n\n\n\nIn this view, spatial epidemiology or analysis is taken to be a set of relatively fixed and well-described ideas and procedures connected to a highly technical set of methods. When we come from this perspective, starting a spatial project requires us to embark with a backpack that is already filled with specialized spatial tools.\n\n\nMy goal in this short essay is to chip away a bit at the idea of spatial epidemiology as something separate and apart from mainstream epidemiology and health. Instead, I argue that it is better understood as an emergent phenomenon that acts as a loose wrapper around a core set of ideas and tools that are part of the working arsenal of most professionals, students, and researchers in public health.\nTo explain what I mean, and why I think it’s important, I’m going to subject you to a bit of autobiography about my own intellectual and professional trajectory."
   },
   {
-    "objectID": "pubhlth405/session_16_gay_plague.html#agenda",
-    "href": "pubhlth405/session_16_gay_plague.html#agenda",
-    "title": "Zelnotes",
-    "section": "Agenda",
-    "text": "Agenda\n\nReflecting on Fiasco Episode 1 & prep for Q&A on 11/9 (~30m)\nMid-semester survey (~10m)\nWhy is stigma a fundamental cause of health inequity? (~30m)\nIf time: looking at feedback from project presentations"
+    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#you-are-almost-certainly-a-spatial-analyst-already",
+    "href": "posts/invitation-to-spatial-epidemiology/index.html#you-are-almost-certainly-a-spatial-analyst-already",
+    "title": "An invitation to spatial epidemiology",
+    "section": "",
+    "text": "My goal in this short essay is to chip away a bit at the idea of spatial epidemiology as something separate and apart from mainstream epidemiology and health. Instead, I argue that it is better understood as an emergent phenomenon that acts as a loose wrapper around a core set of ideas and tools that are part of the working arsenal of most professionals, students, and researchers in public health.\nTo explain what I mean, and why I think it’s important, I’m going to subject you to a bit of autobiography about my own intellectual and professional trajectory."
   },
   {
-    "objectID": "pubhlth405/session_16_gay_plague.html#past-is-always-prologue",
-    "href": "pubhlth405/session_16_gay_plague.html#past-is-always-prologue",
-    "title": "Zelnotes",
-    "section": "Past is always prologue…",
-    "text": "Past is always prologue…\n\n\n\n\n\nThe Washington Post, 1981\n\n\n\n\n\n\n\nInfection Control Today, 2012\n\n\n\n\n\n\n\nNPR, 2017\n\n\n\n\n\n\n\nKaiser Health News, 2020"
+    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#a-process-of-progressive-revelation",
+    "href": "posts/invitation-to-spatial-epidemiology/index.html#a-process-of-progressive-revelation",
+    "title": "An invitation to spatial epidemiology",
+    "section": "A process of progressive revelation",
+    "text": "A process of progressive revelation\nAs a postdoc, working with Ted Cohen, I began analyzing data from a large study of household-level tuberculosis transmission in Lima, Peru. Figure 3 illustrates the model we developed to characterize household-level differences in transmission rates as a function of exposure type:\n\n\n\n\n\n\nFigure 3: Characterizing household-level variation in risks of infection from community vs. household exposures (Figure from Zelner et al. (2014))\n\n\n\nAt the time, I knew that these households were distributed across neighborhoods of Lima, but I didn’t give it much thought. I was more interested in risks experienced by an average household. And to be honest, I didn’t know that spatial metadata were available on each of the households, since I wasn’t involved with the data collection!\nIn the interim, I got the chance to work on some collaborative projects with an explicitly spatial focus. In one, we reconstructed an outbreak of morbillivirus (think: measles) among a herd of migratory dolphins (Figure 4).\n\n\n\n\n\n\nFigure 4: Locations of dolphin strandings during a morbillivirus outbreak in the North Atlantic (dot size indicates a greater number of strandings; Figure from Morris et al. (2015))\n\n\n\nIn another, we looked at the relationship between environmental risks, such as neighborhood-level flooding, on the rate of pediatric diarrheal disease in Ho Chi Minh City in Vietnam (Figure 5).\n\n\n\n\n\n\nFigure 5: Incidence of pediatric diarrhea across neighborhoods of Ho Chi Minh City, Vietnam (Figure from Thompson et al. (2015))\n\n\n\nThese were the first experiences I had explicitly looking at these outcomes as a function of geographic space. While I had previously thought that mapping and spatial analysis and health geography were big scary things I couldn’t do, I started to realize something important: These projects were not substantively very distinct from ones I had done before. The difference was that we were explicitly talking about spatial relationships and making maps (or simple one-dimensional diagrams as in Figure 4), instead of implicitly as in Figure 2 or Figure 3.\nAfter completing these other projects, I dove back in to the Lima TB data to look at the drivers of multi-drug resistant TB (MDR-TB) risk. This was when I finally found out (some 2 years after I had started working with these data!) that spatial information on each household was available. So, with great trepidation, for the first time I made a map to explore spatial variability in MDR-TB outcomes.\nAnd when I did this, we instantly saw that there were seemingly meaningful differences in the rate of TB overall, and MDR-TB in particular, across different health center catchment areas:\n\n\n\n\n\n\nFigure 6: The first map(s) I ever made, from Zelner et al. (2016), nearly 10 years after I started my research career.\n\n\n\nThis was the moment, some 10 years after I dipped my toes into the world of infectious disease epidemiology, where I realized I had been doing spatial work all along.\n\nSo what?\nWhy am I bothering you with this tedious and indulgent bit of personal history? It’s because it took me way too long to recognize that spatial epidemiology was a wrapper around a set of skills and ideas I had been working with for many years before I recognized what I was doing. I was intimidated by anything preceded by ‘spatial-’: it sounded like a bunch of skills I didn’t have and couldn’t acquire.\nBut my belated realization about the emergent quality of spatial epidemiology has been really important and helpful for me. It made me realize that when I push into new areas - in life as much as research - that I probably have more of the tools I need than I realized in advance.\nThis means that you don’t need to identify as a spatial analyst to be one. And if you want to think of yourself as one, you should, because ultimately it is the intention to engage with spatial relationships and geographic variation in a meaningful way that makes you a health geographer or spatial epidemiologist. This is likely true for many if not most scientific subfields1, but this one is mine and I’m glad I finally realized it!"
   },
   {
-    "objectID": "pubhlth405/session_16_gay_plague.html#reflecting-on-what-you-listened-to",
-    "href": "pubhlth405/session_16_gay_plague.html#reflecting-on-what-you-listened-to",
-    "title": "Zelnotes",
-    "section": "Reflecting on what you listened to",
-    "text": "Reflecting on what you listened to\nIn this google doc, answer the following questions on your own:\n\nWhat did you find most interesting or surprising in this episode?\nWhat concepts/readings from earlier in the term did your listening to this episode bring to mind?\nWhat would you like to know more about the making of this episode and about this podcast more generally?\n\n\n\n\n−+\n10:00"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#opening-chapters-of-the-aids-pandemic-are-straight-out-of-charles-rosenbergs-playbook",
-    "href": "pubhlth405/session_16_gay_plague.html#opening-chapters-of-the-aids-pandemic-are-straight-out-of-charles-rosenbergs-playbook",
-    "title": "Zelnotes",
-    "section": "Opening chapters of the AIDS pandemic are straight out of Charles Rosenberg’s playbook",
-    "text": "Opening chapters of the AIDS pandemic are straight out of Charles Rosenberg’s playbook\n\n\n\n“A true epidemic is an event, not a trend.” (Rosenberg 2020)\n\n\n\n\n\n1918 Influenza pandemic: An event\n\n\n\n\n\n\nHIV Crisis: An ongoing event"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#epidemic-as-a-play-in-three-acts",
-    "href": "pubhlth405/session_16_gay_plague.html#epidemic-as-a-play-in-three-acts",
-    "title": "Zelnotes",
-    "section": "Epidemic as a play in three acts:",
-    "text": "Epidemic as a play in three acts:\n\nProgressive Revelation\nManaging Randomness\nNegotiating Public Response"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#progressive-revelation",
-    "href": "pubhlth405/session_16_gay_plague.html#progressive-revelation",
-    "title": "Zelnotes",
-    "section": "Progressive Revelation",
-    "text": "Progressive Revelation\n\n\n\nOnly when the presence of an epidemic becomes unavoidable is there public admission of its existence. Bodies must accumulate and the sick must suffer in increasing numbers before officials acknowledge what can no longer be ignored. (Rosenberg 2020, 566)\n\n\nFirst NBC News Story on HIV/AIDS"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#managing-randomness",
-    "href": "pubhlth405/session_16_gay_plague.html#managing-randomness",
-    "title": "Zelnotes",
-    "section": "Managing Randomness",
-    "text": "Managing Randomness\n\nAccepting the existence of an epidemic implies — in some sense demands — the creation of a framework within which its dismaying arbitrariness may be managed. Collective agreement on that explanatory framework may be seen as the inevitable second stage in any epidemic. (Rosenberg 2020, 567)"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#public-response",
-    "href": "pubhlth405/session_16_gay_plague.html#public-response",
-    "title": "Zelnotes",
-    "section": "Public Response",
-    "text": "Public Response\n\n\n\nIn the stress of an epidemic…, failure to take action constitutes action. An epidemic might in this sense be likened to a trial, with policy choices constituting the possible verdicts. (Rosenberg 2020, 569)\n\n\n\n\nUK Don’t Inject AIDS PSA"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#mid-semester-check-in",
-    "href": "pubhlth405/session_16_gay_plague.html#mid-semester-check-in",
-    "title": "Zelnotes",
-    "section": "Mid-semester check-in",
-    "text": "Mid-semester check-in\n\nPlease fill out this google form\n\n\n−+\n10:00"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#what-is-stigma-and-why-does-it-drive-inequity-in-health-outcomes",
-    "href": "pubhlth405/session_16_gay_plague.html#what-is-stigma-and-why-does-it-drive-inequity-in-health-outcomes",
-    "title": "Zelnotes",
-    "section": "What is stigma and why does it drive inequity in health outcomes?",
-    "text": "What is stigma and why does it drive inequity in health outcomes?\nBased on (Hatzenbuehler, Phelan, and Link 2013):\n\nHow would you define the concept of stigma?\nWhat is the relationship between stigma and other fundamental causes like racism and SES?\nWhat avenues for prevention or intervention does an understanding of the role of stigma as a fundamental cause open up?"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#what-is-problematic-about-analyzing-or-addressing-one-stigmatized-status-at-a-time",
-    "href": "pubhlth405/session_16_gay_plague.html#what-is-problematic-about-analyzing-or-addressing-one-stigmatized-status-at-a-time",
-    "title": "Zelnotes",
-    "section": "What is problematic about analyzing or addressing one stigmatized status at a time?",
-    "text": "What is problematic about analyzing or addressing one stigmatized status at a time?\n\nTable 1 from (Hatzenbuehler, Phelan, and Link 2013)"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#how-are-the-health-effects-of-stigma-maintained-over-time",
-    "href": "pubhlth405/session_16_gay_plague.html#how-are-the-health-effects-of-stigma-maintained-over-time",
-    "title": "Zelnotes",
-    "section": "How are the health effects of stigma maintained over time?",
-    "text": "How are the health effects of stigma maintained over time?\n\nWhat is going on in this figure?"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#stigma-serves-to-create-and-maintain-power-imbalances",
-    "href": "pubhlth405/session_16_gay_plague.html#stigma-serves-to-create-and-maintain-power-imbalances",
-    "title": "Zelnotes",
-    "section": "Stigma serves to create and maintain power imbalances",
-    "text": "Stigma serves to create and maintain power imbalances\n\nIn pathogen groups: Can you come up with some examples - relevant to your pathogen if possible - in which disease-related stigma serves to:\n1. Keep people down via social and economic exploitation.\n\nKeep people in via the enforcement of restrictive social norms.\nKeep people away as a means of avoiding contact with individuals perceived to be diseased."
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#next-time",
-    "href": "pubhlth405/session_16_gay_plague.html#next-time",
-    "title": "Zelnotes",
-    "section": "Next Time",
-    "text": "Next Time\n\nEpisodes 2 & 3"
-  },
-  {
-    "objectID": "pubhlth405/session_16_gay_plague.html#references",
-    "href": "pubhlth405/session_16_gay_plague.html#references",
-    "title": "Zelnotes",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nHatzenbuehler, Mark L., Jo C. Phelan, and Bruce G. Link. 2013. “Stigma as a Fundamental Cause of Population Health Inequalities.” American Journal of Public Health 103 (5): 813–21. https://doi.org/10.2105/AJPH.2012.301069.\n\n\nRosenberg, Charles E. 2020. “What Is an Epidemic? AIDS in Historical Perspective.” Bulletin of the History of Medicine 94 (4): 563–77. https://doi.org/10.1353/bhm.2020.0082."
+    "objectID": "posts/invitation-to-spatial-epidemiology/index.html#footnotes",
+    "href": "posts/invitation-to-spatial-epidemiology/index.html#footnotes",
+    "title": "An invitation to spatial epidemiology",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThough you probably need to be working near-ish to a field for it to happen by chance: there is little chance of me taking on the characteristics a particle physicist or chemical engineer by chance, but I wouldn’t rule out lepidopterist or archaeologist entirely!↩︎"
   },
   {
     "objectID": "pubhlth405/session_20_drugs_into_bodies.html#drugs-into-bodies-reflecting-on-the-legacy-of-hivaids-activism",
